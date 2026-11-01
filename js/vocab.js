@@ -44,6 +44,19 @@ const Vocab = (() => {
         </div>
       </div>
 
+      <div class="grid g2">
+        <div class="card hover" onclick="location.hash='#/dictation'">
+          <span class="pill amber">每日听写</span>
+          <h4 style="margin:6px 0 2px">听音默写 10 个词</h4>
+          <p class="muted tiny" style="margin:0">只给中文和发音，写出英文；逐字母告诉你错在哪</p>
+        </div>
+        <div class="card hover" onclick="location.hash='#/game'">
+          <span class="pill purple">拼词闯关</span>
+          <h4 style="margin:6px 0 2px">按单元逐关拼写</h4>
+          <p class="muted tiny" style="margin:0">三颗心，过一关手作多一截，全对拿三星</p>
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-title"><h3>词库</h3><span class="pill blue">${Store.words.length} 词</span></div>
         <div class="row wrap" style="margin-bottom:10px">
@@ -298,17 +311,29 @@ const Vocab = (() => {
         ${!s.revealed ? `
           <div class="row">
             <button class="btn primary lg" style="flex:1" onclick="Vocab.reveal()">显示答案</button>
-            <button class="btn" onclick="Vocab.detailFromStudy('${w.id}')">详细页</button>
+            <button class="btn" onclick="Vocab.skipWord()">下一词 →</button>
+            <button class="btn soft" onclick="Vocab.detailFromStudy('${w.id}')">详细页</button>
           </div>` : `
           <div class="grade-row">
             <button class="btn g0" onclick="Vocab.judge(0)">不认识<small>8 分钟后重来</small></button>
             <button class="btn g1" onclick="Vocab.judge(1)">模糊<small>间隔略延长</small></button>
             <button class="btn g2" onclick="Vocab.judge(2)">认识<small>进入下一档</small></button>
+          </div>
+          <div class="row" style="justify-content:center;margin-top:8px">
+            <button class="link-btn" onclick="Vocab.skipWord()">这一词先跳过，下一词 →</button>
           </div>`}
       </div>`;
   }
 
   function reveal() { session.revealed = true; renderStudy($('#view')); }
+  /** 不评分直接切下一个；本轮结束后这个词仍算新词 */
+  function skipWord() {
+    if (!session) return;
+    session.idx++;
+    session.revealed = false;
+    session.skipped = (session.skipped || 0) + 1;
+    renderStudy($('#view'));
+  }
   function detailFromStudy(id) { location.hash = '#/vocab/w/' + id; }
 
   async function judge(g) {
@@ -559,6 +584,160 @@ const Vocab = (() => {
 
   function nextQ() { quiz.idx++; renderQuiz($('#view')); }
 
+  /* ================= 每日听写 ================= */
+  let dict = null;
+  const DICT_N = 10;
+
+  function dictPool() {
+    const learned = Object.values(Store.progress).map(r => Store.byId[r.word_id]).filter(Boolean);
+    const mistakes = Store.stats().mistakes.map(r => Store.byId[r.word_id]).filter(Boolean);
+    const due = Store.dueWords();
+    const pool = [];
+    const push = arr => arr.forEach(w => { if (w && !pool.find(x => x.id === w.id)) pool.push(w); });
+    push(shuffle(mistakes).slice(0, 4));
+    push(shuffle(due).slice(0, 4));
+    push(shuffle(learned).slice(0, 5));
+    push(shuffle(Store.words).slice(0, 8));
+    return pool.slice(0, DICT_N);
+  }
+
+  function dictStart() {
+    const picks = dictPool();
+    dict = { picks, idx: 0, typed: '', results: [], revealed: false };
+  }
+
+  async function renderDictation(root) {
+    await Store.loadWords();
+    if (Cloud.user && !Store.state.ready) await Store.loadUser();
+    if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
+    if (!dict || dict.idx >= dict.picks.length) dictStart();
+    paintDict(root);
+  }
+
+  function paintDict(root) {
+    const d = dict;
+    if (!d) return;
+    if (d.idx >= d.picks.length) return dictResult(root);
+
+    const w = d.picks[d.idx];
+    root.innerHTML = `
+      <div class="dict-card">
+        <div class="row between" style="margin-bottom:8px">
+          <a class="back" href="#/vocab" style="margin:0">← 离开听写</a>
+          <span class="tiny dim">${d.idx + 1} / ${d.picks.length}</span>
+        </div>
+        <div class="dict-progress">
+          ${d.picks.map((p, i) => {
+            const r = d.results[i];
+            return `<i class="${r ? (r.ok ? 'ok' : 'bad') : (i === d.idx ? 'now' : '')}"></i>`;
+          }).join('')}
+        </div>
+
+        <div class="card center">
+          <div class="tiny dim">听发音，写出这个词</div>
+          <button class="btn primary" id="d-play" style="margin:10px 0">🔊 播放（可重复听）</button>
+          <div style="font-size:17px;font-weight:600;margin-top:4px">${esc((w.m || []).map(x => x.pos + ' ' + x.cn).join('；'))}</div>
+          ${w.def_en ? `<div class="muted tiny" style="margin-top:4px">${esc(w.def_en)}</div>` : ''}
+          <input id="d-input" class="mono" value="${esc(d.typed || '')}" placeholder="写出你听到的单词"
+            style="text-align:center;font-size:20px;letter-spacing:1px;margin-top:12px" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+          <div class="row" style="margin-top:10px">
+            <button class="btn soft" onclick="Vocab.dictNext(true)">不会，看答案</button>
+            <button class="btn primary" style="flex:1" onclick="Vocab.dictSubmit()">提交</button>
+          </div>
+        </div>
+        <p class="muted tiny center">错过的词会自动进复习队列；听写是检验「真的记住」最快的方式。</p>
+      </div>`;
+
+    const input = $('#d-input');
+    if (input) {
+      input.addEventListener('input', () => { d.typed = input.value; });
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') dictSubmit(); });
+      input.focus();
+    }
+    const play = $('#d-play');
+    if (play) play.onclick = () => Audio2.play(`audio/${w.id}.mp3`, w.w);
+    setTimeout(() => { if (play) play.click(); }, 220);
+  }
+
+  async function dictSubmit() {
+    const d = dict;
+    if (!d) return;
+    const w = d.picks[d.idx];
+    const typed = ($('#d-input').value || '').trim();
+    if (!typed) { UI.toast('先写点什么'); return; }
+    const res = diagnose(typed, w.w);
+    d.results[d.idx] = { w, typed, ok: res.correct };
+    await Store.grade(w.id, res.correct ? 2 : 0, 'dictation');
+    const box = $('#d-fb') || (() => {
+      const el = document.createElement('div');
+      el.id = 'd-fb';
+      $('.dict-card').appendChild(el);
+      return el;
+    })();
+    box.innerHTML = `
+      <div class="feedback ${res.correct ? 'ok' : 'no'}" style="margin-top:12px">
+        <div class="row between"><b>${res.correct ? '✓ 对了' : '✗ 正确写法：' + esc(w.w)}</b>
+          <span class="tiny">${res.correct ? '' : `漏 ${res.miss} · 多/错序 ${res.extra}`}</span></div>
+        ${res.correct ? '' : `<div class="char-diff" style="margin-top:6px">${res.html}</div>`}
+        <div class="tiny" style="margin-top:6px;opacity:.85">${esc(w.ph || '')} · ${esc(w.root && w.root.logic ? w.root.logic : (w.mem || ''))}</div>
+      </div>
+      <button class="btn primary block" style="margin-top:10px" onclick="Vocab.dictNext()">下一词 →</button>`;
+    const input = $('#d-input');
+    if (input) input.disabled = true;
+    const fb = box.querySelector('button');
+    if (fb) fb.focus();
+  }
+
+  function dictNext(reveal) {
+    const d = dict;
+    if (!d) return;
+    if (reveal) {
+      const w = d.picks[d.idx];
+      d.results[d.idx] = { w, typed: '', ok: false };
+      Store.grade(w.id, 0, 'dictation');
+    }
+    d.idx++;
+    d.typed = '';
+    if (d.idx >= d.picks.length) return dictResult($('#view'));
+    paintDict($('#view'));
+  }
+
+  function dictRestart() {
+    dictStart();
+    paintDict($('#view'));
+  }
+
+  function dictResult(root) {
+    const d = dict;
+    const total = d.picks.length;
+    const right = d.results.filter(r => r && r.ok).length;
+    const rate = Math.round(right / total * 100);
+    const wrong = d.results.map((r, i) => ({ ...r, w: r ? r.w : d.picks[i] })).filter(r => r && !r.ok);
+    root.innerHTML = `
+      <div class="dict-card">
+        <div class="card center" style="padding:32px 20px">
+          <div style="font-size:32px">${rate >= 90 ? '🏆' : rate >= 70 ? '👍' : '📝'}</div>
+          <h2>${right} / ${total} 写对</h2>
+          <p class="muted">正确率 ${rate}%　${rate >= 90 ? '耳朵和拼写已经对上了。' : rate >= 70 ? '再磨一轮就稳了。' : '错的大多是词根没吃透，回去看那几组词根。'}</p>
+          <div class="row" style="justify-content:center;margin-top:12px">
+            <button class="btn primary" onclick="Vocab.dictRestart()">再听写一轮</button>
+            <button class="btn" onclick="location.hash='#/vocab/mistakes'">看错词本</button>
+            <button class="btn soft" onclick="location.hash='#/home'">回今日</button>
+          </div>
+        </div>
+        ${wrong.length ? `<div class="card">
+          <div class="card-title"><h3>这次写错的 ${wrong.length} 个</h3><span class="pill red">已进复习</span></div>
+          ${wrong.map(r => `<div class="thread-row" style="border-top:1px dashed #f0e2c6;cursor:pointer" onclick="location.hash='#/vocab/w/${r.w.id}'">
+            <span class="tw">${esc(r.w.w)}</span>
+            <span class="tn">${r.typed ? '写成 ' + esc(r.typed) : '没写出来'}</span>
+            <span class="spacer"></span>
+            <button class="btn sm soft" onclick="event.stopPropagation();Audio2.play('audio/${r.w.id}.mp3','${jss(r.w.w)}')">🔊</button>
+          </div>`).join('')}
+        </div>` : ''}
+      </div>`;
+    window.scrollTo(0, 0);
+  }
+
   /* ================= 词根图谱 ================= */
   function renderRoots(root) {
     const groups = Store.rootGroups();
@@ -597,8 +776,8 @@ const Vocab = (() => {
   }
 
   return {
-    render, setFilter, onSearch, star, startStudy, reveal, judge, detailFromStudy,
+    render, setFilter, onSearch, star, startStudy, reveal, judge, skipWord, detailFromStudy,
     renderDetail, findAndOpen, startTrain, trainOne, checkSpell, pickOption, pickMeaning,
-    pickRoot, nextQ, renderQuiz,
+    pickRoot, nextQ, renderQuiz, renderDictation, dictSubmit, dictNext, dictRestart,
   };
 })();

@@ -1,6 +1,16 @@
 /* 学习计划：按目标分 / 考试日期 / 每日时长生成任务，并作为今日任务来源 */
 const Plan = (() => {
   const BAND_VOCAB = { 5: 3000, 5.5: 3500, 6: 4000, 6.5: 5000, 7: 6000, 7.5: 7000, 8: 8000, 8.5: 9000 };
+  const NEW_OPTIONS = [5, 8, 10, 12, 15, 20, 25, 30];
+  let pendingNew = null;   // 页面上临时选中、点保存后生效
+
+  /** 用户自选优先；没选过就跟学习时长联动 */
+  function dailyNewOf() {
+    if (pendingNew) return pendingNew;
+    const n = +(Store.settings && Store.settings.daily_new);
+    if (n > 0) return n;
+    return dailyNewFrom((Store.profile && Store.profile.daily_minutes) || 60);
+  }
 
   function dailyNewFrom(minutes) {
     if (minutes <= 20) return 8;
@@ -29,7 +39,8 @@ const Plan = (() => {
     const minutes = (state.profile && state.profile.daily_minutes) || 60;
     const due = Store.dueWords().length;
     const overdue = Store.overdueWords().length;
-    const n = dailyNewFrom(minutes);
+    const n = pendingNew || (Number(state.settings && state.settings.daily_new) > 0
+      ? Number(state.settings.daily_new) : dailyNewFrom(minutes));
     const tasks = [];
 
     if (due > 0) {
@@ -99,9 +110,18 @@ const Plan = (() => {
           <label class="field"><span>考试日期（可留空）</span>
             <input type="date" id="pl-date" value="${p.exam_date || ''}"></label>
         </div>
-        <label class="field"><span>每日学习时长：<b id="pl-min-label">${p.daily_minutes || 60}</b> 分钟（对应每日新词 <b id="pl-new-label">${dailyNewFrom(p.daily_minutes || 60)}</b> 个）</span>
+        <label class="field"><span>每日学习时长（决定任务总条数）：<b id="pl-min-label">${p.daily_minutes || 60}</b> 分钟</span>
           <input type="range" id="pl-min" min="20" max="120" step="10" value="${p.daily_minutes || 60}"
             oninput="Plan.previewMinutes(this.value)"></label>
+        <div class="field" style="margin-bottom:12px">
+          <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">
+            每天想学几个新单词（自己定，不用跟着时长走）
+          </span>
+          <div class="chips" id="pl-new-chips">
+            ${NEW_OPTIONS.map(n => `<span class="chip ${n === dailyNewOf() ? 'on' : ''}" data-n="${n}" onclick="Plan.pickNew(${n})">${n} 个</span>`).join('')}
+          </div>
+          <p class="muted tiny" id="pl-new-hint" style="margin:8px 0 0">${newHint(dailyNewOf())}</p>
+        </div>
         <button class="btn primary" onclick="Plan.saveProfile()">保存目标</button>
       </div>
 
@@ -146,15 +166,30 @@ const Plan = (() => {
 
   function previewMinutes(v) {
     $('#pl-min-label').textContent = v;
-    $('#pl-new-label').textContent = dailyNewFrom(+v);
+  }
+
+  function pickNew(n) {
+    pendingNew = n;
+    $$('#pl-new-chips .chip').forEach(c => c.classList.toggle('on', +c.dataset.n === n));
+    const hint = $('#pl-new-hint');
+    if (hint) hint.textContent = newHint(n);
+  }
+
+  function newHint(n) {
+    const due = Store.dueWords().length;
+    if (n <= 8) return `每天 ${n} 个，压力小、复习压力也小，适合刚起步或工作很忙的时候。`;
+    if (n <= 15) return `每天 ${n} 个是比较稳的节奏，按你现在 ${due} 个待复习的量，大概 25–35 分钟能清完。`;
+    if (n <= 20) return `每天 ${n} 个偏快，需要保证每天有 40 分钟以上；连续三天没清复习就会开始积压。`;
+    return `每天 ${n} 个是冲量节奏，只在你有整块时间、且愿意每天复习时才选。`;
   }
 
   async function saveProfile() {
     const band = +$('#pl-band').value;
     const date = $('#pl-date').value || null;
     const mins = +$('#pl-min').value;
+    const newPerDay = pendingNew || dailyNewOf();
     await Store.saveProfile({ target_band: band, exam_date: date, daily_minutes: mins });
-    await Store.saveSettings({ daily_new: dailyNewFrom(mins) });
+    await Store.saveSettings({ daily_new: newPerDay });
     // 计划变化，重建今日任务
     const db = Cloud.client.database;
     await db.from('study_tasks').delete().eq('day', todayStr());
@@ -203,5 +238,5 @@ const Plan = (() => {
     location.hash = map[module] || '#/home';
   }
 
-  return { generate, render, saveProfile, regen, toggle, open, previewMinutes, dailyNewFrom, moduleName, BAND_VOCAB };
+  return { generate, render, saveProfile, regen, toggle, open, previewMinutes, pickNew, dailyNewFrom, dailyNewOf, moduleName, BAND_VOCAB, NEW_OPTIONS };
 })();

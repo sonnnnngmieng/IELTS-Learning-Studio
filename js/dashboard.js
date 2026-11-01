@@ -52,6 +52,8 @@ const Dashboard = (() => {
 
       ${feed}
 
+      ${craftBlock()}
+
       <div class="card">
         <div class="card-title"><h3>今日任务</h3><a class="link-btn" href="#/plan">调整计划 →</a></div>
         ${tasks.length ? tasks.map(t => `
@@ -82,6 +84,39 @@ const Dashboard = (() => {
       ${!user ? feed + motivation : ''}
     `;
     window.scrollTo(0, 0);
+  }
+
+  /** 手工进度 + 听写入口 */
+  function craftBlock() {
+    const m = (window.Craft && Store.words.length) ? Craft.mini() : null;
+    const dictDone = (Store.today && Store.today.reviews) || 0;
+    return `
+      <div class="grid g2">
+        ${m ? `<div class="craft-card" onclick="location.hash='#/craft'">
+          <div class="row between">
+            <div>
+              <div class="ct">${m.c.craft.emoji} ${esc(m.c.craft.name)}</div>
+              <div class="cs">第 ${m.c.id} 单元 · 已${m.c.craft.verb} ${m.st.done}/${m.st.total} ${m.c.craft.unit}</div>
+            </div>
+            <span class="pill ${m.st.wrongTotal ? 'red' : 'green'}">${m.st.wrongTotal ? m.st.wrongTotal + ' 个线头' : '没有线头'}</span>
+          </div>
+          <div class="craft-stage" style="margin:10px 0">${m.art}</div>
+          <div class="progress" style="margin:0 0 6px"><i style="width:${m.st.pct}%"></i></div>
+          <p class="muted tiny" style="margin:0">背一个词就多一${m.c.craft.unit}，学完这个单元成品就进柜子。</p>
+        </div>` : ''}
+
+        <div class="card" style="margin:0">
+          <div class="card-title"><h3>听写 · 闯关</h3><span class="pill amber">动手练</span></div>
+          <p class="muted tiny" style="margin:0 0 10px">看懂了不等于写得出。听写给发音让你默写，闯关按单元一关一关过，错一个扣一颗心。</p>
+          <div class="row wrap">
+            <button class="btn primary sm" onclick="location.hash='#/dictation'">开始今日听写</button>
+            <button class="btn sm" onclick="location.hash='#/game'">拼词闯关</button>
+            <button class="btn sm soft" onclick="location.hash='#/craft'">看手工柜</button>
+          </div>
+          <div class="sep"></div>
+          <p class="muted tiny" style="margin:0">今天已经动手 ${dictDone} 次；听写和闯关拼对的词都会计入复习进度与手作针脚。</p>
+        </div>
+      </div>`;
   }
 
   function nickname() {

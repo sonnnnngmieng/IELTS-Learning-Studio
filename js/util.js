@@ -65,10 +65,12 @@ const UI = {
   },
   showLogin() { $('#login-mask').style.display = 'grid'; },
   closeLogin() { $('#login-mask').style.display = 'none'; },
-  toggleDrawer() {
-    $('#sidebar').classList.toggle('open');
-    $('#drawer-mask').classList.toggle('show');
+  toggleDrawer(force) {
+    const open = force != null ? force : !$('#sidebar').classList.contains('open');
+    $('#sidebar').classList.toggle('open', open);
+    $('#drawer-mask').classList.toggle('show', open);
   },
+  closeDrawer() { this.toggleDrawer(false); },
   openModal(html, opts) {
     opts = opts || {};
     const mask = document.createElement('div');
@@ -117,8 +119,8 @@ const UI = {
     const r = (size - 9) / 2, c = 2 * Math.PI * r;
     const on = Math.max(0, Math.min(100, pct));
     return `<div class="ring" style="width:${size}px;height:${size}px;flex:0 0 ${size}px">
-      <svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="#eef1f6" stroke-width="7"/>
-      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="#2f6bff" stroke-width="7" stroke-linecap="round"
+      <svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="#f5ead3" stroke-width="8"/>
+      <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="#efb52a" stroke-width="8" stroke-linecap="round"
         stroke-dasharray="${c}" stroke-dashoffset="${c - c * on / 100}"/></svg>
       <div class="val">${Math.round(on)}%</div></div>`;
   },

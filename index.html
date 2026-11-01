@@ -3,20 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>雅思学习站 · IELTS Learning Studio</title>
+<title>雅中之思 · IELTS Learning Studio</title>
+<meta name="theme-color" content="#fbf2dc">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="shell">
-  <!-- 侧边导航 -->
+  <!-- 顶部胶囊导航 -->
+  <header class="topnav">
+    <div class="brand" onclick="location.hash='#/home'">
+      <span class="logo">雅</span>
+      <div><b>雅中之思</b><em>IELTS Learning Studio</em></div>
+    </div>
+    <nav class="nav-pills">
+      <a href="#/home" data-nav="home">今日</a>
+      <a href="#/vocab" data-nav="vocab">词汇</a>
+      <a href="#/dictation" data-nav="dictation">听写</a>
+      <a href="#/game" data-nav="game">拼词闯关</a>
+      <a href="#/craft" data-nav="craft">手工柜</a>
+      <a href="#/listening" data-nav="listening">听力</a>
+      <a href="#/writing" data-nav="writing">写作</a>
+      <a href="#/reading" data-nav="reading">阅读</a>
+      <a href="#/speaking" data-nav="speaking">口语</a>
+      <a href="#/plan" data-nav="plan">计划</a>
+      <a href="#/records" data-nav="records">记录</a>
+      <a href="#/ai" data-nav="ai">AI</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn only-mobile" onclick="UI.toggleDrawer()">☰</button>
+      <button class="icon-btn" onclick="location.hash='#/plan'" title="学习计划">◫</button>
+      <button class="user-box" onclick="UI.showUserMenu()">
+        <span class="avatar" id="avatar">?</span>
+        <span class="ub-text"><b id="user-name">未登录</b><em id="user-sub">点击登录同步进度</em></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
   <aside class="sidebar" id="sidebar">
     <div class="side-brand" onclick="location.hash='#/home'">
-      <span class="logo">iP</span>
-      <div><b>雅思学习站</b><em>IELTS Learning Studio</em></div>
+      <span class="logo">雅</span>
+      <div><b>雅中之思</b><em>IELTS Learning Studio</em></div>
     </div>
     <nav class="side-nav">
       <a href="#/home" data-nav="home"><i>◱</i><span>今日</span></a>
       <a href="#/vocab" data-nav="vocab"><i>▤</i><span>词汇</span></a>
+      <a href="#/dictation" data-nav="dictation"><i>⌨</i><span>听写</span></a>
+      <a href="#/game" data-nav="game"><i>◆</i><span>拼词闯关</span></a>
+      <a href="#/craft" data-nav="craft"><i>✿</i><span>手工柜</span></a>
       <a href="#/listening" data-nav="listening"><i>◍</i><span>听力</span></a>
       <a href="#/writing" data-nav="writing"><i>✎</i><span>写作</span></a>
       <a href="#/reading" data-nav="reading"><i>▦</i><span>阅读</span></a>
@@ -26,9 +60,9 @@
       <a href="#/ai" data-nav="ai"><i>✦</i><span>AI 助手</span></a>
     </nav>
     <div class="side-foot">
-      <button class="user-box" onclick="UI.showUserMenu()">
-        <span class="avatar" id="avatar">?</span>
-        <span class="ub-text"><b id="user-name">未登录</b><em id="user-sub">点击登录同步进度</em></span>
+      <button class="user-box" onclick="UI.showUserMenu()" style="width:100%">
+        <span class="avatar">?</span>
+        <span class="ub-text"><b>账号与目标</b><em>个人中心 / 退出登录</em></span>
       </button>
     </div>
   </aside>
@@ -36,11 +70,10 @@
   <!-- 主区域 -->
   <div class="main">
     <header class="topbar">
-      <button class="icon-btn only-mobile" onclick="UI.toggleDrawer()">☰</button>
       <div class="crumb" id="crumb">今日学习空间</div>
       <div class="top-actions">
+        <button class="icon-btn" onclick="location.hash='#/craft'" title="手工柜">✿</button>
         <button class="icon-btn" onclick="location.hash='#/ai'" title="AI 助手">✦</button>
-        <button class="icon-btn" onclick="location.hash='#/plan'" title="学习计划">◫</button>
       </div>
     </header>
     <main id="view" class="view"></main>
@@ -51,9 +84,9 @@
 <nav class="mobbar">
   <a href="#/home" data-mob="home"><span>◱</span>今日</a>
   <a href="#/vocab" data-mob="vocab"><span>▤</span>词汇</a>
-  <a href="#/listening" data-mob="listening"><span>◍</span>听力</a>
-  <a href="#/writing" data-mob="writing"><span>✎</span>写作</a>
-  <a href="#/ai" data-mob="ai"><span>✦</span>AI</a>
+  <a href="#/dictation" data-mob="dictation"><span>⌨</span>听写</a>
+  <a href="#/game" data-mob="game"><span>◆</span>闯关</a>
+  <a href="#/craft" data-mob="craft"><span>✿</span>手工柜</a>
 </nav>
 
 <!-- 登录 -->
@@ -61,31 +94,33 @@
   <div class="modal login-modal">
     <button class="modal-close" onclick="UI.closeLogin()">×</button>
     <h2>登录 / 注册</h2>
-    <p class="muted">登录后学习进度、复习计划、练习记录全部云端同步</p>
+    <p class="muted tiny">登录后单词进度、复习计划、错针记录、手工成品全部云端同步，换设备也接着做。</p>
     <div class="tabs" id="login-tabs">
       <button class="tab active" data-lt="phone" onclick="Auth.switchTab('phone')">手机验证码</button>
       <button class="tab" data-lt="email" onclick="Auth.switchTab('email')">邮箱验证码</button>
     </div>
     <div id="login-phone" class="login-pane">
-      <input id="ph-input" type="tel" maxlength="11" placeholder="请输入 11 位手机号" oninput="Auth.clearErr()">
+      <input id="ph-input" type="tel" inputmode="numeric" maxlength="11" placeholder="请输入 11 位手机号" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'phone')">
       <div class="code-row">
-        <input id="ph-code" type="text" maxlength="6" placeholder="验证码" oninput="Auth.clearErr()">
+        <input id="ph-code" type="text" inputmode="numeric" maxlength="6" placeholder="6 位验证码" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'phone')">
         <button class="btn ghost" id="ph-send" onclick="Auth.sendPhoneCode()">获取验证码</button>
       </div>
-      <button class="btn primary block" onclick="Auth.submitPhone()">登录 / 注册</button>
+      <button class="btn primary block" id="ph-submit" onclick="Auth.submitPhone()">登录 / 注册</button>
+      <p class="muted tiny" style="margin:8px 0 0">验证码 5 分钟内有效；没收到可以稍等 60 秒后重发。</p>
     </div>
     <div id="login-email" class="login-pane" style="display:none">
-      <input id="em-input" type="email" placeholder="请输入邮箱">
+      <input id="em-input" type="email" placeholder="请输入邮箱" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'email')">
       <div class="code-row">
-        <input id="em-code" type="text" maxlength="6" placeholder="验证码">
+        <input id="em-code" type="text" inputmode="numeric" maxlength="6" placeholder="6 位验证码" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'email')">
         <button class="btn ghost" id="em-send" onclick="Auth.sendEmailCode()">获取验证码</button>
       </div>
-      <button class="btn primary block" onclick="Auth.submitEmail()">登录 / 注册</button>
+      <button class="btn primary block" id="em-submit" onclick="Auth.submitEmail()">登录 / 注册</button>
+      <p class="muted tiny" style="margin:8px 0 0">验证码会发到邮箱，可能在垃圾邮件里。</p>
     </div>
     <div class="divider"><span>或</span></div>
     <button class="btn wechat block" onclick="Auth.loginWechat()">微信扫码 / 快捷登录</button>
     <p id="login-err" class="err"></p>
-    <p class="muted tiny">未注册的手机号 / 邮箱验证通过后自动创建账号</p>
+    <p class="muted tiny">未注册的手机号 / 邮箱验证通过后自动创建账号。</p>
   </div>
 </div>
 
@@ -106,6 +141,8 @@
 <script src="js/store.js"></script>
 <script src="js/plan.js"></script>
 <script src="js/daily.js"></script>
+<script src="js/craft.js"></script>
+<script src="js/game.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/vocab.js"></script>
 <script src="js/listening.js"></script>

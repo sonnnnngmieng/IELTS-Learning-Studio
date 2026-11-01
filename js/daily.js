@@ -109,6 +109,8 @@ const Daily = (() => {
       </div>`;
   }
 
+  let quoteOffset = 0;   // 「换一句」的偏移，不写库，只影响当前这次浏览
+
   /** 励志内容按当下状态挑场景：拖延 / 想放弃 / 倦怠 / 焦虑 */
   function quoteFor(ctx) {
     const m = cache.motivation || { quotes: [], stories: [] };
@@ -120,7 +122,7 @@ const Daily = (() => {
     else if (!ctx.studied && ctx.hour >= 21) scene = '想放弃时';
     else if ((ctx.streak || 0) >= 3 && !ctx.studied) scene = '倦怠时';
     const pool = scene ? qs.filter(q => q.scene === scene) : [];
-    return pick(pool.length ? pool : qs, dayIndex());
+    return pick(pool.length ? pool : qs, dayIndex() + quoteOffset);
   }
 
   /* ================= 今日词根 ================= */
@@ -169,14 +171,29 @@ const Daily = (() => {
     const s = today().story;
     if (!q) return '';
     return `
-      <div class="card" style="background:linear-gradient(180deg,#fffdf7,#fff);border-color:#f2e8d0">
-        <div style="font-size:15.5px;font-weight:600;color:#6b4d16;line-height:1.6">“${esc(q.quote)}”</div>
-        <p class="muted" style="margin:8px 0 0;font-size:13.5px;line-height:1.75">${esc(q.text)}</p>
-        <div class="row between" style="margin-top:10px">
-          <span class="pill amber">${esc(q.scene || '')}</span>
-          ${s ? `<button class="link-btn tiny" onclick="Daily.showStory()">看一个学习故事 →</button>` : ''}
+      <div class="quote-card" id="daily-quote">
+        <div class="q">“${esc(q.quote)}”</div>
+        <p class="t">${esc(q.text)}</p>
+        <div class="row between wrap" style="margin-top:10px">
+          <div class="row" style="gap:8px">
+            <span class="pill amber">${esc(q.scene || '')}</span>
+            ${s ? `<button class="link-btn tiny" onclick="Daily.showStory()">看一个学习故事 →</button>` : ''}
+          </div>
+          <button class="btn sm soft" onclick="Daily.nextQuote()">换一句</button>
         </div>
       </div>`;
+  }
+
+  /** 换一句：不写库，只换当前页面这一条 */
+  async function nextQuote() {
+    quoteOffset++;
+    const el = document.getElementById('daily-quote');
+    if (!el) return;
+    const html = await motivateHTML();
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    const card = tmp.firstElementChild;
+    if (card) el.replaceWith(card);
   }
 
   async function showStory() {
@@ -372,6 +389,6 @@ const Daily = (() => {
     Store._writingCount = (nt.data || []).length;
   }
 
-  return { ensure, today, todayWords, feedHTML, motivateHTML, showStory, achievementsHTML, summary,
+  return { ensure, today, todayWords, feedHTML, motivateHTML, showStory, nextQuote, achievementsHTML, summary,
     renderEssay, toggleZh, copyEssay, prepareUserStats, dayIndex };
 })();

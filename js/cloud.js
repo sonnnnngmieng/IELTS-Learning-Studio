@@ -37,58 +37,94 @@ const Cloud = (() => {
     }, 1000);
   }
 
+  function friendly(err) {
+    const m = String((err && (err.message || err)) || '');
+    if (/network|fetch|Failed to fetch|timeout/i.test(m)) return '网络不通，检查一下连接再试';
+    if (/rate|too many/i.test(m)) return '请求太频繁，等一分钟再试';
+    if (/expire|invalid.*code|code.*invalid/i.test(m)) return '验证码不对或已过期，重新获取一个';
+    return m || '操作失败，请稍后再试';
+  }
+  function busy(btn, on, text) {
+    if (!btn) return;
+    if (on) { btn.dataset.label = btn.textContent; btn.textContent = text || '处理中…'; btn.disabled = true; }
+    else { btn.textContent = btn.dataset.label || btn.textContent; btn.disabled = false; }
+  }
+
   const Auth = {
     switchTab(key) {
       $$('#login-tabs .tab').forEach(t => t.classList.toggle('active', t.dataset.lt === key));
       $('#login-phone').style.display = key === 'phone' ? '' : 'none';
       $('#login-email').style.display = key === 'email' ? '' : 'none';
       Auth.clearErr();
+      setTimeout(() => { const el = key === 'phone' ? $('#ph-input') : $('#em-input'); if (el) el.focus(); }, 30);
     },
     clearErr() { $('#login-err').textContent = ''; },
     err(m) { $('#login-err').textContent = m; },
+    enter(e, kind) {
+      if (e.key !== 'Enter') return;
+      if (kind === 'phone') Auth.submitPhone(); else Auth.submitEmail();
+    },
 
     async sendPhoneCode() {
       const phone = $('#ph-input').value.trim();
       if (!/^1\d{10}$/.test(phone)) return Auth.err('请输入正确的 11 位手机号');
+      Auth.clearErr();
       const btn = $('#ph-send');
-      btn.disabled = true;
-      const sent = await client.auth.sendOtp({ phone });
-      if (sent.error) { btn.disabled = false; return Auth.err(sent.error.message || '验证码发送失败'); }
-      pendingPhone = { phone, verificationId: sent.data.verificationId, isExistingUser: sent.data.isExistingUser };
-      startCountdown(btn, 60);
-      UI.toast('验证码已发送');
+      busy(btn, true, '发送中…');
+      try {
+        const sent = await client.auth.sendOtp({ phone });
+        if (sent.error) { busy(btn, false); return Auth.err(friendly(sent.error)); }
+        pendingPhone = { phone, verificationId: sent.data.verificationId, isExistingUser: sent.data.isExistingUser };
+        startCountdown(btn, 60);
+        UI.toast('验证码已发送，请查看短信');
+        const code = $('#ph-code'); if (code) code.focus();
+      } catch (e) { busy(btn, false); Auth.err(friendly(e)); }
     },
     async submitPhone() {
       const p = pendingPhone;
       if (!p || p.phone !== $('#ph-input').value.trim()) return Auth.err('请先获取当前手机号的验证码');
       const code = $('#ph-code').value.trim();
       if (!code) return Auth.err('请输入验证码');
-      const done = await client.auth.verifyOtp({ phone: p.phone, verificationId: p.verificationId, isExistingUser: p.isExistingUser, token: code });
-      if (done.error) return Auth.err(done.error.message || '验证码不正确');
-      pendingPhone = null;
-      Auth.finish();
+      Auth.clearErr();
+      const btn = $('#ph-submit');
+      busy(btn, true, '登录中…');
+      try {
+        const done = await client.auth.verifyOtp({ phone: p.phone, verificationId: p.verificationId, isExistingUser: p.isExistingUser, token: code });
+        if (done.error) { busy(btn, false); return Auth.err(friendly(done.error)); }
+        pendingPhone = null;
+        Auth.finish();
+      } catch (e) { busy(btn, false); Auth.err(friendly(e)); }
     },
 
     async sendEmailCode() {
       const email = $('#em-input').value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return Auth.err('请输入正确的邮箱地址');
+      Auth.clearErr();
       const btn = $('#em-send');
-      btn.disabled = true;
-      const sent = await client.auth.sendOtp({ email });
-      if (sent.error) { btn.disabled = false; return Auth.err(sent.error.message || '验证码发送失败'); }
-      pendingEmail = { email, verificationId: sent.data.verificationId, isExistingUser: sent.data.isExistingUser };
-      startCountdown(btn, 60);
-      UI.toast('验证码已发送到邮箱');
+      busy(btn, true, '发送中…');
+      try {
+        const sent = await client.auth.sendOtp({ email });
+        if (sent.error) { busy(btn, false); return Auth.err(friendly(sent.error)); }
+        pendingEmail = { email, verificationId: sent.data.verificationId, isExistingUser: sent.data.isExistingUser };
+        startCountdown(btn, 60);
+        UI.toast('验证码已发送到邮箱');
+        const code = $('#em-code'); if (code) code.focus();
+      } catch (e) { busy(btn, false); Auth.err(friendly(e)); }
     },
     async submitEmail() {
       const p = pendingEmail;
       if (!p || p.email !== $('#em-input').value.trim()) return Auth.err('请先获取当前邮箱的验证码');
       const code = $('#em-code').value.trim();
       if (!code) return Auth.err('请输入验证码');
-      const done = await client.auth.verifyOtp({ email: p.email, verificationId: p.verificationId, isExistingUser: p.isExistingUser, token: code });
-      if (done.error) return Auth.err(done.error.message || '验证码不正确');
-      pendingEmail = null;
-      Auth.finish();
+      Auth.clearErr();
+      const btn = $('#em-submit');
+      busy(btn, true, '登录中…');
+      try {
+        const done = await client.auth.verifyOtp({ email: p.email, verificationId: p.verificationId, isExistingUser: p.isExistingUser, token: code });
+        if (done.error) { busy(btn, false); return Auth.err(friendly(done.error)); }
+        pendingEmail = null;
+        Auth.finish();
+      } catch (e) { busy(btn, false); Auth.err(friendly(e)); }
     },
 
     async loginWechat() {
@@ -96,12 +132,18 @@ const Cloud = (() => {
       const back = new URL(location.href);
       back.pathname = '/';
       ['code', 'state', 'provider'].forEach(k => back.searchParams.delete(k));
-      const { data, error } = await client.auth.signInWithOAuth({ provider: 'wechat', redirectTo: back.toString() });
-      if (error) return Auth.err(error.message || '暂时无法使用微信登录');
-      location.assign(data.url);
+      try {
+        const { data, error } = await client.auth.signInWithOAuth({ provider: 'wechat', redirectTo: back.toString() });
+        if (error) return Auth.err('微信登录暂时不可用，先用手机号或邮箱登录吧');
+        location.assign(data.url);
+      } catch (e) { Auth.err('微信登录暂时不可用，先用手机号或邮箱登录吧'); }
     },
 
-    finish() { UI.closeLogin(); UI.toast('登录成功'); location.reload(); },
+    finish() {
+      UI.closeLogin();
+      UI.toast('登录成功，正在同步你的进度…');
+      setTimeout(() => location.reload(), 500);
+    },
     async signOut() { await client.auth.signOut(); location.hash = '#/home'; location.reload(); },
   };
 

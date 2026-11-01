@@ -23,7 +23,7 @@
   const titles = {
     home: '今日学习空间', vocab: '词汇', listening: '听力', writing: '写作', reading: '阅读',
     speaking: '口语', plan: '学习计划', records: '学习记录', ai: 'AI 助手', profile: '个人中心',
-    daily: '今日学习空间',
+    daily: '今日学习空间', dictation: '每日听写', game: '拼词闯关', craft: '手工柜',
   };
 
   async function route() {
@@ -35,11 +35,10 @@
     const root = $('#view');
 
     Audio2.stop();
-    $$('.side-nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === page));
+    $$('.side-nav a, .nav-pills a').forEach(a => a.classList.toggle('on', a.dataset.nav === page));
     $$('.mobbar a').forEach(a => a.classList.toggle('on', a.dataset.mob === page));
-    $('#crumb').textContent = titles[page] || '首页';
-    $('#sidebar').classList.remove('open');
-    $('#drawer-mask').classList.remove('show');
+    $('#crumb').textContent = titles[page] || '今日学习空间';
+    UI.closeDrawer();
 
     try {
       if (page === 'home') {
@@ -51,6 +50,9 @@
         return await Dashboard.render(root);
       }
       if (page === 'vocab') return await Vocab.render(root, rest);
+      if (page === 'dictation') return await Vocab.renderDictation(root);
+      if (page === 'game') return await Game.render(root, seg);
+      if (page === 'craft') return await Craft.render(root, seg);
       if (page === 'listening') {
         if (rest === 'practice') { await Listening.ensure(); return Listening.renderPractice(root); }
         return await Listening.render(root);
@@ -102,6 +104,13 @@
           <label class="field"><span>每日学习时长：<b id="pf-min-label">${p.daily_minutes || 60}</b> 分钟</span>
             <input type="range" id="pf-min" min="20" max="120" step="10" value="${p.daily_minutes || 60}"
               oninput="document.getElementById('pf-min-label').textContent=this.value"></label>
+          <div class="field" style="margin-bottom:12px">
+            <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">每天学几个新单词</span>
+            <div class="chips" id="pf-new-chips">
+              ${Plan.NEW_OPTIONS.map(n => `<span class="chip ${n === Plan.dailyNewOf() ? 'on' : ''}" data-n="${n}"
+                onclick="Array.from(this.parentNode.children).forEach(c=>c.classList.remove('on'));this.classList.add('on')">${n} 个</span>`).join('')}
+            </div>
+          </div>
           <button class="btn primary" onclick="Profile.save()">保存</button>
         </div>
 
@@ -114,12 +123,14 @@
         </div>`;
     },
     async save() {
+      const picked = $('#pf-new-chips .chip.on');
+      const newPerDay = picked ? +picked.dataset.n : Plan.dailyNewOf();
       await Store.saveProfile({
         target_band: +$('#pf-band').value,
         exam_date: $('#pf-date').value || null,
         daily_minutes: +$('#pf-min').value,
       });
-      await Store.saveSettings({ daily_new: Plan.dailyNewFrom(+$('#pf-min').value) });
+      await Store.saveSettings({ daily_new: newPerDay });
       UI.toast('已保存');
       Profile.render($('#view'));
     },
