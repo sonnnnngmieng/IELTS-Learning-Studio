@@ -1,0 +1,405 @@
+{
+  "part1": [
+    {
+      "topic": "Hometown",
+      "questions": [
+        {
+          "q": "Where is your hometown?",
+          "tip": "不要只报地名。给出方位 + 一个旅行者能记住的特征（食物、气候、地标），这样考官自然会有追问。",
+          "sample": "I'm from Chengdu, which is in the southwest of China, about two hours from Shanghai by plane. It's best known for its food and for its very relaxed pace of life — people there think nothing of spending an entire afternoon over a cup of tea."
+        },
+        {
+          "q": "What do you like most about your hometown?",
+          "tip": "选一个具体的小场景而不是抽象形容词（比如「绿化好」），用一个小画面说明它。",
+          "sample": "Probably the fact that you're never far from greenery. There's a river running through the centre with parks all along it, so even in the middle of the city you can be sitting under trees within ten minutes of leaving your flat."
+        },
+        {
+          "q": "Has your hometown changed much in recent years?",
+          "tip": "用「变化 + 具体例子 + 你的评价」三段式，避免只说 it has changed a lot。",
+          "sample": "Enormously, yes. Whole neighbourhoods that were low-rise ten years ago are now full of apartment blocks, and there's a metro system that simply didn't exist when I was at school. I think it's made daily life much easier, though the city does feel a bit less distinctive than it used to."
+        },
+        {
+          "q": "Would you like to live there in the future?",
+          "tip": "给出明确立场 + 一个条件或理由。可以「想回去，但不是现在」这种有层次的答案。",
+          "sample": "Eventually, yes — I'd like to go back when I'm a bit older and the pace of life matters more to me than career opportunities. For the next few years, though, I'd rather stay somewhere with more going on professionally."
+        }
+      ]
+    },
+    {
+      "topic": "Work or Study",
+      "questions": [
+        {
+          "q": "Do you work or are you a student?",
+          "tip": "直接回答 + 一句话补充专业/职位和原因，别只答 I'm a student。",
+          "sample": "I'm a full-time student at the moment, in my third year of a degree in environmental engineering. I chose it partly because I was good at chemistry at school, and partly because I wanted a degree that led somewhere concrete."
+        },
+        {
+          "q": "What do you like most about your course?",
+          "tip": "选一个「只有学过的人才说得出」的细节，比 it's interesting 有说服力得多。",
+          "sample": "What I enjoy most is the fieldwork. Twice a year we go out and actually measure water quality in local rivers, and suddenly all the theory from lectures makes sense. I learn far more in a day outdoors than in a week of slides."
+        },
+        {
+          "q": "Is there anything you dislike about it?",
+          "tip": "适度负面 + 合理化，体现思维平衡。不要抱怨太多，也不要假到说「没有缺点」。",
+          "sample": "The workload, honestly. There are weeks when three assignments land on the same day, and you end up doing everything at two in the morning. I understand why it's like that, but I don't think it makes anyone work better."
+        },
+        {
+          "q": "Do you plan to change your job or subject in the future?",
+          "tip": "明确回答 + 给出时间点或条件，避免仅仅说 maybe。",
+          "sample": "Not the subject, but I'd like to move into a more applied side of it — possibly consulting rather than research. I'd want a couple of years of hands-on experience first, though, because I don't think you can advise anyone without having done the work yourself."
+        }
+      ]
+    },
+    {
+      "topic": "Hobbies",
+      "questions": [
+        {
+          "q": "What do you like to do in your free time?",
+          "tip": "说一个真实且能展开的爱好，最好能描述频率和场景。",
+          "sample": "I've got into film photography over the last couple of years. I usually take my camera out on Sunday mornings when the streets are still quiet, and I develop the film myself at a small studio near my flat. It's slow, which is exactly why I like it."
+        },
+        {
+          "q": "Did you have the same hobby when you were a child?",
+          "tip": "用对比结构（小时候 vs 现在），这样自然产生时态变化，展示语法多样性。",
+          "sample": "Not remotely. As a child I was glued to the television and couldn't sit still for anything that required patience. I suppose the difference is that now I spend all day in front of a screen, so doing something physical and slow feels like a treat."
+        },
+        {
+          "q": "Do you think hobbies are important?",
+          "tip": "先给观点，再给一个理由 + 一个具体后果，别停在「很重要」上。",
+          "sample": "I think they're more important than people admit. A hobby is the one part of your week that nobody can evaluate you on, and I suspect that's why people who have one tend to cope better when work gets stressful."
+        },
+        {
+          "q": "Is there a hobby you would like to take up?",
+          "tip": "说出具体名称 + 为什么还没开始，比泛泛而谈更真实。",
+          "sample": "I'd love to learn to sail. There's a reservoir about an hour outside the city that runs courses in summer, but they're expensive and I've never quite had a free weekend. It's on my list for the year I finish my degree."
+        }
+      ]
+    },
+    {
+      "topic": "Weather",
+      "questions": [
+        {
+          "q": "What's the weather like in your city?",
+          "tip": "用一个概括词 + 一两个季节细节，避免只说 it's nice。",
+          "sample": "It's mild and extremely humid. Summers are long, sticky and overcast, and we get very little wind, so the heat just sits there. Winters are short and grey but rarely cold enough to snow."
+        },
+        {
+          "q": "Which season do you like best?",
+          "tip": "给理由时描述体感或活动，而不是抽象说 beautiful。",
+          "sample": "Autumn, without question. The humidity finally drops, the sky clears and it's cool enough to walk everywhere without breaking into a sweat. It lasts about six weeks, which is probably why I appreciate it."
+        },
+        {
+          "q": "Does the weather affect your mood?",
+          "tip": "用一个真实的小例子支撑，让答案有画面感。",
+          "sample": "More than I'd like to admit. If it's been grey for a week I stop going out in the evenings and everything feels like a chore. The first sunny day after a long spell of rain, though, the whole city seems to be in a better mood at once."
+        },
+        {
+          "q": "Do you prefer hot weather or cold weather?",
+          "tip": "选一边，再用一句让步说明另一边的好处，展示思辨。",
+          "sample": "Cold, definitely. You can always put on another layer, but there's a limit to how much you can take off. That said, I'd take a hot, dry day over a cold, wet one any time — it's the damp that I can't stand."
+        }
+      ]
+    },
+    {
+      "topic": "Transport",
+      "questions": [
+        {
+          "q": "How do you usually travel to work or school?",
+          "tip": "给方式 + 耗时 + 一句评价，信息量立刻变足。",
+          "sample": "I take the metro, which is about twenty-five minutes door to door. It's crowded between eight and nine, but it's reliable, and I've got into the habit of reading on the way, so I don't really mind."
+        },
+        {
+          "q": "Do you prefer public transport or driving?",
+          "tip": "比较两类出行方式时各给一个决定性理由。",
+          "sample": "Public transport, on the whole. Driving in the city centre is a gamble — you never know whether a fifteen-minute journey will take fifty. The only time I'd choose a car is when I'm carrying something heavy or visiting somewhere outside the city."
+        },
+        {
+          "q": "Is cycling popular in your city?",
+          "tip": "用趋势词 + 原因 + 障碍，形成完整的「现状—原因—限制」结构。",
+          "sample": "It's become much more popular in the last five years, largely because of the shared bikes you see on every corner. The problem is that there are very few cycle lanes, so most people only cycle on quiet side streets or in parks."
+        },
+        {
+          "q": "What could be done to improve transport in your city?",
+          "tip": "给出 1-2 个具体措施，并说明由谁来做，避免空谈。",
+          "sample": "Two things, I think. The city could build proper separated cycle lanes, which would take a lot of short journeys off the roads, and it could make buses more frequent at night, because at the moment the last one leaves at about ten."
+        }
+      ]
+    },
+    {
+      "topic": "Food",
+      "questions": [
+        {
+          "q": "What kind of food do you like?",
+          "tip": "具体到菜系和一道菜，比 I like Chinese food 有内容得多。",
+          "sample": "I'm very fond of Sichuan food, which is what I grew up with — anything with chilli and Sichuan pepper, really. My favourite is a simple cold noodle dish that my grandmother makes; it takes her about ten minutes and I've never managed to reproduce it."
+        },
+        {
+          "q": "Do you prefer eating at home or in restaurants?",
+          "tip": "给出偏好 + 一个真实理由（成本、健康、社交），可以带一点让步。",
+          "sample": "At home, mostly, because I can control what goes into it and it's a fraction of the price. I do enjoy restaurants when I'm seeing friends, though — there's something about sharing four or five dishes that you can't really do at home."
+        },
+        {
+          "q": "Have your eating habits changed since you were a child?",
+          "tip": "用 before / now 对比，并给出触发变化的具体事件。",
+          "sample": "Quite a lot. As a child I wouldn't touch vegetables and I drank far too much sugary tea. It changed when I moved out for university and had to cook for myself — I got interested in it almost by accident and now I eat far more greens than my parents do."
+        },
+        {
+          "q": "Do you think people will cook less in the future?",
+          "tip": "预测类问题给方向 + 理由 + 例外情况。",
+          "sample": "For everyday meals, probably yes — delivery is cheap and fast here now, and younger people in particular order in most weeknights. I doubt cooking will disappear, though. People still cook when they want to impress someone or when it's a family occasion."
+        }
+      ]
+    }
+  ],
+  "part2": [
+    {
+      "title": "Describe a person who has helped you",
+      "cue_card": [
+        "You should say:",
+        "who this person is",
+        "how they helped you",
+        "why the help was important",
+        "and explain how you felt about it"
+      ],
+      "ideas": [
+        "选一个真实且能展开的人（亲戚、老师、同事、室友），不要选名人",
+        "帮助的内容要具体：不是「鼓励我」，而是「每天陪我走三十分钟，不许谈考试」",
+        "为什么重要：对方有过类似经历 / 在你最脆弱的时候没有说教",
+        "感受部分留最后一段，写「感激 + 后来的改变」，形成闭环"
+      ],
+      "topic_vocab": [
+        { "en": "supportive", "cn": "给予支持的" },
+        { "en": "go out of their way", "cn": "特意费心去做" },
+        { "en": "practical advice", "cn": "切实可行的建议" },
+        { "en": "turn to somebody", "cn": "向某人求助" },
+        { "en": "put things in perspective", "cn": "让人看清事情的全貌" },
+        { "en": "a turning point", "cn": "转折点" },
+        { "en": "grateful", "cn": "感激的" },
+        { "en": "pay it forward", "cn": "把善意传递下去" }
+      ],
+      "sample": "The person I'd like to talk about is my aunt Mei, who works as a nurse in my home city. I've known her all my life, but the time she really helped me was about three years ago, when I was revising for the university entrance exam.\n\nI was under a lot of pressure and, to be honest, I wasn't coping. I'd stopped sleeping properly and had convinced myself that if I didn't get into a top university, my life would be over. Everyone in my family kept telling me to relax, which of course made it worse. My aunt was the only one who didn't. Instead of giving me advice, she started taking me for a walk after dinner every evening — thirty minutes, no phone, no talk about exams. After a couple of weeks I could sit down and work without panicking.\n\nWhat made it count was that she'd been through it herself. She failed her first set of exams, retook them a year later and only qualified as a nurse at thirty, which changed how I saw the whole thing.\n\nLooking back, I feel enormously grateful. These days, if a friend is in that state, I try to do what she did for me: take them for a walk and say nothing."
+    },
+    {
+      "title": "Describe a place you like to go to relax",
+      "cue_card": [
+        "You should say:",
+        "where this place is",
+        "how often you go there",
+        "what you do there",
+        "and explain why it helps you relax"
+      ],
+      "ideas": [
+        "选一个不宏大但你能描述细节的地方：社区图书馆、河边的一段步道、一家小咖啡馆",
+        "描述感官细节（声音、光线、气味），这是口语高分的重要标志",
+        "说明「反差」：为什么这里和你的日常环境不同",
+        "结尾可以提到这个空间正在受到威胁（被商业化、人变多），增加深度"
+      ],
+      "topic_vocab": [
+        { "en": "tranquil", "cn": "宁静的" },
+        { "en": "unwind", "cn": "放松下来" },
+        { "en": "recharge", "cn": "恢复精力" },
+        { "en": "a stone's throw from", "cn": "离……只有一步之遥" },
+        { "en": "bustling", "cn": "熙熙攘攘的" },
+        { "en": "get away from it all", "cn": "远离一切喧嚣" },
+        { "en": "a sense of calm", "cn": "一种平静感" },
+        { "en": "green space", "cn": "绿地" }
+      ],
+      "sample": "The place I go to when I need to switch off is a small public library about a ten-minute walk from my flat, tucked behind a market street. It's a plain 1970s building from the outside, and most people walk straight past it.\n\nI go two or three times a week, usually on weekday evenings when I've finished work. I don't always read — sometimes I just sit at one of the long tables by the window with a notebook and do nothing in particular for half an hour. There's a rule about silence that everyone actually follows, which is rare in this city.\n\nWhat makes it work is the contrast. Outside, the market is loud until about nine, with scooters and people shouting across the street, and the moment the door closes behind you it all disappears. The light is good in the late afternoon, the chairs are uncomfortable enough to keep you awake, and nobody tries to sell you anything.\n\nI suppose it relaxes me because it's one of the few places where I'm not expected to be doing something useful. I've noticed lately that it's getting busier — half the seats are taken by people working on laptops now — so I suspect I'll have to find another refuge before long."
+    },
+    {
+      "title": "Describe something you bought that you were pleased with",
+      "cue_card": [
+        "You should say:",
+        "what it was",
+        "where and when you bought it",
+        "why you bought it",
+        "and explain why you were pleased with it"
+      ],
+      "ideas": [
+        "物品不必贵重，越是日常越容易讲出细节（一双修了三次的鞋、一把二手椅子）",
+        "讲「购买场景」：为什么犹豫、怎么决定，这部分最容易出彩",
+        "用前后对比说明满意：用之前怎样，用之后怎样",
+        "结尾可以给一个「推荐 / 不推荐」的判断，显示评价能力"
+      ],
+      "topic_vocab": [
+        { "en": "worth every penny", "cn": "物有所值" },
+        { "en": "sturdy", "cn": "结实的" },
+        { "en": "durable", "cn": "耐用的" },
+        { "en": "second-hand", "cn": "二手的" },
+        { "en": "splurge on", "cn": "在……上花大钱" },
+        { "en": "value for money", "cn": "性价比" },
+        { "en": "live up to expectations", "cn": "达到预期" },
+        { "en": "a sound investment", "cn": "划算的投资" }
+      ],
+      "sample": "The thing I'm going to describe is a second-hand bicycle I bought about eighteen months ago, from a small repair shop near the university.\n\nI'd been commuting by metro, which cost me about two hours a day, most of it standing up. A colleague suggested cycling, and I was reluctant at first because I hadn't ridden since I was a teenager. I spent a couple of weekends looking at new bikes, then decided that was absurd: I didn't want to spend a month's rent on something I might give up on. So I went to this shop, and the owner, who must have been about seventy, sold me a solid old city bike for the equivalent of forty pounds and threw in a lock.\n\nWhat pleased me was how little I've had to spend since. In eighteen months I've replaced one tyre and had the brakes adjusted twice; that's it. It's heavy and it isn't fashionable, but it's never once let me down.\n\nThe unexpected benefit was the journey itself. I now see the neighbourhood properly — the same baker, the same man walking his dog at seven — and I arrive at work awake rather than half asleep. If someone asked me whether it was worth it, I'd say it's the best forty pounds I've ever spent."
+    },
+    {
+      "title": "Describe an event you attended that you remember well",
+      "cue_card": [
+        "You should say:",
+        "what the event was",
+        "when and where it took place",
+        "who you went with",
+        "and explain why you remember it so clearly"
+      ],
+      "ideas": [
+        "选规模小、你能讲出细节的事件（社区的一次停电晚餐、学校的最后一次运动会）",
+        "用时间线推进：之前、当时、之后，天然形成叙述结构",
+        "加入一个意外插曲，这是让故事好听的关键",
+        "结尾说明它为什么留在记忆里，要与事件本身呼应"
+      ],
+      "topic_vocab": [
+        { "en": "memorable", "cn": "难忘的" },
+        { "en": "atmosphere", "cn": "氛围" },
+        { "en": "turnout", "cn": "到场人数" },
+        { "en": "unexpected twist", "cn": "意外的转折" },
+        { "en": "come together", "cn": "聚在一起" },
+        { "en": "last-minute", "cn": "最后一刻的" },
+        { "en": "stick in my mind", "cn": "留在我记忆里" },
+        { "en": "a sense of occasion", "cn": "仪式感" }
+      ],
+      "sample": "The event I want to describe is a neighbourhood dinner that took place in the courtyard of my building two summers ago, on the night of a power cut.\n\nIt started as a disaster. It was the hottest week of the year, the electricity went off at about seven in the evening and stayed off for five hours, and everyone came down to the courtyard because the flats were unbearable. Someone had a gas camping stove, someone else had a pile of vegetables that were going to spoil, and within an hour there were about forty people cooking in the dark.\n\nI went down with my flatmate, mainly to complain. We ended up sitting on the ground with a retired teacher who had lived in the building for thirty years, and she told us about how the street looked when it was still fields. There were children running around with torches and someone playing a guitar badly.\n\nWhat makes it stick in my mind is that in three years of living there, I'd never spoken to most of those people, and it took a power cut to make it happen. We've tried to organise a proper dinner since, with electricity and invitations, and it was never quite as good."
+    },
+    {
+      "title": "Describe a piece of media you enjoy",
+      "cue_card": [
+        "You should say:",
+        "what it is",
+        "how you found it",
+        "how often you use it",
+        "and explain why you enjoy it"
+      ],
+      "ideas": [
+        "选播客、纪录片或专栏，比「一部电影」更容易讲清长期价值",
+        "讲发现它的契机（朋友推荐、通勤时随手点开），增加真实感",
+        "说明它与你生活的关系：什么时候听、替代了什么",
+        "评价它的独特之处：结构、主持人风格、立场，避免只说 interesting"
+      ],
+      "topic_vocab": [
+        { "en": "episode", "cn": "（节目的）一集" },
+        { "en": "gripping", "cn": "引人入胜的" },
+        { "en": "well-researched", "cn": "研究扎实的" },
+        { "en": "host", "cn": "主持人" },
+        { "en": "accessible", "cn": "通俗易懂的" },
+        { "en": "binge-watch", "cn": "连看好几集" },
+        { "en": "thought-provoking", "cn": "引人深思的" },
+        { "en": "a regular listener", "cn": "固定听众" }
+      ],
+      "sample": "The piece of media I'd like to talk about is a podcast about the history of everyday objects — things like screws, paper clips and refrigerators. I came across it by accident about two years ago, when a friend sent me one episode to listen to on a long train journey, and I've been a regular listener ever since.\n\nEach episode is about forty minutes long and takes one ordinary object and traces where it came from. The one I remember best was about the paper clip: how it was patented several times over by different people, how it became a symbol of resistance in wartime Norway, and how it is now almost never used for its original purpose. It sounds like a trivial subject, and that's exactly what makes it gripping.\n\nI listen while cooking or walking to work, so it's part of my routine rather than something I sit down to. What I like is that the host never dumbs anything down but never lectures either; she assumes you're intelligent and simply doesn't know this particular history.\n\nI think it appeals to me because it makes the ordinary feel strange. Once you've heard how much negotiation and failure went into something as dull as a standard screw thread, you start looking at everything in your kitchen a bit differently."
+    }
+  ],
+  "part3": [
+    {
+      "topic": "帮助他人与社会责任（关联 Part 2：a person who has helped you）",
+      "questions": [
+        {
+          "q": "Why do you think some people are more willing to help others than others are?",
+          "angle": "先分类（性格、成长环境、当下处境），再挑一个主要原因深入，不要罗列三点各说一句。可以提到「帮助的可见性」——看得见结果的帮助更容易坚持。",
+          "sample": "I suspect it has less to do with personality than with whether someone has been helped themselves. People who've been through something difficult tend to recognise it in others, and they also know what kind of help is actually useful. There's a practical factor too: it's much easier to keep helping when you can see the result, which is why people volunteer at a food bank more readily than they donate to an anonymous fund."
+        },
+        {
+          "q": "Should schools teach students to do community service?",
+          "angle": "给出立场（应该，但要有设计）+ 一个理由 + 一个条件。可以引用 Part 2 里「被要求做」和「自愿做」的区别。",
+          "sample": "Yes, I think they should, mainly because it exposes teenagers to people outside their own bubble. But the design matters enormously. If students simply have to log forty hours, most of them will find the easiest possible placement and learn nothing. If instead they have to write or talk about what they did, the requirement starts to do some real work."
+        },
+        {
+          "q": "Do you think governments or individuals should take more responsibility for helping people in need?",
+          "angle": "避免二选一，给出「分工」框架：政府负责规模和公平，个人负责灵活和温度。这个框架能让答案有结构感。",
+          "sample": "I'd say they do different jobs and both are necessary. Governments are the only actor that can operate at scale and treat people equally, so anything to do with income, housing or healthcare has to be public. Individuals are much better at the things that can't be standardised — noticing that a neighbour has stopped going out, for instance. A system that relies only on one of those two will always have gaps."
+        }
+      ]
+    },
+    {
+      "topic": "城市公共空间与休闲（关联 Part 2：a place you go to relax）",
+      "questions": [
+        {
+          "q": "Why do people need places to relax outside their homes?",
+          "angle": "从「角色的切换」入手：在家仍然被家务和责任围绕，公共空间提供的是「不需要扮演任何角色」的状态。",
+          "sample": "Because home is rarely as restful as we imagine. Even when you're sitting down, you're looking at the washing-up or the emails you haven't answered. A park or a library works differently: you have no role there and nothing to maintain, so your mind actually lets go. I think that's why people will pay for a coffee just to sit somewhere that isn't their own flat."
+        },
+        {
+          "q": "Are there enough public spaces in cities today?",
+          "angle": "给出「数量 vs 质量」的区分，比简单回答 yes or no 更有层次。可以提商业化侵蚀公共空间。",
+          "sample": "In terms of quantity, probably, at least in the city I live in. The problem is quality and access. A great deal of what passes for public space is actually a shopping centre — you're allowed in, but only as a customer. Genuine public space, where you can sit for two hours without buying anything, is much scarcer and tends to be in the wealthier districts."
+        },
+        {
+          "q": "Should city governments spend money on parks rather than on other facilities?",
+          "angle": "承认机会成本，再给出「绿地不是奢侈品」的论证，用健康或气候角度支撑。",
+          "sample": "I wouldn't put parks ahead of hospitals, but I do think they're systematically undervalued because their benefits are hard to measure. A park improves air quality, gives children somewhere to run and gives older people somewhere to sit and talk, and none of that shows up in the same way a new road does. In a city that's getting hotter, green space is also basic infrastructure, not decoration."
+        }
+      ]
+    },
+    {
+      "topic": "媒体、信息与注意力（关联 Part 2：a piece of media you enjoy）",
+      "questions": [
+        {
+          "q": "How has the way people get information changed in recent years?",
+          "angle": "用「从编辑推荐到算法推荐」这条主线，再补一个后果（信息茧房 / 质量参差）。",
+          "sample": "The biggest shift is that information is no longer selected by editors but by algorithms optimising for attention. Twenty years ago a newspaper decided what mattered and you might disagree with it; now you see whatever keeps you watching. The result is that people consume more than ever and trust less, which is a strange combination."
+        },
+        {
+          "q": "Do you think traditional media such as newspapers and television will disappear?",
+          "angle": "区分「形式」与「功能」：纸会消失，但经过核实的报道不会。这个区分能让答案显得有洞察力。",
+          "sample": "The physical forms probably will, and fairly soon. But I'd separate the format from the function. What newspapers actually provide is someone being paid to check facts before publishing, and that's becoming rarer and more valuable at the same time. I suspect we'll end up paying for verification rather than for paper."
+        },
+        {
+          "q": "What can individuals do to deal with too much information?",
+          "angle": "给 2 个可操作的做法 + 一个原则，避免空喊「提高媒介素养」。",
+          "sample": "Two things seem to help. The first is to pay for one or two sources instead of getting everything free, because you then have an incentive to use them properly. The second is to read something long every week — a report rather than a feed — just to keep the habit of following an argument. Beyond that, I think the real skill is noticing when you're being made angry, because outrage is usually the sign that you're being sold something."
+        }
+      ]
+    }
+  ],
+  "shadowing": [
+    {
+      "en": "I'd like to talk about a place I go to when I need to switch off.",
+      "zh": "我想谈一个我需要放空自己时会去的地方。",
+      "note": "I'd like to 中 d 几乎不发音，读作 /aɪd laɪk tə/；talk about a 连读为 /tɔːkəˈbaʊtə/；when I 中 when 的 n 与 I 连接，读 /wen aɪ/。整句语调在 place 处略升，在 switch off 处下降，表示信息重心。"
+    },
+    {
+      "en": "It's about a ten-minute walk from my flat.",
+      "zh": "从我的公寓走过去大约十分钟。",
+      "note": "about a 连读为 /əˈbaʊtə/；ten-minute 是复合形容词，重音在 ten 上；from my 中 from 弱读为 /frəm/。注意整句用降调，表示陈述完成。"
+    },
+    {
+      "en": "What I like most about it is that nobody expects you to do anything.",
+      "zh": "我最喜欢它的一点是，没有人期待你去做任何事。",
+      "note": "What I 连读 /wɒt aɪ/；like most about it 中 about it 连读 /əˈbaʊtɪt/；is that 的 that 弱读为 /ðət/。这是强调句式，重音落在 most 和 anything 上。"
+    },
+    {
+      "en": "I've been a regular listener ever since.",
+      "zh": "从那以后我就成了固定听众。",
+      "note": "I've been a 连读为 /aɪv bɪnə/；regular 三个音节重音在第一个 /ˈreɡjələ/；ever since 中 ever 的 r 与 since 不连读，中间略停。整句用降调收尾，语气笃定。"
+    },
+    {
+      "en": "To be honest, I wasn't coping at all at that point.",
+      "zh": "说实话，那个时候我完全应付不来。",
+      "note": "To be honest 常作插入语，读得快而轻 /tə bi ˈɒnɪst/；wasn't coping 中 t 失去爆破，只做口型；at all at 三词连读为 /əˈtɔːlət/。重音在 coping 和 all 上。"
+    },
+    {
+      "en": "It turned out to be the best forty pounds I've ever spent.",
+      "zh": "结果它成了我花过最值的四十英镑。",
+      "note": "turned out 中 d 与 out 连读 /tɜːnd aʊt/；to be 弱读 /tə bi/；best forty 中 t 失去爆破。I've ever spent 重音在 ever，表示强调。"
+    },
+    {
+      "en": "There's something about sharing four or five dishes that you can't really do at home.",
+      "zh": "分享四五道菜这件事，在家里真的做不到。",
+      "note": "There's something 连读 /ðeəz ˈsʌmθɪŋ/；about 后的 sharing 重读；can't really 中 t 失去爆破，really 常弱化为 /rɪli/。that you 连读 /ðətʃu/。"
+    },
+    {
+      "en": "I'd rather stay somewhere with more going on professionally.",
+      "zh": "我宁愿待在一个职业机会更多的地方。",
+      "note": "I'd rather 中 d 不发音，读 /aɪ ˈrɑːðə/；with more 中 th 与 m 相接，不要加音；going on 连读 /ˈɡəʊɪŋ ɒn/。rather 重读，表达偏好。"
+    },
+    {
+      "en": "The moment the door closes behind you, it all disappears.",
+      "zh": "门在你身后一关上，这一切就都消失了。",
+      "note": "The moment 中 moment 的 t 与 the 相接；closes behind you 中 behind you 连读 /bɪˈhaɪndʒu/；it all 连读 /ɪˈtɔːl/。前半句升调，后半句降调，构成对比。"
+    },
+    {
+      "en": "If someone asked me whether it was worth it, I'd say yes without hesitation.",
+      "zh": "如果有人问我值不值，我会毫不犹豫地说值。",
+      "note": "asked me 中 d 与 m 相接，读 /ɑːskt mi/；whether it 连读 /ˈweðərɪt/；worth it 连读 /ˈwɜːθɪt/。I'd say 中 d 弱化，整句在 yes 处重读。"
+    }
+  ]
+}

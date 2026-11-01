@@ -1,0 +1,965 @@
+[
+  {
+    "page_pdf": 27,
+    "page_print": "018",
+    "words": [
+      {
+        "word": "drip",
+        "phonetic": "/drɪp/",
+        "meanings": [
+          { "pos": "v.", "cn": "滴出（液体）；滴下" }
+        ],
+        "examples": [
+          { "en": "Be careful! Your paintbrush is dripping.", "zh": "小心！你的漆刷正在往下滴漆。" }
+        ],
+        "collocation": ["drip down 滴下"],
+        "memory": "drip 和 drop 都是象声词——仔细听一听雨滴落在地上的声音。"
+      },
+      {
+        "word": "drown",
+        "phonetic": "/draʊn/",
+        "meanings": [
+          { "pos": "v.", "cn": "（使）淹死；浸没" }
+        ],
+        "examples": [
+          { "en": "She attempted to drown herself in the river.", "zh": "她企图投河自尽。" }
+        ]
+      },
+      {
+        "word": "blow",
+        "phonetic": "/bləʊ/",
+        "meanings": [
+          { "pos": "v.", "cn": "吹；（风）吹；吹动" },
+          { "pos": "n.", "cn": "用力的一击；打击，挫折" }
+        ],
+        "examples": [
+          { "en": "Now, Peter, make a wish and blow out the candles.", "zh": "彼得，现在许个愿，然后吹灭蜡烛。" }
+        ],
+        "collocation": ["strike a blow for 维护（某种信念、原则等）"]
+      },
+      {
+        "word": "puff",
+        "phonetic": "/pʌf/",
+        "meanings": [
+          { "pos": "v.", "cn": "喷出；喘息" },
+          { "pos": "n.", "cn": "（吹出的）一股，一缕" }
+        ],
+        "examples": [
+          { "en": "Don't puff cigarette smoke in my face.", "zh": "不要向我脸上喷烟。" }
+        ]
+      },
+      {
+        "word": "gush",
+        "phonetic": "/ɡʌʃ/",
+        "meanings": [
+          { "pos": "v./n.", "cn": "涌出" }
+        ],
+        "examples": [
+          { "en": "In a moment more, the crowd began to gush forth from the doors of the church.", "zh": "过了一会儿，人群便开始从教堂的几扇门里蜂拥而出。" }
+        ],
+        "collocation": ["gush out 涌出，喷出", "gush from 从……喷出"]
+      },
+      {
+        "word": "dense",
+        "phonetic": "/dens/",
+        "meanings": [
+          { "pos": "adj.", "cn": "密集的；稠密的" }
+        ],
+        "examples": [
+          { "en": "There will be dense fog in northern parts of the country tomorrow.", "zh": "该国北部地区明天将有浓雾。" }
+        ],
+        "derivatives": [
+          { "w": "density", "pos": "n.", "cn": "密度" }
+        ]
+      },
+      {
+        "word": "intensity",
+        "phonetic": "/ɪnˈtensəti/",
+        "meanings": [
+          { "pos": "n.", "cn": "强度；强烈" }
+        ],
+        "examples": [
+          { "en": "I was surprised by the intensity of his anxiety.", "zh": "我对他的强烈焦虑感到吃惊。" }
+        ],
+        "derivatives": [
+          { "w": "intense", "pos": "adj.", "cn": "强烈的；紧张的" }
+        ]
+      },
+      {
+        "word": "intensive",
+        "phonetic": "/ɪnˈtensɪv/",
+        "meanings": [
+          { "pos": "adj.", "cn": "加强的，集中的，密集的" }
+        ],
+        "examples": [
+          { "en": "Intensive care in hospitals is given to the seriously ill.", "zh": "在医院里，危重病人会得到加强护理。" }
+        ],
+        "collocation": ["intensive care unit (ICU) 重症监护室"],
+        "derivatives": [
+          { "w": "intense", "pos": "adj.", "cn": "剧烈的，强烈的" },
+          { "w": "intensively", "pos": "adv.", "cn": "深入地，密集地" }
+        ]
+      },
+      {
+        "word": "emerge",
+        "phonetic": "/iˈmɜːdʒ/",
+        "meanings": [
+          { "pos": "v.", "cn": "浮现，露出；摆脱出来；暴露" }
+        ],
+        "examples": [
+          { "en": "The sun emerged from behind the clouds.", "zh": "太阳从云层后面露出来。" }
+        ],
+        "collocation": ["emerge out of 从……里出来"],
+        "memory": "e（向外）+ merge（浸没）→ 浮现。"
+      },
+      {
+        "word": "flash",
+        "phonetic": "/flæʃ/",
+        "meanings": [
+          { "pos": "v.", "cn": "（使）闪光；（使）闪现；（通过计算机、卫星等）快速发送" },
+          { "pos": "n.", "cn": "闪光（灯）；闪现" }
+        ],
+        "examples": [
+          { "en": "The good news was flashed across the country.", "zh": "这个好消息迅速传遍全国。" }
+        ],
+        "collocation": ["flash through sb.'s mind 闪过某人的脑海"]
+      },
+      {
+        "word": "float",
+        "phonetic": "/fləʊt/",
+        "meanings": [
+          { "pos": "v.", "cn": "漂浮；浮起" }
+        ],
+        "examples": [
+          { "en": "The smell of roses floated around.", "zh": "玫瑰花的芳香在四周飘荡。" }
+        ]
+      },
+      {
+        "word": "environment",
+        "phonetic": "/ɪnˈvaɪərənmənt/",
+        "meanings": [
+          { "pos": "n.", "cn": "自然环境；环境，周围状况" }
+        ],
+        "examples": [
+          { "en": "An increasing number of people are concerned about the pollution of the environment.", "zh": "越来越多的人关心环境污染问题。" }
+        ],
+        "derivatives": [
+          { "w": "environmental", "pos": "adj.", "cn": "自然环境保护的；有关环境的" }
+        ]
+      },
+      {
+        "word": "surrounding",
+        "phonetic": "/səˈraʊndɪŋ/",
+        "meanings": [
+          { "pos": "adj.", "cn": "周围的，附近的" }
+        ],
+        "examples": [
+          { "en": "The polluted waste is often dumped unconscionably, making the surrounding land infertile.", "zh": "被污染的废料经常被随意倾倒，周边土地因此变得贫瘠。" }
+        ],
+        "collocation": ["surrounding environment 周围环境"]
+      },
+      {
+        "word": "condition",
+        "phonetic": "/kənˈdɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "条件；情况，状态" }
+        ],
+        "examples": [
+          { "en": "I had almost decided to accept their conditions at that time.", "zh": "当时，我差不多已决定要接受他们的条件了。" }
+        ],
+        "collocation": ["accept a condition 接受条件"]
+      }
+    ]
+  },
+  {
+    "page_pdf": 28,
+    "page_print": "019",
+    "words": [
+      {
+        "word": "situation",
+        "phonetic": "/ˌsɪtʃuˈeɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "情况，处境，形势" }
+        ],
+        "examples": [
+          { "en": "Due to poor management, they finally got into a difficult financial situation.", "zh": "由于管理不善，他们最终陷入财政困境。" }
+        ],
+        "collocation": ["in this situation 在这种场合/形势/情况下"],
+        "derivatives": [
+          { "w": "situate", "pos": "v.", "cn": "使坐落于，使位于" }
+        ]
+      },
+      {
+        "word": "nature",
+        "phonetic": "/ˈneɪtʃə/",
+        "meanings": [
+          { "pos": "n.", "cn": "大自然；本性；性质" }
+        ],
+        "examples": [
+          { "en": "In fact, nature is much better at recycling than we humans are.", "zh": "事实上，自然界在循环利用方面比人类做得好很多。" }
+        ],
+        "collocation": ["destroy nature 破坏大自然"]
+      },
+      {
+        "word": "natural",
+        "phonetic": "/ˈnætʃərəl/",
+        "meanings": [
+          { "pos": "adj.", "cn": "自然的；天然的" }
+        ],
+        "examples": [
+          { "en": "It is natural that he should fall in love with such a beautiful girl.", "zh": "他爱上如此美丽的姑娘，这是很自然的事。" }
+        ],
+        "derivatives": [
+          { "w": "naturally", "pos": "adv.", "cn": "自然地；天然地" }
+        ]
+      },
+      {
+        "word": "artificial",
+        "phonetic": "/ˌɑːtɪˈfɪʃl/",
+        "meanings": [
+          { "pos": "adj.", "cn": "人造的" }
+        ],
+        "examples": [
+          { "en": "This fruit juice contains absolutely no artificial flavourings or colourings.", "zh": "这种果汁绝对不含人造调味品或色素。" }
+        ],
+        "memory": "字根 art 意为“技巧（skill）；技艺（art）”；字根 fic 等同字根 fact，意为“制作（to make）”。同字根的单词例如：artefact（用技艺制作出来的物品，非天然的→人造物品；手工艺品），factory（制作的地方→工厂）。"
+      },
+      {
+        "word": "synthetic",
+        "phonetic": "/sɪnˈθetɪk/",
+        "meanings": [
+          { "pos": "adj.", "cn": "人造的，合成的" },
+          { "pos": "n.", "cn": "[-s] 合成物" }
+        ],
+        "examples": [
+          { "en": "Nylon is a synthetic material; it is not from nature.", "zh": "尼龙是一种合成材料，不是天然物质。" }
+        ]
+      },
+      {
+        "word": "petrol",
+        "phonetic": "/ˈpetrəl/",
+        "meanings": [
+          { "pos": "n.", "cn": "【英】汽油" }
+        ],
+        "examples": [
+          { "en": "My new car really eats up petrol.", "zh": "我的新汽车真是太耗油了。" }
+        ]
+      },
+      {
+        "word": "gas",
+        "phonetic": "/ɡæs/",
+        "meanings": [
+          { "pos": "n.", "cn": "气体；【美】汽油" }
+        ],
+        "examples": [
+          { "en": "There are reports that some gas stations have run out of gas.", "zh": "有报道称，一些加油站的汽油已经用光了。" }
+        ],
+        "collocation": ["a gas station 加油站"]
+      },
+      {
+        "word": "gasoline",
+        "phonetic": "/ˈɡæsəliːn/",
+        "meanings": [
+          { "pos": "n.", "cn": "【美】汽油" }
+        ],
+        "examples": [
+          { "en": "The price of gasoline is unstable.", "zh": "汽油价格不稳定。" }
+        ]
+      },
+      {
+        "word": "petroleum",
+        "phonetic": "/pɪˈtrəʊliəm/",
+        "meanings": [
+          { "pos": "n.", "cn": "石油" }
+        ],
+        "examples": [
+          { "en": "Petroleum is an important natural resource.", "zh": "石油是一种重要的自然资源。" }
+        ],
+        "memory": "字根 petr 指“石头”，如：petrology（岩石学）。记得 surprise, amaze, astonish, astound 这些表示“使惊奇”的词吗？要表达最高程度的“惊奇”，就用 petrify（v. [使]石化；使吓呆）。",
+        "derivatives": [
+          { "w": "petrify", "pos": "v.", "cn": "[使]石化；使吓呆" }
+        ]
+      }
+    ]
+  },
+  {
+    "page_pdf": 29,
+    "type": "blank"
+  },
+  {
+    "page_pdf": 30,
+    "type": "cover",
+    "title": "Chapter 2 植物研究",
+    "quote": {
+      "en": "Let life be beautiful like summer flowers and death like autumn leaves. —Rabindranath Tagore",
+      "zh": "使生如夏花之绚烂，死如秋叶之静美。——泰戈尔"
+    },
+    "illustration_words": [
+      { "word": "jungle", "pos": "n.", "cn": "丛林" },
+      { "word": "trunk", "pos": "n.", "cn": "树干" },
+      { "word": "weed", "pos": "n.", "cn": "杂草" }
+    ]
+  },
+  {
+    "page_pdf": 31,
+    "page_print": "022",
+    "words": [
+      {
+        "word": "photosynthesis",
+        "phonetic": "/ˌfəʊtəʊˈsɪnθəsɪs/",
+        "meanings": [
+          { "pos": "n.", "cn": "光合作用" }
+        ],
+        "examples": [
+          { "en": "The algae capture the sun's energy by photosynthesis and store it in organic molecules.", "zh": "水藻通过光合作用获得太阳的能量，将它储存在有机分子中。" }
+        ],
+        "memory": "前缀 photo 表示“光（light）”，故该单词的结构是：photo（光）+ synthesis（合成）→ 用光合成 → 光合作用。又如 photograph（照片）：photo（光）+ graph（写，画）→ 用光来描绘。"
+      },
+      {
+        "word": "respire",
+        "phonetic": "/rɪˈspaɪə/",
+        "meanings": [
+          { "pos": "v.", "cn": "呼吸" }
+        ],
+        "examples": [
+          { "en": "Plants respire in the same way as animals, taking in oxygen and giving out carbon dioxide.", "zh": "植物和动物的呼吸方式相同，即摄入氧气并释放出二氧化碳。" }
+        ],
+        "derivatives": [
+          { "w": "respiration", "pos": "n.", "cn": "呼吸" },
+          { "w": "respiratory", "pos": "adj.", "cn": "呼吸的" }
+        ]
+      },
+      {
+        "word": "dioxide",
+        "phonetic": "/daɪˈɒksaɪd/",
+        "meanings": [
+          { "pos": "n.", "cn": "二氧化物" }
+        ],
+        "examples": [
+          { "en": "Plants can absorb carbon dioxide and release oxygen.", "zh": "植物可以吸收二氧化碳并释放氧气。" }
+        ],
+        "collocation": ["carbon dioxide 二氧化碳"],
+        "memory": "di（二）+ oxide（氧化物）→ 二氧化物。"
+      },
+      {
+        "word": "vegetation",
+        "phonetic": "/ˌvedʒəˈteɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "植物，草木" }
+        ],
+        "examples": [
+          { "en": "There is not much vegetation in deserts.", "zh": "沙漠中的植物不多。" }
+        ],
+        "derivatives": [
+          { "w": "vegetable", "pos": "n.", "cn": "蔬菜" },
+          { "w": "vegetarian", "pos": "n.", "cn": "素食者" }
+        ]
+      },
+      {
+        "word": "herb",
+        "phonetic": "/hɜːb/",
+        "meanings": [
+          { "pos": "n.", "cn": "药草；香草" }
+        ],
+        "examples": [
+          { "en": "There is a herb garden behind the house.", "zh": "屋后有一个芳草园。" }
+        ],
+        "derivatives": [
+          { "w": "herbal", "pos": "adj.", "cn": "药草的；香草的" },
+          { "w": "herbivore", "pos": "n.", "cn": "食草动物" },
+          { "w": "carnivore", "pos": "n.", "cn": "食肉动物" }
+        ]
+      },
+      {
+        "word": "perennial",
+        "phonetic": "/pəˈreniəl/",
+        "meanings": [
+          { "pos": "n.", "cn": "多年生植物" },
+          { "pos": "adj.", "cn": "长期的，持久的" }
+        ],
+        "examples": [
+          { "en": "These perennials should be planted where they can naturalise.", "zh": "应该将这些多年生植物种在它们能适应的环境中。" }
+        ]
+      },
+      {
+        "word": "botany",
+        "phonetic": "/ˈbɒtəni/",
+        "meanings": [
+          { "pos": "n.", "cn": "植物学" }
+        ],
+        "examples": [
+          { "en": "He was involved in the structural botany.", "zh": "他潜心于研究结构植物学。" }
+        ],
+        "derivatives": [
+          { "w": "botanical", "pos": "adj.", "cn": "植物的；植物学的" },
+          { "w": "botanist", "pos": "n.", "cn": "植物学家" }
+        ]
+      },
+      {
+        "word": "ecology",
+        "phonetic": "/iˈkɒlədʒi/",
+        "meanings": [
+          { "pos": "n.", "cn": "生态学；生态" }
+        ],
+        "examples": [
+          { "en": "I am interested in the ecology of the desert.", "zh": "我对沙漠的生态感兴趣。" }
+        ],
+        "derivatives": [
+          { "w": "ecological", "pos": "adj.", "cn": "生态学的；生态的" },
+          { "w": "ecologist", "pos": "n.", "cn": "生态学家" }
+        ]
+      },
+      {
+        "word": "ecosystem",
+        "phonetic": "/ˈiːkəʊˌsɪstəm/",
+        "meanings": [
+          { "pos": "n.", "cn": "生态系统" }
+        ],
+        "examples": [
+          { "en": "Water is the core of a healthy ecosystem.", "zh": "水是生态系统保持良好状态的核心要素。" }
+        ],
+        "memory": "eco（生态）+ system（系统）→ 生态系统。"
+      },
+      {
+        "word": "eco-friendly",
+        "phonetic": "/ˌiːkəʊˈfrendli/",
+        "meanings": [
+          { "pos": "adj.", "cn": "对生态环境友好的，不妨害生态环境的" }
+        ],
+        "examples": [
+          { "en": "Attention to eco-friendly packaging is increasing.", "zh": "对生态友好型包装的关注度日益提高。" }
+        ],
+        "derivatives": [
+          { "w": "user-friendly", "pos": "adj.", "cn": "便于使用的" }
+        ]
+      },
+      {
+        "word": "horticulture",
+        "phonetic": "/ˈhɔːtɪkʌltʃə/",
+        "meanings": [
+          { "pos": "n.", "cn": "园艺学；园艺" }
+        ],
+        "examples": [
+          { "en": "Horticulture is the industry and science of plant cultivation.", "zh": "园艺是关于植物栽培的产业和科学。" }
+        ]
+      },
+      {
+        "word": "organism",
+        "phonetic": "/ˈɔːɡənɪzəm/",
+        "meanings": [
+          { "pos": "n.", "cn": "有机体，生物" }
+        ],
+        "examples": [
+          { "en": "This insect behaves like a parasite—an organism that lives on or in another organism called a host.", "zh": "这种昆虫的行为像寄生虫，即一种生活在被称为“宿主”的另一个生物身上或体内的生物。" }
+        ],
+        "derivatives": [
+          { "w": "organ", "pos": "n.", "cn": "器官" }
+        ]
+      },
+      {
+        "word": "genetics",
+        "phonetic": "/dʒəˈnetɪks/",
+        "meanings": [
+          { "pos": "n.", "cn": "遗传学" }
+        ],
+        "examples": [
+          { "en": "In genetics, genes were formerly called factors.", "zh": "在遗传学上，基因以前被称为因子。" }
+        ],
+        "derivatives": [
+          { "w": "gene", "pos": "n.", "cn": "基因" },
+          { "w": "genetic", "pos": "adj.", "cn": "基因的" }
+        ]
+      }
+    ]
+  },
+  {
+    "page_pdf": 32,
+    "page_print": "023",
+    "words": [
+      {
+        "word": "mutation",
+        "phonetic": "/mjuːˈteɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "突变，变异" }
+        ],
+        "examples": [
+          { "en": "The mutations in plants caused by radiation have been found in experiments.", "zh": "已有实验发现辐射引起的植物变异。" }
+        ],
+        "derivatives": [
+          { "w": "mutate", "pos": "v.", "cn": "改变；（使）突变" },
+          { "w": "mutant", "pos": "n.", "cn": "突变体" }
+        ]
+      },
+      {
+        "word": "variation",
+        "phonetic": "/ˌveəriˈeɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "变种；变异" }
+        ],
+        "examples": [
+          { "en": "Variation among dogs is limited to the possible permutations of their genes.", "zh": "狗的变异受限于其基因可能存在的排列组合方式。" }
+        ],
+        "derivatives": [
+          { "w": "vary", "pos": "v.", "cn": "变化" }
+        ]
+      },
+      {
+        "word": "diversity",
+        "phonetic": "/daɪˈvɜːsəti/",
+        "meanings": [
+          { "pos": "n.", "cn": "多样性" }
+        ],
+        "examples": [
+          { "en": "This place used to be a flourishing forest with regional diversity.", "zh": "这里曾是一片有着区域多样性的繁茂森林。" }
+        ],
+        "derivatives": [
+          { "w": "diverse", "pos": "adj.", "cn": "不同的，多种多样的" },
+          { "w": "biodiversity", "pos": "n.", "cn": "生物多样性" }
+        ]
+      },
+      {
+        "word": "hybridisation",
+        "phonetic": "/ˌhaɪbrɪdaɪˈzeɪʃn/",
+        "meanings": [
+          { "pos": "n.", "cn": "杂交" }
+        ],
+        "examples": [
+          { "en": "Somatic cell hybridisation is a very useful technique.", "zh": "体细胞杂交是一种很实用的技术。" }
+        ],
+        "derivatives": [
+          { "w": "hybrid", "pos": "n.", "cn": "杂种，杂交生成的生物体" },
+          { "w": "hybrid", "pos": "adj.", "cn": "混合的" }
+        ]
+      },
+      {
+        "word": "classify",
+        "phonetic": "/ˈklæsɪfaɪ/",
+        "meanings": [
+          { "pos": "v.", "cn": "分类" }
+        ],
+        "examples": [
+          { "en": "Librarians spend a lot of time classifying books.", "zh": "图书馆管理员花许多时间将书分类。" }
+        ],
+        "collocation": ["classify...as... 把……分类为……"],
+        "derivatives": [
+          { "w": "classification", "pos": "n.", "cn": "分类" },
+          { "w": "classified", "pos": "adj.", "cn": "机密的，保密的" }
+        ]
+      },
+      {
+        "word": "reproduce",
+        "phonetic": "/ˌriːprəˈdjuːs/",
+        "meanings": [
+          { "pos": "v.", "cn": "繁殖" }
+        ],
+        "examples": [
+          { "en": "When they can't reproduce, cancerous cells die off instead of becoming dangerous.", "zh": "若癌细胞无法繁殖，它们就会消亡而不会造成威胁。" }
+        ]
+      },
+      {
+        "word": "evolve",
+        "phonetic": "/ɪˈvɒlv/",
+        "meanings": [
+          { "pos": "v.", "cn": "进化；（使）发展，（使）逐步形成" }
+        ],
+        "examples": [
+          { "en": "The developmental history of society tells us that man has evolved from some ancient primates.", "zh": "社会发展史告诉我们，人是由某些古灵长目动物进化来的。" }
+        ],
+        "collocation": ["evolve from 从……进化而来"],
+        "memory": "字根 volu 和 volv 都源自拉丁文 volvere，表示“滚，转（to roll）”，所以英语中包含 volv 和 volu 的单词多含有此意义：evolve（滚动着展开→发展；进化），evolution（进化；发展），involve（滚在里面→包含，牵涉），revolve（重新滚动→旋转；围绕），revolution（革命）。"
+      },
+      {
+        "word": "fluctuate",
+        "phonetic": "/ˈflʌktʃueɪt/",
+        "meanings": [
+          { "pos": "v.", "cn": "波动，起伏" }
+        ],
+        "examples": [
+          { "en": "The price of vegetables fluctuates seasonally.", "zh": "蔬菜的价格随季节波动。" }
+        ],
+        "derivatives": [
+          { "w": "fluctuation", "pos": "n.", "cn": "波动" },
+          { "w": "fluctuant", "pos": "adj.", "cn": "波动的，起伏的" }
+        ]
+      },
+      {
+        "word": "reclaim",
+        "phonetic": "/rɪˈkleɪm/",
+        "meanings": [
+          { "pos": "v.", "cn": "开垦，开拓，利用" }
+        ],
+        "examples": [
+          { "en": "This land was reclaimed from the sea.", "zh": "这块地是填海造出来的。" }
+        ]
+      },
+      {
+        "word": "cultivate",
+        "phonetic": "/ˈkʌltɪveɪt/",
+        "meanings": [
+          { "pos": "v.", "cn": "耕作；培养" }
+        ],
+        "examples": [
+          { "en": "The farmer is cultivating his land.", "zh": "农民正在耕耘他的土地。" }
+        ],
+        "collocation": ["cultivate the habit of 养成……的习惯", "cultivate a creative mind 培养富有创造力的头脑"],
+        "memory": "该字的字根 cult 表示“耕种；培养”。同根词 culture 意为“文化”，而古时最早的文化之一即农耕文化——怎样播种，如何灌溉，何时收获，等等。",
+        "derivatives": [
+          { "w": "cultivation", "pos": "n.", "cn": "耕种；培养" }
+        ]
+      },
+      {
+        "word": "sow",
+        "phonetic": "/səʊ/",
+        "meanings": [
+          { "pos": "v.", "cn": "播种" }
+        ],
+        "examples": [
+          { "en": "These seeds should be sown in April.", "zh": "这些种子应在4月播种。" }
+        ]
+      }
+    ]
+  },
+  {
+    "page_pdf": 33,
+    "page_print": "024",
+    "words": [
+      {
+        "word": "harvest",
+        "phonetic": "/ˈhɑːvɪst/",
+        "meanings": [
+          { "pos": "v.", "cn": "收割" },
+          { "pos": "n.", "cn": "收获；收成" }
+        ],
+        "examples": [
+          { "en": "A good summer harvest is not easy to come by.", "zh": "夏季的好收成不容易实现。" }
+        ],
+        "collocation": ["at the harvest 在收获的季节"]
+      },
+      {
+        "word": "pluck",
+        "phonetic": "/plʌk/",
+        "meanings": [
+          { "pos": "v.", "cn": "采，摘" }
+        ],
+        "examples": [
+          { "en": "He plucked a rose for his lover.", "zh": "他为他情人摘了一朵玫瑰花。" }
+        ]
+      },
+      {
+        "word": "pick",
+        "phonetic": "/pɪk/",
+        "meanings": [
+          { "pos": "v.", "cn": "拾；摘" }
+        ],
+        "examples": [
+          { "en": "He picked the watch up from the carpet.", "zh": "他把表从地毯上捡起来。" }
+        ]
+      },
+      {
+        "word": "yield",
+        "phonetic": "/jiːld/",
+        "meanings": [
+          { "pos": "v.", "cn": "出产；屈服，服从" },
+          { "pos": "n.", "cn": "产量；投资收益" }
+        ],
+        "examples": [
+          { "en": "This land yields well.", "zh": "这块土地产量高。" }
+        ],
+        "derivatives": [
+          { "w": "yielding", "pos": "adj.", "cn": "易弯曲的；顺从的" },
+          { "w": "unyielding", "pos": "adj.", "cn": "坚硬的；不屈不挠的" }
+        ]
+      },
+      {
+        "word": "rear",
+        "phonetic": "/rɪə/",
+        "meanings": [
+          { "pos": "v.", "cn": "培养，抚养；饲养" },
+          { "pos": "n.", "cn": "后部" }
+        ],
+        "examples": [
+          { "en": "Most farmers in this area rear sheep.", "zh": "这个地区的大多数农民都养羊。" }
+        ]
+      },
+      {
+        "word": "arable",
+        "phonetic": "/ˈærəbl/",
+        "meanings": [
+          { "pos": "adj.", "cn": "适于耕种的" }
+        ],
+        "examples": [
+          { "en": "This area changed quickly from arable land to desert.", "zh": "这个地区很快就从可耕地变成了沙漠。" }
+        ]
+      },
+      {
+        "word": "plough",
+        "phonetic": "/plaʊ/",
+        "meanings": [
+          { "pos": "n.", "cn": "犁（= plow）" },
+          { "pos": "v.", "cn": "耕（地）" }
+        ],
+        "examples": [
+          { "en": "The ground was ploughed and planted with corn.", "zh": "这块地被犁过并种上了谷物。" }
+        ]
+      },
+      {
+        "word": "spade",
+        "phonetic": "/speɪd/",
+        "meanings": [
+          { "pos": "n.", "cn": "铲，锹" }
+        ],
+        "examples": [
+          { "en": "He bought a new spade.", "zh": "他买了把新铲子。" }
+        ]
+      },
+      {
+        "word": "rake",
+        "phonetic": "/reɪk/",
+        "meanings": [
+          { "pos": "n.", "cn": "耙子" },
+          { "pos": "v.", "cn": "耙；搜索" }
+        ],
+        "examples": [
+          { "en": "With an ancient rusty rake I went to work.", "zh": "我拿了把古老生锈的耙子去工作。" }
+        ]
+      },
+      {
+        "word": "stack",
+        "phonetic": "/stæk/",
+        "meanings": [
+          { "pos": "n.", "cn": "堆，垛" },
+          { "pos": "v.", "cn": "堆积" }
+        ],
+        "examples": [
+          { "en": "He placed the books in a neat stack.", "zh": "他把书整整齐齐地放成一堆。" }
+        ]
+      },
+      {
+        "word": "heap",
+        "phonetic": "/hiːp/",
+        "meanings": [
+          { "pos": "n.", "cn": "（大而杂乱的）堆" }
+        ],
+        "examples": [
+          { "en": "A heap of old clothes was lying in the corner.", "zh": "一堆旧衣服堆在角落里。" }
+        ]
+      },
+      {
+        "word": "bundle",
+        "phonetic": "/ˈbʌndl/",
+        "meanings": [
+          { "pos": "n.", "cn": "捆，包，束" }
+        ],
+        "examples": [
+          { "en": "He collected a bundle of sticks.", "zh": "他收集了一捆树枝。" }
+        ]
+      },
+      {
+        "word": "bunch",
+        "phonetic": "/bʌntʃ/",
+        "meanings": [
+          { "pos": "n.", "cn": "一束（花），一串（钥匙）" }
+        ],
+        "examples": [
+          { "en": "I bought a bunch of lilacs.", "zh": "我买了一束丁香花。" }
+        ]
+      },
+      {
+        "word": "vase",
+        "phonetic": "/vɑːz/",
+        "meanings": [
+          { "pos": "n.", "cn": "瓶，花瓶" }
+        ],
+        "examples": [
+          { "en": "This flaw makes the vase less valuable.", "zh": "因为这处缺陷，这个花瓶不那么值钱了。" }
+        ]
+      }
+    ]
+  },
+  {
+    "page_pdf": 34,
+    "page_print": "025",
+    "words": [
+      {
+        "word": "sunlight",
+        "phonetic": "/ˈsʌnlaɪt/",
+        "meanings": [
+          { "pos": "n.", "cn": "阳光" }
+        ],
+        "examples": [
+          { "en": "The sunlight was reflected by the water.", "zh": "水面反射着阳光。" }
+        ],
+        "collocation": ["expose...to the sunlight 把……暴露在阳光下", "get sunlight 受到阳光照射"]
+      },
+      {
+        "word": "short-day",
+        "phonetic": "/ˈʃɔːt deɪ/",
+        "meanings": [
+          { "pos": "adj.", "cn": "短日照的" }
+        ],
+        "examples": [
+          { "en": "Soybean is a typical short-day crop.", "zh": "大豆是典型的短日照作物。" }
+        ]
+      },
+      {
+        "word": "shade-tolerant",
+        "phonetic": "/ˈʃeɪd ˈtɒlərənt/",
+        "meanings": [
+          { "pos": "adj.", "cn": "耐阴的" }
+        ],
+        "examples": [
+          { "en": "He highlighted the importance of shade-tolerant plants in gardens.", "zh": "他强调了耐阴植物在庭园中的重要性。" }
+        ]
+      },
+      {
+        "word": "fungus",
+        "phonetic": "/ˈfʌŋɡəs/",
+        "meanings": [
+          { "pos": "n.", "cn": "真菌" }
+        ],
+        "examples": [
+          { "en": "Don't eat that fungus. It might be poisonous.", "zh": "别吃那种菌，可能有毒。" }
+        ]
+      },
+      {
+        "word": "mould",
+        "phonetic": "/məʊld/",
+        "meanings": [
+          { "pos": "n.", "cn": "霉菌（= mold）" },
+          { "pos": "v.", "cn": "发霉" }
+        ],
+        "examples": [
+          { "en": "The walls were black with mould.", "zh": "墙因发霉而变黑。" }
+        ]
+      },
+      {
+        "word": "pollen",
+        "phonetic": "/ˈpɒlən/",
+        "meanings": [
+          { "pos": "n.", "cn": "花粉" },
+          { "pos": "v.", "cn": "给……授粉" }
+        ],
+        "examples": [
+          { "en": "Each spring, pollen from nearby plants is blown into the water.", "zh": "每年春天，附近植物的花粉被风吹到水中。" }
+        ]
+      },
+      {
+        "word": "germinate",
+        "phonetic": "/ˈdʒɜːmɪneɪt/",
+        "meanings": [
+          { "pos": "v.", "cn": "（使）发芽；开始生长" }
+        ],
+        "examples": [
+          { "en": "Warmth is needed for the seeds to germinate.", "zh": "种子发芽需要一定的温度。" }
+        ],
+        "derivatives": [
+          { "w": "germ", "pos": "n.", "cn": "萌芽；细菌" }
+        ]
+      },
+      {
+        "word": "seed",
+        "phonetic": "/siːd/",
+        "meanings": [
+          { "pos": "n.", "cn": "种子，籽；萌芽" }
+        ],
+        "examples": [
+          { "en": "The farmers were scattering seeds over the fields.", "zh": "农夫在往田里播撒种子。" }
+        ],
+        "collocation": ["sow seeds 播种"],
+        "derivatives": [
+          { "w": "seedling", "pos": "n.", "cn": "秧苗，幼苗" }
+        ]
+      },
+      {
+        "word": "burgeon",
+        "phonetic": "/ˈbɜːdʒən/",
+        "meanings": [
+          { "pos": "n.", "cn": "嫩枝，新芽" },
+          { "pos": "v.", "cn": "急速增长；发芽，抽枝" }
+        ],
+        "examples": [
+          { "en": "This firm aimed at the burgeoning market for augmented-reality games.", "zh": "这家公司瞄准了快速发展的运用增强现实技术的游戏的市场。" }
+        ]
+      },
+      {
+        "word": "bud",
+        "phonetic": "/bʌd/",
+        "meanings": [
+          { "pos": "n.", "cn": "芽，苞，蓓蕾" }
+        ],
+        "examples": [
+          { "en": "The roses are in bud.", "zh": "玫瑰花正含苞待放。" }
+        ],
+        "collocation": ["break out into bud 发芽"]
+      },
+      {
+        "word": "flower",
+        "phonetic": "/ˈflaʊə/",
+        "meanings": [
+          { "pos": "v.", "cn": "开花" },
+          { "pos": "n.", "cn": "花朵" }
+        ],
+        "examples": [
+          { "en": "Cherry trees flower in the early spring.", "zh": "樱桃树在早春开花。" }
+        ]
+      },
+      {
+        "word": "blossom",
+        "phonetic": "/ˈblɒsəm/",
+        "meanings": [
+          { "pos": "v.", "cn": "开花" },
+          { "pos": "n.", "cn": "花朵" }
+        ],
+        "examples": [
+          { "en": "The tree was covered with beautiful pink blossom.", "zh": "这棵树开满了美丽的粉红色花朵。" }
+        ]
+      },
+      {
+        "word": "bloom",
+        "phonetic": "/bluːm/",
+        "meanings": [
+          { "pos": "n.", "cn": "花朵" }
+        ],
+        "examples": [
+          { "en": "The apple trees are out of bloom.", "zh": "这些苹果树的花已败落。" }
+        ],
+        "collocation": ["in bloom 鲜花盛开"]
+      },
+      {
+        "word": "scent",
+        "phonetic": "/sent/",
+        "meanings": [
+          { "pos": "n.", "cn": "气味；香味" },
+          { "pos": "v.", "cn": "使具有香味" }
+        ],
+        "examples": [
+          { "en": "The flower scents the air.", "zh": "空气中弥漫着花香。" }
+        ]
+      },
+      {
+        "word": "aromatic",
+        "phonetic": "/ˌærəˈmætɪk/",
+        "meanings": [
+          { "pos": "adj.", "cn": "芳香的" }
+        ],
+        "examples": [
+          { "en": "Aromatic plants are often used in cooking.", "zh": "烹调中常使用芳香植物。" }
+        ]
+      },
+      {
+        "word": "ripen",
+        "phonetic": "/ˈraɪpən/",
+        "meanings": [
+          { "pos": "v.", "cn": "（使）成熟" }
+        ],
+        "examples": [
+          { "en": "The sun ripens the corn.", "zh": "阳光使谷物成熟。" }
+        ],
+        "derivatives": [
+          { "w": "ripe", "pos": "adj.", "cn": "熟的；时机成熟的" },
+          { "w": "ripener", "pos": "n.", "cn": "催熟剂" }
+        ]
+      }
+    ]
+  }
+]

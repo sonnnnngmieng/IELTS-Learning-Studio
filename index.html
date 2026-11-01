@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>雅思学习站 · IELTS Learning Studio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="shell">
+  <!-- 侧边导航 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand" onclick="location.hash='#/home'">
+      <span class="logo">iP</span>
+      <div><b>雅思学习站</b><em>IELTS Learning Studio</em></div>
+    </div>
+    <nav class="side-nav">
+      <a href="#/home" data-nav="home"><i>◱</i><span>今日</span></a>
+      <a href="#/vocab" data-nav="vocab"><i>▤</i><span>词汇</span></a>
+      <a href="#/listening" data-nav="listening"><i>◍</i><span>听力</span></a>
+      <a href="#/writing" data-nav="writing"><i>✎</i><span>写作</span></a>
+      <a href="#/reading" data-nav="reading"><i>▦</i><span>阅读</span></a>
+      <a href="#/speaking" data-nav="speaking"><i>◎</i><span>口语</span></a>
+      <a href="#/plan" data-nav="plan"><i>◫</i><span>学习计划</span></a>
+      <a href="#/records" data-nav="records"><i>◔</i><span>学习记录</span></a>
+      <a href="#/ai" data-nav="ai"><i>✦</i><span>AI 助手</span></a>
+    </nav>
+    <div class="side-foot">
+      <button class="user-box" onclick="UI.showUserMenu()">
+        <span class="avatar" id="avatar">?</span>
+        <span class="ub-text"><b id="user-name">未登录</b><em id="user-sub">点击登录同步进度</em></span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" onclick="UI.toggleDrawer()">☰</button>
+      <div class="crumb" id="crumb">今日学习空间</div>
+      <div class="top-actions">
+        <button class="icon-btn" onclick="location.hash='#/ai'" title="AI 助手">✦</button>
+        <button class="icon-btn" onclick="location.hash='#/plan'" title="学习计划">◫</button>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+</div>
+
+<!-- 移动端底部导航 -->
+<nav class="mobbar">
+  <a href="#/home" data-mob="home"><span>◱</span>今日</a>
+  <a href="#/vocab" data-mob="vocab"><span>▤</span>词汇</a>
+  <a href="#/listening" data-mob="listening"><span>◍</span>听力</a>
+  <a href="#/writing" data-mob="writing"><span>✎</span>写作</a>
+  <a href="#/ai" data-mob="ai"><span>✦</span>AI</a>
+</nav>
+
+<!-- 登录 -->
+<div class="modal-mask" id="login-mask" style="display:none">
+  <div class="modal login-modal">
+    <button class="modal-close" onclick="UI.closeLogin()">×</button>
+    <h2>登录 / 注册</h2>
+    <p class="muted">登录后学习进度、复习计划、练习记录全部云端同步</p>
+    <div class="tabs" id="login-tabs">
+      <button class="tab active" data-lt="phone" onclick="Auth.switchTab('phone')">手机验证码</button>
+      <button class="tab" data-lt="email" onclick="Auth.switchTab('email')">邮箱验证码</button>
+    </div>
+    <div id="login-phone" class="login-pane">
+      <input id="ph-input" type="tel" maxlength="11" placeholder="请输入 11 位手机号" oninput="Auth.clearErr()">
+      <div class="code-row">
+        <input id="ph-code" type="text" maxlength="6" placeholder="验证码" oninput="Auth.clearErr()">
+        <button class="btn ghost" id="ph-send" onclick="Auth.sendPhoneCode()">获取验证码</button>
+      </div>
+      <button class="btn primary block" onclick="Auth.submitPhone()">登录 / 注册</button>
+    </div>
+    <div id="login-email" class="login-pane" style="display:none">
+      <input id="em-input" type="email" placeholder="请输入邮箱">
+      <div class="code-row">
+        <input id="em-code" type="text" maxlength="6" placeholder="验证码">
+        <button class="btn ghost" id="em-send" onclick="Auth.sendEmailCode()">获取验证码</button>
+      </div>
+      <button class="btn primary block" onclick="Auth.submitEmail()">登录 / 注册</button>
+    </div>
+    <div class="divider"><span>或</span></div>
+    <button class="btn wechat block" onclick="Auth.loginWechat()">微信扫码 / 快捷登录</button>
+    <p id="login-err" class="err"></p>
+    <p class="muted tiny">未注册的手机号 / 邮箱验证通过后自动创建账号</p>
+  </div>
+</div>
+
+<div id="toast" class="toast" style="display:none"></div>
+<div class="drawer-mask" id="drawer-mask" onclick="UI.toggleDrawer()"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script>
+  window.PUBLIC_CONFIG = {
+    endpoint: "https://ielts-station-86055.app.workbuddy.host",
+    oauthRelayBaseUrl: "https://www.workbuddy.cn/v2/as/genie-baas/oauth",
+    publishableKey: "wbpk_EM0sEYg5RawLa41D0Xu5OT_DodsJs2jlx9o8eK7VN7AyKdFE0OmPcks"
+  };
+</script>
+<script src="js/util.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/store.js"></script>
+<script src="js/plan.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/vocab.js"></script>
+<script src="js/listening.js"></script>
+<script src="js/writing.js"></script>
+<script src="js/reading.js"></script>
+<script src="js/speaking.js"></script>
+<script src="js/records.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

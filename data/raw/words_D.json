@@ -1,0 +1,604 @@
+[
+  {
+    "page_pdf": 35,
+    "page_print": "026",
+    "words": [
+      {
+        "word": "fruit",
+        "phonetic": "/fruːt/",
+        "meanings": [{"pos": "v.", "cn": "结果实"}],
+        "examples": [{"en": "The apple trees fruited early this year.", "zh": "今年苹果树很早就开始结果了。"}]
+      },
+      {
+        "word": "wither",
+        "phonetic": "/ˈwɪðə/",
+        "meanings": [{"pos": "v.", "cn": "（使）枯萎"}],
+        "examples": [{"en": "The grapes withered on the vine.", "zh": "葡萄藤上的葡萄干瘪了。"}],
+        "derivatives": [{"w": "withered", "pos": "adj.", "cn": "凋谢了的；枯萎的"}]
+      },
+      {
+        "word": "decompose",
+        "phonetic": "/ˌdiːkəmˈpəʊz/",
+        "meanings": [{"pos": "v.", "cn": "（使）分解；（使）腐烂"}],
+        "examples": [{"en": "You can apply heat to decompose organic compounds.", "zh": "你可以加热来分解有机化合物。"}],
+        "memory": "de（非，使相反）+ compose（组成）→ 分解，腐烂",
+        "derivatives": [{"w": "compose", "pos": "v.", "cn": "构成；写；创作"}]
+      },
+      {
+        "word": "rot",
+        "phonetic": "/rɒt/",
+        "meanings": [{"pos": "v.", "cn": "（使）腐烂；（使）腐坏"}, {"pos": "n.", "cn": "腐烂"}],
+        "examples": [{"en": "Rot in the tree trunk caused the tree to fall.", "zh": "树干的腐烂导致树木倒了。"}],
+        "derivatives": [{"w": "rotten", "pos": "adj.", "cn": "腐烂的"}]
+      },
+      {
+        "word": "decay",
+        "phonetic": "/dɪˈkeɪ/",
+        "meanings": [{"pos": "v.", "cn": "腐烂"}],
+        "examples": [{"en": "The vegetables have begun to decay.", "zh": "那些蔬菜已开始腐烂。"}]
+      },
+      {
+        "word": "stale",
+        "phonetic": "/steɪl/",
+        "meanings": [{"pos": "adj.", "cn": "不新鲜的；没有新意的，陈腐的"}],
+        "examples": [{"en": "He always bought two loaves of stale bread.", "zh": "他总是要买两条不新鲜的面包。"}],
+        "derivatives": [{"w": "staleness", "pos": "n.", "cn": "不新鲜；无趣味"}]
+      },
+      {
+        "word": "rainforest",
+        "phonetic": "/ˈreɪnfɒrɪst/",
+        "meanings": [{"pos": "n.", "cn": "雨林"}],
+        "examples": [{"en": "The rainforest is being systematically destroyed.", "zh": "雨林正被系统化地毁灭。"}],
+        "collocation": ["a rainforest reserve 雨林保护区"]
+      },
+      {
+        "word": "jungle",
+        "phonetic": "/ˈdʒʌŋɡl/",
+        "meanings": [{"pos": "n.", "cn": "（热带）丛林，密林"}],
+        "examples": [{"en": "Tigers are found in the jungle of Asia.", "zh": "在亚洲的丛林中有老虎。"}],
+        "collocation": ["in the jungle 在丛林里"]
+      },
+      {
+        "word": "plantation",
+        "phonetic": "/plænˈteɪʃən/",
+        "meanings": [{"pos": "n.", "cn": "种植园；栽植"}],
+        "examples": [{"en": "They work on plantations.", "zh": "他们在种植园工作。"}]
+      },
+      {
+        "word": "field",
+        "phonetic": "/fiːld/",
+        "meanings": [{"pos": "n.", "cn": "原野；场地；野外"}],
+        "examples": [{"en": "The students of the geological class will be out on field exploration for the duration of the school year.", "zh": "地质班的学生将把本学年的全部时间用于野外勘探。"}]
+      },
+      {
+        "word": "terrace",
+        "phonetic": "/ˈterəs/",
+        "meanings": [{"pos": "n.", "cn": "梯田"}],
+        "examples": [{"en": "The terrace channels are convenient for irrigation.", "zh": "梯田的沟渠便于灌溉。"}]
+      },
+      {
+        "word": "timber",
+        "phonetic": "/ˈtɪmbə/",
+        "meanings": [{"pos": "n.", "cn": "木材，木料；林木"}],
+        "examples": [{"en": "The farmer spent a day in the woods hewing timber.", "zh": "这个农夫花了一天时间在森林里砍木材。"}]
+      },
+      {
+        "word": "charcoal",
+        "phonetic": "/ˈtʃɑːkəʊl/",
+        "meanings": [{"pos": "n.", "cn": "木炭"}],
+        "examples": [{"en": "Prepare a fire in a charcoal grill.", "zh": "在木炭烧烤炉里点上火。"}]
+      },
+      {
+        "word": "log",
+        "phonetic": "/lɒg/",
+        "meanings": [{"pos": "n.", "cn": "原木；（航海、飞行）日志"}],
+        "examples": [{"en": "A log got in his way as he drove.", "zh": "一根原木挡住了他的去路。"}],
+        "memory": "早期，航海时用来测量航行速度的测量仪是用木板（log）绑桨和绳子等制成的。所以，log 既有\"原木\"的含义，又有\"航行日志\"的含义。比如 logging industry 意思是\"伐木业\"，而网络上流行的 blog（博客）即 weblog（网络日志）的缩写。"
+      },
+      {
+        "word": "logo",
+        "phonetic": "/ˈləʊgəʊ/",
+        "meanings": [{"pos": "n.", "cn": "标识，标志，徽标"}],
+        "examples": [{"en": "The letterhead was impressed with the company's logo.", "zh": "信头印有该公司的徽标。"}]
+      },
+      {
+        "word": "forestry",
+        "phonetic": "/ˈfɒrɪstrɪ/",
+        "meanings": [{"pos": "n.", "cn": "林学；林业"}],
+        "examples": [{"en": "Mountainous areas, covered by forests, are the very place for forestry development.", "zh": "森林覆盖的山区正是适合发展林业的地方。"}],
+        "derivatives": [{"w": "forest", "pos": "n.", "cn": "森林"}]
+      },
+      {
+        "word": "branch",
+        "phonetic": "/brɑːntʃ/",
+        "meanings": [{"pos": "n.", "cn": "树枝；（企业组织的）分支机构，分店"}],
+        "examples": [{"en": "The company's head office is in this city, but it has branches all over the country.", "zh": "公司的总部在这座城市，但是它的分公司遍布全国各地。"}],
+        "collocation": ["extend the olive branch 伸出橄榄枝，准备讲和"]
+      }
+    ]
+  },
+  {
+    "page_pdf": 36,
+    "page_print": "027",
+    "words": [
+      {
+        "word": "trunk",
+        "phonetic": "/trʌŋk/",
+        "meanings": [{"pos": "n.", "cn": "树干；躯干；大箱子"}],
+        "examples": [{"en": "Can she move that trunk by herself?", "zh": "她能自己搬动那只大箱子吗？"}]
+      },
+      {
+        "word": "bough",
+        "phonetic": "/baʊ/",
+        "meanings": [{"pos": "n.", "cn": "大树枝"}],
+        "examples": [{"en": "The window of her car was broken by a bough during last night's storm.", "zh": "在昨晚的暴风雨中，她的车窗被一根大树打破了。"}]
+      },
+      {
+        "word": "root",
+        "phonetic": "/ruːt/",
+        "meanings": [{"pos": "n.", "cn": "根"}, {"pos": "v.", "cn": "（使）生根"}],
+        "examples": [{"en": "The dog is snuffling around the root of a tree.", "zh": "那条狗在一棵树的根部嗅来嗅去。"}]
+      },
+      {
+        "word": "hay",
+        "phonetic": "/heɪ/",
+        "meanings": [{"pos": "n.", "cn": "干草"}],
+        "examples": [{"en": "Make hay while the sun shines.", "zh": "趁有太阳时晒干草。（比喻把握时机，趁热打铁）"}],
+        "collocation": ["hit the hay 上床睡觉"]
+      },
+      {
+        "word": "straw",
+        "phonetic": "/strɔː/",
+        "meanings": [{"pos": "n.", "cn": "稻草，麦秆；吸管"}],
+        "examples": [{"en": "This hat is made of straw.", "zh": "这帽子是用稻草编的。"}]
+      },
+      {
+        "word": "reed",
+        "phonetic": "/riːd/",
+        "meanings": [{"pos": "n.", "cn": "芦苇"}],
+        "examples": [{"en": "The roof is made of dried reeds.", "zh": "这房顶是用干芦苇制成的。"}]
+      },
+      {
+        "word": "thorn",
+        "phonetic": "/θɔːn/",
+        "meanings": [{"pos": "n.", "cn": "刺，棘刺；荆棘"}],
+        "examples": [{"en": "She got her finger pricked by a thorn.", "zh": "她的手指被刺扎了一下。"}],
+        "derivatives": [{"w": "thorny", "pos": "adj.", "cn": "多刺的；棘手的"}]
+      },
+      {
+        "word": "weed",
+        "phonetic": "/wiːd/",
+        "meanings": [{"pos": "n.", "cn": "杂草，野草"}, {"pos": "v.", "cn": "除杂草"}],
+        "examples": [{"en": "The garden is choked with weeds.", "zh": "花园里杂草丛生。"}]
+      },
+      {
+        "word": "grass",
+        "phonetic": "/grɑːs/",
+        "meanings": [{"pos": "n.", "cn": "草；草地"}],
+        "examples": [{"en": "The grass was wet with dew.", "zh": "草被露水打湿了。"}]
+      },
+      {
+        "word": "meadow",
+        "phonetic": "/ˈmedəʊ/",
+        "meanings": [{"pos": "n.", "cn": "草地；牧场"}],
+        "examples": [{"en": "The children ran free across the meadow.", "zh": "孩子们在草地上自由地奔跑。"}]
+      },
+      {
+        "word": "lawn",
+        "phonetic": "/lɔːn/",
+        "meanings": [{"pos": "n.", "cn": "草地，草坪"}],
+        "examples": [{"en": "My mother asked me to mow the lawn.", "zh": "妈妈让我去修剪草坪。"}]
+      },
+      {
+        "word": "olive",
+        "phonetic": "/ˈɒlɪv/",
+        "meanings": [{"pos": "n.", "cn": "橄榄；橄榄树"}],
+        "examples": [{"en": "The olive branch is the emblem of peace.", "zh": "橄榄枝是和平的象征。"}],
+        "collocation": ["an olive branch 橄榄枝，和平象征", "olive oil 橄榄油"],
+        "memory": "《圣经》记载：当洪水（flood）淹没大地时，按照上帝的指示，挪亚（Noah）将所有的动物都成对地带入方舟（ark）中。一段时间后，挪亚从方舟的窗户放出一只渡鸦（raven），渡鸦飞来飞去，后来他又放出一只鸽子（dove，这里不是说\"德芙\"巧克力品牌！）。但是，因为地上都是水，鸽子没有地方落脚，就飞回了方舟。又过了几天，挪亚再次放出鸽子。这次，鸽子回来时嘴里衔着新折下的橄榄枝（olive leaf），于是挪亚知道地上的水退了，大地恢复生机。"
+      },
+      {
+        "word": "pine",
+        "phonetic": "/paɪn/",
+        "meanings": [{"pos": "n.", "cn": "松树；松木"}],
+        "examples": [{"en": "It's a place noted for its pine trees and springs.", "zh": "这是一个以松树和泉水而知名的地方。"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 37,
+    "page_print": "028",
+    "words": [
+      {
+        "word": "vine",
+        "phonetic": "/vaɪn/",
+        "meanings": [{"pos": "n.", "cn": "葡萄藤"}],
+        "examples": [{"en": "The grapes withered on the vine.", "zh": "葡萄藤上的葡萄干瘪了。"}]
+      },
+      {
+        "word": "violet",
+        "phonetic": "/ˈvaɪəlɪt/",
+        "meanings": [{"pos": "n.", "cn": "堇菜"}],
+        "examples": [{"en": "The violet is a dainty spring flower.", "zh": "堇菜是一种娇小的春花。"}]
+      },
+      {
+        "word": "tulip",
+        "phonetic": "/ˈtjuːlɪp/",
+        "meanings": [{"pos": "n.", "cn": "郁金香"}],
+        "examples": [{"en": "She trimmed the stalks of the tulips before putting them in a vase.", "zh": "在把郁金香插进花瓶之前，她修剪了一下花茎。"}]
+      },
+      {
+        "word": "mint",
+        "phonetic": "/mɪnt/",
+        "meanings": [{"pos": "n.", "cn": "薄荷；薄荷糖；铸币厂"}, {"pos": "v.", "cn": "铸造（硬币）"}],
+        "examples": [{"en": "We sat in the back row, sucking mints.", "zh": "我们坐在后排，嘴里嚼着薄荷糖。"}],
+        "memory": "在罗马神话中，希腊神话里的天后赫拉（Hera）的对应者是朱诺（Juno），别名是莫涅塔（Moneta）。她曾数次警告罗马人即将出现的危险，帮助她们渡过难关（别名 Moneta 可能与表示\"警告\"的拉丁文 monere 有关）。罗马人为她建了一座神庙，后来在神庙里建了铸币厂，希望女神能守护她们的财富，同时告诫她们不要因金钱而迷失自我。英语中的 money 和 mint 都源自女神的别名，可见一个人手里的 money 有\"警告\"的含义。"
+      },
+      {
+        "word": "reef",
+        "phonetic": "/riːf/",
+        "meanings": [{"pos": "n.", "cn": "（暗）礁，礁脉"}],
+        "examples": [{"en": "The ship was wrecked on a reef.", "zh": "这艘船触礁失事了。"}]
+      },
+      {
+        "word": "alga",
+        "phonetic": "/ˈælgə/",
+        "meanings": [{"pos": "n.", "cn": "海藻，藻"}],
+        "examples": [{"en": "Some of the algae are edible.", "zh": "有些海藻是可以吃的。"}],
+        "derivatives": [{"w": "algal", "pos": "adj.", "cn": "海藻的"}, {"w": "algae", "pos": "n.", "cn": "[alga 的复数形式] 藻类"}]
+      },
+      {
+        "word": "enzyme",
+        "phonetic": "/ˈenzaɪm/",
+        "meanings": [{"pos": "n.", "cn": "酶"}],
+        "examples": [{"en": "One enzyme can activate a thousand of these chemical reactions in an hour.", "zh": "一个酶在一小时内可激发一千次这种化学反应。"}]
+      },
+      {
+        "word": "catalyst",
+        "phonetic": "/ˈkætəlɪst/",
+        "meanings": [{"pos": "n.", "cn": "催化剂；促进因素"}],
+        "examples": [{"en": "A catalyst is a substance which speeds up a chemical reaction.", "zh": "催化剂是一种能加速化学反应的物质。"}],
+        "derivatives": [{"w": "catalyse", "pos": "v.", "cn": "（= catalyze）催化；促成"}]
+      },
+      {
+        "word": "release",
+        "phonetic": "/rɪˈliːs/",
+        "meanings": [{"pos": "v./n.", "cn": "释放；发布"}],
+        "examples": [{"en": "I released the horse and it ran away.", "zh": "我放了这匹马，它跑走了。"}]
+      },
+      {
+        "word": "emission",
+        "phonetic": "/ɪˈmɪʃən/",
+        "meanings": [{"pos": "n.", "cn": "排放，散发；排放物，散发物"}],
+        "examples": [{"en": "This conference aims to reduce carbon emissions or greenhouse gas emissions around the world.", "zh": "这次会议旨在减少全球的碳排放或温室气体排放。"}]
+      },
+      {
+        "word": "absorb",
+        "phonetic": "/əbˈsɔːb/",
+        "meanings": [{"pos": "v.", "cn": "吸收；吸引全部注意力"}],
+        "examples": [{"en": "Dry sand absorbs water.", "zh": "干沙吸收水分。"}],
+        "collocation": ["be absorbed in 全神贯注在……上"]
+      },
+      {
+        "word": "circulation",
+        "phonetic": "/ˌsɜːkjəˈleɪʃən/",
+        "meanings": [{"pos": "n.", "cn": "流通；循环；流传"}],
+        "examples": [{"en": "Sea surface temperatures and atmospheric circulation are strongly coupled.", "zh": "海洋表面的温度与大气环流是密切相关的。"}],
+        "derivatives": [{"w": "circle", "pos": "n.", "cn": "圆"}, {"w": "circle", "pos": "v.", "cn": "环绕；盘旋"}, {"w": "circulate", "pos": "v.", "cn": "流传；循环"}]
+      },
+      {
+        "word": "exceed",
+        "phonetic": "/ɪkˈsiːd/",
+        "meanings": [{"pos": "v.", "cn": "超过"}],
+        "examples": [{"en": "The driver exceeds the speed limit.", "zh": "那位司机超速驾车。"}]
+      },
+      {
+        "word": "uptake",
+        "phonetic": "/ˈʌpteɪk/",
+        "meanings": [{"pos": "n.", "cn": "摄取；领会"}],
+        "examples": [{"en": "The doctor advised me to reduce the salt uptake.", "zh": "医生建议我减少盐的摄入。"}]
+      },
+      {
+        "word": "nutrient",
+        "phonetic": "/ˈnjuːtrɪənt/",
+        "meanings": [{"pos": "n.", "cn": "营养物质"}],
+        "examples": [{"en": "The nutrient in the soil acts as a stimulus to growth in plants.", "zh": "土壤中的营养物质能促进植物生长。"}],
+        "memory": "字根 nutri 表示\"滋养（to nourish）\"。美国安利公司的营养保健品品牌\"纽崔莱\"的英文原名就是 Nutrilite。",
+        "derivatives": [{"w": "nutrition", "pos": "n.", "cn": "营养"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 38,
+    "page_print": "029",
+    "words": [
+      {
+        "word": "energy",
+        "phonetic": "/ˈenədʒɪ/",
+        "meanings": [{"pos": "n.", "cn": "能源；精力"}],
+        "examples": [{"en": "The majority of the energy we consume comes from fossil fuel energy sources.", "zh": "我们消耗的能源大多来自化石能源。"}]
+      },
+      {
+        "word": "surroundings",
+        "phonetic": "/səˈraʊndɪŋz/",
+        "meanings": [{"pos": "n.", "cn": "环境"}],
+        "examples": [{"en": "The adaptability of the youth to new surroundings is one of their good qualities.", "zh": "年轻人适应新环境的能力是他们的优点之一。"}]
+      },
+      {
+        "word": "mechanism",
+        "phonetic": "/ˈmekənɪzəm/",
+        "meanings": [{"pos": "n.", "cn": "机制；构造"}],
+        "examples": [{"en": "Bones and muscles are parts of the mechanism of the body.", "zh": "骨骼和肌肉是身体的部分构造。"}]
+      },
+      {
+        "word": "counterbalance",
+        "phonetic": "/ˌkaʊntəˈbæləns/；/ˌkaʊntə ˈbæləns/",
+        "meanings": [{"pos": "n.", "cn": "起平衡作用的事物；抗衡力"}, {"pos": "v.", "cn": "抵消；对……起平衡作用"}],
+        "examples": [{"en": "Their strength counterbalances our strength in attack.", "zh": "他们防卫的力量与我们攻击的力量不相上下。"}]
+      },
+      {
+        "word": "protect",
+        "phonetic": "/prəˈtekt/",
+        "meanings": [{"pos": "v.", "cn": "保护"}],
+        "examples": [{"en": "We have to do what it takes to protect our parks and protect our planet for generations to come.", "zh": "我们必须采取一切措施为子孙后代保护我们的公园和我们的星球。"}],
+        "collocation": ["protect...from/against 保护……免受……的伤害"],
+        "derivatives": [{"w": "protection", "pos": "n.", "cn": "保护"}, {"w": "protective", "pos": "adj.", "cn": "保护的，防护的"}]
+      },
+      {
+        "word": "preserve",
+        "phonetic": "/prɪˈzɜːv/",
+        "meanings": [{"pos": "v.", "cn": "保护；维持（原状）；保存"}],
+        "examples": [{"en": "It is the duty of the police to preserve public order.", "zh": "维持公共秩序是警察的职责。"}],
+        "derivatives": [{"w": "preservation", "pos": "n.", "cn": "保护"}]
+      },
+      {
+        "word": "conservation",
+        "phonetic": "/ˌkɔnsəˈveɪʃən/",
+        "meanings": [{"pos": "n.", "cn": "（对自然环境的）保护；保存"}],
+        "examples": [{"en": "Some accommodation between conservation and tourism is essential.", "zh": "对自然环境的保护与旅游业之间的相互协调是至关重要的。"}],
+        "derivatives": [{"w": "conversation", "pos": "n.", "cn": "交谈"}]
+      },
+      {
+        "word": "bush fire",
+        "phonetic": "/ˈbʊʃ ˈfaɪə/",
+        "meanings": [{"pos": "n.", "cn": "林区大火"}],
+        "examples": [{"en": "The friendly fallow deer were trapped by a bush fire.", "zh": "这些温顺的黇鹿被林区大火困住了。"}]
+      },
+      {
+        "word": "extinguish",
+        "phonetic": "/ɪkˈstɪŋgwɪʃ/",
+        "meanings": [{"pos": "v.", "cn": "扑灭（火）；使（想法、感情等）破灭"}],
+        "examples": [{"en": "They tried every means to extinguish the fire.", "zh": "他们尝试了各种办法来扑火。"}],
+        "derivatives": [{"w": "extinguisher", "pos": "n.", "cn": "灭火器"}]
+      },
+      {
+        "word": "destruct",
+        "phonetic": "/dɪˈstrʌkt/",
+        "meanings": [{"pos": "v.", "cn": "（使）自毁"}],
+        "examples": [{"en": "The tape would self-destruct in twenty minutes.", "zh": "这盘磁带会在 20 分钟后自毁。"}],
+        "derivatives": [{"w": "destruction", "pos": "n.", "cn": "破坏"}]
+      },
+      {
+        "word": "ruin",
+        "phonetic": "/ruːɪn/",
+        "meanings": [{"pos": "v.", "cn": "毁坏，摧毁"}, {"pos": "n.", "cn": "毁灭；废墟"}],
+        "examples": [{"en": "The storm ruined the crops.", "zh": "暴风雨毁坏了庄稼。"}]
+      },
+      {
+        "word": "perish",
+        "phonetic": "/ˈperɪʃ/",
+        "meanings": [{"pos": "v.", "cn": "毁灭，消亡；腐烂"}],
+        "examples": [{"en": "Flowers perish when frost comes.", "zh": "霜冻一来，花即凋零。"}],
+        "memory": "西方学术界有一句很有名的话：\"Publish or Perish!\"指的是从事研究的人，如果不能有效地在规定时期杂志上连续发表足够数量的论文或学术文章，就无法维持或推进其学术生涯。"
+      },
+      {
+        "word": "demolish",
+        "phonetic": "/dɪˈmɒlɪʃ/",
+        "meanings": [{"pos": "v.", "cn": "拆除；毁坏，破坏；推翻"}],
+        "examples": [{"en": "The fire demolished the town.", "zh": "大火烧毁了这座城镇。"}]
+      },
+      {
+        "word": "infringe",
+        "phonetic": "/ɪnˈfrɪndʒ/",
+        "meanings": [{"pos": "v.", "cn": "侵犯；违反"}],
+        "examples": [{"en": "The press infringed a copyright agreement.", "zh": "这家出版社违反了一项版权协议。"}],
+        "memory": "fringe 指\"边缘\"，可以把 infringe 想象成是从外面走到了边界里面，破坏了边界，形成了侵犯行为。"
+      }
+    ]
+  },
+  {
+    "page_pdf": 39,
+    "page_print": "030",
+    "words": [
+      {
+        "word": "undermine",
+        "phonetic": "/ˌʌndəˈmaɪn/",
+        "meanings": [{"pos": "v.", "cn": "破坏；逐渐削弱"}],
+        "examples": [{"en": "The constant criticism was beginning to undermine her confidence.", "zh": "持续的批评开始逐渐削弱她的自信。"}]
+      },
+      {
+        "word": "extinction",
+        "phonetic": "/ɪkˈstɪŋkʃən/",
+        "meanings": [{"pos": "n.", "cn": "灭绝"}],
+        "examples": [{"en": "By 2050, a quarter of the earth's species could be threatened with extinction.", "zh": "到 2050 年，地球上四分之一的物种可能会灭绝。"}],
+        "derivatives": [{"w": "extinct", "pos": "adj.", "cn": "已灭绝的"}]
+      },
+      {
+        "word": "pattern",
+        "phonetic": "/ˈpætən/",
+        "meanings": [{"pos": "n.", "cn": "模式，样式；底样"}],
+        "examples": [{"en": "Training and education follow different patterns in different regions.", "zh": "培训和教育在不同的地区遵循不同的模式。"}],
+        "collocation": ["a dress pattern 衣服的底样"]
+      },
+      {
+        "word": "outcome",
+        "phonetic": "/ˈaʊtkʌm/",
+        "meanings": [{"pos": "n.", "cn": "结果"}],
+        "examples": [{"en": "We are anxiously awaiting the outcome of their discussion.", "zh": "我们急切地等待着他们讨论的结果。"}]
+      },
+      {
+        "word": "impact",
+        "phonetic": "/ˈɪmpækt/",
+        "meanings": [{"pos": "n.", "cn": "影响"}],
+        "examples": [{"en": "We are a flash in time, but our impact is forever.", "zh": "我们只是时间长河中的一瞬闪光，但我们的影响是永恒的。"}],
+        "collocation": ["have an impact on 对……有影响"]
+      },
+      {
+        "word": "seasonal",
+        "phonetic": "/ˈsiːzənəl/",
+        "meanings": [{"pos": "adj.", "cn": "季节性的"}],
+        "examples": [{"en": "The greatest seasonal change on our planet is now under way.", "zh": "地球上最精彩的季节性变化正上演。"}]
+      },
+      {
+        "word": "experimental",
+        "phonetic": "/ɪkˌsperɪˈmentl/",
+        "meanings": [{"pos": "adj.", "cn": "实验的；试验性的"}],
+        "examples": [{"en": "There is no cure or vaccine, but some patients have been given experimental treatments.", "zh": "没有任何治疗方法或疫苗，但是一些病人接受了试验性治疗。"}]
+      },
+      {
+        "word": "favourable",
+        "phonetic": "/ˈfeɪvərəbəl/",
+        "meanings": [{"pos": "adj.", "cn": "（= favorable）有利的；赞成的，肯定的"}],
+        "examples": [{"en": "It's encouraging to receive a favourable report on one's study.", "zh": "在学习中获得肯定的反馈，这是令人鼓舞的。"}]
+      },
+      {
+        "word": "productive",
+        "phonetic": "/prəˈdʌktɪv/",
+        "meanings": [{"pos": "adj.", "cn": "多产的"}],
+        "examples": [{"en": "Once the plants have produced fruit, they become less productive.", "zh": "一旦结过果实，这些植物就变得少产了。"}]
+      },
+      {
+        "word": "effective",
+        "phonetic": "/ɪˈfektɪv/",
+        "meanings": [{"pos": "adj.", "cn": "有效的"}],
+        "examples": [{"en": "These are effective measures.", "zh": "这些都是有效的措施。"}],
+        "derivatives": [{"w": "effect", "pos": "n.", "cn": "效应；结果"}]
+      },
+      {
+        "word": "efficient",
+        "phonetic": "/ɪˈfɪʃənt/",
+        "meanings": [{"pos": "adj.", "cn": "效率高的"}],
+        "examples": [{"en": "This new copy machine is more efficient than the old one.", "zh": "这台新复印机比那台旧的效率高。"}]
+      },
+      {
+        "word": "considerable",
+        "phonetic": "/kənˈsɪdərəbəl/",
+        "meanings": [{"pos": "adj.", "cn": "相当多的"}],
+        "examples": [{"en": "It is a considerable sum of money.", "zh": "那是一笔数量可观的钱。"}]
+      },
+      {
+        "word": "massive",
+        "phonetic": "/ˈmæsɪv/",
+        "meanings": [{"pos": "adj.", "cn": "巨大的，大规模的，庞大的"}],
+        "examples": [{"en": "There are massive mineral resources in the west part of China.", "zh": "中国西部地区有着大量的矿产资源。"}],
+        "derivatives": [{"w": "mass", "pos": "n.", "cn": "团；大量"}, {"w": "massively", "pos": "adv.", "cn": "大规模地"}]
+      },
+      {
+        "word": "immense",
+        "phonetic": "/ɪˈmens/",
+        "meanings": [{"pos": "adj.", "cn": "巨大的"}],
+        "examples": [{"en": "They plunged into their work with immense zeal.", "zh": "他们以极大的热情投入工作。"}]
+      },
+      {
+        "word": "maximal",
+        "phonetic": "/ˈmæksɪməl/",
+        "meanings": [{"pos": "adj.", "cn": "最大的"}],
+        "examples": [{"en": "She obtained maximal benefit from the course.", "zh": "她从该课程中获益极大。"}]
+      },
+      {
+        "word": "minimal",
+        "phonetic": "/ˈmɪnɪməl/",
+        "meanings": [{"pos": "adj.", "cn": "最小的，极小的"}],
+        "examples": [{"en": "I stayed with friends, so my expenses were minimal.", "zh": "我住在朋友家，所以我的花费极小。"}]
+      },
+      {
+        "word": "optimal",
+        "phonetic": "/ˈɒptɪməl/",
+        "meanings": [{"pos": "adj.", "cn": "最佳的，最理想的"}],
+        "examples": [{"en": "This is the optimal season for the growth of plants.", "zh": "这是植物生长的最佳季节。"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 40,
+    "type": "cover",
+    "title": "Chapter 3 动物保护"
+  },
+  {
+    "page_pdf": 41,
+    "page_print": "032",
+    "words": [
+      {
+        "word": "biologist",
+        "phonetic": "/baɪˈɒlədʒɪst/",
+        "meanings": [{"pos": "n.", "cn": "生物学家"}],
+        "examples": [{"en": "The biologist brought out a specimen box and showed the items one by one.", "zh": "生物学家拿出标本箱，一件一件地展示着标本。"}],
+        "derivatives": [{"w": "biology", "pos": "n.", "cn": "生物学"}]
+      },
+      {
+        "word": "zoologist",
+        "phonetic": "/zəʊˈɒlədʒɪst/",
+        "meanings": [{"pos": "n.", "cn": "动物学家"}],
+        "examples": [{"en": "The zoologist had spent a long time living with monkeys.", "zh": "这位动物学家与猴子一起生活了很长时间。"}],
+        "derivatives": [{"w": "zoology", "pos": "n.", "cn": "动物学"}]
+      },
+      {
+        "word": "ecologist",
+        "phonetic": "/iːˈkɒlədʒɪst/",
+        "meanings": [{"pos": "n.", "cn": "生态学家"}],
+        "examples": [{"en": "A contemporary ecologist once said: man lives on the earth as a guest of green plants.", "zh": "一位当代生态学家曾说：人类是作为绿色植物的客人生活在地球上的。"}],
+        "derivatives": [{"w": "ecology", "pos": "n.", "cn": "生态学"}]
+      },
+      {
+        "word": "botanist",
+        "phonetic": "/ˈbɒtənɪst/",
+        "meanings": [{"pos": "n.", "cn": "植物学家"}],
+        "examples": [{"en": "The botanist discovered many rare plants.", "zh": "这个植物学家发现了许多稀有植物。"}],
+        "derivatives": [{"w": "botany", "pos": "n.", "cn": "植物学"}]
+      },
+      {
+        "word": "mammal",
+        "phonetic": "/ˈmæməl/",
+        "meanings": [{"pos": "n.", "cn": "哺乳动物"}],
+        "examples": [{"en": "Human beings also belong to the mammal species.", "zh": "人类也属于哺乳动物。"}]
+      },
+      {
+        "word": "primate",
+        "phonetic": "/ˈpraɪmeɪt/",
+        "meanings": [{"pos": "n.", "cn": "灵长目动物"}],
+        "examples": [{"en": "Compared to body size, the primate brain is larger than that of other animals.", "zh": "相对身体大小而言，灵长目动物的大脑比其他动物的大脑都要大些。"}]
+      },
+      {
+        "word": "vertebrate",
+        "phonetic": "/ˈvɜːtɪbrɪt/",
+        "meanings": [{"pos": "n.", "cn": "脊椎动物"}],
+        "examples": [{"en": "Fish, birds and human beings are all vertebrates.", "zh": "鱼、鸟和人类都是脊椎动物。"}]
+      },
+      {
+        "word": "reptile",
+        "phonetic": "/ˈreptaɪl/",
+        "meanings": [{"pos": "n.", "cn": "爬行动物"}],
+        "examples": [{"en": "It is said that he hates reptiles.", "zh": "据说他讨厌爬行动物。"}]
+      },
+      {
+        "word": "amphibian",
+        "phonetic": "/æmˈfɪbɪən/",
+        "meanings": [{"pos": "n.", "cn": "两栖动物；水陆两用车"}, {"pos": "adj.", "cn": "两栖动物的；水陆两用的"}],
+        "examples": [{"en": "Nobody knows why amphibians are disappearing, dolphins are dying and coral is turning white.", "zh": "没有人知道为什么两栖动物正在消失，海豚正在死亡，珊瑚正在变成白色。"}]
+      },
+      {
+        "word": "carnivore",
+        "phonetic": "/ˈkɑːnɪvɔː/",
+        "meanings": [{"pos": "n.", "cn": "食肉动物"}],
+        "examples": [{"en": "Lions and tigers are carnivores.", "zh": "狮子和老虎是食肉动物。"}],
+        "memory": "字根 carn 表示\"肉（flesh）\"，vore 表示\"吞食（to devour）\"。类似地，herbivore（食草动物）中的字根 herb 表示\"草（grass）\"，folivore（食叶动物）中的字根 foli 表示\"叶（foliage）\"。含有 carn 的词又如：carnation（康乃馨），大多是粉红色的，即肉色的；大家熟悉的 carnival（狂欢节），也被译为\"嘉年华\"（根据单词的粤语音译直译），原意指在为期 40 天的大斋期前的节日（有观点认为该词来源于表示\"告别肉食\"的中世纪欧洲拉丁文语）。"
+      },
+      {
+        "word": "herbivore",
+        "phonetic": "/ˈhɜːbɪvɔː/",
+        "meanings": [{"pos": "n.", "cn": "食草动物"}],
+        "examples": [{"en": "Pandas are classified as carnivores but they mainly have a diet of an herbivore.", "zh": "大熊猫被归为食肉动物，但它们的日常主要饮食像食草动物。"}]
+      }
+    ]
+  }
+]
