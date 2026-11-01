@@ -70,15 +70,6 @@ const Plan = (() => {
 
   /* ---------- 计划页 ---------- */
   async function render(root) {
-    if (!Cloud.user) {
-      root.innerHTML = `
-        <h1>学习计划</h1>
-        <div class="card center" style="padding:34px 20px">
-          <p class="muted">登录后可设置目标分数与考试日期，系统会每天自动生成学习任务。</p>
-          <button class="btn primary" onclick="UI.showLogin()">登录 / 注册</button>
-        </div>`;
-      return;
-    }
     await Store.loadUser();
     await Store.loadWords();
     await Store.loadTasks();
@@ -188,20 +179,19 @@ const Plan = (() => {
     const date = $('#pl-date').value || null;
     const mins = +$('#pl-min').value;
     const newPerDay = pendingNew || dailyNewOf();
-    await Store.saveProfile({ target_band: band, exam_date: date, daily_minutes: mins });
-    await Store.saveSettings({ daily_new: newPerDay });
+    Store.saveProfile({ target_band: band, exam_date: date, daily_minutes: mins });
+    Store.saveSettings({ daily_new: newPerDay });
     // 计划变化，重建今日任务
-    const db = Cloud.client.database;
-    await db.from('study_tasks').delete().eq('day', todayStr());
-    await Store.loadTasks();
+    delete Store.state.tasks[todayStr()];
+    Store.loadTasks();
     UI.toast('目标已保存，今日任务已更新');
+    UI.setUserChip();
     render($('#view'));
   }
 
-  async function regen() {
-    const db = Cloud.client.database;
-    await db.from('study_tasks').delete().eq('day', todayStr());
-    await Store.loadTasks();
+  function regen() {
+    delete Store.state.tasks[todayStr()];
+    Store.loadTasks();
     UI.toast('已重新生成今日任务');
     location.hash = '#/plan';
     render($('#view'));

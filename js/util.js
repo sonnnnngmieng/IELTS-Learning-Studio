@@ -63,8 +63,6 @@ const UI = {
     clearTimeout(this.toastTimer);
     this.toastTimer = setTimeout(() => { t.style.display = 'none'; }, ms || 2200);
   },
-  showLogin() { $('#login-mask').style.display = 'grid'; },
-  closeLogin() { $('#login-mask').style.display = 'none'; },
   toggleDrawer(force) {
     const open = force != null ? force : !$('#sidebar').classList.contains('open');
     $('#sidebar').classList.toggle('open', open);
@@ -99,20 +97,23 @@ const UI = {
     });
   },
   showUserMenu() {
-    if (!Cloud.user) return this.showLogin();
     UI.sheet([
-      { label: Cloud.user.name || '我的账号', plain: true },
-      { label: '个人中心 / 目标设置', onClick: () => { location.hash = '#/profile'; } },
+      { label: '目标与个人中心', onClick: () => { location.hash = '#/profile'; } },
       { label: '学习记录', onClick: () => { location.hash = '#/records'; } },
-      { label: '退出登录', danger: true, onClick: () => Auth.signOut() },
+      { label: '导出学习数据（备份）', onClick: () => { Store.exportData(); UI.toast('备份文件已下载，换设备时可在个人中心导入'); } },
+      { label: '清空本地学习数据', danger: true, onClick: () => {
+        if (confirm('确定清空吗？所有单词进度、任务和统计都会被删除，且无法恢复。建议先导出备份。')) {
+          Store.resetData(); UI.toast('已清空'); location.hash = '#/home'; setTimeout(() => location.reload(), 400);
+        }
+      } },
     ]);
   },
   setUserChip() {
-    const u = Cloud.user;
-    const name = u ? (u.name || (u.phone ? u.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2') : u.email || '学习者')) : '未登录';
-    $('#user-name').textContent = name;
-    $('#user-sub').textContent = u ? '进度已云端同步' : '点击登录同步进度';
-    $('#avatar').textContent = u ? (name[0] || 'U').toUpperCase() : '?';
+    const p = (typeof Store !== 'undefined' && Store.profile) || {};
+    const left = (typeof Store !== 'undefined') ? Store.examCountdown() : null;
+    $('#avatar').textContent = p.target_band ? p.target_band : '雅';
+    $('#user-name').textContent = p.target_band ? `目标 ${p.target_band} 分` : '设置学习目标';
+    $('#user-sub').textContent = left != null && left >= 0 ? `距考试 ${left} 天` : '考试日期未设置';
   },
   ring(pct, size) {
     size = size || 78;

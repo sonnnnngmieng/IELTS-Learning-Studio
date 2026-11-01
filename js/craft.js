@@ -10,6 +10,21 @@ const Craft = (() => {
     { name: '手织杯垫', kind: '织', verb: '织', unit: '针', cols: 10, color: '#c9a227', color2: '#f3e3b4', emoji: '🧶' },
     { name: '布艺书签', kind: '缝', verb: '缝', unit: '格', cols: 8, color: '#9aa86a', color2: '#e2e6c8', emoji: '🪡' },
     { name: '拼贴画', kind: '拼', verb: '拼', unit: '块', cols: 8, color: '#cf8a72', color2: '#f3ddd4', emoji: '🧵' },
+    { name: '绒线帽', kind: '织', verb: '织', unit: '针', cols: 12, color: '#b0685c', color2: '#edcfc7', emoji: '🧣' },
+    { name: '帆布笔袋', kind: '缝', verb: '缝', unit: '格', cols: 10, color: '#7d94a8', color2: '#d7e2ea', emoji: '✂️' },
+    { name: '碎花桌布', kind: '拼', verb: '拼', unit: '块', cols: 12, color: '#a586b8', color2: '#e6dcef', emoji: '🪡' },
+    { name: '毛毡收纳篮', kind: '缝', verb: '缝', unit: '格', cols: 9, color: '#c98f4e', color2: '#f2ddc0', emoji: '🧺' },
+    { name: '流苏挂毯', kind: '织', verb: '织', unit: '针', cols: 11, color: '#6f9f8f', color2: '#d3e7e0', emoji: '🎗️' },
+    { name: '皮质钥匙扣', kind: '缝', verb: '缝', unit: '格', cols: 6, color: '#8d6e53', color2: '#e0d2c4', emoji: '🔑' },
+    { name: '拼布杯套', kind: '拼', verb: '拼', unit: '块', cols: 8, color: '#d19a6b', color2: '#f4e3cf', emoji: '☕' },
+    { name: '羊毛手套', kind: '织', verb: '织', unit: '针', cols: 9, color: '#9b7fb8', color2: '#e4dcef', emoji: '🧤' },
+    { name: '亚麻餐垫', kind: '缝', verb: '缝', unit: '格', cols: 10, color: '#87a06e', color2: '#dfe8d2', emoji: '🍽️' },
+    { name: '编织小毯', kind: '拼', verb: '拼', unit: '块', cols: 12, color: '#c47a8a', color2: '#f2dade', emoji: '🛏️' },
+    { name: '挂绳编织', kind: '织', verb: '织', unit: '针', cols: 8, color: '#5f8fa8', color2: '#d4e4ec', emoji: '🪢' },
+    { name: '布偶香囊', kind: '缝', verb: '缝', unit: '格', cols: 7, color: '#b8905f', color2: '#ecdcc4', emoji: '🌿' },
+    { name: '彩线手环', kind: '拼', verb: '拼', unit: '块', cols: 6, color: '#d98f5f', color2: '#f5dfcd', emoji: '📿' },
+    { name: '针织围脖', kind: '织', verb: '织', unit: '针', cols: 11, color: '#7f9eb3', color2: '#dbe7ee', emoji: '🧣' },
+    { name: '帆布拖鞋', kind: '缝', verb: '缝', unit: '格', cols: 9, color: '#a3a06f', color2: '#e6e4c9', emoji: '🥿' },
   ];
 
   function craftOf(chId, idx) {
@@ -97,7 +112,7 @@ const Craft = (() => {
   /* ================= 页面 ================= */
   async function render(root, seg) {
     await Store.loadWords();
-    if (Cloud.user && !Store.state.ready) await Store.loadUser();
+    if (!Store.state.ready) await Store.loadUser();
     if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
     const openId = (seg && seg[0] === 'item' && seg[1]) ? +seg[1] : null;
 
@@ -122,7 +137,7 @@ const Craft = (() => {
         ${working.map(({ c, st }) => `<div class="craft-card" onclick="location.hash='#/craft/item/${c.id}'">
           <div class="ct">${c.craft.emoji} ${esc(c.craft.name)}</div>
           <div class="cs">第 ${c.id} 单元 · ${esc(c.title)} · ${st.done}/${st.total} ${c.craft.unit}</div>
-          <div class="craft-stage">${art(c.id, c.id - 1)}</div>
+          <div class="craft-stage">${art(c.id, c.id - 1, { limit: 150 })}</div>
           <div class="progress" style="margin:10px 0 4px"><i style="width:${st.pct}%"></i></div>
           <div class="row between tiny"><span class="dim">${st.pct}%</span><span class="${st.wrongTotal ? 'pill red' : 'dim'}">${st.wrongTotal ? st.wrongTotal + ' 个线头' : '没有线头'}</span></div>
         </div>`).join('')}

@@ -30,7 +30,7 @@ const Game = (() => {
   /* ---------- 关卡地图 ---------- */
   async function render(root, seg) {
     await Store.loadWords();
-    if (Cloud.user && !Store.state.ready) await Store.loadUser();
+    if (!Store.state.ready) await Store.loadUser();
     if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
     if (seg && seg[0] === 'play' && seg[1] != null && seg[2] != null) return play(root, +seg[1], +seg[2]);
 

@@ -1,15 +1,10 @@
 /* 首页：每日学习空间（今日内容 + 任务 + 提醒 + 推荐 + 成就 + 总结 + 励志） */
 const Dashboard = (() => {
   async function render(root) {
-    const user = Cloud.user;
-    if (user) {
-      await Store.loadWords();
-      await Store.loadUser();
-      await Store.loadTasks();
-      await Daily.prepareUserStats();
-    } else {
-      await Store.loadWords();
-    }
+    await Store.loadWords();
+    await Store.loadUser();
+    await Store.loadTasks();
+    await Daily.prepareUserStats();
 
     const p = Store.profile;
     const left = Store.examCountdown();
@@ -28,21 +23,20 @@ const Dashboard = (() => {
     root.innerHTML = `
       <section class="hero">
         <div class="greet">
-          <h1>${greeting()}${user ? '，' + esc(nickname()) : ''}</h1>
+          <h1>${greeting()}，同学</h1>
           <p>${new Date().toLocaleDateString('zh-CN', { month: 'long', day: 'numeric', weekday: 'long' })}
-            ${p.target_band ? ` · 目标 ${p.target_band} 分` : ''}
+            ${p.target_band ? ` · 目标 ${p.target_band} 分` : ' · <a href="#/profile" style="text-decoration:underline">设置目标 →</a>'}
             ${left != null && left >= 0 ? ` · 距考试 <b>${left}</b> 天` : ''}</p>
-          ${user ? `<p class="tiny" style="margin:6px 0 0;color:var(--ink-2)">${reminderText(remain, tasks.length, left)}</p>` : ''}
+          <p class="tiny" style="margin:6px 0 0;color:var(--ink-2)">${reminderText(remain, tasks.length, left)}</p>
         </div>
-        ${user ? UI.ring(pct) : ''}
-        ${user ? `<div style="min-width:118px">
+        ${UI.ring(pct)}
+        <div style="min-width:118px">
           <div class="tiny dim">今日任务</div>
           <div style="font-size:15px;font-weight:500">${doneCnt} / ${tasks.length} 已完成</div>
           <div class="tiny dim" style="margin-top:2px">${secs ? '已学习 ' + fmtMin(Math.round(secs / 60)) : '还没开始，先做一件小事'}</div>
-        </div>` : `<button class="btn primary" onclick="UI.showLogin()">登录 / 注册</button>`}
+        </div>
       </section>
 
-      ${!user ? guestBlock() : `
       <section class="kpis">
         <div class="kpi"><div class="n">${stats.due}</div><div class="l">待复习</div></div>
         <div class="kpi"><div class="n">${stats.mastered}</div><div class="l">已掌握</div></div>
@@ -58,7 +52,7 @@ const Dashboard = (() => {
         <div class="card-title"><h3>今日任务</h3><a class="link-btn" href="#/plan">调整计划 →</a></div>
         ${tasks.length ? tasks.map(t => `
           <div class="task-item">
-            <span class="task-check ${t.status === 'done' ? 'done' : ''}" onclick="Dashboard.toggle(${t.id})">${t.status === 'done' ? '✓' : ''}</span>
+            <span class="task-check ${t.status === 'done' ? 'done' : ''}" onclick="Dashboard.toggle('${jss(t.id)}')">${t.status === 'done' ? '✓' : ''}</span>
             <div class="task-main">
               <div class="t ${t.status === 'done' ? 'done' : ''}">${esc(t.title)}</div>
               <div class="s">${Plan.moduleName(t.module)} · 约 ${t.est_min} 分钟</div>
@@ -79,9 +73,6 @@ const Dashboard = (() => {
       ${Daily.summary() || ''}
       ${Daily.achievementsHTML()}
       ${motivation}
-      `}
-
-      ${!user ? feed + motivation : ''}
     `;
     window.scrollTo(0, 0);
   }
@@ -119,14 +110,6 @@ const Dashboard = (() => {
       </div>`;
   }
 
-  function nickname() {
-    const u = Cloud.user || {};
-    if (u.name) return u.name;
-    if (u.phone) return u.phone.slice(-4) + ' 同学';
-    if (u.email) return u.email.split('@')[0];
-    return '同学';
-  }
-
   function reminderText(remain, total, left) {
     if (!total) return '先去「学习计划」设定目标，系统会每天为你排任务。';
     const h = new Date().getHours();
@@ -160,30 +143,10 @@ const Dashboard = (() => {
     return recs.slice(0, 3);
   }
 
-  function guestBlock() {
-    return `
-      <div class="card">
-        <h3>每天打开就知道学什么</h3>
-        <p class="muted tiny">登录后会获得：每日大/小作文精讲、今日重点单词、听力材料、口语话题、按目标分生成的任务，以及你自己的学习进度与成就。</p>
-        <div class="grid g2" style="margin-top:8px">
-          <div class="card flat" style="margin:0;cursor:pointer" onclick="location.hash='#/vocab'">
-            <h4>词汇</h4><p class="muted tiny" style="margin:0">词根 + 双例句 + 双发音 + 间隔复习</p></div>
-          <div class="card flat" style="margin:0;cursor:pointer" onclick="location.hash='#/listening'">
-            <h4>听力</h4><p class="muted tiny" style="margin:0">逐句听写 + 句法语音解析</p></div>
-          <div class="card flat" style="margin:0;cursor:pointer" onclick="location.hash='#/writing'">
-            <h4>写作</h4><p class="muted tiny" style="margin:0">范文段落拆解 + 可迁移句型</p></div>
-          <div class="card flat" style="margin:0;cursor:pointer" onclick="location.hash='#/ai'">
-            <h4>AI 助手</h4><p class="muted tiny" style="margin:0">作文批改、表达润色、错因分析</p></div>
-        </div>
-        <button class="btn primary block" style="margin-top:12px" onclick="UI.showLogin()">登录 / 注册，开始今天的计划</button>
-      </div>`;
-  }
-
   async function toggle(id) {
-    const t = Store.tasks.find(x => x.id === id);
+    const t = (Store.tasks || []).find(x => x.id === id);
     if (!t) return;
-    await Store.toggleTask(t, t.status !== 'done');
-    await Store.loadUser();
+    Store.toggleTask(t, t.status !== 'done');
     render($('#view'));
   }
 

@@ -243,14 +243,10 @@ const Writing = (() => {
   function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
 
   async function save() {
-    if (Store.needLogin()) return;
     const body = $('#wp-body').value.trim();
     if (!body) return UI.toast('正文还是空的');
     const prompt = $('#wp-prompt').value.trim() || '未填写题目';
-    const { error } = await Cloud.client.database.from('user_notes').insert({
-      kind: 'writing', title: prompt.slice(0, 80), content: body,
-    });
-    if (error) return UI.toast('保存失败：' + (error.message || '网络异常'));
+    Store.addEvent('writing', { title: prompt.slice(0, 80), content: body });
     UI.toast('已保存，可在学习记录查看');
   }
 

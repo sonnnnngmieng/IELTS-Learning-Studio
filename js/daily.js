@@ -374,19 +374,14 @@ const Daily = (() => {
     setTimeout(() => { ta.style.display = 'none'; }, 800);
   }
 
-  /** 供首页使用：并行取用户统计 */
+  /** 供首页使用：取本地统计 */
   async function prepareUserStats() {
-    if (!Cloud.user) return;
-    const rows = await Store.history(40);
+    const rows = Store.history(40);
     Store._streak = Store.streak(rows);
-    const db = Cloud.client.database;
-    const [ls, nt] = await Promise.all([
-      db.from('listening_sessions').select('accuracy').limit(100),
-      db.from('user_notes').select('id').eq('kind', 'writing').limit(100),
-    ]);
-    Store._listenCount = (ls.data || []).length;
-    Store._bestAccuracy = (ls.data || []).reduce((a, x) => Math.max(a, x.accuracy || 0), 0);
-    Store._writingCount = (nt.data || []).length;
+    const listens = Store.eventsOf('listening', 100);
+    Store._listenCount = listens.length;
+    Store._bestAccuracy = listens.reduce((a, x) => Math.max(a, x.accuracy || 0), 0);
+    Store._writingCount = Store.eventsOf('writing', 100).length;
   }
 
   return { ensure, today, todayWords, feedHTML, motivateHTML, showStory, nextQuote, achievementsHTML, summary,

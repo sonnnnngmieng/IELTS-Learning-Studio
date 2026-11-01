@@ -1,8 +1,10 @@
-/* AI 学习助手：作文批改 / 表达润色 / 单词讲解 / 错因复盘 / 自由问答 */
+/* AI 学习助手：流式对话 + 本地助教兜底 + 快捷数据卡片 */
 const AI = (() => {
+  const KEY = 'wb_ai_chat_v1';
   let history = [];      // {role, content}
   let pending = false;
   let preset = null;
+  let aiOk = null;       // null=未探测 true=可用 false=不可用
 
   const SYSTEM = `你是中国雅思考生的学习助手，服务对象目标是 7 分以上。
 规则：
@@ -20,19 +22,33 @@ const AI = (() => {
     { key: 'plan', label: '帮我排今天的学习', tip: '告诉我你现在的时间和薄弱项' },
   ];
 
+  /* 纯本地快捷卡片（不依赖模型） */
+  const QUICK = [
+    { key: 'plan', label: '今天学什么', icon: '◫' },
+    { key: 'review', label: '错词复盘', icon: '↺' },
+    { key: 'data', label: '进度速览', icon: '◔' },
+  ];
+
+  function loadHist() {
+    try { history = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { history = []; }
+    if (!Array.isArray(history)) history = [];
+  }
+  function saveHist() {
+    try { localStorage.setItem(KEY, JSON.stringify(history.slice(-40))); } catch (e) {}
+  }
+
   async function render(root) {
-    if (!Cloud.user) {
-      root.innerHTML = `<h1>AI 学习助手</h1>
-        <div class="card center" style="padding:34px 18px">
-          <p class="muted">AI 助手需要登录后使用（模型调用由平台提供，无需自备 Key）。</p>
-          <button class="btn primary" onclick="UI.showLogin()">登录 / 注册</button></div>`;
-      return;
-    }
+    loadHist();
+    await Store.loadWords();
+    if (aiOk == null) aiOk = await Cloud.probe();
     root.innerHTML = `
       <h1>AI 学习助手</h1>
       <p class="muted" style="margin-bottom:12px">批改、讲解、复盘都可以。它给的是练习参考，不是官方评分。</p>
       <div class="chips" style="margin-bottom:10px">
         ${PRESETS.map(p => `<span class="chip" onclick="AI.usePreset('${p.key}')" title="${esc(p.tip)}">${esc(p.label)}</span>`).join('')}
+      </div>
+      <div class="chips" style="margin-bottom:10px">
+        ${QUICK.map(q => `<span class="chip soft" onclick="AI.quick('${q.key}')">${q.icon} ${esc(q.label)}</span>`).join('')}
       </div>
       <div class="ai-wrap">
         <div class="ai-log" id="ai-log"></div>
@@ -40,7 +56,8 @@ const AI = (() => {
           <textarea id="ai-input" rows="1" placeholder="问点什么，或把作文 / 句子贴进来…（Enter 发送，Shift+Enter 换行）"></textarea>
           <button class="btn primary" id="ai-send" onclick="AI.send()">发送</button>
         </div>
-      </div>`;
+      </div>
+      ${history.length ? `<p class="tiny muted" style="margin-top:8px"><a onclick="AI.clearHist()" style="cursor:pointer">清空对话记录</a>（对话保存在本设备）</p>` : ''}`;
     paintLog();
     const ta = $('#ai-input');
     ta.addEventListener('keydown', e => {
@@ -60,13 +77,24 @@ const AI = (() => {
 · 把口语答案改得更自然（不是换成更难的词）
 · 听你描述听不懂的句子，判断是词汇、连读还是理解问题
 
-想从哪一项开始？</div></div>`;
+${aiOk === false ? '（当前 AI 服务不可用，我会先用本地助教回答：讲词、排计划、错词复盘、作文初诊都能做。）' : '想从哪一项开始？'}</div></div>`;
       return;
     }
     log.innerHTML = history.map(m => `<div class="msg ${m.role === 'user' ? 'user' : 'ai'}">
       <span class="who">${m.role === 'user' ? '我' : 'AI'}</span>
-      <div class="text">${esc(m.content)}</div></div>`).join('');
+      <div class="text">${fmtReply(m.content)}</div></div>`).join('');
     log.scrollTop = log.scrollHeight;
+  }
+
+  function fmtReply(s) {
+    return esc(s).replace(/\n/g, '<br>');
+  }
+
+  function clearHist() {
+    history = [];
+    saveHist();
+    paintLog();
+    UI.toast('对话已清空');
   }
 
   function usePreset(key) {
@@ -84,6 +112,16 @@ const AI = (() => {
     ta.value = map[key] || '';
     ta.focus();
     ta.setSelectionRange(ta.value.length, ta.value.length);
+  }
+
+  /** 纯本地快捷卡片，不经模型 */
+  function quick(kind) {
+    const map = { plan: () => Tutor.planToday(), review: () => Tutor.mistakeReview(), data: () => Tutor.overview() };
+    const text = (map[kind] || Tutor.fallback)();
+    history.push({ role: 'user', content: QUICK.find(q => q.key === kind).label });
+    history.push({ role: 'assistant', content: text });
+    saveHist();
+    paintLog();
   }
 
   async function send() {
@@ -107,17 +145,23 @@ const AI = (() => {
     log.scrollTop = log.scrollHeight;
     const box = holder.querySelector('#ai-stream');
     let full = '';
+    let usedLocal = false;
     try {
-      const messages = history.slice(-8).map(m => ({ role: m.role, content: m.content }));
+      const messages = history.slice(-9, -1).map(m => ({ role: m.role, content: m.content }));
       full = await Cloud.chat(messages, {
         system: SYSTEM,
         onDelta: (d, all) => { box.textContent = all; log.scrollTop = log.scrollHeight; },
       });
-      history.push({ role: 'assistant', content: full });
+      if (aiOk !== true) { aiOk = true; }
     } catch (e) {
-      box.textContent = '出错了：' + (e.message || '请稍后重试');
-      history.pop();
+      // 云端 AI 不可用 → 本地助教兜底
+      usedLocal = true;
+      full = Tutor.answer(history[history.length - 1].content);
+      box.innerHTML = `<div class="tiny" style="color:var(--amber);margin-bottom:6px">AI 服务暂时不可用，以下是本地助教的回答：</div>${fmtReply(full)}`;
     }
+    if (!usedLocal) box.textContent = full;
+    history.push({ role: 'assistant', content: full });
+    saveHist();
     pending = false;
     paintLog();
   }
@@ -196,5 +240,5 @@ const AI = (() => {
     }
   }
 
-  return { render, send, usePreset, explainWord, reviewText, reviewEssay, polishSpeaking, askPreset };
+  return { render, send, usePreset, quick, clearHist, explainWord, reviewText, reviewEssay, polishSpeaking, askPreset };
 })();

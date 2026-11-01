@@ -29,11 +29,7 @@ const Listening = (() => {
     await ensure();
     const mats = allMaterials();
     const s = Store.stats();
-    let recent = [];
-    if (Cloud.user) {
-      const { data } = await Cloud.client.database.from('listening_sessions').select('*').order('created_at', { ascending: false }).limit(5);
-      recent = data || [];
-    }
+    let recent = Store.eventsOf('listening', 5);
     const avgAcc = recent.length ? Math.round(recent.reduce((a, b) => a + (b.accuracy || 0), 0) / recent.length) : null;
 
     root.innerHTML = `
@@ -354,18 +350,17 @@ const Listening = (() => {
   }
 
   async function saveSession() {
-    if (!Cloud.user) { UI.showLogin(); return; }
     const tags = $$('#tags .chip.on').map(c => c.dataset.k);
     const s = stats;
     const avg = s.diffs.length ? Math.round(s.diffs.reduce((a, b) => a + b, 0) / s.diffs.length) : 0;
-    const { error } = await Cloud.client.database.from('listening_sessions').insert({
-      drill_id: cur.id, mode: 'intensive', accuracy: avg, missed_words: s.missed,
+    const secs = Math.round((Date.now() - s.started) / 1000);
+    Store.addEvent('listening', {
+      drill_id: cur.id, accuracy: avg, missed_words: s.missed,
       spelling_errors: s.spelling, replays: s.replays,
-      seconds: Math.round((Date.now() - s.started) / 1000), error_tags: JSON.stringify(tags),
+      seconds: secs, error_tags: tags,
     });
-    if (error) return UI.toast('保存失败：' + (error.message || '请检查网络'));
-    Store.trackStudy(Math.round((Date.now() - s.started) / 1000));
-    await Store.flushStats();
+    Store.trackStudy(secs);
+    Store.flushStats();
     UI.toast('记录已保存，可在学习记录查看');
     location.hash = '#/listening';
   }

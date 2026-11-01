@@ -10,7 +10,7 @@ const Vocab = (() => {
   /* ================= 词汇中心 ================= */
   async function render(root, sub) {
     await Store.loadWords();
-    if (Cloud.user && !Store.state.ready) await Store.loadUser();
+    if (!Store.state.ready) await Store.loadUser();
     if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
     if (sub === 'study') return renderStudy(root);
     if (sub === 'train') return renderTrain(root);
@@ -229,17 +229,14 @@ const Vocab = (() => {
   }
 
   async function star(id, btn) {
-    if (Store.needLogin()) return;
-    const on = await Store.toggleStar(id);
+    const on = Store.toggleStar(id);
     if (btn) { btn.textContent = on ? '★ 已收藏' : '☆ 收藏'; btn.classList.toggle('line', on); }
     UI.toast(on ? '已加入生词本' : '已移出生词本');
   }
 
   /* ================= 学习会话 ================= */
   async function startStudy(kind, singleId) {
-    if (!singleId && Store.needLogin()) return;
     await Store.loadWords();
-    if (Store.needLogin() && !singleId) return;
     let queue = [];
     if (singleId) queue = [Store.byId[singleId]].filter(Boolean);
     else if (kind === 'review') queue = Store.dueWords();
@@ -367,7 +364,6 @@ const Vocab = (() => {
   }
 
   async function startTrain(mode) {
-    if (Store.needLogin()) return;
     await Store.loadWords();
     const learned = Object.values(Store.progress).map(r => Store.byId[r.word_id]).filter(Boolean);
     let pool = learned.length >= 8 ? learned : Store.words;
@@ -608,7 +604,7 @@ const Vocab = (() => {
 
   async function renderDictation(root) {
     await Store.loadWords();
-    if (Cloud.user && !Store.state.ready) await Store.loadUser();
+    if (!Store.state.ready) await Store.loadUser();
     if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
     if (!dict || dict.idx >= dict.picks.length) dictStart();
     paintDict(root);

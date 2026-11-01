@@ -33,8 +33,8 @@
       <button class="icon-btn only-mobile" onclick="UI.toggleDrawer()">☰</button>
       <button class="icon-btn" onclick="location.hash='#/plan'" title="学习计划">◫</button>
       <button class="user-box" onclick="UI.showUserMenu()">
-        <span class="avatar" id="avatar">?</span>
-        <span class="ub-text"><b id="user-name">未登录</b><em id="user-sub">点击登录同步进度</em></span>
+        <span class="avatar" id="avatar">雅</span>
+        <span class="ub-text"><b id="user-name">设置学习目标</b><em id="user-sub">考试日期未设置</em></span>
       </button>
     </div>
   </header>
@@ -60,9 +60,9 @@
       <a href="#/ai" data-nav="ai"><i>✦</i><span>AI 助手</span></a>
     </nav>
     <div class="side-foot">
-      <button class="user-box" onclick="UI.showUserMenu()" style="width:100%">
-        <span class="avatar">?</span>
-        <span class="ub-text"><b>账号与目标</b><em>个人中心 / 退出登录</em></span>
+      <button class="user-box" onclick="location.hash='#/profile'" style="width:100%">
+        <span class="avatar" id="avatar-m">雅</span>
+        <span class="ub-text"><b>目标与个人中心</b><em>目标分数 / 考试日期 / 数据备份</em></span>
       </button>
     </div>
   </aside>
@@ -89,40 +89,7 @@
   <a href="#/craft" data-mob="craft"><span>✿</span>手工柜</a>
 </nav>
 
-<!-- 登录 -->
-<div class="modal-mask" id="login-mask" style="display:none">
-  <div class="modal login-modal">
-    <button class="modal-close" onclick="UI.closeLogin()">×</button>
-    <h2>登录 / 注册</h2>
-    <p class="muted tiny">登录后单词进度、复习计划、错针记录、手工成品全部云端同步，换设备也接着做。</p>
-    <div class="tabs" id="login-tabs">
-      <button class="tab active" data-lt="phone" onclick="Auth.switchTab('phone')">手机验证码</button>
-      <button class="tab" data-lt="email" onclick="Auth.switchTab('email')">邮箱验证码</button>
-    </div>
-    <div id="login-phone" class="login-pane">
-      <input id="ph-input" type="tel" inputmode="numeric" maxlength="11" placeholder="请输入 11 位手机号" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'phone')">
-      <div class="code-row">
-        <input id="ph-code" type="text" inputmode="numeric" maxlength="6" placeholder="6 位验证码" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'phone')">
-        <button class="btn ghost" id="ph-send" onclick="Auth.sendPhoneCode()">获取验证码</button>
-      </div>
-      <button class="btn primary block" id="ph-submit" onclick="Auth.submitPhone()">登录 / 注册</button>
-      <p class="muted tiny" style="margin:8px 0 0">验证码 5 分钟内有效；没收到可以稍等 60 秒后重发。</p>
-    </div>
-    <div id="login-email" class="login-pane" style="display:none">
-      <input id="em-input" type="email" placeholder="请输入邮箱" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'email')">
-      <div class="code-row">
-        <input id="em-code" type="text" inputmode="numeric" maxlength="6" placeholder="6 位验证码" oninput="Auth.clearErr()" onkeydown="Auth.enter(event,'email')">
-        <button class="btn ghost" id="em-send" onclick="Auth.sendEmailCode()">获取验证码</button>
-      </div>
-      <button class="btn primary block" id="em-submit" onclick="Auth.submitEmail()">登录 / 注册</button>
-      <p class="muted tiny" style="margin:8px 0 0">验证码会发到邮箱，可能在垃圾邮件里。</p>
-    </div>
-    <div class="divider"><span>或</span></div>
-    <button class="btn wechat block" onclick="Auth.loginWechat()">微信扫码 / 快捷登录</button>
-    <p id="login-err" class="err"></p>
-    <p class="muted tiny">未注册的手机号 / 邮箱验证通过后自动创建账号。</p>
-  </div>
-</div>
+<!-- 登录已移除：所有数据保存在本设备，无需注册 -->
 
 <div id="toast" class="toast" style="display:none"></div>
 <div class="drawer-mask" id="drawer-mask" onclick="UI.toggleDrawer()"></div>
@@ -150,6 +117,7 @@
 <script src="js/reading.js"></script>
 <script src="js/speaking.js"></script>
 <script src="js/records.js"></script>
+<script src="js/tutor.js"></script>
 <script src="js/ai.js"></script>
 <script src="js/app.js"></script>
 </body>

@@ -1,27 +1,15 @@
-/* 学习记录：时间投入 / 听写正确率 / 错词排行 / 写作练习 */
+/* 学习记录：时间投入 / 听写正确率 / 错词排行 / 写作练习（本地数据） */
 const Records = (() => {
   async function render(root) {
-    if (!Cloud.user) {
-      root.innerHTML = `<h1>学习记录</h1>
-        <div class="card center" style="padding:34px 18px"><p class="muted">登录后查看你的学习数据</p>
-        <button class="btn primary" onclick="UI.showLogin()">登录 / 注册</button></div>`;
-      return;
-    }
     await Store.loadUser();
     await Store.loadWords();
-    const db = Cloud.client.database;
-    const [hist, sessions, notes] = await Promise.all([
-      Store.history(30),
-      db.from('listening_sessions').select('*').order('created_at', { ascending: false }).limit(12),
-      db.from('user_notes').select('*').order('created_at', { ascending: false }).limit(10),
-    ]);
-    const rows = hist || [];
+    const rows = Store.history(30);
     const stats = Store.stats();
     const st = Store.streak(rows);
     const totalSec = rows.reduce((a, r) => a + (r.study_seconds || 0), 0);
     const totalWords = rows.reduce((a, r) => a + (r.new_words || 0), 0);
-    const reviews = rows.reduce((a, r) => a + (r.reviews || 0), 0);
-    const sess = sessions.data || [];
+    const sess = Store.eventsOf('listening', 12);
+    const notes = Store.eventsOf('writing', 10);
     const avgAcc = sess.length ? Math.round(sess.reduce((a, s) => a + (s.accuracy || 0), 0) / sess.length) : null;
 
     // 近 14 天柱状
@@ -39,8 +27,7 @@ const Records = (() => {
     // 错因聚合
     const tagCount = {};
     sess.forEach(s => {
-      let tags = [];
-      try { tags = JSON.parse(s.error_tags || '[]'); } catch (e) {}
+      const tags = Array.isArray(s.error_tags) ? s.error_tags : [];
       tags.forEach(t => { tagCount[t] = (tagCount[t] || 0) + 1; });
     });
     const tagRank = Object.entries(tagCount).sort((a, b) => b[1] - a[1]).slice(0, 4);
@@ -105,18 +92,18 @@ const Records = (() => {
         <div class="card-title"><h3>听力练习记录</h3></div>
         ${sess.length ? sess.map(s => `<div class="task-item">
           <span class="pill ${s.accuracy >= 85 ? 'green' : s.accuracy >= 60 ? 'amber' : 'red'}">${s.accuracy}%</span>
-          <div class="task-main"><div class="t">${esc(s.drill_id)} · ${s.mode === 'intensive' ? '精听' : '泛听'}</div>
-            <div class="s">漏听 ${s.missed_words} · 拼写 ${s.spelling_errors} · ${Math.round((s.seconds || 0) / 60)} 分钟 · ${(s.created_at || '').slice(0, 10)}</div></div>
+          <div class="task-main"><div class="t">${esc(s.drill_id)} · 精听</div>
+            <div class="s">漏听 ${s.missed_words} · 拼写 ${s.spelling_errors} · ${Math.round((s.seconds || 0) / 60)} 分钟 · ${esc(s.day || '')}</div></div>
         </div>`).join('') : '<p class="muted tiny">还没有听力记录</p>'}
       </div>
 
       <div class="card">
         <div class="card-title"><h3>写作练习</h3></div>
-        ${(notes.data || []).filter(n => n.kind === 'writing').length
-          ? (notes.data || []).filter(n => n.kind === 'writing').map(n => `<div class="task-item">
+        ${notes.length
+          ? notes.map((n, i) => `<div class="task-item">
               <div class="task-main"><div class="t">${esc((n.title || '练习').slice(0, 40))}</div>
-                <div class="s">${(n.content || '').split(/\s+/).filter(Boolean).length} 词 · ${(n.created_at || '').slice(0, 10)}</div></div>
-              <button class="btn sm soft" onclick="Records.viewNote(${n.id})">查看</button>
+                <div class="s">${(n.content || '').split(/\s+/).filter(Boolean).length} 词 · ${esc(n.day || '')}</div></div>
+              <button class="btn sm soft" onclick="Records.viewNote(${i})">查看</button>
             </div>`).join('')
           : '<p class="muted tiny">还没有保存过作文</p>'}
       </div>`;
@@ -136,13 +123,13 @@ const Records = (() => {
     return cells.join('');
   }
 
-  async function viewNote(id) {
-    const db = Cloud.client.database;
-    const { data } = await db.from('user_notes').select('*').eq('id', id).maybeSingle();
-    if (!data) return;
-    UI.openModal(`<h2>${esc((data.title || '练习').slice(0, 50))}</h2>
-      <p class="muted tiny">${(data.created_at || '').slice(0, 16).replace('T', ' ')}</p>
-      <div class="essay" style="font-size:14px">${esc(data.content || '')}</div>`, { wide: true });
+  function viewNote(idx) {
+    const notes = Store.eventsOf('writing', 10);
+    const n = notes[idx];
+    if (!n) return;
+    UI.openModal(`<h2>${esc((n.title || '练习').slice(0, 50))}</h2>
+      <p class="muted tiny">${esc(n.day || '')}</p>
+      <div class="essay" style="font-size:14px">${esc(n.content || '')}</div>`, { wide: true });
   }
 
   return { render, viewNote };
