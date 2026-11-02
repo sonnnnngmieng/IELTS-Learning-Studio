@@ -91,7 +91,8 @@ const Listening = (() => {
   }
 
   function tagLabel(k) {
-    const t = (DEEP.error_tags || []).find(x => x.key === k);
+    // 别的页面（比如学习记录）会先调到这里，此时精听数据可能还没加载
+    const t = ((DEEP && DEEP.error_tags) || []).find(x => x.key === k);
     return t ? t.label : k;
   }
 
