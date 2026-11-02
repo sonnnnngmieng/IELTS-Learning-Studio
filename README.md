@@ -4,7 +4,7 @@
 
 **无需注册登录**：打开就能学，所有进度保存在本设备浏览器（localStorage），换设备时在「个人中心 → 导出/导入备份」迁移。
 
-线上地址：https://ielts-station-86055.app.workbuddy.host/?sharecode=MUZ3NY7BPH
+线上地址：https://fengyi-song.github.io/IELTS-Learning-Studio/
 
 ---
 
