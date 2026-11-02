@@ -69,13 +69,13 @@ const ChangeLog = (() => {
           <h3>当前版本 <span style="color:var(--brand)">v${esc(VER.ver)}</span></h3>
           <span class="pill ${fresh ? 'amber' : 'green'}">${fresh ? '有 ' + fresh + ' 条没看过' : '已是最新'}</span>
         </div>
-        <p class="muted tiny" style="margin:0 0 10px">构建号 ${esc(VER.build)} · ${esc(VER.date)} 发布</p>
+        <p class="muted tiny" style="margin:0 0 10px">${esc(VER.date)} 发布</p>
         <div class="root-box" style="margin:0">
-          <div class="root-logic">更新只替换网页代码，你的学习进度、错词、击掌记录都还在这台设备的浏览器里，不会被新版本覆盖。升级前还会自动留一份快照，万一不对可以退回去。</div>
+          <div class="root-logic">更新只换页面，学习进度、错词、击掌记录都还在；升级前会顺手留一份备份。</div>
         </div>
         <div class="row wrap" style="margin-top:12px">
           <button class="btn sm" onclick="ChangeLog.jumpProfile()">数据备份 / 恢复</button>
-          <button class="btn sm soft" onclick="ChangeLog.reload()">强制拉取最新版</button>
+          <button class="btn sm soft" onclick="ChangeLog.reload()">刷新到最新</button>
         </div>
       </div>
 
