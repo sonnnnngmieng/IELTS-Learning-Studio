@@ -1,0 +1,3232 @@
+{
+ "calendar": {
+  "us": "/ˈkælɪndər/",
+  "def_en": "a chart or system that shows the days, weeks and months of a year",
+  "root": {
+   "prefix": "calend-(<拉丁 kalendae 每月初一，源自 calare 宣告)",
+   "base": "-ar(名词后缀，表事物)",
+   "suffix": "",
+   "logic": "calend(宣告→每月初一)+ar(事物)→ 记录每月初一的账本 → 日历、历法",
+   "note": "古罗马人在每月初一宣告节庆与债务，故 kalendae 意为“宣告日”。"
+  },
+  "ex2": {
+   "en": "Many international students now mark assignment deadlines on a shared online calendar to avoid missing submissions.",
+   "zh": "如今许多留学生把作业截止日期标在共享的电子日历上，以免错过提交。",
+   "note": "mark sth on a calendar 把……标在日历上；lunar/solar calendar 阴历/阳历。听力 Section 1 校园场景常考。"
+  },
+  "syn": [
+   "timetable",
+   "schedule",
+   "almanac"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "calendrical",
+    "pos": "adj.",
+    "cn": "历法的"
+   }
+  ],
+  "use": "听力 Section 1 · 写作（校园生活）"
+ },
+ "deforest": {
+  "us": "/ˌdiːˈfɔːrɪst/",
+  "def_en": "to cut down or clear all the trees from a large area of land",
+  "root": {
+   "prefix": "de-(去除，取消)",
+   "base": "forest(森林)",
+   "suffix": "",
+   "logic": "de(去除)+forest(森林)→ 把森林去掉 → 砍伐森林",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Several South American countries have deforested vast areas of rainforest to make room for cattle ranching.",
+   "zh": "几个南美国家砍伐了大片雨林，为养牛业腾出土地。",
+   "note": "及物动词，主语多为人或国家；deforestation 是更常见的名词形式。阅读（环境）高频。"
+  },
+  "syn": [
+   "clear-cut",
+   "log",
+   "denude"
+  ],
+  "ant": [
+   "afforest",
+   "reforest",
+   "replant"
+  ],
+  "fam": [
+   {
+    "w": "deforestation",
+    "pos": "n.",
+    "cn": "毁林，滥伐森林"
+   },
+   {
+    "w": "forested",
+    "pos": "adj.",
+    "cn": "覆盖森林的"
+   }
+  ],
+  "use": "阅读（环境）· 写作 Task 2"
+ },
+ "dusk": {
+  "us": "/dʌsk/",
+  "def_en": "the time just before night when the light has almost gone",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：dusk 读音短促下沉，像太阳“咚”地沉下去，天色转暗 → 黄昏",
+   "note": "词源存疑：以下为助记联想，非严格词源。古英语作 dox/dusc，来源不明，一说与“暗色、尘土”有关。"
+  },
+  "ex2": {
+   "en": "Bats leave their rocky caves at dusk to hunt insects over the calm surface of the lake.",
+   "zh": "蝙蝠在黄昏时离开岩洞，在平静的湖面上捕食昆虫。",
+   "note": "at dusk 在黄昏（介词用 at，不用 in）；反义 at dawn。听力 Section 4 动物类讲座常出现。"
+  },
+  "syn": [
+   "twilight",
+   "nightfall",
+   "sundown"
+  ],
+  "ant": [
+   "dawn",
+   "daybreak"
+  ],
+  "fam": [
+   {
+    "w": "dusky",
+    "pos": "adj.",
+    "cn": "昏暗的；暗色的"
+   }
+  ],
+  "use": "阅读（动物/自然）· 听力 Section 4"
+ },
+ "eclipse": {
+  "us": "/ɪˈklɪps/",
+  "def_en": "an occasion when one planet or moon blocks the light of another",
+  "root": {
+   "prefix": "ec-(<希腊 ek- 向外，离开)",
+   "base": "lips(<希腊 leipein 离开、舍弃)",
+   "suffix": "-e(希腊名词词尾)",
+   "logic": "ek(离开)+leipein(舍弃)→ 天体“离开”了原来的位置、失去光亮 → 食",
+   "note": "古希腊人以“天体放弃其位置”来解释日月食。"
+  },
+  "ex2": {
+   "en": "Thousands of amateur astronomers travelled to the remote desert to watch the total solar eclipse.",
+   "zh": "数千名天文爱好者前往偏远的沙漠观看日全食。",
+   "note": "solar/lunar eclipse 日食/月食；in eclipse 处于食相；引申义“黯然失色”。阅读（天文）常见。"
+  },
+  "syn": [
+   "occultation",
+   "obscuration"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "阅读（天文/自然科学）"
+ },
+ "fertile": {
+  "us": "/ˈfɜːrtl/",
+  "def_en": "able to produce good crops, or able to produce many young",
+  "root": {
+   "prefix": "",
+   "base": "fer(带来，承载，拉丁 ferre)",
+   "suffix": "-tile(形容词后缀，能……的)",
+   "logic": "fer(承载)+tile(能……的)→ 能承载果实的 → 肥沃的、多产的",
+   "note": "同根：transfer 转移、confer 赋予、fertility 肥力。"
+  },
+  "ex2": {
+   "en": "Volcanic ash made the surrounding fields so fertile that farmers harvested three crops a year.",
+   "zh": "火山灰使周围的田地极为肥沃，农民一年能收三季作物。",
+   "note": "fertile soil/land 肥沃的土壤/土地；fertile imagination 丰富的想象力。阅读（农业）高频。"
+  },
+  "syn": [
+   "productive",
+   "rich",
+   "fruitful"
+  ],
+  "ant": [
+   "barren",
+   "infertile",
+   "sterile"
+  ],
+  "fam": [
+   {
+    "w": "fertility",
+    "pos": "n.",
+    "cn": "肥沃；生育力"
+   },
+   {
+    "w": "fertilise",
+    "pos": "v.",
+    "cn": "施肥"
+   },
+   {
+    "w": "fertiliser",
+    "pos": "n.",
+    "cn": "肥料"
+   }
+  ],
+  "use": "阅读（农业/生物）· 写作 Task 2"
+ },
+ "fertilise": {
+  "us": "/ˈfɜːrtəlaɪz/",
+  "def_en": "to put substances into soil or on plants so that they grow well",
+  "root": {
+   "prefix": "",
+   "base": "fertil(肥沃的，源自拉丁 ferre 承载)",
+   "suffix": "-ise(动词后缀，使成为)",
+   "logic": "fertil(肥沃)+ise(使……)→ 使土地肥沃 → 施肥",
+   "note": "美式拼写 fertilize；名词 fertiliser = fertilizer。"
+  },
+  "ex2": {
+   "en": "Farmers who fertilise their fields too heavily often pollute nearby rivers with chemical nitrogen runoff.",
+   "zh": "施肥过量的农民常使含氮的地表径流污染附近的河流。",
+   "note": "fertilise the soil/lawn 给土壤/草坪施肥；heavy fertilising 过量施肥。阅读（农业/环境）。"
+  },
+  "syn": [
+   "feed",
+   "enrich",
+   "nourish"
+  ],
+  "ant": [
+   "deplete"
+  ],
+  "fam": [
+   {
+    "w": "fertiliser",
+    "pos": "n.",
+    "cn": "肥料"
+   },
+   {
+    "w": "fertility",
+    "pos": "n.",
+    "cn": "肥沃；繁殖力"
+   },
+   {
+    "w": "fertilisation",
+    "pos": "n.",
+    "cn": "施肥；受精"
+   }
+  ],
+  "use": "阅读（农业/环境）"
+ },
+ "heaven": {
+  "us": "/ˈhevən/",
+  "def_en": "the place where God is believed to live, or a very pleasant situation",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：heaven 与 heave(举起)形近——抬头“举起”目光所见的穹顶 → 天空 → 天堂",
+   "note": "词源存疑：以下为助记联想，非严格词源。古英语 heofon 来源不明，一说与“覆盖、天穹”的古老词根有关。"
+  },
+  "ex2": {
+   "en": "For a keen retired gardener, a quiet afternoon among the flower beds is absolute heaven.",
+   "zh": "对热爱园艺的人来说，在花坛间度过一个安静的下午简直是天堂。",
+   "note": "口语中表“极乐、太舒服了”；the heavens 天空；Good heavens! 表惊讶。听力 Section 1 日常对话。"
+  },
+  "syn": [
+   "paradise",
+   "bliss",
+   "ecstasy"
+  ],
+  "ant": [
+   "hell"
+  ],
+  "fam": [
+   {
+    "w": "heavenly",
+    "pos": "adj.",
+    "cn": "天堂的；美妙的"
+   }
+  ],
+  "use": "听力 Section 1 · 口语 Part 1"
+ },
+ "lunar": {
+  "us": "/ˈluːnər/",
+  "def_en": "relating to the moon, or to a system of months based on the moon",
+  "root": {
+   "prefix": "",
+   "base": "lun(月亮，拉丁 luna)",
+   "suffix": "-ar(形容词后缀)",
+   "logic": "lun(月亮)+ar(……的)→ 与月亮有关的 → 月亮的、阴历的",
+   "note": "lunatic 同源，古人认为月相变化会使人发狂。"
+  },
+  "ex2": {
+   "en": "The Chinese New Year falls on the first day of the first month of the lunar calendar.",
+   "zh": "中国新年落在阴历正月的第一天。",
+   "note": "lunar calendar 阴历；lunar eclipse 月食；lunar surface 月球表面。中西方节日对比类阅读常考。"
+  },
+  "syn": [],
+  "ant": [
+   "solar"
+  ],
+  "fam": [
+   {
+    "w": "lunatic",
+    "pos": "adj./n.",
+    "cn": "疯狂的（人）"
+   }
+  ],
+  "use": "阅读（天文/文化）· 听力 Section 3"
+ },
+ "paradise": {
+  "us": "/ˈpærədaɪs/",
+  "def_en": "a perfect place where everyone is happy, or a place of great beauty",
+  "root": {
+   "prefix": "para-(<古波斯 pairi 周围)",
+   "base": "dise(<古波斯 daēza 墙)",
+   "suffix": "",
+   "logic": "pairi(周围)+daēza(墙)→ 围墙环绕的园林 → 乐园 → 天堂",
+   "note": "经希腊语 paradeisos 进入英语，原指波斯王家的围墙园林。"
+  },
+  "ex2": {
+   "en": "The island, with its white sand and warm sea, has become a paradise for divers.",
+   "zh": "这座岛有白沙与温暖的海水，已成为潜水者的乐园。",
+   "note": "a paradise for... ……的天堂/乐园；常与 for 连用表示“适合某类人”。阅读（旅游/地理）。"
+  },
+  "syn": [
+   "heaven",
+   "utopia",
+   "eden"
+  ],
+  "ant": [
+   "hell",
+   "inferno"
+  ],
+  "fam": [],
+  "use": "阅读（旅游/地理）· 口语 Part 2"
+ },
+ "solar": {
+  "us": "/ˈsoʊlər/",
+  "def_en": "relating to the sun, or powered by the energy of the sun",
+  "root": {
+   "prefix": "",
+   "base": "sol(太阳，拉丁 sol)",
+   "suffix": "-ar(形容词后缀)",
+   "logic": "sol(太阳)+ar(……的)→ 太阳的；用太阳能的",
+   "note": "同根：solstice 至日（太阳停住）、parasol 阳伞。"
+  },
+  "ex2": {
+   "en": "The new campus library is heated by solar panels installed on its wide south-facing roof.",
+   "zh": "新校园图书馆由安装在朝南宽屋顶上的太阳能板供暖。",
+   "note": "solar energy/system/panel 太阳能/太阳系/太阳能板。阅读（能源/环境）高频。"
+  },
+  "syn": [
+   "sun-powered",
+   "photovoltaic"
+  ],
+  "ant": [
+   "lunar"
+  ],
+  "fam": [
+   {
+    "w": "solar-powered",
+    "pos": "adj.",
+    "cn": "太阳能驱动的"
+   }
+  ],
+  "use": "阅读（能源/环境）· 写作 Task 2"
+ },
+ "sunrise": {
+  "us": "/ˈsʌnraɪz/",
+  "def_en": "the time in the morning when the sun first appears",
+  "root": {
+   "prefix": "sun(太阳)",
+   "base": "rise(升起)",
+   "suffix": "",
+   "logic": "sun(太阳)+rise(升起)→ 太阳升起之时 → 日出",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Birdwatchers gather on the cliff an hour before sunrise, when the forest is at its loudest.",
+   "zh": "观鸟者在日出前一小时聚集在悬崖上，那时森林里的鸟声最响。",
+   "note": "at sunrise 在日出时；before/after sunrise 日出前/后。听力 Section 2 自然旅游场景。"
+  },
+  "syn": [
+   "daybreak",
+   "dawn",
+   "sunup"
+  ],
+  "ant": [
+   "sunset",
+   "dusk"
+  ],
+  "fam": [],
+  "use": "听力 Section 2（旅游/自然）"
+ },
+ "sunset": {
+  "us": "/ˈsʌnset/",
+  "def_en": "the time in the evening when the sun disappears below the horizon",
+  "root": {
+   "prefix": "sun(太阳)",
+   "base": "set(落下，沉下)",
+   "suffix": "",
+   "logic": "sun(太阳)+set(落下)→ 太阳落下之时 → 日落",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The tour ends with an evening boat trip to watch the sunset over the harbour.",
+   "zh": "行程以一次傍晚的乘船游览收尾，在港口看日落。",
+   "note": "at sunset 在日落时；sunset industry 夕阳产业。听力旅游场景与阅读经济类均可见。"
+  },
+  "syn": [
+   "dusk",
+   "nightfall",
+   "sundown"
+  ],
+  "ant": [
+   "sunrise",
+   "dawn"
+  ],
+  "fam": [],
+  "use": "听力 Section 2 · 口语 Part 2"
+ },
+ "circulate": {
+  "us": "/ˈsɜːrkjəleɪt/",
+  "def_en": "to move around continuously through a system, or to spread among people",
+  "root": {
+   "prefix": "",
+   "base": "circul(圆圈，环，拉丁 circulus)",
+   "suffix": "-ate(动词后缀)",
+   "logic": "circul(圆环)+ate(动词)→ 绕着圈子走 → 循环、流通、传播",
+   "note": "circulus 是 circus(圆形竞技场)的指小形式。"
+  },
+  "ex2": {
+   "en": "Warm water circulates through narrow pipes beneath the floor and heats the whole classroom efficiently.",
+   "zh": "温水在地板下的细管中循环，高效地为整间教室供暖。",
+   "note": "circulate blood 使血液流动；rumours circulate 谣言传播；be in circulation 在流通中。阅读（生理/环境）。"
+  },
+  "syn": [
+   "flow",
+   "spread",
+   "move"
+  ],
+  "ant": [
+   "stagnate",
+   "halt"
+  ],
+  "fam": [
+   {
+    "w": "circulation",
+    "pos": "n.",
+    "cn": "循环；流通；发行量"
+   },
+   {
+    "w": "circulatory",
+    "pos": "adj.",
+    "cn": "循环的"
+   }
+  ],
+  "use": "阅读（生物/物理）· 听力 Section 4"
+ },
+ "dew": {
+  "us": "/duː/",
+  "def_en": "small drops of water that form on plants and ground during the night",
+  "root": {
+   "prefix": "",
+   "base": "dew(古英语 dēaw，与“滴落、流动”的古老词根相关)",
+   "suffix": "",
+   "logic": "dew(古英语 dēaw)→ 夜间凝在草叶上的水珠 → 露水",
+   "note": ""
+  },
+  "ex2": {
+   "en": "By dawn the grass was already heavy with dew and our boots were soaked through.",
+   "zh": "到黎明时草上已挂满露水，我们的靴子都湿透了。",
+   "note": "be heavy with dew 露水很重；dew point 露点。天气与农业类听力/阅读常出现。"
+  },
+  "syn": [
+   "moisture",
+   "condensation",
+   "droplets"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "dewy",
+    "pos": "adj.",
+    "cn": "带露水的；清新的"
+   }
+  ],
+  "use": "听力 Section 2（天气）· 阅读（农业）"
+ },
+ "drain": {
+  "us": "/dreɪn/",
+  "def_en": "to make liquid flow away from something, or to use up strength or money",
+  "root": {
+   "prefix": "",
+   "base": "drain(古英语 dreahnian 滤出液体，与 dry 干的同源)",
+   "suffix": "",
+   "logic": "drain(滤出)→ 让水一点点流走 → 排空；（资源）被抽干 → 耗竭",
+   "note": "“与 dry 同源”为词源学界的常见说法。"
+  },
+  "ex2": {
+   "en": "Draining the wetland to build new houses destroyed the habitat of several rare breeding birds.",
+   "zh": "排干湿地建新房毁掉了几种稀有繁殖鸟类的栖息地。",
+   "note": "drain away 流走；drain sb of sth 耗尽某人……；brain drain 人才流失（写作常用）。"
+  },
+  "syn": [
+   "empty",
+   "remove",
+   "deplete"
+  ],
+  "ant": [
+   "fill",
+   "flood",
+   "irrigate"
+  ],
+  "fam": [
+   {
+    "w": "drainage",
+    "pos": "n.",
+    "cn": "排水；排水系统"
+   }
+  ],
+  "use": "阅读（环境/城市）· 写作 Task 2"
+ },
+ "evaporate": {
+  "us": "/ɪˈvæpəreɪt/",
+  "def_en": "to change from a liquid into a gas, or to disappear gradually",
+  "root": {
+   "prefix": "e-(<ex- 向外)",
+   "base": "vapor(蒸汽)",
+   "suffix": "-ate(动词后缀)",
+   "logic": "e(向外)+vapor(蒸汽)+ate(动词)→ 变成蒸汽散出去 → 蒸发",
+   "note": "拉丁语 evaporare 本义“散出蒸汽”。"
+  },
+  "ex2": {
+   "en": "In the desert, water in shallow pools evaporates within a few hours under the fierce midday sun.",
+   "zh": "在沙漠里，浅水洼中的水在正午阳光下几小时内就蒸发了。",
+   "note": "evaporate into 蒸发成；引申义“（希望、资金）消失”。阅读（水循环/气候）高频。"
+  },
+  "syn": [
+   "vanish",
+   "dry up",
+   "disappear"
+  ],
+  "ant": [
+   "condense",
+   "solidify"
+  ],
+  "fam": [
+   {
+    "w": "evaporation",
+    "pos": "n.",
+    "cn": "蒸发"
+   },
+   {
+    "w": "evaporated",
+    "pos": "adj.",
+    "cn": "浓缩的（牛奶）"
+   }
+  ],
+  "use": "阅读（水循环/气候）· 听力 Section 4"
+ },
+ "fountain": {
+  "us": "/ˈfaʊntn/",
+  "def_en": "a structure that sends a jet of water into the air, or a source of something",
+  "root": {
+   "prefix": "",
+   "base": "fount(泉，源，拉丁 fons/fontis)",
+   "suffix": "-ain(名词后缀)",
+   "logic": "fons(泉)+ain→ 泉眼、喷水的装置 → 喷泉；引申为“源泉”",
+   "note": "同根：font 字体（原指洗礼泉）、fontanel 囟门。"
+  },
+  "ex2": {
+   "en": "The old stone fountain in the main square was switched off during the summer drought.",
+   "zh": "夏季干旱期间，主广场上那座古老的石喷泉被关掉了。",
+   "note": "fountain of wisdom/youth 智慧之泉/青春之泉；drinking fountain 饮水器。听力 Section 2 城市介绍。"
+  },
+  "syn": [
+   "spring",
+   "source",
+   "jet"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "fountainhead",
+    "pos": "n.",
+    "cn": "源头，源泉"
+   }
+  ],
+  "use": "听力 Section 2（城市/旅游）"
+ },
+ "pour": {
+  "us": "/pɔːr/",
+  "def_en": "to make a liquid flow out of a container, or to rain heavily",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：pour 与 poor 同音——“穷”得只剩水，只能一股脑倒出来 → 倾倒、倾盆",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 pouren 来源不明，可能出自古法语。"
+  },
+  "ex2": {
+   "en": "Heavy rain poured down for three whole days, and the river finally burst its banks.",
+   "zh": "大雨倾盆下了三天，河水最终冲垮了堤岸。",
+   "note": "pour sth into 把……倒入；pour down（雨）倾盆而下；it never rains but it pours 祸不单行。"
+  },
+  "syn": [
+   "spill",
+   "stream",
+   "gush"
+  ],
+  "ant": [
+   "trickle",
+   "drip"
+  ],
+  "fam": [
+   {
+    "w": "downpour",
+    "pos": "n.",
+    "cn": "倾盆大雨"
+   }
+  ],
+  "use": "听力 Section 2（天气）· 阅读（气候）"
+ },
+ "precipitate": {
+  "us": "/prɪˈsɪpɪteɪt/",
+  "def_en": "to cause something to happen suddenly, or (of rain or snow) to fall from clouds",
+  "root": {
+   "prefix": "pre-(<prae- 向前)",
+   "base": "cipit(<caput 头)",
+   "suffix": "-ate(动词后缀)",
+   "logic": "头朝前(pre+caput)→ 急速下坠 → （水汽）从空中落下凝结；引申“使突然发生”",
+   "note": "作形容词/名词时读 /prɪˈsɪpɪtət/，作动词读 /prɪˈsɪpɪteɪt/。"
+  },
+  "ex2": {
+   "en": "When warm moist air rises over the mountains, it cools and its vapour precipitates as rain.",
+   "zh": "暖湿气流在山区抬升后冷却，其中的水汽凝结成雨降落。",
+   "note": "precipitate a crisis 引发危机；precipitation 降水（量）。阅读（气象/水循环）术语。"
+  },
+  "syn": [
+   "trigger",
+   "hasten",
+   "condense"
+  ],
+  "ant": [
+   "delay",
+   "postpone"
+  ],
+  "fam": [
+   {
+    "w": "precipitation",
+    "pos": "n.",
+    "cn": "降水（量）；仓促"
+   },
+   {
+    "w": "precipitous",
+    "pos": "adj.",
+    "cn": "陡峭的；仓促的"
+   }
+  ],
+  "use": "阅读（气象/地理）· 听力 Section 4"
+ },
+ "reservoir": {
+  "us": "/ˈrezərvwɑːr/",
+  "def_en": "a large artificial lake used for storing water, or a large supply of something",
+  "root": {
+   "prefix": "re-(回，留住)",
+   "base": "serv(保持，储存)",
+   "suffix": "-oir(法语场所后缀)",
+   "logic": "re(留住)+serv(保存)+oir(地方)→ 存水的地方 → 水库；引申“储备”",
+   "note": "法语借词，词尾 -oir 保留法语拼写。"
+  },
+  "ex2": {
+   "en": "The city's main reservoir dropped to its lowest level in twenty years after the dry winter.",
+   "zh": "经历干燥的冬季后，该市主要水库的水位降至二十年来最低。",
+   "note": "a reservoir of talent/energy 人才/能量储备。阅读（水资源）与听力地图题常考。"
+  },
+  "syn": [
+   "lake",
+   "store",
+   "supply"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "阅读（水资源/地理）· 听力 Section 2"
+ },
+ "shade": {
+  "us": "/ʃeɪd/",
+  "def_en": "slight darkness caused by something blocking light, or a degree of a colour",
+  "root": {
+   "prefix": "",
+   "base": "shade(古英语 sceadu 阴影，与 shadow 同源)",
+   "suffix": "",
+   "logic": "shade(阴影)→ 光被挡住形成的暗处 → 阴凉处；引申“色度、细微差别”",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Visitors rested in the shade of the old trees before continuing along the coastal path.",
+   "zh": "游客在老树的阴凉处休息，然后继续沿海岸小路前行。",
+   "note": "in the shade 在阴凉处；a shade of 一丝……；shade...from 为……遮挡。听力指路题常见。"
+  },
+  "syn": [
+   "shadow",
+   "shelter",
+   "coolness"
+  ],
+  "ant": [
+   "sunlight",
+   "glare"
+  ],
+  "fam": [
+   {
+    "w": "shady",
+    "pos": "adj.",
+    "cn": "背阴的；可疑的"
+   },
+   {
+    "w": "shading",
+    "pos": "n.",
+    "cn": "阴影；明暗处理"
+   }
+  ],
+  "use": "听力 Section 2 · 阅读（植物/城市）"
+ },
+ "shadow": {
+  "us": "/ˈʃædoʊ/",
+  "def_en": "a dark shape made on a surface when a body blocks the light",
+  "root": {
+   "prefix": "",
+   "base": "shadow(古英语 sceadwe，shade 的变体形式)",
+   "suffix": "",
+   "logic": "shadow→ 物体挡住光投下的暗形 → 影子；引申“阴影、影响力”",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The length of a shadow changes with the height of the sun during the day.",
+   "zh": "一天中影子的长度随太阳高度而变化。",
+   "note": "cast a shadow 投下影子；in the shadow of 在……的阴影下；without a shadow of doubt 毫无疑问。"
+  },
+  "syn": [
+   "silhouette",
+   "shade",
+   "darkness"
+  ],
+  "ant": [
+   "light",
+   "highlight"
+  ],
+  "fam": [
+   {
+    "w": "shadowy",
+    "pos": "adj.",
+    "cn": "阴暗的；模糊的"
+   }
+  ],
+  "use": "阅读（物理/天文）· 写作"
+ },
+ "spring": {
+  "us": "/sprɪŋ/",
+  "def_en": "the season between winter and summer, or a place where water flows from the ground",
+  "root": {
+   "prefix": "",
+   "base": "spring(古英语 springan 跳跃、涌出)",
+   "suffix": "",
+   "logic": "spring(跳跃、涌出)→ 水从地下“跳”出来 → 泉；草木“跃”出生机 → 春天",
+   "note": "两个义项都来自“涌出、跳跃”这一核心义。"
+  },
+  "ex2": {
+   "en": "A hot spring near the village supplies the hotel with mineral water all year round.",
+   "zh": "村边的一处温泉常年为这家旅馆供应矿泉水。",
+   "note": "hot spring 温泉；spring up 涌现；季节前用 in spring。听力 Section 2 旅游场景。"
+  },
+  "syn": [
+   "fountain",
+   "source",
+   "origin"
+  ],
+  "ant": [
+   "autumn",
+   "fall"
+  ],
+  "fam": [
+   {
+    "w": "springtime",
+    "pos": "n.",
+    "cn": "春季"
+   },
+   {
+    "w": "springy",
+    "pos": "adj.",
+    "cn": "有弹性的"
+   }
+  ],
+  "use": "听力 Section 2（旅游）· 阅读（地理）"
+ },
+ "sunshine": {
+  "us": "/ˈsʌnʃaɪn/",
+  "def_en": "the bright light and gentle warmth that come from the sun",
+  "root": {
+   "prefix": "sun(太阳)",
+   "base": "shine(照耀)",
+   "suffix": "",
+   "logic": "sun(太阳)+shine(照耀)→ 阳光",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The south coast enjoys more than six hours of sunshine a day even in early spring.",
+   "zh": "即使在早春，南海岸每天也能享受六个多小时的阳光。",
+   "note": "in the sunshine 在阳光下；a ray of sunshine 一缕阳光，也指带来快乐的人。天气类听力常考。"
+  },
+  "syn": [
+   "sunlight",
+   "daylight"
+  ],
+  "ant": [
+   "darkness",
+   "shade"
+  ],
+  "fam": [],
+  "use": "听力 Section 2（天气）· 口语 Part 1"
+ },
+ "vapour": {
+  "us": "/ˈveɪpər/",
+  "def_en": "a mass of very small drops of water or of gas in the air",
+  "root": {
+   "prefix": "",
+   "base": "vapor(拉丁 vapor 蒸汽)",
+   "suffix": "",
+   "logic": "vapor(蒸汽)→ 悬浮在空气中的水汽 → 蒸气",
+   "note": "英式拼写 vapour，美式拼写 vapor。"
+  },
+  "ex2": {
+   "en": "Water vapour in the atmosphere traps heat and keeps the planet warmer than it would otherwise be.",
+   "zh": "大气中的水汽截留热量，使地球比原本更温暖。",
+   "note": "water vapour 水汽；vapour trail 飞机尾迹。阅读（气象/物理）常用，不可数名词。"
+  },
+  "syn": [
+   "steam",
+   "mist",
+   "moisture"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "vaporise",
+    "pos": "v.",
+    "cn": "（使）汽化"
+   },
+   {
+    "w": "vaporous",
+    "pos": "adj.",
+    "cn": "雾状的；蒸汽状的"
+   }
+  ],
+  "use": "阅读（气象/物理）· 听力 Section 4"
+ },
+ "waterfall": {
+  "us": "/ˈwɔːtərfɔːl/",
+  "def_en": "a place where a river falls steeply over the edge of a rock",
+  "root": {
+   "prefix": "water(水)",
+   "base": "fall(落下)",
+   "suffix": "",
+   "logic": "water(水)+fall(落下)→ 水从高处落下之处 → 瀑布",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The trail leads past a series of steep little waterfalls before reaching the viewing platform.",
+   "zh": "这条小径经过一连串陡峭的小瀑布，最后到达观景平台。",
+   "note": "常与 plunge/flow 搭配；map 题中作为地标出现。听力 Section 2 地图题高频。"
+  },
+  "syn": [
+   "cascade",
+   "falls",
+   "cataract"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 2（旅游/地图）"
+ },
+ "blow": {
+  "us": "/bloʊ/",
+  "def_en": "to send air out with force, or (of wind) to move along",
+  "root": {
+   "prefix": "",
+   "base": "blow(古英语 blāwan 吹)",
+   "suffix": "",
+   "logic": "blow(吹)→ 用嘴或风把空气送出去 → 吹；（比喻）打击",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Strong winds blew across the open plain all night and damaged several fragile glass greenhouses.",
+   "zh": "大风整夜吹过开阔的平原，损坏了好几个玻璃温室。",
+   "note": "blow down 吹倒；blow up 爆炸/充气；a blow to sth 对……的打击。过去式 blew，过去分词 blown。"
+  },
+  "syn": [
+   "gust",
+   "whip",
+   "puff"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "blower",
+    "pos": "n.",
+    "cn": "鼓风机"
+   }
+  ],
+  "use": "听力 Section 2（天气）· 阅读（气候）"
+ },
+ "condition": {
+  "us": "/kənˈdɪʃn/",
+  "def_en": "the state that someone or something is in, or a rule that must be met",
+  "root": {
+   "prefix": "con-(共同，一起)",
+   "base": "dit(<dicere 说)",
+   "suffix": "-ion(名词后缀)",
+   "logic": "con(共同)+dicere(说)→ 共同约定 → 约定的条款 → 条件；条款所定之状 → 状态",
+   "note": "原义“共同商定之事”，与 predict、dictionary 同根。"
+  },
+  "ex2": {
+   "en": "Researchers found that these plants grew far faster under laboratory conditions than in open fields.",
+   "zh": "研究人员发现，这些植物在实验室条件下比在露地生长快得多。",
+   "note": "under/in... conditions 在……条件下；on condition that 条件是；in good condition 状况良好。写作常用。"
+  },
+  "syn": [
+   "state",
+   "situation",
+   "requirement"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "conditional",
+    "pos": "adj.",
+    "cn": "有条件的"
+   },
+   {
+    "w": "conditioner",
+    "pos": "n.",
+    "cn": "护发素；调节器"
+   }
+  ],
+  "use": "阅读（科研）· 写作 Task 2"
+ },
+ "dense": {
+  "us": "/dens/",
+  "def_en": "containing a lot of things or people close together; thick and hard to see through",
+  "root": {
+   "prefix": "",
+   "base": "dense(拉丁 densus 浓密、稠密)",
+   "suffix": "",
+   "logic": "dense(稠密)→ 东西挤得很紧 → 密集的、浓的",
+   "note": "同根：condense 浓缩、density 密度。"
+  },
+  "ex2": {
+   "en": "The lower mountain slopes are covered by dense forest that receives very little direct sunlight.",
+   "zh": "低处的山坡被茂密的森林覆盖，几乎见不到直射阳光。",
+   "note": "dense fog/population 浓雾/稠密的人口；densely populated 人口稠密的。阅读（地理/人口）高频。"
+  },
+  "syn": [
+   "thick",
+   "crowded",
+   "compact"
+  ],
+  "ant": [
+   "sparse",
+   "thin"
+  ],
+  "fam": [
+   {
+    "w": "density",
+    "pos": "n.",
+    "cn": "密度"
+   },
+   {
+    "w": "densely",
+    "pos": "adv.",
+    "cn": "稠密地"
+   }
+  ],
+  "use": "阅读（地理/人口/生态）· 听力 Section 4"
+ },
+ "drip": {
+  "us": "/drɪp/",
+  "def_en": "to fall in small drops, or to let liquid fall in drops",
+  "root": {
+   "prefix": "",
+   "base": "drip(中古英语 drippen，模仿水滴落下的声音)",
+   "suffix": "",
+   "logic": "drip(拟声)→ 水一滴一滴落下的声音 → 滴下",
+   "note": "与 drop 同源，两者均为拟声来源。"
+  },
+  "ex2": {
+   "en": "The tap in the school kitchen had dripped all night, wasting hundreds of litres of water.",
+   "zh": "学校厨房的水龙头滴了一整夜，浪费了几百升水。",
+   "note": "drip from 从……滴下；be dripping with 满是……；drip irrigation 滴灌（农业阅读）。"
+  },
+  "syn": [
+   "trickle",
+   "drop",
+   "leak"
+  ],
+  "ant": [
+   "pour",
+   "gush"
+  ],
+  "fam": [
+   {
+    "w": "dripping",
+    "pos": "adj.",
+    "cn": "湿淋淋的"
+   }
+  ],
+  "use": "听力 Section 1（维修）· 阅读（农业/水）"
+ },
+ "drown": {
+  "us": "/draʊn/",
+  "def_en": "to die under water because you cannot breathe, or to flood something",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：drown 中间的 ow 像一圈圈水波——把人“罩”进水里 → 淹死",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 drounen 来源不明，可能与古诺尔斯语 drukkna 有关。"
+  },
+  "ex2": {
+   "en": "Rising sea levels could drown low-lying Pacific islands that are home to thousands of people.",
+   "zh": "海平面上升可能淹没数以千计人居住的低洼岛屿。",
+   "note": "drown in 淹没于；drown out（声音）盖过；a drowning man 溺水者。阅读（气候）与安全类听力。"
+  },
+  "syn": [
+   "flood",
+   "submerge",
+   "sink"
+  ],
+  "ant": [
+   "rescue",
+   "surface"
+  ],
+  "fam": [
+   {
+    "w": "drowning",
+    "pos": "n.",
+    "cn": "溺死"
+   }
+  ],
+  "use": "阅读（气候/灾害）· 听力 Section 2（安全）"
+ },
+ "emerge": {
+  "us": "/ɪˈmɜːrdʒ/",
+  "def_en": "to come out from a place or appear, often after being hidden",
+  "root": {
+   "prefix": "e-(<ex- 向外)",
+   "base": "merge(<拉丁 mergere 浸没)",
+   "suffix": "-e",
+   "logic": "e(向外)+merg(浸在水中)→ 从水里出来 → 浮现、显露",
+   "note": "merge（合并）同出 mergere，但词义已分化。"
+  },
+  "ex2": {
+   "en": "New evidence has emerged that the ancient city was abandoned after a long and severe drought.",
+   "zh": "有新证据显示，这座古城是在一场长期干旱之后被废弃的。",
+   "note": "emerge from 从……中出现；it emerged that... 后来发现……；emerging economies 新兴经济体。"
+  },
+  "syn": [
+   "appear",
+   "surface",
+   "arise"
+  ],
+  "ant": [
+   "disappear",
+   "vanish",
+   "submerge"
+  ],
+  "fam": [
+   {
+    "w": "emergence",
+    "pos": "n.",
+    "cn": "出现，兴起"
+   },
+   {
+    "w": "emerging",
+    "pos": "adj.",
+    "cn": "新兴的"
+   },
+   {
+    "w": "emergency",
+    "pos": "n.",
+    "cn": "紧急情况"
+   }
+  ],
+  "use": "阅读（科研/历史）· 写作 Task 2"
+ },
+ "environment": {
+  "us": "/ɪnˈvaɪrənmənt/",
+  "def_en": "the natural world, or the conditions that surround a person or thing",
+  "root": {
+   "prefix": "en-(在……之中)",
+   "base": "viron(圈子，环绕，古法语)",
+   "suffix": "-ment(名词后缀)",
+   "logic": "en(在……中)+viron(环绕)+ment(名词)→ 环绕在周围的一切 → 环境",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Children who grow up in a noisy urban environment may find it harder to concentrate at school.",
+   "zh": "在嘈杂城市环境中长大的孩子可能更难在学校集中注意力。",
+   "note": "the environment 指自然环境（须加 the）；working environment 工作环境。写作环境类话题核心词。"
+  },
+  "syn": [
+   "surroundings",
+   "setting",
+   "habitat"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "environmental",
+    "pos": "adj.",
+    "cn": "环境的"
+   },
+   {
+    "w": "environmentally",
+    "pos": "adv.",
+    "cn": "在环境方面"
+   },
+   {
+    "w": "environmentalist",
+    "pos": "n.",
+    "cn": "环保主义者"
+   }
+  ],
+  "use": "写作 Task 2 · 阅读（环境）· 听力 Section 4"
+ },
+ "flash": {
+  "us": "/flæʃ/",
+  "def_en": "to shine brightly for a short time, or to move or appear very quickly",
+  "root": {
+   "prefix": "",
+   "base": "flash(中古英语 flasshen，模仿闪光、泼水的声音)",
+   "suffix": "",
+   "logic": "flash(拟声)→ 啪的一亮 → 闪光；（信息）一闪而过 → 快速传送",
+   "note": "拟声来源为较常见的解释。"
+  },
+  "ex2": {
+   "en": "A warning flashed on the screen when the temperature inside the greenhouse rose too high.",
+   "zh": "当温室内温度过高时，屏幕上闪过一条警告。",
+   "note": "a flash of lightning 一道闪电；in a flash 一瞬间；flash back 闪回。听力/阅读（科技）常见。"
+  },
+  "syn": [
+   "sparkle",
+   "gleam",
+   "flicker"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "flashy",
+    "pos": "adj.",
+    "cn": "浮华的"
+   },
+   {
+    "w": "flashback",
+    "pos": "n.",
+    "cn": "闪回"
+   }
+  ],
+  "use": "听力 Section 1 · 阅读（科技）"
+ },
+ "float": {
+  "us": "/floʊt/",
+  "def_en": "to stay on the surface of a liquid, or to move slowly through the air",
+  "root": {
+   "prefix": "",
+   "base": "float(古英语 flotian，与 flēotan 漂浮同源)",
+   "suffix": "",
+   "logic": "float(漂浮)→ 停在水面不沉 → 漂浮；在空中缓移 → 飘浮",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Plastic waste floats on the ocean surface for years and is often eaten by hungry seabirds.",
+   "zh": "塑料垃圾在洋面上漂浮多年，常被饥饿的海鸟吞食。",
+   "note": "float on/in 漂浮在……上；float an idea 提出想法试探；floating population 流动人口。"
+  },
+  "syn": [
+   "drift",
+   "hover",
+   "bob"
+  ],
+  "ant": [
+   "sink"
+  ],
+  "fam": [
+   {
+    "w": "floating",
+    "pos": "adj.",
+    "cn": "漂浮的"
+   }
+  ],
+  "use": "阅读（环境/海洋）· 听力 Section 4"
+ },
+ "gush": {
+  "us": "/ɡʌʃ/",
+  "def_en": "to flow out suddenly and in large amounts, especially with great force from a pipe or opening",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：gush 尾音 -sh 像水“咕唰”喷出的声音 → 涌出",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 gushen，可能为拟声词或借自北欧语。"
+  },
+  "ex2": {
+   "en": "Oil gushed from the broken undersea pipe for hours before engineers could stop the leak.",
+   "zh": "石油从破裂的管道中喷涌了好几个小时，工程师才止住泄漏。",
+   "note": "gush from/out of 从……涌出；口语中 gush 也指“滔滔不绝地夸赞”。"
+  },
+  "syn": [
+   "spurt",
+   "pour",
+   "stream"
+  ],
+  "ant": [
+   "trickle",
+   "drip"
+  ],
+  "fam": [
+   {
+    "w": "gusher",
+    "pos": "n.",
+    "cn": "喷油井；滔滔不绝的人"
+   }
+  ],
+  "use": "阅读（能源/灾害）· 听力 Section 2"
+ },
+ "intensity": {
+  "us": "/ɪnˈtensəti/",
+  "def_en": "the great strength or extreme degree of something such as heat or feeling",
+  "root": {
+   "prefix": "in-(向内，朝向)",
+   "base": "tens(<tendere 伸展，拉紧)",
+   "suffix": "-ity(名词后缀)",
+   "logic": "in(朝向)+tendere(拉紧)→ 被拉得很紧的状态 → 紧张、强烈 → 强度",
+   "note": "同根：tension 张力、extend 延伸、intense 强烈的。"
+  },
+  "ex2": {
+   "en": "Scientists measure the intensity of sunlight reaching different layers of the rainforest canopy each day.",
+   "zh": "科学家每天测量到达雨林冠层不同高度的阳光强度。",
+   "note": "the intensity of light/heat 光/热强度；high-intensity 高强度的。阅读（物理/环境）。"
+  },
+  "syn": [
+   "strength",
+   "force",
+   "severity"
+  ],
+  "ant": [
+   "weakness",
+   "mildness"
+  ],
+  "fam": [
+   {
+    "w": "intense",
+    "pos": "adj.",
+    "cn": "强烈的；紧张的"
+   },
+   {
+    "w": "intensify",
+    "pos": "v.",
+    "cn": "加强，加剧"
+   },
+   {
+    "w": "intensively",
+    "pos": "adv.",
+    "cn": "密集地"
+   }
+  ],
+  "use": "阅读（物理/环境）· 听力 Section 4"
+ },
+ "intensive": {
+  "us": "/ɪnˈtensɪv/",
+  "def_en": "involving a lot of effort, activity or care within a short period",
+  "root": {
+   "prefix": "in-(朝向)",
+   "base": "tens(伸展，拉紧)",
+   "suffix": "-ive(形容词后缀)",
+   "logic": "tens(拉紧)+ive→ 把力量集中拉紧的 → 密集的、加强的",
+   "note": "与 intense（感觉强烈）区分：intensive 强调“集中投入”。"
+  },
+  "ex2": {
+   "en": "The farm uses intensive farming methods to produce three harvests of green vegetables every year.",
+   "zh": "这个农场采用集约化耕作方式，每年收获三季蔬菜。",
+   "note": "intensive care 重症监护；intensive farming/course 集约农业/强化课程；labour-intensive 劳动密集型。"
+  },
+  "syn": [
+   "concentrated",
+   "thorough",
+   "rigorous"
+  ],
+  "ant": [
+   "extensive",
+   "superficial"
+  ],
+  "fam": [
+   {
+    "w": "intensity",
+    "pos": "n.",
+    "cn": "强度"
+   },
+   {
+    "w": "intensively",
+    "pos": "adv.",
+    "cn": "密集地"
+   },
+   {
+    "w": "intensify",
+    "pos": "v.",
+    "cn": "加剧"
+   }
+  ],
+  "use": "阅读（农业/教育）· 写作 Task 2"
+ },
+ "puff": {
+  "us": "/pʌf/",
+  "def_en": "to blow out air or smoke in short bursts, or a small amount of smoke",
+  "root": {
+   "prefix": "",
+   "base": "puff(中古英语 puffen，拟声词)",
+   "suffix": "",
+   "logic": "puff(拟声)→ 噗的一下喷气 → 喷出；一股（烟、气）",
+   "note": "拟声来源为常见解释。"
+  },
+  "ex2": {
+   "en": "The old steam train puffed slowly out of the country station, leaving a long cloud of smoke.",
+   "zh": "那列老式蒸汽火车噗噗地缓缓驶出乡村小站，留下一长串烟雾。",
+   "note": "puff at/on 抽（烟）；out of puff 气喘吁吁；a puff of wind 一阵风。"
+  },
+  "syn": [
+   "blow",
+   "gust",
+   "whiff"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "puffy",
+    "pos": "adj.",
+    "cn": "肿胀的"
+   }
+  ],
+  "use": "听力 Section 2（交通/旅游）"
+ },
+ "surrounding": {
+  "us": "/səˈraʊndɪŋ/",
+  "def_en": "situated all around a particular place or thing, or existing in the area nearby",
+  "root": {
+   "prefix": "sur-(<super 在上，越过)",
+   "base": "round(<拉丁 unda 波浪；superundare 水漫出→包围)",
+   "suffix": "-ing(形容词后缀)",
+   "logic": "sur(越过)+unda(波浪)→ 水漫过来把东西围住 → 环绕 → 周围的",
+   "note": "surround 并非由 round（圆）构成，这是常见误解。"
+  },
+  "ex2": {
+   "en": "The new airport has greatly improved transport links with the surrounding small towns and villages.",
+   "zh": "新机场大大改善了与周边城镇和村庄的交通联系。",
+   "note": "the surrounding area/countryside 周边地区；名词形式 surroundings 指“环境”。"
+  },
+  "syn": [
+   "neighbouring",
+   "nearby",
+   "encircling"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "surround",
+    "pos": "v.",
+    "cn": "包围，环绕"
+   },
+   {
+    "w": "surroundings",
+    "pos": "n.",
+    "cn": "环境，周围事物"
+   }
+  ],
+  "use": "阅读（城市/环境）· 听力 Section 2"
+ },
+ "artificial": {
+  "us": "/ˌɑːrtɪˈfɪʃl/",
+  "def_en": "made or produced by people rather than existing or occurring in nature",
+  "root": {
+   "prefix": "",
+   "base": "art(技艺，拉丁 ars)",
+   "suffix": "-fic(<facere 做)+-ial(形容词后缀)",
+   "logic": "art(技艺)+fic(做)+ial→ 用技艺做出来的 → 人造的",
+   "note": "同根：artefact 手工艺品、factory 工厂、manufacture 制造。"
+  },
+  "ex2": {
+   "en": "Artificial lighting in offices can disturb the body clock and reduce the quality of sleep.",
+   "zh": "办公室的人工照明会扰乱生物钟，降低睡眠质量。",
+   "note": "artificial intelligence 人工智能；artificial flavour 人工香精；反义 natural。阅读（科技/健康）。"
+  },
+  "syn": [
+   "synthetic",
+   "man-made",
+   "fake"
+  ],
+  "ant": [
+   "natural",
+   "genuine"
+  ],
+  "fam": [
+   {
+    "w": "artificially",
+    "pos": "adv.",
+    "cn": "人工地"
+   },
+   {
+    "w": "artificiality",
+    "pos": "n.",
+    "cn": "人造性；虚假"
+   }
+  ],
+  "use": "阅读（科技/健康）· 写作 Task 2"
+ },
+ "gas": {
+  "us": "/ɡæs/",
+  "def_en": "a substance like air that is not solid or liquid, or petrol in American English",
+  "root": {
+   "prefix": "",
+   "base": "gas(17世纪化学家 van Helmont 造词，可能取自希腊 khaos 混沌)",
+   "suffix": "",
+   "logic": "gas(取自 khaos 混沌)→ 无形无状之物 → 气体；（美口）汽油",
+   "note": "由比利时化学家 J. B. van Helmont 创造，词源本身仍有讨论。"
+  },
+  "ex2": {
+   "en": "Burning natural gas to heat homes produces far less carbon dioxide than burning coal does.",
+   "zh": "用天然气取暖所排放的二氧化碳远少于烧煤。",
+   "note": "greenhouse gas 温室气体；gas station（美）加油站；step on the gas 加速。阅读（能源/环境）。"
+  },
+  "syn": [
+   "vapour",
+   "fume",
+   "petrol"
+  ],
+  "ant": [
+   "solid",
+   "liquid"
+  ],
+  "fam": [
+   {
+    "w": "gaseous",
+    "pos": "adj.",
+    "cn": "气态的"
+   },
+   {
+    "w": "gasoline",
+    "pos": "n.",
+    "cn": "（美）汽油"
+   }
+  ],
+  "use": "阅读（能源/环境）· 听力 Section 4"
+ },
+ "gasoline": {
+  "us": "/ˈɡæsəliːn/",
+  "def_en": "a liquid fuel made from petroleum and used in car engines",
+  "root": {
+   "prefix": "",
+   "base": "gas(气体，汽油)",
+   "suffix": "-ol(油、醇类后缀)+-ine(化学名词后缀)",
+   "logic": "gas+ol(油)+ine→ 易挥发的石油馏分 → 汽油",
+   "note": "原为商品名 gasolene，后通用化；英式用 petrol。"
+  },
+  "ex2": {
+   "en": "The price of gasoline rose sharply after the storm damaged several refineries along the coast.",
+   "zh": "风暴破坏了沿海几家炼油厂后，汽油价格急剧上涨。",
+   "note": "gasoline engine 汽油发动机；美式口语常缩为 gas。听力（交通/能源）常见。"
+  },
+  "syn": [
+   "petrol",
+   "fuel"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 2（交通）· 阅读（能源）"
+ },
+ "natural": {
+  "us": "/ˈnætʃrəl/",
+  "def_en": "existing in nature and not made or caused by people",
+  "root": {
+   "prefix": "",
+   "base": "natur(天性，出生，拉丁 natura)",
+   "suffix": "-al(形容词后缀)",
+   "logic": "natur(天生)+al(……的)→ 与生俱来、非人造的 → 自然的、天然的",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The reserve protects a natural wetland habitat that supports more than two hundred bird species.",
+   "zh": "该保护区守护着一片天然湿地栖息地，养育着两百多种鸟类。",
+   "note": "natural resources 自然资源；it is natural that... 理应……；反义 artificial。写作环境类常用。"
+  },
+  "syn": [
+   "native",
+   "innate",
+   "wild"
+  ],
+  "ant": [
+   "artificial",
+   "man-made"
+  ],
+  "fam": [
+   {
+    "w": "nature",
+    "pos": "n.",
+    "cn": "自然；本性"
+   },
+   {
+    "w": "naturally",
+    "pos": "adv.",
+    "cn": "自然地；天然地"
+   },
+   {
+    "w": "naturalist",
+    "pos": "n.",
+    "cn": "博物学家"
+   }
+  ],
+  "use": "写作 Task 2 · 阅读（环境）"
+ },
+ "nature": {
+  "us": "/ˈneɪtʃər/",
+  "def_en": "the physical world of plants, animals and landscapes, or someone's character",
+  "root": {
+   "prefix": "",
+   "base": "nat(出生，拉丁 nasci)",
+   "suffix": "-ure(名词后缀)",
+   "logic": "nat(出生)+ure(名词)→ 与生俱来的东西 → 本性；天生万物 → 大自然",
+   "note": "同根：native 本地的、nation 民族、innate 先天的。"
+  },
+  "ex2": {
+   "en": "Spending regular time in nature has been shown to reduce stress and improve concentration among students.",
+   "zh": "研究表明，经常置身自然之中能减轻学生的压力并提高专注力。",
+   "note": "in nature 在自然界；by nature 天生；human nature 人性。写作与口语高频。"
+  },
+  "syn": [
+   "environment",
+   "character",
+   "essence"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "natural",
+    "pos": "adj.",
+    "cn": "自然的"
+   },
+   {
+    "w": "naturally",
+    "pos": "adv.",
+    "cn": "自然地"
+   },
+   {
+    "w": "naturalistic",
+    "pos": "adj.",
+    "cn": "自然主义的"
+   }
+  ],
+  "use": "写作 Task 2 · 阅读（环境/心理）"
+ },
+ "petrol": {
+  "us": "/ˈpetrəl/",
+  "def_en": "a liquid fuel made from petroleum and used in car engines (British English)",
+  "root": {
+   "prefix": "",
+   "base": "petr(石头)",
+   "suffix": "-ol(油)",
+   "logic": "petr(石头)+ol(油)→ 从石油中提炼的燃料 → （英）汽油",
+   "note": "源自法语 pétrole；美式用 gas/gasoline。"
+  },
+  "ex2": {
+   "en": "Drivers in the city centre pay far more for petrol than people living in rural areas.",
+   "zh": "市中心的司机加油比农村地区的人贵得多。",
+   "note": "petrol station（英）加油站；unleaded petrol 无铅汽油。听力（交通/地图）常见。"
+  },
+  "syn": [
+   "gasoline",
+   "fuel"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "petroleum",
+    "pos": "n.",
+    "cn": "石油"
+   }
+  ],
+  "use": "听力 Section 2（交通）· 阅读（能源）"
+ },
+ "petroleum": {
+  "us": "/pəˈtroʊliəm/",
+  "def_en": "a dark oil found under the ground, used to make fuel and plastics",
+  "root": {
+   "prefix": "",
+   "base": "petr(石头)",
+   "suffix": "-ole(油，拉丁 oleum)+-um(名词后缀)",
+   "logic": "petr(石)+oleum(油)→ 石头里的油 → 石油",
+   "note": "中世纪拉丁语 petroleum 即“岩中油”。"
+  },
+  "ex2": {
+   "en": "Many everyday products, ranging from plastic bottles to painkillers, are manufactured from petroleum at huge refineries.",
+   "zh": "从塑料瓶到止痛药，许多日常用品都是在大型炼油厂由石油制成的。",
+   "note": "petroleum-based 石油基的；petroleum industry 石油工业。阅读（能源/化工）。"
+  },
+  "syn": [
+   "crude oil",
+   "oil"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "petrochemical",
+    "pos": "n.",
+    "cn": "石油化工产品"
+   }
+  ],
+  "use": "阅读（能源/工业）· 听力 Section 4"
+ },
+ "situation": {
+  "us": "/ˌsɪtʃuˈeɪʃn/",
+  "def_en": "the set of conditions that exist at a particular time and place",
+  "root": {
+   "prefix": "",
+   "base": "situ(位置，拉丁 situs)",
+   "suffix": "-ation(名词后缀)",
+   "logic": "situ(位置)+ation→ 所处的位置 → 所处的情形 → 情况、处境",
+   "note": "同根：site 地点、situate 使位于。"
+  },
+  "ex2": {
+   "en": "The report describes the situation of farmers who lost their land to the expanding desert.",
+   "zh": "报告描述了那些土地被扩张的沙漠吞没的农民的处境。",
+   "note": "in a ... situation 处于……情况；the economic/housing situation 经济/住房形势。写作 Task 2 常用。"
+  },
+  "syn": [
+   "circumstances",
+   "condition",
+   "position"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "situate",
+    "pos": "v.",
+    "cn": "使位于"
+   },
+   {
+    "w": "situated",
+    "pos": "adj.",
+    "cn": "位于……的"
+   }
+  ],
+  "use": "写作 Task 2 · 听力 Section 3"
+ },
+ "synthetic": {
+  "us": "/sɪnˈθetɪk/",
+  "def_en": "made by chemical processes from artificial materials rather than natural ones",
+  "root": {
+   "prefix": "syn-(一起)",
+   "base": "thet(<希腊 tithenai 放置)",
+   "suffix": "-ic(形容词后缀)",
+   "logic": "syn(一起)+thet(放置)+ic→ 把成分放在一起制成的 → 合成的",
+   "note": "同根：synthesis 合成、hypothesis 假设（放在下面）。"
+  },
+  "ex2": {
+   "en": "Synthetic fibres such as nylon dry quickly but release thousands of tiny plastic particles when washed.",
+   "zh": "尼龙等合成纤维干得快，但洗涤时会释放成千上万个微小塑料颗粒。",
+   "note": "synthetic materials/fibres 合成材料/纤维；反义 natural。阅读（材料/环境）。"
+  },
+  "syn": [
+   "artificial",
+   "man-made",
+   "chemical"
+  ],
+  "ant": [
+   "natural",
+   "organic"
+  ],
+  "fam": [
+   {
+    "w": "synthesis",
+    "pos": "n.",
+    "cn": "合成；综合"
+   },
+   {
+    "w": "synthesise",
+    "pos": "v.",
+    "cn": "合成"
+   },
+   {
+    "w": "synthetically",
+    "pos": "adv.",
+    "cn": "人工合成地"
+   }
+  ],
+  "use": "阅读（材料/环境）· 写作 Task 2"
+ },
+ "botany": {
+  "us": "/ˈbɑːtəni/",
+  "def_en": "the scientific study of plants, including their structure, growth and classification",
+  "root": {
+   "prefix": "",
+   "base": "botan(植物，希腊 botanē 牧草)",
+   "suffix": "-y(学科名词后缀)",
+   "logic": "botan(牧草、植物)+y(学科)→ 研究植物的学问 → 植物学",
+   "note": "希腊语 botanē 原指“牧场、饲料草”。"
+  },
+  "ex2": {
+   "en": "She studied botany at university and now records rare alpine plants for a conservation group.",
+   "zh": "她在大学学的是植物学，现在为一个保护组织记录珍稀高山植物。",
+   "note": "学科名不加冠词；同族 botanical garden 植物园、botanist 植物学家。听力 Section 3 选课场景。"
+  },
+  "syn": [],
+  "ant": [],
+  "fam": [
+   {
+    "w": "botanical",
+    "pos": "adj.",
+    "cn": "植物的；植物学的"
+   },
+   {
+    "w": "botanist",
+    "pos": "n.",
+    "cn": "植物学家"
+   }
+  ],
+  "use": "听力 Section 3（课程）· 阅读（生物）"
+ },
+ "dioxide": {
+  "us": "/daɪˈɑːksaɪd/",
+  "def_en": "a compound containing two atoms of oxygen and one atom of another element",
+  "root": {
+   "prefix": "di-(二，两个)",
+   "base": "oxide(氧化物，oxy- 氧 + -ide 化合物后缀)",
+   "suffix": "",
+   "logic": "di(二)+oxide(氧化物)→ 含两个氧原子的化合物 → 二氧化物",
+   "note": "oxy- 源自希腊 oxys（尖、酸），因早期认为氧是构成酸的元素。"
+  },
+  "ex2": {
+   "en": "Levels of carbon dioxide in the atmosphere have risen sharply since the beginning of industrialisation.",
+   "zh": "自工业化开始以来，大气中的二氧化碳含量急剧上升。",
+   "note": "carbon dioxide 二氧化碳；常与 emit/absorb/reduce 搭配。环境类阅读与写作必考词。"
+  },
+  "syn": [],
+  "ant": [],
+  "fam": [
+   {
+    "w": "oxide",
+    "pos": "n.",
+    "cn": "氧化物"
+   },
+   {
+    "w": "monoxide",
+    "pos": "n.",
+    "cn": "一氧化物"
+   }
+  ],
+  "use": "阅读（环境/化学）· 写作 Task 2"
+ },
+ "eco_friendly": {
+  "us": "/ˌiːkoʊˈfrendli/",
+  "def_en": "not harmful to the environment, or designed to cause little damage",
+  "root": {
+   "prefix": "eco-(生态，<希腊 oikos 家)",
+   "base": "friendly(友好的)",
+   "suffix": "",
+   "logic": "eco(生态)+friendly(友好)→ 对生态友好的 → 环保的",
+   "note": "eco- 来自希腊 oikos“家”，把自然看作人类共同的家。"
+  },
+  "ex2": {
+   "en": "The hotel advertises itself as eco-friendly, yet it still uses bottled water in every room.",
+   "zh": "这家旅馆自称环保，却仍在每个房间提供瓶装水。",
+   "note": "eco-friendly products/packaging 环保产品/包装；构词同 user-friendly。写作 Task 2 环境类常用。"
+  },
+  "syn": [
+   "green",
+   "sustainable",
+   "environmentally friendly"
+  ],
+  "ant": [
+   "polluting",
+   "harmful"
+  ],
+  "fam": [
+   {
+    "w": "eco-tourism",
+    "pos": "n.",
+    "cn": "生态旅游"
+   },
+   {
+    "w": "ecosystem",
+    "pos": "n.",
+    "cn": "生态系统"
+   }
+  ],
+  "use": "写作 Task 2 · 阅读（环境）· 听力 Section 2"
+ },
+ "ecology": {
+  "us": "/iˈkɑːlədʒi/",
+  "def_en": "the study of how living things relate to each other and to their environment",
+  "root": {
+   "prefix": "eco-(<希腊 oikos 家，住所)",
+   "base": "log(学说，logos)",
+   "suffix": "-y(名词后缀)",
+   "logic": "oikos(家)+logos(学说)→ 研究“自然之家”的学问 → 生态学",
+   "note": "由德国生物学家 Haeckel 于 1866 年创造。"
+  },
+  "ex2": {
+   "en": "Building a large dam can change the ecology of a river for hundreds of kilometres downstream.",
+   "zh": "修建大型水坝可能改变一条河下游数百公里的生态。",
+   "note": "the ecology of... ……的生态；同族 ecological、ecologist。阅读（生态/环境）。"
+  },
+  "syn": [
+   "ecosystem",
+   "environment"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "ecological",
+    "pos": "adj.",
+    "cn": "生态的"
+   },
+   {
+    "w": "ecologist",
+    "pos": "n.",
+    "cn": "生态学家"
+   }
+  ],
+  "use": "阅读（生态/环境）· 听力 Section 4"
+ },
+ "ecosystem": {
+  "us": "/ˈiːkoʊˌsɪstəm/",
+  "def_en": "all the living things in an area together with the environment they share",
+  "root": {
+   "prefix": "eco-(生态)",
+   "base": "system(系统)",
+   "suffix": "",
+   "logic": "eco(生态)+system(系统)→ 生物与环境构成的系统 → 生态系统",
+   "note": "由英国植物学家 Tansley 于 1935 年提出。"
+  },
+  "ex2": {
+   "en": "Removing a single predator from an ecosystem can cause unexpected changes throughout the food chain.",
+   "zh": "从生态系统中移除单一捕食者，可能在整条食物链上引发意想不到的变化。",
+   "note": "a fragile/balanced ecosystem 脆弱/平衡的生态系统；marine ecosystem 海洋生态系统。写作环境类必用。"
+  },
+  "syn": [
+   "biome",
+   "habitat"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "ecological",
+    "pos": "adj.",
+    "cn": "生态的"
+   }
+  ],
+  "use": "阅读（生态）· 听力 Section 4 · 写作 Task 2"
+ },
+ "genetics": {
+  "us": "/dʒəˈnetɪks/",
+  "def_en": "the scientific study of genes and how qualities pass from parents to young",
+  "root": {
+   "prefix": "",
+   "base": "gen(产生，出生，希腊 genesis)",
+   "suffix": "-etics(学科后缀)",
+   "logic": "gen(出生)+etics(学问)→ 研究生命如何“生成”的学问 → 遗传学",
+   "note": "同根：gene 基因、genesis 起源、generate 产生。"
+  },
+  "ex2": {
+   "en": "Research in genetics has made it possible to identify the risk of certain diseases early.",
+   "zh": "遗传学研究使早期识别某些疾病的风险成为可能。",
+   "note": "学科名不可数；同族 genetic（adj.）、genetically modified 转基因的。阅读（生物/医学）。"
+  },
+  "syn": [],
+  "ant": [],
+  "fam": [
+   {
+    "w": "gene",
+    "pos": "n.",
+    "cn": "基因"
+   },
+   {
+    "w": "genetic",
+    "pos": "adj.",
+    "cn": "遗传的"
+   },
+   {
+    "w": "geneticist",
+    "pos": "n.",
+    "cn": "遗传学家"
+   }
+  ],
+  "use": "阅读（生物/医学）· 听力 Section 4"
+ },
+ "herb": {
+  "us": "/hɜːrb/",
+  "def_en": "a plant used for flavouring food or for making medicine",
+  "root": {
+   "prefix": "",
+   "base": "herb(拉丁 herba 草、青草)",
+   "suffix": "",
+   "logic": "herba(草)→ 可食用或药用的草本植物 → 香草、药草",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The small garden behind the pharmacy grows herbs that are still used in traditional medicine.",
+   "zh": "药房后面的小园子种着一些至今仍用于传统医药的草药。",
+   "note": "美音 /hɜːrb/ 中 h 发音（英音 herb 的 h 不发音）；herbal tea 花草茶。"
+  },
+  "syn": [
+   "plant",
+   "spice"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "herbal",
+    "pos": "adj.",
+    "cn": "草本的"
+   },
+   {
+    "w": "herbivore",
+    "pos": "n.",
+    "cn": "食草动物"
+   },
+   {
+    "w": "herbicide",
+    "pos": "n.",
+    "cn": "除草剂"
+   }
+  ],
+  "use": "听力 Section 2（园艺/健康）· 阅读（植物）"
+ },
+ "horticulture": {
+  "us": "/ˈhɔːrtɪkʌltʃər/",
+  "def_en": "the practice or science of growing flowers, fruit and vegetables",
+  "root": {
+   "prefix": "",
+   "base": "horti(花园，拉丁 hortus)",
+   "suffix": "-culture(耕作，培养)",
+   "logic": "horti(花园)+culture(耕作)→ 在园圃中耕作 → 园艺（学）",
+   "note": "hortus 亦见于 horticultural society（园艺学会）。"
+  },
+  "ex2": {
+   "en": "Students of horticulture learn how soil quality, light and water affect the growth of vegetables.",
+   "zh": "园艺学的学生要了解土壤质量、光照和水分如何影响蔬菜生长。",
+   "note": "与 agriculture 对比：horticulture 指园圃中的小规模精细栽培。听力 Section 3 课程介绍。"
+  },
+  "syn": [
+   "gardening",
+   "cultivation"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "horticultural",
+    "pos": "adj.",
+    "cn": "园艺的"
+   },
+   {
+    "w": "horticulturist",
+    "pos": "n.",
+    "cn": "园艺学家"
+   }
+  ],
+  "use": "听力 Section 3（课程）· 阅读（农业）"
+ },
+ "organism": {
+  "us": "/ˈɔːrɡənɪzəm/",
+  "def_en": "a living thing, especially a very small one such as a bacterium",
+  "root": {
+   "prefix": "",
+   "base": "organ(器官，希腊 organon 工具)",
+   "suffix": "-ism(名词后缀)",
+   "logic": "organ(器官)+ism→ 由各器官组成的整体 → 生物体",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Some tiny organisms can survive in volcanic hot springs where the water is almost boiling.",
+   "zh": "有些微小生物能在水温几乎沸腾的火山温泉中存活。",
+   "note": "living organism 生物体；genetically modified organism (GMO) 转基因生物。阅读（生物）高频。"
+  },
+  "syn": [
+   "creature",
+   "life form",
+   "being"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "organ",
+    "pos": "n.",
+    "cn": "器官"
+   },
+   {
+    "w": "organic",
+    "pos": "adj.",
+    "cn": "有机的"
+   },
+   {
+    "w": "organisation",
+    "pos": "n.",
+    "cn": "组织，机构"
+   }
+  ],
+  "use": "阅读（生物）· 听力 Section 4"
+ },
+ "perennial": {
+  "us": "/pəˈreniəl/",
+  "def_en": "a plant that lives for more than two years; lasting or recurring for a long time",
+  "root": {
+   "prefix": "per-(贯穿，始终)",
+   "base": "enn(<拉丁 annus 年)",
+   "suffix": "-ial(形容词后缀)",
+   "logic": "per(贯穿)+annus(年)+ial→ 一年年持续下去的 → 多年生的；长期的",
+   "note": "同根：annual 一年的、anniversary 周年。"
+  },
+  "ex2": {
+   "en": "Unlike annuals, most perennials return year after year, so gardeners spend far less on new plants.",
+   "zh": "与一年生植物不同，大多数多年生植物年年复生，因此园丁购买新苗的花费少得多。",
+   "note": "perennial problem 长期存在的问题；与 annual（一年生）对比记忆。阅读（植物/农业）。"
+  },
+  "syn": [
+   "enduring",
+   "recurring",
+   "lasting"
+  ],
+  "ant": [
+   "annual",
+   "temporary"
+  ],
+  "fam": [
+   {
+    "w": "perennially",
+    "pos": "adv.",
+    "cn": "长期地；多年生地"
+   }
+  ],
+  "use": "阅读（植物/农业）· 写作 Task 2"
+ },
+ "photosynthesis": {
+  "us": "/ˌfoʊtoʊˈsɪnθəsɪs/",
+  "def_en": "the process by which green plants use sunlight to make food from water and carbon dioxide",
+  "root": {
+   "prefix": "photo-(光)",
+   "base": "synthesis(合成；syn- 一起 + thesis 放置)",
+   "suffix": "-is(希腊名词词尾)",
+   "logic": "photo(光)+synthesis(合成)→ 利用光进行的合成 → 光合作用",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Scientists found that photosynthesis slows down when leaves become too hot to absorb carbon dioxide.",
+   "zh": "科学家发现，当叶片过热而无法吸收二氧化碳时，光合作用就会减慢。",
+   "note": "perform/carry out photosynthesis 进行光合作用；the rate of photosynthesis 光合速率。阅读（生物/环境）高频。"
+  },
+  "syn": [],
+  "ant": [],
+  "fam": [
+   {
+    "w": "photosynthesise",
+    "pos": "v.",
+    "cn": "进行光合作用"
+   },
+   {
+    "w": "photosynthetic",
+    "pos": "adj.",
+    "cn": "光合作用的"
+   }
+  ],
+  "use": "阅读（生物/环境）· 听力 Section 4"
+ },
+ "respire": {
+  "us": "/rɪˈspaɪər/",
+  "def_en": "to breathe, or (of cells or roots) to take in oxygen and release energy",
+  "root": {
+   "prefix": "re-(反复)",
+   "base": "spir(呼吸，拉丁 spirare)",
+   "suffix": "-e",
+   "logic": "re(反复)+spir(呼吸)→ 反复地呼吸 → 呼吸",
+   "note": "同根：inspire 吸气→启发、expire 断气→到期、spirit 气息→精神。"
+  },
+  "ex2": {
+   "en": "Roots also respire, so soil that stays permanently waterlogged can slowly kill a mature tree.",
+   "zh": "根系也要呼吸，因此长期积水的水土会慢慢使一棵成年树死亡。",
+   "note": "植物学术语，比 breathe 正式；名词 respiration 指呼吸（作用）。阅读（植物生理）。"
+  },
+  "syn": [
+   "breathe"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "respiration",
+    "pos": "n.",
+    "cn": "呼吸（作用）"
+   },
+   {
+    "w": "respiratory",
+    "pos": "adj.",
+    "cn": "呼吸的"
+   }
+  ],
+  "use": "阅读（植物/生理）· 听力 Section 4"
+ },
+ "vegetation": {
+  "us": "/ˌvedʒəˈteɪʃn/",
+  "def_en": "the plants that grow in a particular area, considered as a group",
+  "root": {
+   "prefix": "",
+   "base": "veget(生长，有活力，拉丁 vegetus)",
+   "suffix": "-ation(名词后缀)",
+   "logic": "veget(生长)+ation→ 生长出来的植物总体 → 植被、草木",
+   "note": "vegetable 同源，原义“有生气的（植物）”。"
+  },
+  "ex2": {
+   "en": "Above the tree line, the vegetation becomes low and tough enough to survive strong winds.",
+   "zh": "在树线以上，植被变得低矮而坚韧，足以抵御强风。",
+   "note": "dense/sparse vegetation 茂密/稀疏的植被；不可数名词。阅读（地理/生态）。"
+  },
+  "syn": [
+   "plants",
+   "flora",
+   "greenery"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "vegetate",
+    "pos": "v.",
+    "cn": "生长；过单调生活"
+   },
+   {
+    "w": "vegetarian",
+    "pos": "n.",
+    "cn": "素食者"
+   }
+  ],
+  "use": "阅读（地理/生态）· 听力 Section 4"
+ },
+ "classify": {
+  "us": "/ˈklæsɪfaɪ/",
+  "def_en": "to put people or things into groups according to their type",
+  "root": {
+   "prefix": "",
+   "base": "class(类别，等级)",
+   "suffix": "-ify(动词后缀，使……化)",
+   "logic": "class(类别)+ify(使)→ 使归入类别 → 分类",
+   "note": "class 源自拉丁 classis，原指罗马公民的等级。"
+  },
+  "ex2": {
+   "en": "Biologists now classify living organisms according to shared genetic features rather than outward appearance alone.",
+   "zh": "生物学家如今依据共有的遗传特征而非仅凭外表对生物进行分类。",
+   "note": "classify...as... 把……归为；be classified into 被分为。阅读（生物分类）。"
+  },
+  "syn": [
+   "categorise",
+   "sort",
+   "group"
+  ],
+  "ant": [
+   "confuse",
+   "jumble"
+  ],
+  "fam": [
+   {
+    "w": "classification",
+    "pos": "n.",
+    "cn": "分类"
+   },
+   {
+    "w": "classified",
+    "pos": "adj.",
+    "cn": "机密的"
+   }
+  ],
+  "use": "阅读（生物/科研）· 听力 Section 3"
+ },
+ "cultivate": {
+  "us": "/ˈkʌltɪveɪt/",
+  "def_en": "to prepare land and grow crops on it, or to develop a skill or relationship",
+  "root": {
+   "prefix": "",
+   "base": "cult(耕种，拉丁 colere)",
+   "suffix": "-iv(形容词)+-ate(动词后缀)",
+   "logic": "cult(耕种)+ivate→ 耕作土地；引申“耕耘心智” → 培养",
+   "note": "同根：culture 文化（原义“耕作”）、agriculture 农业。"
+  },
+  "ex2": {
+   "en": "Farmers in the region have cultivated rice on these terraces for over a thousand years.",
+   "zh": "该地区的农民在这些梯田上种稻已有一千多年。",
+   "note": "cultivate land/crops 耕地/种庄稼；cultivate an interest 培养兴趣。阅读（农业）。"
+  },
+  "syn": [
+   "grow",
+   "farm",
+   "foster"
+  ],
+  "ant": [
+   "neglect",
+   "abandon"
+  ],
+  "fam": [
+   {
+    "w": "cultivation",
+    "pos": "n.",
+    "cn": "耕作；培养"
+   },
+   {
+    "w": "cultivated",
+    "pos": "adj.",
+    "cn": "有教养的；栽培的"
+   },
+   {
+    "w": "culture",
+    "pos": "n.",
+    "cn": "文化"
+   }
+  ],
+  "use": "阅读（农业）· 写作 Task 2"
+ },
+ "diversity": {
+  "us": "/daɪˈvɜːrsəti/",
+  "def_en": "a range of many different types of things, people or living things",
+  "root": {
+   "prefix": "di-(<dis- 分开)",
+   "base": "vers(转)",
+   "suffix": "-ity(名词后缀)",
+   "logic": "dis(分开)+vertere(转)+ity→ 转向不同方向 → 各不相同 → 多样性",
+   "note": "同根：diverse、reverse、convert。"
+  },
+  "ex2": {
+   "en": "Cutting down the forest reduced the diversity of insects and the birds that feed on them.",
+   "zh": "砍伐森林减少了昆虫以及以昆虫为食的鸟类的多样性。",
+   "note": "biological/cultural diversity 生物/文化多样性；a diversity of 多种……。写作环境类高频。"
+  },
+  "syn": [
+   "variety",
+   "range",
+   "heterogeneity"
+  ],
+  "ant": [
+   "uniformity",
+   "sameness"
+  ],
+  "fam": [
+   {
+    "w": "diverse",
+    "pos": "adj.",
+    "cn": "多样的"
+   },
+   {
+    "w": "diversify",
+    "pos": "v.",
+    "cn": "使多样化"
+   },
+   {
+    "w": "biodiversity",
+    "pos": "n.",
+    "cn": "生物多样性"
+   }
+  ],
+  "use": "写作 Task 2 · 阅读（生态/社会）"
+ },
+ "evolve": {
+  "us": "/ɪˈvɑːlv/",
+  "def_en": "to change gradually over a long time, or (of living things) to develop",
+  "root": {
+   "prefix": "e-(<ex- 向外)",
+   "base": "volv(滚，转，拉丁 volvere)",
+   "suffix": "-e",
+   "logic": "e(向外)+volv(卷、转)→ 把卷起的东西展开 → 逐步发展 → 进化",
+   "note": "同根：involve 卷入、revolve 旋转、revolution 革命。"
+  },
+  "ex2": {
+   "en": "Some desert plants have evolved thick waxy leaves that store water through the long dry season.",
+   "zh": "有些沙漠植物进化出了厚而具蜡质的叶子，可在漫长旱季储水。",
+   "note": "evolve from 由……进化而来；evolve into 进化成。阅读（生物进化）必考词。"
+  },
+  "syn": [
+   "develop",
+   "adapt",
+   "progress"
+  ],
+  "ant": [
+   "stagnate",
+   "remain"
+  ],
+  "fam": [
+   {
+    "w": "evolution",
+    "pos": "n.",
+    "cn": "进化；演变"
+   },
+   {
+    "w": "evolutionary",
+    "pos": "adj.",
+    "cn": "进化的"
+   }
+  ],
+  "use": "阅读（生物/进化）· 听力 Section 4"
+ },
+ "fluctuate": {
+  "us": "/ˈflʌktʃueɪt/",
+  "def_en": "to change frequently in level, amount or value, rising and falling in an irregular way",
+  "root": {
+   "prefix": "",
+   "base": "fluct(波浪，拉丁 fluctus)",
+   "suffix": "-uate(动词后缀)",
+   "logic": "fluct(波浪)+uate→ 像波浪一样上下起伏 → 波动",
+   "note": "同根：fluid 流体、fluent 流利的。"
+  },
+  "ex2": {
+   "en": "Annual rainfall in this region fluctuates widely, so farmers cannot rely on any single crop.",
+   "zh": "该地区年降水量起伏很大，因此农民不能只依赖单一作物。",
+   "note": "fluctuate between A and B 在……之间波动；prices/temperatures fluctuate。阅读（数据/经济）。"
+  },
+  "syn": [
+   "vary",
+   "swing",
+   "oscillate"
+  ],
+  "ant": [
+   "stabilise",
+   "level off"
+  ],
+  "fam": [
+   {
+    "w": "fluctuation",
+    "pos": "n.",
+    "cn": "波动"
+   },
+   {
+    "w": "fluctuating",
+    "pos": "adj.",
+    "cn": "波动的"
+   }
+  ],
+  "use": "阅读（数据/经济/气候）· 写作 Task 1"
+ },
+ "hybridisation": {
+  "us": "/ˌhaɪbrɪdəˈzeɪʃn/",
+  "def_en": "the process of breeding two different plants or animals to produce young",
+  "root": {
+   "prefix": "",
+   "base": "hybrid(杂种，拉丁 hybrida)",
+   "suffix": "-isation(名词后缀，表过程)",
+   "logic": "hybrid(杂交后代)+isation(过程)→ 杂交",
+   "note": "美式拼写 hybridization；hybrida 原指家猪与野猪的后代。"
+  },
+  "ex2": {
+   "en": "Hybridisation between wild and farmed salmon may weaken the wild population's ability to survive at sea.",
+   "zh": "野生鲑鱼与养殖鲑鱼的杂交可能削弱野生种群在海洋中的生存能力。",
+   "note": "同族 hybrid（n./adj. 杂交种；混合的）；注意与 genetic modification 区分。阅读（生物/农业）。"
+  },
+  "syn": [
+   "crossbreeding",
+   "crossing"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "hybrid",
+    "pos": "n.",
+    "cn": "杂交种；混合物"
+   },
+   {
+    "w": "hybridise",
+    "pos": "v.",
+    "cn": "（使）杂交"
+   }
+  ],
+  "use": "阅读（生物/农业）· 听力 Section 4"
+ },
+ "mutation": {
+  "us": "/mjuːˈteɪʃn/",
+  "def_en": "a change in the genes of a living thing that may affect how it develops",
+  "root": {
+   "prefix": "",
+   "base": "mut(改变，拉丁 mutare)",
+   "suffix": "-ation(名词后缀)",
+   "logic": "mut(改变)+ation→ 基因发生的改变 → 突变",
+   "note": "同根：mutual 相互的（原义“交换”）、commute 通勤（往来交换）。"
+  },
+  "ex2": {
+   "en": "A single mutation in the virus allowed it to spread far more easily between people.",
+   "zh": "病毒中的一个突变使它更容易在人与人之间传播。",
+   "note": "genetic mutation 基因突变；动词 mutate。阅读（生物/医学）常与 evolve、adapt 同现。"
+  },
+  "syn": [
+   "change",
+   "alteration",
+   "variation"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "mutate",
+    "pos": "v.",
+    "cn": "（使）突变"
+   },
+   {
+    "w": "mutant",
+    "pos": "n.",
+    "cn": "突变体"
+   }
+  ],
+  "use": "阅读（生物/医学）· 听力 Section 4"
+ },
+ "reclaim": {
+  "us": "/rɪˈkleɪm/",
+  "def_en": "to get back something lost, or to make land or waste usable again",
+  "root": {
+   "prefix": "re-(回，返回)",
+   "base": "claim(呼喊，拉丁 clamare)",
+   "suffix": "",
+   "logic": "re(回)+claim(喊)→ 把（猎鹰）唤回来 → 收回；使荒废之地重新可用 → 开垦",
+   "note": "原为驯鹰术语：把飞走的鹰唤回手上。"
+  },
+  "ex2": {
+   "en": "The city plans to reclaim the abandoned industrial site and turn it into a public park.",
+   "zh": "该市计划改造这片废弃的工业用地，把它变成公园。",
+   "note": "reclaim land from the sea 填海造陆；reclaim waste 回收利用废物；baggage reclaim 行李提取处。"
+  },
+  "syn": [
+   "recover",
+   "restore",
+   "recycle"
+  ],
+  "ant": [
+   "abandon",
+   "surrender"
+  ],
+  "fam": [
+   {
+    "w": "reclamation",
+    "pos": "n.",
+    "cn": "开垦；回收"
+   }
+  ],
+  "use": "阅读（城市/环境）· 听力 Section 2"
+ },
+ "reproduce": {
+  "us": "/ˌriːprəˈduːs/",
+  "def_en": "to produce young, or to make a copy of something",
+  "root": {
+   "prefix": "re-(再)+pro-(向前)",
+   "base": "duc(引导，拉丁 ducere)",
+   "suffix": "-e",
+   "logic": "re(再)+pro(向前)+duc(引导)→ 再引出一个 → 复制；生物再产生后代 → 繁殖",
+   "note": "同根：produce、conduct、reduce。"
+  },
+  "ex2": {
+   "en": "Many coral species reproduce only once a year, when the sea reaches a certain temperature.",
+   "zh": "许多珊瑚物种一年只繁殖一次，时机是海水达到某一温度之时。",
+   "note": "reproduce itself 自我复制；reproductive system 生殖系统。阅读（生物）。"
+  },
+  "syn": [
+   "breed",
+   "multiply",
+   "copy"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "reproduction",
+    "pos": "n.",
+    "cn": "繁殖；复制"
+   },
+   {
+    "w": "reproductive",
+    "pos": "adj.",
+    "cn": "生殖的"
+   }
+  ],
+  "use": "阅读（生物）· 听力 Section 4"
+ },
+ "sow": {
+  "us": "/soʊ/",
+  "def_en": "to plant seeds in the ground so that plants will grow",
+  "root": {
+   "prefix": "",
+   "base": "sow(古英语 sāwan 播种)",
+   "suffix": "",
+   "logic": "sow(古英语 sāwan)→ 把种子撒进土里 → 播种",
+   "note": "过去式 sowed，过去分词 sown 或 sowed。"
+  },
+  "ex2": {
+   "en": "Farmers here sow their wheat in early autumn so that the roots develop before winter.",
+   "zh": "这里的农民在初秋播种小麦，好让根系在入冬前发育。",
+   "note": "sow seeds 播种；引申 sow doubt 播下怀疑的种子。阅读（农业）。"
+  },
+  "syn": [
+   "plant",
+   "scatter",
+   "seed"
+  ],
+  "ant": [
+   "harvest",
+   "reap"
+  ],
+  "fam": [
+   {
+    "w": "sower",
+    "pos": "n.",
+    "cn": "播种者"
+   }
+  ],
+  "use": "阅读（农业）· 听力 Section 2"
+ },
+ "variation": {
+  "us": "/ˌveriˈeɪʃn/",
+  "def_en": "a difference in amount, level or form between similar things",
+  "root": {
+   "prefix": "",
+   "base": "vari(变化，杂色，拉丁 varius)",
+   "suffix": "-ation(名词后缀)",
+   "logic": "vari(不同)+ation→ 变得不同的地方 → 变化、变异",
+   "note": "同根：vary、various、variety。"
+  },
+  "ex2": {
+   "en": "There is wide variation in the price of the same medicine between different European countries.",
+   "zh": "同一种药品在不同欧洲国家之间的价格差异很大。",
+   "note": "variation in 在……方面的差异；seasonal variation 季节性变化。写作 Task 1 描述数据常用。"
+  },
+  "syn": [
+   "difference",
+   "fluctuation",
+   "deviation"
+  ],
+  "ant": [
+   "uniformity",
+   "consistency"
+  ],
+  "fam": [
+   {
+    "w": "vary",
+    "pos": "v.",
+    "cn": "变化，不同"
+   },
+   {
+    "w": "variable",
+    "pos": "adj./n.",
+    "cn": "可变的；变量"
+   },
+   {
+    "w": "various",
+    "pos": "adj.",
+    "cn": "各种各样的"
+   }
+  ],
+  "use": "写作 Task 1 · 阅读（生物/数据）"
+ },
+ "arable": {
+  "us": "/ˈærəbl/",
+  "def_en": "describing land that is suitable for growing crops and can be ploughed and planted",
+  "root": {
+   "prefix": "",
+   "base": "ar(犁，拉丁 arare)",
+   "suffix": "-able(可……的)",
+   "logic": "ar(犁地)+able(可……的)→ 可以犁种的 → 适于耕种的",
+   "note": "拉丁 arare（犁）亦见于同义的 plough。"
+  },
+  "ex2": {
+   "en": "Only a small share of the country's land is arable, and much of it is being built on.",
+   "zh": "该国只有一小部分土地是可耕地，而其中很多正在被占用建楼。",
+   "note": "arable land/farming 耕地/耕作农业；常与 livestock farming 对比。阅读（农业/土地）。"
+  },
+  "syn": [
+   "cultivable",
+   "farmable",
+   "fertile"
+  ],
+  "ant": [
+   "barren",
+   "unproductive"
+  ],
+  "fam": [],
+  "use": "阅读（农业/土地）· 写作 Task 2"
+ },
+ "bunch": {
+  "us": "/bʌntʃ/",
+  "def_en": "a group of things of the same kind fastened or growing together",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：bunch 读音近“蹦齐”——花枝蹦到一起扎成一扎 → 一束、一串",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 bunche，来源不明，可能出自方言。"
+  },
+  "ex2": {
+   "en": "He bought a bunch of bananas and a large bunch of flowers on his way home.",
+   "zh": "他在回家路上买了一串香蕉和一大束花。",
+   "note": "a bunch of 一束/一串，口语中也可指“一群、一帮”；bunches of 成串的。听力 Section 1 购物。"
+  },
+  "syn": [
+   "cluster",
+   "bouquet",
+   "collection"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 1（购物）· 口语 Part 1"
+ },
+ "bundle": {
+  "us": "/ˈbʌndl/",
+  "def_en": "a number of things, such as papers or sticks, tied or wrapped together",
+  "root": {
+   "prefix": "",
+   "base": "bund(<bind 捆绑)",
+   "suffix": "-le(名词后缀，表物)",
+   "logic": "bund(捆绑)+le(物)→ 捆在一起的东西 → 捆、包",
+   "note": ""
+  },
+  "ex2": {
+   "en": "She carried a heavy bundle of old newspapers to the recycling point on the corner.",
+   "zh": "她把一捆沉甸甸的旧报纸搬到街角的回收点。",
+   "note": "a bundle of 一捆；bundle up 穿得暖和；bundle sth with sth 搭售。"
+  },
+  "syn": [
+   "bunch",
+   "pack",
+   "parcel"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "bundle",
+    "pos": "v.",
+    "cn": "捆扎；匆匆推走"
+   }
+  ],
+  "use": "听力 Section 1 · 阅读（日常）"
+ },
+ "harvest": {
+  "us": "/ˈhɑːrvɪst/",
+  "def_en": "to gather crops from fields, or the crops that are gathered",
+  "root": {
+   "prefix": "",
+   "base": "harvest(古英语 hærfest 秋季，收获季)",
+   "suffix": "",
+   "logic": "harvest(秋季)→ 秋天所做的农事 → 收割、收成",
+   "note": "原义即“秋天”，词义由季节转指该季节的收获。"
+  },
+  "ex2": {
+   "en": "Villagers still harvest the rice by hand because machines cannot reach the narrow hillside terraces.",
+   "zh": "村民仍手工收割稻子，因为机器上不了那些狭窄的山坡梯田。",
+   "note": "harvest time 收获季节；a good/poor harvest 丰/歉收；harvest rainwater 收集雨水。"
+  },
+  "syn": [
+   "reap",
+   "gather",
+   "crop"
+  ],
+  "ant": [
+   "sow",
+   "plant"
+  ],
+  "fam": [
+   {
+    "w": "harvester",
+    "pos": "n.",
+    "cn": "收割机；收割者"
+   }
+  ],
+  "use": "阅读（农业）· 听力 Section 2"
+ },
+ "heap": {
+  "us": "/hiːp/",
+  "def_en": "a large pile of things put together in an untidy way",
+  "root": {
+   "prefix": "",
+   "base": "heap(古英语 hēap 堆、人群)",
+   "suffix": "",
+   "logic": "heap(堆)→ 东西随意堆在一起 → 一堆",
+   "note": ""
+  },
+  "ex2": {
+   "en": "A heap of empty plastic bottles had collected behind the school kitchen within a single week.",
+   "zh": "短短一周内，学校厨房后面就积起了一堆空塑料瓶。",
+   "note": "a heap of 一堆；heaps of（口语）大量；collapse in a heap 瘫倒。"
+  },
+  "syn": [
+   "pile",
+   "mound",
+   "stack"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 1 · 阅读（环境/垃圾）"
+ },
+ "pick": {
+  "us": "/pɪk/",
+  "def_en": "to choose something, or to take a flower or fruit from a plant",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：pick 的动作像鸟用喙“啄”下果实 → 摘、拾；再由“逐个取下”引申为挑选",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 piken，来源不确定，可能与“啄、刺”类词有关。"
+  },
+  "ex2": {
+   "en": "Visitors are allowed to pick apples in the orchard but must pay for them by weight.",
+   "zh": "游客可以在果园里摘苹果，但必须按重量付费。",
+   "note": "pick up 捡起/接人；pick out 挑出；pick sb's brains 向某人请教。听力高频短语动词。"
+  },
+  "syn": [
+   "choose",
+   "select",
+   "pluck"
+  ],
+  "ant": [
+   "reject",
+   "leave"
+  ],
+  "fam": [
+   {
+    "w": "picker",
+    "pos": "n.",
+    "cn": "采摘者；拣选机"
+   }
+  ],
+  "use": "听力 Section 1/2 · 口语 Part 1"
+ },
+ "plough": {
+  "us": "/plaʊ/",
+  "def_en": "to turn over the soil before planting, or the tool used for this",
+  "root": {
+   "prefix": "",
+   "base": "plough(古英语 plōh 犁)",
+   "suffix": "",
+   "logic": "plough(犁)→ 翻土的农具 → 犁地",
+   "note": "美式拼写 plow。"
+  },
+  "ex2": {
+   "en": "The field must be ploughed twice before the wheat seed is sown in early spring.",
+   "zh": "这块地必须犁两遍，才能在早春播下麦种。",
+   "note": "plough back profits 把利润再投资；plough through 费力读完。阅读（农业）。"
+  },
+  "syn": [
+   "till",
+   "cultivate",
+   "turn over"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "ploughing",
+    "pos": "n.",
+    "cn": "耕地，翻耕"
+   }
+  ],
+  "use": "阅读（农业）· 听力 Section 2"
+ },
+ "pluck": {
+  "us": "/plʌk/",
+  "def_en": "to pull something quickly, especially a flower, fruit or feather",
+  "root": {
+   "prefix": "",
+   "base": "pluck(古英语 pluccian 拔，与中古荷兰语 plukken 同源)",
+   "suffix": "",
+   "logic": "pluck(拔)→ 快速一拽 → 采摘；把心“提”起来 → 鼓起勇气",
+   "note": ""
+  },
+  "ex2": {
+   "en": "She plucked a few fresh leaves from the herb garden and added them to the soup.",
+   "zh": "她从香草园里摘了几片新鲜叶子放进汤里。",
+   "note": "pluck up courage 鼓起勇气；pluck at 拉扯；pluck the strings 拨弦。"
+  },
+  "syn": [
+   "pick",
+   "pull",
+   "gather"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "plucky",
+    "pos": "adj.",
+    "cn": "勇敢的"
+   }
+  ],
+  "use": "阅读（植物/日常）· 听力 Section 1"
+ },
+ "rake": {
+  "us": "/reɪk/",
+  "def_en": "a garden tool with a long handle and metal teeth, or to use such a tool",
+  "root": {
+   "prefix": "",
+   "base": "rake(古英语 raca 耙)",
+   "suffix": "",
+   "logic": "rake(耙)→ 带齿的农具 → 耙地；像耙子一样遍搜 → 搜索",
+   "note": ""
+  },
+  "ex2": {
+   "en": "He raked the fallen leaves into a heap and burned them at the end of the garden.",
+   "zh": "他把落叶耙成一堆，在园子尽头烧掉了。",
+   "note": "rake leaves 耙落叶；rake in 大量赚取；rake up 重提（旧事）。"
+  },
+  "syn": [
+   "scrape",
+   "comb",
+   "gather"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 2（园艺）· 阅读（日常）"
+ },
+ "rear": {
+  "us": "/rɪr/",
+  "def_en": "to care for young animals or children until they are grown",
+  "root": {
+   "prefix": "",
+   "base": "rear(<古英语 ræran 使升起，与 rise 同源)",
+   "suffix": "",
+   "logic": "rear(使升起)→ 把幼崽或孩子“扶起来”养大 → 抚养、饲养",
+   "note": "名词“后部”义来自古法语 rere（在后），两义同形不同源。"
+  },
+  "ex2": {
+   "en": "The centre rears injured young birds and releases them into the wild once they can fly.",
+   "zh": "该中心饲养受伤的幼鸟，待它们能飞后放归野外。",
+   "note": "rear children 抚养孩子；cattle rearing 养牛；at the rear of 在……后部。"
+  },
+  "syn": [
+   "raise",
+   "breed",
+   "bring up"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "rearing",
+    "pos": "n.",
+    "cn": "饲养，抚养"
+   }
+  ],
+  "use": "阅读（动物/农业）· 听力 Section 4"
+ },
+ "spade": {
+  "us": "/speɪd/",
+  "def_en": "a tool with a long handle and a flat metal blade, used for digging",
+  "root": {
+   "prefix": "",
+   "base": "spade(古英语 spadu 铲)",
+   "suffix": "",
+   "logic": "spade(铲)→ 翻土的工具 → 铁锹",
+   "note": ""
+  },
+  "ex2": {
+   "en": "Each student was given a spade and asked to plant a tree on the hillside.",
+   "zh": "每个学生都领到一把铁锹，被要求在山坡上种一棵树。",
+   "note": "call a spade a spade 直言不讳；in spades（口语）大量地。听力 Section 2 志愿活动。"
+  },
+  "syn": [
+   "shovel",
+   "digger"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 2（园艺/志愿活动）"
+ },
+ "stack": {
+  "us": "/stæk/",
+  "def_en": "a neat pile of things, or to put things into a pile",
+  "root": {
+   "prefix": "",
+   "base": "stack(古诺尔斯语 stakkr 草堆)",
+   "suffix": "",
+   "logic": "stack(草堆)→ 整齐码起的一摞 → 堆；动词堆放",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The librarian stacked the returned books on a metal trolley before putting them back on the shelves.",
+   "zh": "图书管理员把归还的书摞在一辆金属推车上，然后放回书架。",
+   "note": "a stack of 一摞；stack up 堆积；stack the shelves 上架。听力 Section 1（图书馆）。"
+  },
+  "syn": [
+   "pile",
+   "heap",
+   "mound"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "stackable",
+    "pos": "adj.",
+    "cn": "可叠放的"
+   }
+  ],
+  "use": "听力 Section 1（图书馆）· 阅读（日常）"
+ },
+ "vase": {
+  "us": "/veɪs/",
+  "def_en": "a container, usually made of glass or clay, used for holding cut flowers",
+  "root": {
+   "prefix": "",
+   "base": "vase(法语 vase < 拉丁 vas 容器)",
+   "suffix": "",
+   "logic": "vas(容器)→ 盛水的器皿 → 花瓶",
+   "note": "美音多读 /veɪs/，英音多读 /vɑːz/。"
+  },
+  "ex2": {
+   "en": "The flowers she picked were too tall for the small glass vase on the table.",
+   "zh": "她采的花太高了，桌上的小玻璃花瓶插不下。",
+   "note": "a vase of flowers 一瓶花；注意美式与英式发音差异。听力 Section 1（家居）。"
+  },
+  "syn": [
+   "pot",
+   "container",
+   "jar"
+  ],
+  "ant": [],
+  "fam": [],
+  "use": "听力 Section 1（家居/购物）"
+ },
+ "yield": {
+  "us": "/jiːld/",
+  "def_en": "to produce a crop or result, or to give way under pressure",
+  "root": {
+   "prefix": "",
+   "base": "yield(古英语 gieldan 支付、回报)",
+   "suffix": "",
+   "logic": "yield(支付)→ 土地“付给”人收成 → 出产；被迫“交付” → 屈服",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The new variety of rice yields almost twice as much grain as the traditional one.",
+   "zh": "这个水稻新品种的产量几乎是传统品种的两倍。",
+   "note": "yield to 屈服于；crop yield 作物产量；yield results 产生结果。阅读（农业）与写作 Task 1。"
+  },
+  "syn": [
+   "produce",
+   "surrender",
+   "give way"
+  ],
+  "ant": [
+   "resist",
+   "withstand"
+  ],
+  "fam": [
+   {
+    "w": "yielding",
+    "pos": "adj.",
+    "cn": "柔顺的；出产的"
+   },
+   {
+    "w": "unyielding",
+    "pos": "adj.",
+    "cn": "坚硬的；不屈的"
+   }
+  ],
+  "use": "阅读（农业/经济）· 写作 Task 1"
+ },
+ "aromatic": {
+  "us": "/ˌærəˈmætɪk/",
+  "def_en": "having a strong and pleasant smell, like spices, herbs or fresh coffee",
+  "root": {
+   "prefix": "",
+   "base": "aromat(香料，希腊 arōma)",
+   "suffix": "-ic(形容词后缀)",
+   "logic": "aroma(香气)+tic→ 带有香气的 → 芳香的",
+   "note": "aroma 也常指咖啡、葡萄酒的香气。"
+  },
+  "ex2": {
+   "en": "The kitchen garden is planted with aromatic herbs that release their scent when lightly touched.",
+   "zh": "这个厨房菜园里种着芳香的香草，一碰就散发香味。",
+   "note": "aromatic herbs/plants 香草；aromatic compounds（化学）芳香族化合物。听力 Section 2 园艺。"
+  },
+  "syn": [
+   "fragrant",
+   "scented",
+   "spicy"
+  ],
+  "ant": [
+   "odourless",
+   "smelly"
+  ],
+  "fam": [
+   {
+    "w": "aroma",
+    "pos": "n.",
+    "cn": "香气"
+   },
+   {
+    "w": "aromatherapy",
+    "pos": "n.",
+    "cn": "芳香疗法"
+   }
+  ],
+  "use": "听力 Section 2（园艺/饮食）· 阅读（植物）"
+ },
+ "bloom": {
+  "us": "/bluːm/",
+  "def_en": "a flower, especially on a tree or plant, or the state of flowering",
+  "root": {
+   "prefix": "",
+   "base": "bloom(中古英语 blom < 古诺尔斯语 blóm 花)",
+   "suffix": "",
+   "logic": "bloom(花)→ 树上开出的花 → 花朵；in bloom 处于盛花期",
+   "note": "与 blossom、flower 同源，均出自“开花”的古老词根。"
+  },
+  "ex2": {
+   "en": "The lavender fields are at their best in July, when the whole valley is in bloom.",
+   "zh": "薰衣草田在七月最美，那时整个山谷都在开花。",
+   "note": "in/out of bloom 正开花/花已谢；come into bloom 开花。听力/阅读（植物/旅游）。"
+  },
+  "syn": [
+   "blossom",
+   "flower"
+  ],
+  "ant": [
+   "wither"
+  ],
+  "fam": [
+   {
+    "w": "blooming",
+    "pos": "adj.",
+    "cn": "盛开的；（英口）讨厌的"
+   }
+  ],
+  "use": "阅读（植物）· 听力 Section 2（旅游）"
+ },
+ "blossom": {
+  "us": "/ˈblɑːsəm/",
+  "def_en": "a flower on a tree, or to produce flowers and begin to develop",
+  "root": {
+   "prefix": "",
+   "base": "blossom(古英语 blōstm，与 blow 开花同源)",
+   "suffix": "",
+   "logic": "blossom(花)→ 果树开的花 → 花朵；动词开花，引申“发展壮大”",
+   "note": ""
+  },
+  "ex2": {
+   "en": "The cherry blossom attracts thousands of visitors to the city's parks each April, boosting local business.",
+   "zh": "每年四月樱花吸引数千游客来到城市公园，带动了当地生意。",
+   "note": "in blossom 开花；blossom into 发展成为。阅读（植物）· 听力（旅游）。"
+  },
+  "syn": [
+   "bloom",
+   "flower",
+   "flourish"
+  ],
+  "ant": [
+   "wither",
+   "fade"
+  ],
+  "fam": [
+   {
+    "w": "blossoming",
+    "pos": "adj.",
+    "cn": "兴旺发展的"
+   }
+  ],
+  "use": "阅读（植物）· 听力 Section 2"
+ },
+ "bud": {
+  "us": "/bʌd/",
+  "def_en": "a small tight part of a plant that opens into a leaf or a flower",
+  "root": {
+   "prefix": "",
+   "base": "",
+   "suffix": "",
+   "logic": "联想：bud 与 body 首音相近——“小小的身体”裹在苞里 → 花苞、嫩芽",
+   "note": "词源存疑：以下为助记联想，非严格词源。中古英语 budde，来源不明。"
+  },
+  "ex2": {
+   "en": "The first green buds appear on the trees in early March, long before the leaves open.",
+   "zh": "三月初树上就冒出最早的绿芽，远在叶子展开之前。",
+   "note": "in bud 含苞待放；nip sth in the bud 把……扼杀在萌芽状态；taste bud 味蕾。"
+  },
+  "syn": [
+   "shoot",
+   "sprout",
+   "germ"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "budding",
+    "pos": "adj.",
+    "cn": "崭露头角的；发芽的"
+   }
+  ],
+  "use": "阅读（植物）· 听力 Section 4"
+ },
+ "burgeon": {
+  "us": "/ˈbɜːrdʒən/",
+  "def_en": "to begin to grow, or to develop and increase very quickly and strongly",
+  "root": {
+   "prefix": "",
+   "base": "burg(<拉丁 burra 羊毛)",
+   "suffix": "-eon(名词/动词后缀)",
+   "logic": "burra(羊毛)→ 一团毛茸茸的东西 → 嫩芽、花苞 → 迅速抽枝生长 → 急速发展",
+   "note": "原义“长芽”，现代多用于商业、城市等抽象事物的迅速增长。"
+  },
+  "ex2": {
+   "en": "The small town's population burgeoned after a new railway line linked it to the capital.",
+   "zh": "一条新铁路把这个小镇与首都连接起来后，镇上人口迅速增长。",
+   "note": "常以现在分词 burgeoning 作定语，如 burgeoning market/industry。阅读（经济/城市）。"
+  },
+  "syn": [
+   "flourish",
+   "expand",
+   "thrive"
+  ],
+  "ant": [
+   "decline",
+   "shrink"
+  ],
+  "fam": [
+   {
+    "w": "burgeoning",
+    "pos": "adj.",
+    "cn": "迅速发展的"
+   }
+  ],
+  "use": "阅读（经济/城市）· 写作 Task 2"
+ },
+ "flower": {
+  "us": "/ˈflaʊər/",
+  "def_en": "the coloured part of a plant that produces seeds, or to produce flowers",
+  "root": {
+   "prefix": "",
+   "base": "flour(<古法语 flor < 拉丁 flos/florem 花)",
+   "suffix": "",
+   "logic": "flos(花)→ 植物的花；动词“开花”；引申“精华”",
+   "note": "flour（面粉）与本词同源，原指“麦子最好的部分”。"
+  },
+  "ex2": {
+   "en": "Many wild plants in the meadow flower only once before the field is cut for hay.",
+   "zh": "草甸上的许多野生植物只开一次花，随后这片地就被人割作干草。",
+   "note": "in flower 正开花；flower bed 花坛；the flower of youth 青春年华。"
+  },
+  "syn": [
+   "bloom",
+   "blossom"
+  ],
+  "ant": [
+   "wither"
+  ],
+  "fam": [
+   {
+    "w": "flowering",
+    "pos": "n./adj.",
+    "cn": "开花（的）"
+   },
+   {
+    "w": "floral",
+    "pos": "adj.",
+    "cn": "花的"
+   },
+   {
+    "w": "florist",
+    "pos": "n.",
+    "cn": "花商"
+   }
+  ],
+  "use": "阅读（植物）· 听力 Section 2"
+ },
+ "fungus": {
+  "us": "/ˈfʌŋɡəs/",
+  "def_en": "a living thing such as a mushroom or mould that is not a plant or animal",
+  "root": {
+   "prefix": "",
+   "base": "fungus(拉丁 fungus 蘑菇)",
+   "suffix": "",
+   "logic": "fungus(蘑菇)→ 蘑菇、霉菌一类生物 → 真菌",
+   "note": "复数为 fungi /ˈfʌŋdʒaɪ/，也可作 funguses。"
+  },
+  "ex2": {
+   "en": "The fungus spreads quickly through warm wet soil and attacks the roots of young fruit trees.",
+   "zh": "这种真菌在潮湿土壤中迅速蔓延，侵染幼树的根系。",
+   "note": "复数 fungi；fungal infection 真菌感染；常与 bacterium、virus 并列。阅读（生物/医学）。"
+  },
+  "syn": [
+   "mould",
+   "mushroom",
+   "mildew"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "fungal",
+    "pos": "adj.",
+    "cn": "真菌的"
+   },
+   {
+    "w": "fungicide",
+    "pos": "n.",
+    "cn": "杀真菌剂"
+   }
+  ],
+  "use": "阅读（生物/农业/医学）· 听力 Section 4"
+ },
+ "germinate": {
+  "us": "/ˈdʒɜːrmɪneɪt/",
+  "def_en": "to start growing, or to make a seed start growing",
+  "root": {
+   "prefix": "",
+   "base": "germin(芽，拉丁 germen)",
+   "suffix": "-ate(动词后缀)",
+   "logic": "germen(芽、胚)→ 种子冒出芽 → 发芽；引申“想法萌生”",
+   "note": "同根：germ 细菌，原义也是“芽、胚”。"
+  },
+  "ex2": {
+   "en": "Seeds of this desert plant germinate only after a heavy rain has soaked the ground.",
+   "zh": "这种沙漠植物的种子只有在暴雨浸透土壤之后才会发芽。",
+   "note": "germinate seeds 使种子发芽；an idea germinates 想法萌生。阅读（植物/农业）。"
+  },
+  "syn": [
+   "sprout",
+   "bud",
+   "shoot"
+  ],
+  "ant": [
+   "wither",
+   "rot"
+  ],
+  "fam": [
+   {
+    "w": "germination",
+    "pos": "n.",
+    "cn": "发芽"
+   },
+   {
+    "w": "germ",
+    "pos": "n.",
+    "cn": "细菌；萌芽"
+   }
+  ],
+  "use": "阅读（植物/农业）· 听力 Section 4"
+ },
+ "mould": {
+  "us": "/moʊld/",
+  "def_en": "a soft green or black substance that grows on old food or damp walls",
+  "root": {
+   "prefix": "",
+   "base": "mould(中古英语 moul < 古诺尔斯语 mygla 霉；亦与 mould 软土有关)",
+   "suffix": "",
+   "logic": "mould(软土、霉)→ 潮湿处长的绒毛状物 → 霉菌；动词“发霉”",
+   "note": "美式拼写 mold；“模子、塑造”义的 mould 同形不同源。"
+  },
+  "ex2": {
+   "en": "Damp air in the bathroom encourages black mould to grow along the wooden window frames.",
+   "zh": "浴室里的潮湿空气使黑色霉菌沿着木质窗框生长。",
+   "note": "mould 作主语时不可数；mould grows on... 霉长在……上。阅读（健康/建筑）。"
+  },
+  "syn": [
+   "fungus",
+   "mildew",
+   "blight"
+  ],
+  "ant": [],
+  "fam": [
+   {
+    "w": "mouldy",
+    "pos": "adj.",
+    "cn": "发霉的"
+   }
+  ],
+  "use": "阅读（健康/建筑）· 听力 Section 2"
+ }
+}

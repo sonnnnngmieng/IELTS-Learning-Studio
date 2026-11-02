@@ -1,0 +1,313 @@
+{
+  "synonym_groups": [
+    {
+      "theme": "重要",
+      "pairs": [
+        ["important", "crucial"],
+        ["significant", "vital"],
+        ["essential", "indispensable"],
+        ["key", "pivotal"],
+        ["critical", "paramount"]
+      ]
+    },
+    {
+      "theme": "变化",
+      "pairs": [
+        ["change", "alter"],
+        ["transform", "convert"],
+        ["shift", "switch"],
+        ["modify", "adjust"],
+        ["evolve", "develop"]
+      ]
+    },
+    {
+      "theme": "原因",
+      "pairs": [
+        ["because of", "owing to"],
+        ["due to", "as a result of"],
+        ["cause", "give rise to"],
+        ["reason", "factor"],
+        ["stem from", "result from"]
+      ]
+    },
+    {
+      "theme": "影响",
+      "pairs": [
+        ["affect", "influence"],
+        ["impact", "effect"],
+        ["consequence", "repercussion"],
+        ["result in", "bring about"],
+        ["harmful", "detrimental"]
+      ]
+    },
+    {
+      "theme": "观点",
+      "pairs": [
+        ["think", "believe"],
+        ["argue", "contend"],
+        ["claim", "maintain"],
+        ["suggest", "propose"],
+        ["assert", "state"]
+      ]
+    },
+    {
+      "theme": "增加",
+      "pairs": [
+        ["increase", "rise"],
+        ["grow", "expand"],
+        ["surge", "soar"],
+        ["climb", "escalate"],
+        ["boost", "enhance"]
+      ]
+    },
+    {
+      "theme": "减少",
+      "pairs": [
+        ["decrease", "decline"],
+        ["reduce", "lower"],
+        ["drop", "fall"],
+        ["diminish", "lessen"],
+        ["shrink", "contract"]
+      ]
+    },
+    {
+      "theme": "困难",
+      "pairs": [
+        ["difficult", "challenging"],
+        ["hard", "demanding"],
+        ["obstacle", "barrier"],
+        ["struggle", "strive"],
+        ["complex", "complicated"]
+      ]
+    },
+    {
+      "theme": "方法",
+      "pairs": [
+        ["method", "approach"],
+        ["way", "means"],
+        ["strategy", "tactic"],
+        ["technique", "mechanism"],
+        ["solve", "tackle"]
+      ]
+    },
+    {
+      "theme": "发现",
+      "pairs": [
+        ["find", "discover"],
+        ["reveal", "show"],
+        ["demonstrate", "indicate"],
+        ["identify", "detect"],
+        ["observe", "notice"]
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "r1",
+      "title": "The Restless Mind of the Octopus",
+      "level": "中等",
+      "topic": "动物行为",
+      "paragraphs": [
+        "For most of the twentieth century, the octopus was regarded as a solitary creature with little to recommend it to students of behaviour beyond its talent for escaping from aquariums. That view has changed. An octopus has roughly five hundred million neurons, a number comparable to that of a dog, and about two thirds of them lie not in the brain but in the eight arms. Each arm can taste, touch and make decisions with a degree of independence that is difficult to reconcile with the idea of a single, central controller.",
+        "Such an unusual nervous system raises an obvious question: how does an animal built in this way rest? In 2018 a team working with captive Octopus vulgaris reported something unexpected. The animals spent most of the day motionless, pale and unresponsive, but every so often they entered a brief phase, lasting under a minute, in which their skin flickered through rapid changes of colour and their eyes moved beneath the lids. The pattern repeated several times an hour, and it looked strikingly like the rapid eye movement stage of mammalian sleep.",
+        "Describing the phase is easier than proving that it is sleep. Researchers in the field apply three tests. First, the state must be reversible: a strong enough stimulus should wake the animal. Second, an animal deprived of rest should afterwards rest for longer, a phenomenon known as rebound. Third, responsiveness should be measurably reduced. The octopus team, led by a neurobiologist in Tokyo, designed a simple experiment around the second and third of these. They delivered a gentle vibration to the tank at intervals and recorded how strongly the animals reacted.",
+        "The results supported the sleep hypothesis, though not decisively. During quiet periods, octopuses responded to even mild vibrations by contracting their skin and shifting position. During the flickering phase they needed a considerably stronger signal before they reacted at all. When the researchers repeatedly disturbed the animals during that phase, the octopuses afterwards entered it more often and for longer, exactly the rebound that sleep researchers look for. The authors were careful to note, however, that their sample was small, consisting of a handful of individuals in laboratory tanks.",
+        "Why an animal with a lifespan of barely two years would need to sleep at all is a puzzle. One possibility is that sleep serves memory. Octopuses are unusually quick learners, capable of solving novel mechanical problems and of remembering a solution for weeks, and their brains are organised in a way that bears no resemblance to our own. If the same function has evolved in two such different nervous systems, the argument runs, sleep may be a very old solution indeed, inherited from a common ancestor that lived more than five hundred million years ago.",
+        "The alternative is that the flickering phase has nothing to do with sleep and is instead a form of rehearsal, in which the animal practises the colour patterns it will need later. Cuttlefish, close relatives of the octopus, produce similar displays while resting, and at least one study has linked them to the patterns used in hunting. Deciding between the two explanations will require recordings of brain activity, which are extremely difficult to obtain from a soft-bodied animal that shows no interest in cooperating. Until then, the safest conclusion is that the octopus does something which looks very much like sleep, and that nobody yet knows why."
+      ],
+      "difficult_sentences": [
+        {
+          "en": "An octopus has roughly five hundred million neurons, a number comparable to that of a dog, and about two thirds of them lie not in the brain but in the eight arms.",
+          "analysis": "主干是 An octopus has neurons，后面 a number comparable to that of a dog 是同位语，用来补充说明 five hundred million 这个数字（that 指代 number，避免重复）。and 连接第二个分句 about two thirds of them lie not in the brain but in the eight arms，其中 not ... but ... 是并列否定结构，意思是「不在……而在……」。them 回指 neurons。",
+          "translation": "章鱼大约有五亿个神经元，这个数量与狗相当，而其中约三分之二不在大脑里，而在八条腕足中。"
+        },
+        {
+          "en": "Such an unusual nervous system raises an obvious question: how does an animal built in this way rest?",
+          "analysis": "主句是 Such an unusual nervous system raises a question，冒号后面用疑问句作同位语，具体说明 question 的内容。built in this way 是过去分词短语后置修饰 animal，相当于 which is built in this way。注意 raise a question 是固定搭配，不能用 rise。",
+          "translation": "如此奇特的神经系统引出一个显而易见的问题：以这种方式构造的动物是如何休息的？"
+        },
+        {
+          "en": "When the researchers repeatedly disturbed the animals during that phase, the octopuses afterwards entered it more often and for longer, exactly the rebound that sleep researchers look for.",
+          "analysis": "When 引导时间状语从句，主句是 the octopuses entered it more often and for longer。entered it 中的 it 指代前文的 the flickering phase。句末 exactly the rebound that ... 是同位语，对前面描述的现象下定义，that 引导定语从句修饰 rebound，look for 后面的关系代词在从句中作宾语所以省略了。",
+          "translation": "当研究人员在该阶段反复打扰这些章鱼后，它们随后进入这一阶段的次数更多、持续时间也更长，这正是睡眠研究者所寻找的「反弹」现象。"
+        },
+        {
+          "en": "If the same function has evolved in two such different nervous systems, the argument runs, sleep may be a very old solution indeed, inherited from a common ancestor that lived more than five hundred million years ago.",
+          "analysis": "If 引导条件状语从句，the argument runs 是插入语（意思是「这种论点认为」），拆开看会让句子更好理解：If ..., sleep may be a very old solution。inherited from ... 是过去分词短语作后置定语，修饰 solution；that lived ... 是定语从句修饰 ancestor。indeed 用于加强语气。",
+          "translation": "这种论点认为，如果同一功能已经在两种如此不同的神经系统中演化出来，那么睡眠或许是一种非常古老的解决方案，继承自五亿多年前的一个共同祖先。"
+        },
+        {
+          "en": "The alternative is that the flickering phase has nothing to do with sleep and is instead a form of rehearsal, in which the animal practises the colour patterns it will need later.",
+          "analysis": "主干是 The alternative is that ...，that 引导表语从句；从句内部由 and 连接两个并列谓语 has nothing to do with sleep 和 is instead a form of rehearsal。in which 引导非限制性定语从句修饰 rehearsal，其中 it will need later 是省略了关系词的定语从句修饰 patterns。",
+          "translation": "另一种解释是，这个闪变阶段与睡眠毫无关系，而是一种排练，动物在其中练习日后需要用到的体色图案。"
+        }
+      ],
+      "questions": [
+        {
+          "type": "判断题",
+          "question": "The majority of an octopus's neurons are located in its arms.",
+          "answer": "TRUE",
+          "explanation": "定位第一段 about two thirds of them lie not in the brain but in the eight arms。two thirds（三分之二）即 the majority，arms 与原文一致，因此为 TRUE。"
+        },
+        {
+          "type": "判断题",
+          "question": "The 2018 study was the first to observe colour changes in resting octopuses.",
+          "answer": "NOT GIVEN",
+          "explanation": "第二段只说该团队 reported something unexpected，全文没有任何地方说这是「首次」发现，也没有提到此前是否有人观察过，属于无法判断，因此选 NOT GIVEN。这是典型的「绝对化词 first 无原文支撑」陷阱。"
+        },
+        {
+          "type": "判断题",
+          "question": "The octopuses reacted to weaker vibrations during the flickering phase than during quiet periods.",
+          "answer": "FALSE",
+          "explanation": "定位第四段 During the flickering phase they needed a considerably stronger signal before they reacted at all，即需要更强的信号，与题干 weaker 正好相反，故为 FALSE。"
+        },
+        {
+          "type": "判断题",
+          "question": "Cuttlefish show displays while resting that resemble those of octopuses.",
+          "answer": "TRUE",
+          "explanation": "定位最后一段 Cuttlefish, close relatives of the octopus, produce similar displays while resting。similar displays 对应题干 resemble those of octopuses，故为 TRUE。"
+        },
+        {
+          "type": "选择题",
+          "question": "How did the researchers test whether the flickering phase was a form of sleep?",
+          "options": [
+            "A. They recorded electrical activity in the brain.",
+            "B. They measured how strongly the animals responded to vibrations.",
+            "C. They compared octopuses with mammals in the same tank.",
+            "D. They prevented the animals from eating for several days."
+          ],
+          "answer": "B",
+          "explanation": "定位第三段最后两句，团队围绕「反应性下降」和「反弹」设计实验，delivered a gentle vibration 并记录反应强度；第四段也印证了这一点。A 项是最后一段提到的「未来需要做但很难做」的事，属于常见干扰项。"
+        },
+        {
+          "type": "选择题",
+          "question": "Why does the writer remain cautious about the conclusions of the study?",
+          "options": [
+            "A. The animals were observed in the wild.",
+            "B. Only a small number of animals were studied.",
+            "C. The experiment lasted too short a time.",
+            "D. Another team failed to repeat the results."
+          ],
+          "answer": "B",
+          "explanation": "定位第四段末句 their sample was small, consisting of a handful of individuals。sample small 与 a handful of individuals 对应 B。文中明确说是 laboratory tanks，与 A 相反；C、D 均未提及。"
+        },
+        {
+          "type": "填空题",
+          "question": "About two thirds of an octopus's neurons are found in its ______.",
+          "answer": "arms",
+          "explanation": "定位第一段 about two thirds of them lie not in the brain but in the eight arms，填入 arms。注意题目常把 eight 去掉，只保留单数名词，拼写不要写成 army。"
+        },
+        {
+          "type": "填空题",
+          "question": "When disturbed repeatedly, the octopuses entered the flickering phase more often and for longer, a phenomenon known as ______.",
+          "answer": "rebound",
+          "explanation": "定位第四段 exactly the rebound that sleep researchers look for，同时第三段也给出定义 a phenomenon known as rebound。题目用 phenomenon known as 直接对应原文措辞。"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "title": "A History Written in Ice",
+      "level": "较难",
+      "topic": "考古与环境科学",
+      "paragraphs": [
+        "Every winter, snow falls on the interior of Greenland and never completely melts. Layer upon layer is buried, compressed and gradually turned to ice, so that a column drilled from the surface contains a continuous record stretching back more than a hundred thousand years. Trapped within it are bubbles of ancient air, grains of dust and, less obviously, traces of metals that were released into the atmosphere thousands of kilometres away. Reading that record has become one of the more surprising branches of archaeology.",
+        "The link between ice and ancient economies was established in the 1990s, when chemists analysing cores from central Greenland noticed sharp fluctuations in the concentration of lead. Lead is a by-product of silver smelting: the ores that Roman mints relied on contained both metals, and the furnaces that separated them released lead vapour into the air. Winds carried it north and west, and it settled on the ice sheet along with the snow. Because annual layers can be counted in the same way as tree rings, the timing of each fluctuation can be dated to within a few years.",
+        "The pattern that emerged was closely tied to political history. Lead concentrations rose steeply from around 500 BC, peaked during the first and second centuries AD, when the empire was at its height, and fell back sharply in the third century as mines were abandoned and trade contracted. A second peak followed in the early medieval period, and a third, much larger, came with the industrial revolution. The technique effectively allows historians to estimate the volume of silver production for periods when written accounts are fragmentary or silent.",
+        "Estimates of that volume have proved controversial. To convert a concentration measured in ice into a quantity of metal, researchers must model how much lead was lost in smelting, how far it travelled and how quickly it was deposited. Small changes in any of these assumptions shift the answer by a factor of two or more. One widely cited reconstruction put Roman emissions at roughly ten thousand tonnes a year at their peak, a figure that some historians regard as implausibly high given the number of furnaces that could have been in operation.",
+        "More robust, perhaps, are the relative changes. The cores show, for instance, a marked decline in the mid-fourteenth century, coinciding with the arrival of the plague in Europe, when a large fraction of the population died and demand for silver collapsed. Identifying such signals in a layer of ice is not the same as explaining them, but it does provide an independent check on conclusions drawn from coins, ships and tax records.",
+        "The findings have also altered how scientists think about the pre-industrial atmosphere. It was long assumed that air pollution on a significant scale began with coal, in the eighteenth century. Ice cores show that this is wrong. Human activity was leaving a measurable chemical signature in the most remote part of the northern hemisphere two thousand years before that, which means that any baseline used to judge the cleanliness of modern air is itself a product of human history.",
+        "None of this makes ice cores a substitute for conventional evidence, and the researchers involved are the first to say so. What the ice offers is a timeline of pollution that is independent of any written source, and therefore immune to the biases of the people who wrote those sources. Used alongside coins and shipwrecks, it turns a scattered set of documents into something closer to an economic series."
+      ],
+      "difficult_sentences": [
+        {
+          "en": "Layer upon layer is buried, compressed and gradually turned to ice, so that a column drilled from the surface contains a continuous record stretching back more than a hundred thousand years.",
+          "analysis": "主句是 Layer upon layer is buried, compressed and turned to ice，三个过去分词并列作谓语（被动）。so that 引导结果状语从句。drilled from the surface 是过去分词短语后置修饰 a column；stretching back ... 是现在分词短语后置修饰 record，相当于 which stretches back。注意 layer upon layer 作主语时谓语用单数 is。",
+          "translation": "一层又一层的雪被掩埋、压实并逐渐变成冰，因此从表面钻取的一段冰柱包含着可追溯到十万多年前的连续记录。"
+        },
+        {
+          "en": "The link between ice and ancient economies was established in the 1990s, when chemists analysing cores from central Greenland noticed sharp fluctuations in the concentration of lead.",
+          "analysis": "主干是 The link was established in the 1990s。when 引导非限制性定语从句修饰 the 1990s（先行词是时间，所以用 when）。analysing cores from central Greenland 是现在分词短语作定语修饰 chemists，可还原为 who were analysing。注意 established 在此是「被确立」而不是「建立机构」。",
+          "translation": "冰与古代经济之间的联系是在 20 世纪 90 年代确立的，当时分析格陵兰中部冰芯的化学家注意到铅浓度的剧烈波动。"
+        },
+        {
+          "en": "Lead concentrations rose steeply from around 500 BC, peaked during the first and second centuries AD, when the empire was at its height, and fell back sharply in the third century as mines were abandoned and trade contracted.",
+          "analysis": "主句有三个并列谓语：rose、peaked、fell back，中间用逗号和 and 连接，这是学术写作中常见的「一条时间线串三个动作」结构。when the empire was at its height 是非限制性定语从句修饰 the first and second centuries AD；as 引导原因状语从句，意为「随着／因为」。at its height 意为「处于鼎盛时期」。",
+          "translation": "铅浓度从公元前 500 年左右开始急剧上升，在公元 1 至 2 世纪帝国处于鼎盛时期达到峰值，随后在 3 世纪随着矿山被废弃、贸易萎缩而大幅回落。"
+        },
+        {
+          "en": "To convert a concentration measured in ice into a quantity of metal, researchers must model how much lead was lost in smelting, how far it travelled and how quickly it was deposited.",
+          "analysis": "句首 To convert ... into ... 是目的状语，convert A into B 意为「把 A 换算成 B」，measured in ice 是过去分词后置修饰 concentration。主句 researchers must model 后面接三个由 how 引导的宾语从句并列，形成排比，这是雅思阅读中常见的三连问结构。",
+          "translation": "要把在冰中测得的浓度换算成金属数量，研究者必须模拟熔炼过程中损失了多少铅、铅传播了多远以及沉降速度有多快。"
+        },
+        {
+          "en": "Human activity was leaving a measurable chemical signature in the most remote part of the northern hemisphere two thousand years before that, which means that any baseline used to judge the cleanliness of modern air is itself a product of human history.",
+          "analysis": "主句是 Human activity was leaving a signature，用的是过去进行时，强调「当时一直在留下」。two thousand years before that 是时间状语，that 指前文的 the eighteenth century。which 引导非限制性定语从句，指代前面整句话；从句中 used to judge ... 是过去分词短语修饰 baseline，is itself a product 是主系表结构。",
+          "translation": "人类活动早在那个时间点之前两千年，就在北半球最偏远的地区留下了可测量的化学印记，这意味着任何用来评判现代空气清洁程度的基准线本身也是人类历史的产物。"
+        }
+      ],
+      "questions": [
+        {
+          "type": "判断题",
+          "question": "The snow that falls on central Greenland melts completely each summer.",
+          "answer": "FALSE",
+          "explanation": "定位第一段第一句 snow falls on the interior of Greenland and never completely melts，never completely melts 与题干 melts completely 直接矛盾，故为 FALSE。"
+        },
+        {
+          "type": "判断题",
+          "question": "Some of the lead found in Greenland ice originated from Roman silver production.",
+          "answer": "TRUE",
+          "explanation": "定位第二段 Lead is a by-product of silver smelting: the ores that Roman mints relied on ... released lead vapour into the air，再由风带到冰盖上。题干用 originated from 对应原文的产生与传输链条，故为 TRUE。"
+        },
+        {
+          "type": "判断题",
+          "question": "Historians are now agreed on the exact quantity of silver produced in the Roman period.",
+          "answer": "FALSE",
+          "explanation": "定位第四段 Estimates of that volume have proved controversial 以及 some historians regard as implausibly high，说明学界存在争议，与题干 agreed 相反，故为 FALSE。"
+        },
+        {
+          "type": "判断题",
+          "question": "The fall in lead levels in the fourteenth century was caused by a change in wind patterns.",
+          "answer": "FALSE",
+          "explanation": "定位第五段 a marked decline in the mid-fourteenth century, coinciding with the arrival of the plague in Europe, when a large fraction of the population died and demand for silver collapsed。原因是瘟疫导致需求崩溃，而非风向变化，风向在文中并未被提及为原因，故为 FALSE。"
+        },
+        {
+          "type": "选择题",
+          "question": "Why can the timing of changes in lead levels be identified so precisely?",
+          "options": [
+            "A. Roman writers recorded the dates of mining activity.",
+            "B. Annual layers of ice can be counted like tree rings.",
+            "C. Coins found in the ice can be dated accurately.",
+            "D. Volcanic eruptions occurred at regular intervals."
+          ],
+          "answer": "B",
+          "explanation": "定位第二段末句 Because annual layers can be counted in the same way as tree rings, the timing of each fluctuation can be dated to within a few years。A 项与文章「书面记录残缺或沉默」的说法冲突，C、D 未提及。"
+        },
+        {
+          "type": "选择题",
+          "question": "What is the main difficulty in turning ice measurements into estimates of production?",
+          "options": [
+            "A. Ice cores cover too short a period of time.",
+            "B. The models rest on assumptions that greatly change the result.",
+            "C. Lead from different sources cannot be distinguished.",
+            "D. Roman furnaces were too few to leave any trace."
+          ],
+          "answer": "B",
+          "explanation": "定位第四段 Small changes in any of these assumptions shift the answer by a factor of two or more，说明假设的微小变动会让结果相差两倍以上，对应 B 项 greatly change the result。A 与第一段「十万多年」矛盾。"
+        },
+        {
+          "type": "填空题",
+          "question": "Annual layers in the ice can be counted in the same way as ______ rings.",
+          "answer": "tree",
+          "explanation": "定位第二段 in the same way as tree rings，注意题目只保留一个空，需填 tree 而不是 tree rings，同时不要写成 tree's。"
+        },
+        {
+          "type": "填空题",
+          "question": "Lead levels fell sharply in the mid-fourteenth century when the ______ reached Europe.",
+          "answer": "plague",
+          "explanation": "定位第五段 coinciding with the arrival of the plague in Europe。arrival of the plague 与题干 the plague reached Europe 构成同义替换，考查名词拼写 plague（瘟疫）。"
+        }
+      ]
+    }
+  ]
+}

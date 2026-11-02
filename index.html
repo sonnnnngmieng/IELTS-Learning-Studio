@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>雅中之思 · IELTS Learning Studio</title>
+<meta name="theme-color" content="#fbf2dc">
+<link rel="stylesheet" href="css/style.css">
+<script>/* 主题预加载，避免闪白 */try{document.documentElement.dataset.theme=localStorage.getItem('wb_theme')||'cream'}catch(e){}</script>
+</head>
+<body>
+<div class="shell">
+  <!-- 顶部胶囊导航 -->
+  <header class="topnav">
+    <div class="brand" onclick="location.hash='#/home'">
+      <span class="logo">雅</span>
+      <div><b>雅中之思</b><em>IELTS Learning Studio</em></div>
+    </div>
+    <nav class="nav-pills">
+      <a href="#/home" data-nav="home">今日</a>
+      <a href="#/vocab" data-nav="vocab">词汇</a>
+      <a href="#/dictation" data-nav="dictation">听写</a>
+      <a href="#/game" data-nav="game">拼词闯关</a>
+      <a href="#/craft" data-nav="craft">手工柜</a>
+      <a href="#/listening" data-nav="listening">听力</a>
+      <a href="#/writing" data-nav="writing">写作</a>
+      <a href="#/reading" data-nav="reading">阅读</a>
+      <a href="#/speaking" data-nav="speaking">口语</a>
+      <a href="#/plan" data-nav="plan">计划</a>
+      <a href="#/records" data-nav="records">记录</a>
+      <a href="#/guide" data-nav="guide">备考</a>
+      <a href="#/ai" data-nav="ai">AI</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn only-mobile" onclick="UI.toggleDrawer()">☰</button>
+      <button class="icon-btn" onclick="UI.themePicker()" title="切换主题">◐</button>
+      <button class="icon-btn" onclick="location.hash='#/plan'" title="学习计划">◫</button>
+      <button class="user-box" onclick="UI.showUserMenu()">
+        <span class="avatar" id="avatar">雅</span>
+        <span class="ub-text"><b id="user-name">设置学习目标</b><em id="user-sub">考试日期未设置</em></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand" onclick="location.hash='#/home'">
+      <span class="logo">雅</span>
+      <div><b>雅中之思</b><em>IELTS Learning Studio</em></div>
+    </div>
+    <nav class="side-nav">
+      <a href="#/home" data-nav="home"><i>◱</i><span>今日</span></a>
+      <a href="#/vocab" data-nav="vocab"><i>▤</i><span>词汇</span></a>
+      <a href="#/dictation" data-nav="dictation"><i>⌨</i><span>听写</span></a>
+      <a href="#/game" data-nav="game"><i>◆</i><span>拼词闯关</span></a>
+      <a href="#/craft" data-nav="craft"><i>✿</i><span>手工柜</span></a>
+      <a href="#/listening" data-nav="listening"><i>◍</i><span>听力</span></a>
+      <a href="#/writing" data-nav="writing"><i>✎</i><span>写作</span></a>
+      <a href="#/reading" data-nav="reading"><i>▦</i><span>阅读</span></a>
+      <a href="#/speaking" data-nav="speaking"><i>◎</i><span>口语</span></a>
+      <a href="#/plan" data-nav="plan"><i>◫</i><span>学习计划</span></a>
+      <a href="#/records" data-nav="records"><i>◔</i><span>学习记录</span></a>
+      <a href="#/guide" data-nav="guide"><i>✦</i><span>备考指南</span></a>
+      <a href="#/ai" data-nav="ai"><i>✧</i><span>AI 助手</span></a>
+    </nav>
+    <div class="side-foot">
+      <button class="user-box" onclick="location.hash='#/profile'" style="width:100%">
+        <span class="avatar" id="avatar-m">雅</span>
+        <span class="ub-text"><b>目标与个人中心</b><em>目标分数 / 考试日期 / 数据备份</em></span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <div class="main">
+    <header class="topbar">
+      <div class="crumb" id="crumb">今日学习空间</div>
+      <div class="top-actions">
+        <button class="icon-btn" onclick="location.hash='#/craft'" title="手工柜">✿</button>
+        <button class="icon-btn" onclick="location.hash='#/ai'" title="AI 助手">✦</button>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+</div>
+
+<!-- 移动端底部导航 -->
+<nav class="mobbar">
+  <a href="#/home" data-mob="home"><span>◱</span>今日</a>
+  <a href="#/vocab" data-mob="vocab"><span>▤</span>词汇</a>
+  <a href="#/dictation" data-mob="dictation"><span>⌨</span>听写</a>
+  <a href="#/game" data-mob="game"><span>◆</span>闯关</a>
+  <a href="#/craft" data-mob="craft"><span>✿</span>手工柜</a>
+</nav>
+
+<!-- 登录已移除：所有数据保存在本设备，无需注册 -->
+
+<!-- 手写涂鸦页角装饰 -->
+<div class="doodle d1" aria-hidden="true"><svg width="120" height="46" viewBox="0 0 120 46"><path d="M4 30 Q 18 12 34 26 T 66 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 40 C 30 34 60 42 84 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 5"/></svg><span style="margin-left:6px">keep going ✎</span></div>
+<div class="doodle d2" aria-hidden="true"><svg width="64" height="52" viewBox="0 0 64 52"><path d="M8 44 L 8 20 L 16 20 L 16 12 L 24 12 L 24 4 L 40 4 L 40 12 L 48 12 L 48 20 L 56 20 L 56 44 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 24 h16 M24 32 h16" stroke="currentColor" stroke-width="2"/><rect x="6" y="44" width="52" height="5" fill="currentColor" opacity=".25"/></svg><span style="display:block;text-align:right;margin-top:3px">像素学习台</span></div>
+
+<div id="toast" class="toast" style="display:none"></div>
+<div class="drawer-mask" id="drawer-mask" onclick="UI.toggleDrawer()"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script>
+  window.PUBLIC_CONFIG = {
+    endpoint: "https://ielts-station-86055.app.workbuddy.host",
+    oauthRelayBaseUrl: "https://www.workbuddy.cn/v2/as/genie-baas/oauth",
+    publishableKey: "wbpk_EM0sEYg5RawLa41D0Xu5OT_DodsJs2jlx9o8eK7VN7AyKdFE0OmPcks"
+  };
+</script>
+<script src="js/util.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/store.js"></script>
+<script src="js/plan.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/craft.js"></script>
+<script src="js/game.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/vocab.js"></script>
+<script src="js/listening.js"></script>
+<script src="js/writing.js"></script>
+<script src="js/reading.js"></script>
+<script src="js/speaking.js"></script>
+<script src="js/records.js"></script>
+<script src="js/tutor.js"></script>
+<script src="js/guide.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

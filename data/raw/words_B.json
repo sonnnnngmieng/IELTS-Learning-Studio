@@ -1,0 +1,827 @@
+[
+  {
+    "page_pdf": 19,
+    "page_print": "010",
+    "words": [
+      {
+        "word": "meteorology",
+        "phonetic": "/ˌmiːtiəˈrɒlədʒi/",
+        "meanings": [{"pos": "n.", "cn": "气象学"}],
+        "examples": [{"en": "Nowadays, few people like to study meteorology.", "zh": "现在，很少有人愿意学气象学。"}],
+        "memory": "meteor(高处的事物) + logy(学说) → 气象学。",
+        "derivatives": [{"w": "meteorological", "pos": "adj.", "cn": "气象的"}]
+      },
+      {
+        "word": "mild",
+        "phonetic": "/maɪld/",
+        "meanings": [{"pos": "adj.", "cn": "温和的；不严重的"}],
+        "examples": [{"en": "The weather is mild today; it is neither hot nor cold.", "zh": "今天的天气温暖舒适，不热也不冷。"}],
+        "collocation": ["a mild climate 温和的气候"]
+      },
+      {
+        "word": "heating",
+        "phonetic": "/ˈhiːtɪŋ/",
+        "meanings": [{"pos": "n.", "cn": "供暖；暖气装置"}],
+        "examples": [{"en": "The workers are installing a heating system.", "zh": "工人们正在安装供暖系统。"}],
+        "collocation": ["central heating 中央暖气系统"],
+        "memory": "heat n. 热；强烈感情 v. (使)变热"
+      },
+      {
+        "word": "moderate",
+        "phonetic": "/ˈmɒdərət/ (adj.)  /ˈmɒdəreɪt/ (v.)",
+        "meanings": [{"pos": "adj.", "cn": "适度的；温和的；中等的"}, {"pos": "v.", "cn": "(使)缓和"}],
+        "examples": [{"en": "The wind was strong all day, but it moderated in the evening.", "zh": "一整天，风都刮得很厉害，但到傍晚时有所减弱了。"}],
+        "collocation": ["a moderate climate 温和的气候"]
+      },
+      {
+        "word": "warm",
+        "phonetic": "/wɔːm/",
+        "meanings": [{"pos": "adj.", "cn": "温暖的"}, {"pos": "v.", "cn": "(使)变暖"}],
+        "examples": [{"en": "The blood of a warm-blooded animal remains around the same temperature both on warm and cold days.", "zh": "不论天气温暖还是寒冷，恒温动物的血都会保持基本不变的温度。"}],
+        "derivatives": [{"w": "warmth", "pos": "n.", "cn": "温暖；热情"}]
+      },
+      {
+        "word": "thermal",
+        "phonetic": "/ˈθɜːməl/",
+        "meanings": [{"pos": "adj.", "cn": "热量的"}],
+        "examples": [{"en": "The thermal energy has become more and more important.", "zh": "热能变得越来越重要了。"}]
+      },
+      {
+        "word": "tropics",
+        "phonetic": "/ˈtrɒpɪks/",
+        "meanings": [{"pos": "n.", "cn": "[the ~] 热带地区"}],
+        "examples": [{"en": "He lives in the tropics.", "zh": "他住在热带地区。"}],
+        "collocation": ["in the tropics 在热带地区"],
+        "derivatives": [{"w": "tropical", "pos": "adj.", "cn": "热带的"}]
+      },
+      {
+        "word": "arid",
+        "phonetic": "/ˈærɪd/",
+        "meanings": [{"pos": "adj.", "cn": "干燥的，干旱的；枯燥的"}],
+        "examples": [{"en": "It is difficult to grow fruit in arid desert areas.", "zh": "在干燥的沙漠地带栽培水果很困难。"}],
+        "collocation": ["an arid desert 干旱的荒漠"]
+      },
+      {
+        "word": "moist",
+        "phonetic": "/mɔɪst/",
+        "meanings": [{"pos": "adj.", "cn": "潮湿的，湿润的"}],
+        "examples": [{"en": "His eyes were moist with tears.", "zh": "泪水润湿了他的眼睛。"}],
+        "derivatives": [{"w": "moisture", "pos": "n.", "cn": "潮气，湿气；水分"}]
+      },
+      {
+        "word": "damp",
+        "phonetic": "/dæmp/",
+        "meanings": [{"pos": "adj.", "cn": "潮湿的，湿气重的"}],
+        "examples": [{"en": "The damp match won't strike.", "zh": "这潮湿的火柴划不着。"}],
+        "collocation": ["a damp climate 潮湿的气候"],
+        "derivatives": [{"w": "dampness", "pos": "n.", "cn": "潮湿"}]
+      },
+      {
+        "word": "humid",
+        "phonetic": "/ˈhjuːmɪd/",
+        "meanings": [{"pos": "adj.", "cn": "潮湿的，湿热的"}],
+        "examples": [{"en": "The milk powder has lumped together because my home is so humid.", "zh": "我家太潮湿了，所以奶粉结块了。"}],
+        "collocation": ["humid conditions 湿热的天气状况"],
+        "derivatives": [{"w": "humidity", "pos": "n.", "cn": "高温潮湿；湿度"}]
+      },
+      {
+        "word": "snowy",
+        "phonetic": "/ˈsnəʊi/",
+        "meanings": [{"pos": "adj.", "cn": "下雪多的；被雪覆盖的"}],
+        "examples": [{"en": "The snowy weather lasted the whole time we were there.", "zh": "我们在那儿的整段时间都是下雪的天气。"}],
+        "derivatives": [{"w": "snow", "pos": "n.", "cn": "雪"}]
+      },
+      {
+        "word": "frost",
+        "phonetic": "/frɒst/",
+        "meanings": [{"pos": "n.", "cn": "霜；霜冻；严寒"}],
+        "examples": [{"en": "Sweet potatoes decayed after the frost.", "zh": "发生霜冻之后，甘薯烂掉了。"}],
+        "derivatives": [{"w": "frosty", "pos": "adj.", "cn": "结霜的；严寒的"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 20,
+    "page_print": "011",
+    "words": [
+      {
+        "word": "hail",
+        "phonetic": "/heɪl/",
+        "meanings": [{"pos": "n.", "cn": "雹，冰雹"}, {"pos": "v.", "cn": "赞扬；招呼；下雹"}],
+        "examples": [{"en": "It hailed during the night.", "zh": "夜间下了冰雹。"}]
+      },
+      {
+        "word": "thaw",
+        "phonetic": "/θɔː/",
+        "meanings": [{"pos": "v.", "cn": "解冻，融解，融化"}, {"pos": "n.", "cn": "解冻时期"}],
+        "examples": [{"en": "The sun thawed the ice and melted the snow.", "zh": "阳光之下，冰雪消融。"}],
+        "collocation": ["thaw (sth.) out (使冷冻食品)解冻；(使某物)变暖"]
+      },
+      {
+        "word": "chill",
+        "phonetic": "/tʃɪl/",
+        "meanings": [{"pos": "v.", "cn": "(使)变冷；使恐惧"}, {"pos": "n.", "cn": "寒冷；害怕"}],
+        "examples": [{"en": "The bad news cast a chill over the whole family.", "zh": "这坏消息使全家人感到不寒而栗。"}],
+        "collocation": ["chill enthusiasm 使热情冷却"],
+        "derivatives": [{"w": "chilly", "pos": "adj.", "cn": "寒冷的"}]
+      },
+      {
+        "word": "freeze",
+        "phonetic": "/friːz/",
+        "meanings": [{"pos": "v.", "cn": "结冰"}, {"pos": "n.", "cn": "霜冻；严寒期"}],
+        "examples": [{"en": "The weatherman predicted a freeze for tonight.", "zh": "天气预报员预报今晚有霜冻。"}],
+        "derivatives": [{"w": "freezer", "pos": "n.", "cn": "冰柜"}, {"w": "freezing", "pos": "adj.", "cn": "极冷的"}]
+      },
+      {
+        "word": "frigid",
+        "phonetic": "/ˈfrɪdʒɪd/",
+        "meanings": [{"pos": "adj.", "cn": "寒冷的"}],
+        "examples": [{"en": "Hohhot is a frigid city in winter.", "zh": "冬天的呼和浩特十分寒冷。"}],
+        "collocation": ["the frigid zones 寒带", "a frigid climate 极冷的气候"]
+      },
+      {
+        "word": "tremble",
+        "phonetic": "/ˈtrembl/",
+        "meanings": [{"pos": "v./n.", "cn": "战栗，颤抖"}],
+        "examples": [{"en": "There was a tremble in her voice.", "zh": "她的声音颤抖着。"}],
+        "collocation": ["tremble all over 浑身颤抖"]
+      },
+      {
+        "word": "shiver",
+        "phonetic": "/ˈʃɪvə/",
+        "meanings": [{"pos": "v.", "cn": "颤抖，哆嗦，发抖"}],
+        "examples": [{"en": "She shivered because she was worried and afraid.", "zh": "她因担忧和害怕而发抖。"}],
+        "collocation": ["shiver with cold 冷得发抖"],
+        "memory": "以er结尾的词，常常表示一种反复状态，如：batter(连续用bat[球棒]击打→连续猛击)，chatter(反复chat[聊天]→喋喋不休)，flicker(摇曳，闪烁不定)，teeter(蹒跚行走；摇摇欲坠)，teeter-totter(反复出现摇摇欲坠的状态→跷跷板)。"
+      },
+      {
+        "word": "thunder",
+        "phonetic": "/ˈθʌndə/",
+        "meanings": [{"pos": "n.", "cn": "雷；雷声"}, {"pos": "v.", "cn": "打雷；轰隆隆地快速移动"}],
+        "examples": [{"en": "An express train thundered through the station.", "zh": "一辆快车轰隆隆地驶过车站。"}],
+        "derivatives": [{"w": "thunderstorm", "pos": "n.", "cn": "雷雨"}]
+      },
+      {
+        "word": "lightning",
+        "phonetic": "/ˈlaɪtnɪŋ/",
+        "meanings": [{"pos": "n.", "cn": "闪电"}, {"pos": "adj.", "cn": "闪电般的，极快的"}],
+        "examples": [{"en": "During the storm, flashes of lightning appeared in the sky.", "zh": "暴风雨中，道道闪电划过天空。"}],
+        "derivatives": [
+          {"w": "lighten", "pos": "v.", "cn": "使变轻；(使)发亮"},
+          {"w": "lighter", "pos": "n.", "cn": "打火机"},
+          {"w": "lightly", "pos": "adv.", "cn": "轻轻地；轻松地"}
+        ]
+      },
+      {
+        "word": "stormy",
+        "phonetic": "/ˈstɔːmi/",
+        "meanings": [{"pos": "adj.", "cn": "有暴风雨的；争吵激烈的；(大海)波涛汹涌的"}],
+        "examples": [{"en": "Our ship was tossed about on the stormy sea.", "zh": "我们的船在波涛汹涌的海面上颠簸。"}],
+        "derivatives": [{"w": "storm", "pos": "n.", "cn": "暴风雨"}]
+      },
+      {
+        "word": "downpour",
+        "phonetic": "/ˈdaʊnpɔː/",
+        "meanings": [{"pos": "n.", "cn": "倾盆大雨"}],
+        "examples": [{"en": "For the past six hours, the downpour had been continuous.", "zh": "过去的六个小时里，倾盆大雨持续不断。"}],
+        "memory": "down(向下) + pour(倾倒) → 倾盆大雨。"
+      },
+      {
+        "word": "rainfall",
+        "phonetic": "/ˈreɪnfɔːl/",
+        "meanings": [{"pos": "n.", "cn": "降雨量"}],
+        "examples": [{"en": "There have been four years of below-average rainfall.", "zh": "已经有四年降雨量低于平均值了。"}],
+        "memory": "rain(雨) + fall(降落) → 降雨量。"
+      },
+      {
+        "word": "sprinkle",
+        "phonetic": "/ˈsprɪŋkl/",
+        "meanings": [{"pos": "v.", "cn": "撒，洒；下小雨"}, {"pos": "n.", "cn": "少量；小雨"}],
+        "examples": [{"en": "We've only had a few sprinkles of rain recently.", "zh": "近来，我们这里只下过几场小雨。"}],
+        "collocation": ["sprinkle sth. on sth. 把某物洒/撒到某物上"]
+      }
+    ]
+  },
+  {
+    "page_pdf": 21,
+    "page_print": "012",
+    "words": [
+      {
+        "word": "rainbow",
+        "phonetic": "/ˈreɪnbəʊ/",
+        "meanings": [{"pos": "n.", "cn": "虹，彩虹"}],
+        "examples": [{"en": "A rainbow is usually seen after a heavy rain.", "zh": "彩虹通常在大雨之后出现。"}]
+      },
+      {
+        "word": "shower",
+        "phonetic": "/ˈʃaʊə/",
+        "meanings": [{"pos": "n.", "cn": "阵雨；(一)阵；淋浴"}],
+        "examples": [{"en": "The weatherman predicts showers this afternoon.", "zh": "气象预报员预报今天下午有阵雨。"}]
+      },
+      {
+        "word": "Celsius",
+        "phonetic": "/ˈselsiəs/",
+        "meanings": [{"pos": "adj.", "cn": "摄氏的"}, {"pos": "n.", "cn": "摄氏温度"}],
+        "examples": [{"en": "The maximum temperature in July may be 36 degrees Celsius.", "zh": "7月的最高温度可能达到36摄氏度。"}],
+        "memory": "Fahrenheit adj. 华氏的 n. 华氏温度\n以摄氏温标最初的提出者，即18世纪的瑞典科学家Anders Celsius的名字命名。"
+      },
+      {
+        "word": "temperature",
+        "phonetic": "/ˈtemprətʃə/",
+        "meanings": [{"pos": "n.", "cn": "气温；体温；温度"}],
+        "examples": [{"en": "After the storm, there will be a sharp drop in temperature.", "zh": "暴风雨过后，气温将骤降。"}],
+        "collocation": ["take the temperature 量温度"]
+      },
+      {
+        "word": "forecast",
+        "phonetic": "/ˈfɔːkɑːst/",
+        "meanings": [{"pos": "n.", "cn": "预测，预报"}, {"pos": "v.", "cn": "预测，预言"}],
+        "examples": [{"en": "The recent statement of the president forecasts a change in the situation.", "zh": "总统最近的一次讲话预示着形势将有所变化。"}],
+        "memory": "fore(前，先) + cast(扔) → 预先扔下 → 预报。"
+      },
+      {
+        "word": "peak",
+        "phonetic": "/piːk/",
+        "meanings": [{"pos": "n.", "cn": "山峰；顶点"}, {"pos": "v.", "cn": "达到最大值"}],
+        "examples": [{"en": "The mountain peaks are covered with snow all year round.", "zh": "山峰上终年覆盖着雪。"}],
+        "collocation": ["a mountain peak 山峰"]
+      },
+      {
+        "word": "mount",
+        "phonetic": "/maʊnt/",
+        "meanings": [{"pos": "v.", "cn": "逐渐增加；爬上，登上"}, {"pos": "n.", "cn": "[M-] 山"}],
+        "examples": [{"en": "The old lady can only mount the stairs with difficulty.", "zh": "这位老妇人上楼梯十分艰难。"}]
+      },
+      {
+        "word": "mountain",
+        "phonetic": "/ˈmaʊntɪn/",
+        "meanings": [{"pos": "n.", "cn": "山，山岳，高山"}],
+        "examples": [{"en": "The northern side of the mountain is almost vertical.", "zh": "这座山的北坡几乎是垂直的。"}],
+        "derivatives": [{"w": "mountainous", "pos": "adj.", "cn": "多山的"}]
+      },
+      {
+        "word": "range",
+        "phonetic": "/reɪndʒ/",
+        "meanings": [{"pos": "n.", "cn": "山脉；范围"}],
+        "examples": [{"en": "A range of hills rose on our left.", "zh": "山脉在我们左方出现。"}],
+        "collocation": ["in the range of 在……范围内；在……射程内"]
+      },
+      {
+        "word": "ridge",
+        "phonetic": "/rɪdʒ/",
+        "meanings": [{"pos": "n.", "cn": "山脊，山脉"}, {"pos": "v.", "cn": "使隆起"}],
+        "examples": [{"en": "The sky above the ridge of the mountains brightened.", "zh": "山脊上方的天空变得明亮起来。"}]
+      },
+      {
+        "word": "slope",
+        "phonetic": "/sləʊp/",
+        "meanings": [{"pos": "v.", "cn": "倾斜；有坡度"}, {"pos": "n.", "cn": "山坡；斜坡"}],
+        "examples": [{"en": "He ran up the slope to the top of the hill.", "zh": "他跑上斜坡，来到山顶。"}]
+      },
+      {
+        "word": "valley",
+        "phonetic": "/ˈvæli/",
+        "meanings": [{"pos": "n.", "cn": "山谷，溪谷"}],
+        "examples": [{"en": "The valley was hidden from view in the mist.", "zh": "溪谷隐没在雾霾之中，看不见了。"}],
+        "collocation": ["in a valley 在山谷里"]
+      },
+      {
+        "word": "hillside",
+        "phonetic": "/ˈhɪlsaɪd/",
+        "meanings": [{"pos": "n.", "cn": "(小山的)山腰，山坡"}],
+        "examples": [{"en": "The path steepened as they climbed the hillside.", "zh": "他们顺着山坡往上爬，小径愈发陡峭。"}]
+      },
+      {
+        "word": "overlook",
+        "phonetic": "/ˌəʊvəˈlʊk/",
+        "meanings": [{"pos": "v.", "cn": "俯瞰，远眺；未注意到"}],
+        "examples": [{"en": "The house on the hill overlooks the village.", "zh": "从小山上的房子可以俯瞰村庄。"}],
+        "collocation": ["be easily overlooked 容易被忽略的"],
+        "memory": "over(在上) + look(看) → 在上面往下看 → 俯瞰。"
+      },
+      {
+        "word": "southern",
+        "phonetic": "/ˈsʌðən/",
+        "meanings": [{"pos": "adj.", "cn": "南部的；南方的"}],
+        "examples": [{"en": "Only in the southern part of Taiwan have I seen such scenery.", "zh": "唯有在台湾南部我才见过这样的风景。"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 22,
+    "page_print": "013",
+    "words": [
+      {
+        "word": "southeast",
+        "phonetic": "/ˌsaʊθˈiːst/",
+        "meanings": [{"pos": "n.", "cn": "东南方；东南部"}, {"pos": "adj.", "cn": "东南方的；东南部的"}],
+        "examples": [{"en": "Austria lies to the southeast of Germany.", "zh": "奥地利在德国的东南边。"}]
+      },
+      {
+        "word": "southwest",
+        "phonetic": "/ˌsaʊθˈwest/",
+        "meanings": [{"pos": "n.", "cn": "西南方；西南部"}, {"pos": "adj.", "cn": "西南方的；西南部的"}],
+        "examples": [{"en": "Ireland is in the southwest of the British Isles.", "zh": "爱尔兰在不列颠群岛的西南部。"}]
+      },
+      {
+        "word": "northeast",
+        "phonetic": "/ˌnɔːθˈiːst/",
+        "meanings": [{"pos": "n.", "cn": "东北方；东北部"}, {"pos": "adj.", "cn": "东北方的；东北部的"}],
+        "examples": [{"en": "Snow in October is nothing strange in northeast China.", "zh": "在中国东北部，10月下雪不是什么奇怪的事。"}]
+      },
+      {
+        "word": "northwest",
+        "phonetic": "/ˌnɔːθˈwest/",
+        "meanings": [{"pos": "n.", "cn": "西北方；西北部"}, {"pos": "adj.", "cn": "西北方的；西北部的"}],
+        "examples": [{"en": "There is a large hilly area in the northwest.", "zh": "西北部有一大片丘陵地带。"}]
+      },
+      {
+        "word": "eastern",
+        "phonetic": "/ˈiːstən/",
+        "meanings": [{"pos": "adj.", "cn": "东部的；东方的"}],
+        "examples": [{"en": "The eastern situation is similarly intense.", "zh": "东部的情况同样紧张。"}]
+      },
+      {
+        "word": "oriental",
+        "phonetic": "/ˌɔːriˈentl/",
+        "meanings": [{"pos": "adj.", "cn": "东方的(尤指中国和日本的)"}],
+        "examples": [{"en": "She has studied the cultures of oriental countries.", "zh": "她研究过东方各国的文化。"}],
+        "memory": "字根ori意为“升起”→太阳升起的地方→东方的。同字根的又如：origin(太阳升起的地方→起源)，originator(发起人)，orient(太阳升起的地方→东方→向东→确定方向)。在英美等地的一些大学，在新学年开始前后有一周叫O-Week，即Orientation Week，会给新生介绍大学的各种情况，让他们摸清方向，尽快适应。"
+      },
+      {
+        "word": "inevitable",
+        "phonetic": "/ɪˈnevɪtəbl/",
+        "meanings": [{"pos": "adj.", "cn": "不可避免的，必然的"}],
+        "examples": [{"en": "Such a difficult operation may not succeed, but it's an inevitable gamble.", "zh": "难度如此之大的手术可能会失败，但我们必须冒险一试。"}],
+        "memory": "in(不) + evitable(可避免的) → 不可避免的。",
+        "derivatives": [{"w": "evitable", "pos": "adj.", "cn": "可避免的"}]
+      },
+      {
+        "word": "irreversible",
+        "phonetic": "/ˌɪrɪˈvɜːsəbl/",
+        "meanings": [{"pos": "adj.", "cn": "不可逆转的；不可挽回的"}],
+        "examples": [{"en": "He suffered irreversible brain damage from the incident.", "zh": "他的大脑在事故中受伤，无法治愈。"}],
+        "memory": "ir(不) + re(回) + vers(转) + ible(可……的) → 不可以转回来的 → 不可逆转的。"
+      },
+      {
+        "word": "irregularly",
+        "phonetic": "/ɪˈreɡjələli/",
+        "meanings": [{"pos": "adv.", "cn": "不规则地；不合常规地"}],
+        "examples": [{"en": "The patient is breathing irregularly.", "zh": "病人的呼吸很不均匀。"}],
+        "derivatives": [{"w": "regularly", "pos": "adv.", "cn": "有规律地"}]
+      },
+      {
+        "word": "inappropriate",
+        "phonetic": "/ˌɪnəˈprəʊpriət/",
+        "meanings": [{"pos": "adj.", "cn": "不合适的"}],
+        "examples": [{"en": "Your bright red coat would be quite inappropriate for a funeral.", "zh": "你鲜艳的红大衣很不适合葬礼。"}],
+        "derivatives": [{"w": "appropriate", "pos": "adj.", "cn": "恰当的，合适的"}]
+      },
+      {
+        "word": "abnormal",
+        "phonetic": "/æbˈnɔːml/",
+        "meanings": [{"pos": "adj.", "cn": "不正常的，反常的；变态的"}],
+        "examples": [{"en": "El Niño will result in the abnormal weather.", "zh": "厄尔尼诺现象将会导致异常的天气。"}],
+        "collocation": ["an abnormal climate 异常气候"],
+        "memory": "ab(不) + normal(正常的) → 不正常的。"
+      },
+      {
+        "word": "sediment",
+        "phonetic": "/ˈsedɪmənt/",
+        "meanings": [{"pos": "n.", "cn": "沉淀物；沉积物"}],
+        "examples": [{"en": "The sediment of coffee will settle.", "zh": "咖啡渣会沉淀下去。"}]
+      },
+      {
+        "word": "silt",
+        "phonetic": "/sɪlt/",
+        "meanings": [{"pos": "n.", "cn": "淤泥，泥沙"}, {"pos": "v.", "cn": "(使)淤塞"}],
+        "examples": [{"en": "River sediments gradually silted up the harbour.", "zh": "河流的沉积物逐渐使港口淤塞。"}]
+      },
+      {
+        "word": "muddy",
+        "phonetic": "/ˈmʌdi/",
+        "meanings": [{"pos": "adj.", "cn": "泥泞的；浑浊的"}],
+        "examples": [{"en": "We left the car and struck out along the muddy track.", "zh": "我们下了车，开始沿着泥泞的小路前行。"}],
+        "derivatives": [{"w": "mud", "pos": "n.", "cn": "泥"}]
+      },
+      {
+        "word": "clay",
+        "phonetic": "/kleɪ/",
+        "meanings": [{"pos": "n.", "cn": "黏土，陶土"}],
+        "examples": [{"en": "Bricks and dishes are made from various kinds of clay.", "zh": "砖和盘子由各种黏土制成。"}]
+      },
+      {
+        "word": "dirt",
+        "phonetic": "/dɜːt/",
+        "meanings": [{"pos": "n.", "cn": "污垢，灰尘；[尤美]泥土"}],
+        "examples": [{"en": "The children were outside, playing happily in the dirt.", "zh": "孩子们正在外面的泥土地里开心地玩耍。"}],
+        "derivatives": [{"w": "dirty", "pos": "adj.", "cn": "脏的；下流的"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 23,
+    "page_print": "014",
+    "words": [
+      {
+        "word": "rural",
+        "phonetic": "/ˈrʊərəl/",
+        "meanings": [{"pos": "adj.", "cn": "农村的，乡村的；田园的"}],
+        "examples": [{"en": "The disease occurs most frequently in rural areas.", "zh": "那种疾病多见于农村地区。"}],
+        "collocation": ["rural areas 农村地区"]
+      },
+      {
+        "word": "suburb",
+        "phonetic": "/ˈsʌbɜːb/",
+        "meanings": [{"pos": "n.", "cn": "郊区，郊外，近郊"}],
+        "examples": [{"en": "They proposed setting up a school in the suburbs.", "zh": "他们建议在郊区成立一所学校。"}],
+        "memory": "sub(接近) + urb(城市) → 城市附近。",
+        "derivatives": [{"w": "suburban", "pos": "adj.", "cn": "郊区的"}]
+      },
+      {
+        "word": "outskirts",
+        "phonetic": "/ˈaʊtskɜːts/",
+        "meanings": [{"pos": "n.", "cn": "郊区，市郊"}],
+        "examples": [{"en": "We live on the outskirts of the city.", "zh": "我们住在这座城市的郊区。"}]
+      },
+      {
+        "word": "remote",
+        "phonetic": "/rɪˈməʊt/",
+        "meanings": [{"pos": "adj.", "cn": "遥远的；偏僻的；疏远的"}],
+        "examples": [{"en": "She came from a remote village.", "zh": "她来自一个偏僻的村子。"}],
+        "collocation": ["a remote control 遥控器"]
+      },
+      {
+        "word": "desolate",
+        "phonetic": "/ˈdesələt/",
+        "meanings": [{"pos": "adj.", "cn": "荒凉的"}],
+        "examples": [{"en": "So how should they escape from these desolate canyons?", "zh": "那么他们要怎样逃出这些荒凉的峡谷呢？"}]
+      },
+      {
+        "word": "distant",
+        "phonetic": "/ˈdɪstənt/",
+        "meanings": [{"pos": "adj.", "cn": "遥远的；远隔的"}],
+        "examples": [{"en": "It snows all year round in that distant little village.", "zh": "那个遥远的小村落整年下雪。"}],
+        "collocation": ["the distant past 遥远的过去"],
+        "derivatives": [{"w": "distance", "pos": "n.", "cn": "距离，间距；远处"}]
+      },
+      {
+        "word": "adjacent",
+        "phonetic": "/əˈdʒeɪsnt/",
+        "meanings": [{"pos": "adj.", "cn": "邻近的，毗连的"}],
+        "examples": [{"en": "We stayed in adjacent rooms.", "zh": "我们待在相邻的房间。"}],
+        "collocation": ["adjacent to 与……毗连的"]
+      },
+      {
+        "word": "toxic",
+        "phonetic": "/ˈtɒksɪk/",
+        "meanings": [{"pos": "adj.", "cn": "有毒的"}],
+        "examples": [{"en": "All medicines are toxic.", "zh": "所有药物都有毒性。"}],
+        "collocation": ["toxic waste 有毒废物", "highly toxic 剧毒的"],
+        "memory": "来源于希腊语toxon，意为“弓(bow)”，在荷马史诗《伊利亚特》中还能寻到其踪迹。后来在战争中，人们普遍在箭头上涂毒药，提高弓箭的杀伤力，字根tox就有了“毒”的含义。如：toxicant(毒物，毒药)，detoxify(解毒)，toxicologist(毒理学家)，intoxicated(心里中毒的→陶醉的)。",
+        "derivatives": [{"w": "poisonous", "pos": "adj.", "cn": "有毒的"}]
+      },
+      {
+        "word": "pollution",
+        "phonetic": "/pəˈluːʃn/",
+        "meanings": [{"pos": "n.", "cn": "污染"}],
+        "examples": [{"en": "Waste water from the factory is the main cause of pollution in local rivers.", "zh": "来自那家工厂的污水是造成当地河流污染的主要原因。"}],
+        "collocation": ["pollution control 污染控制"],
+        "derivatives": [{"w": "pollute", "pos": "v.", "cn": "弄脏，污染"}]
+      },
+      {
+        "word": "pollutant",
+        "phonetic": "/pəˈluːtənt/",
+        "meanings": [{"pos": "n.", "cn": "污染物质"}],
+        "examples": [{"en": "Coal is a heavy pollutant.", "zh": "煤是一种重污染物。"}],
+        "collocation": ["atmospheric pollutants 大气污染物"]
+      },
+      {
+        "word": "contaminate",
+        "phonetic": "/kənˈtæmɪneɪt/",
+        "meanings": [{"pos": "v.", "cn": "弄脏，污染"}],
+        "examples": [{"en": "The river was contaminated with waste.", "zh": "这条河被垃圾污染了。"}],
+        "collocation": ["contaminated water 受到污染的水"],
+        "memory": "con(共同) + tam(接触) + in(里面) + ate(动词后缀) → 大家一起在里面摸来摸去 → 污染。",
+        "derivatives": [{"w": "contamination", "pos": "n.", "cn": "污染"}]
+      },
+      {
+        "word": "geology",
+        "phonetic": "/dʒiˈɒlədʒi/",
+        "meanings": [{"pos": "n.", "cn": "地质学；地质状况"}],
+        "examples": [{"en": "He devoted all his life to the research of the agricultural geology.", "zh": "他把一生奉献给了农业地质学的研究事业。"}],
+        "derivatives": [{"w": "geological", "pos": "adj.", "cn": "地质(学)的"}]
+      },
+      {
+        "word": "border",
+        "phonetic": "/ˈbɔːdə/",
+        "meanings": [{"pos": "n.", "cn": "边界；边界地区；镶边"}, {"pos": "v.", "cn": "和……毗邻；形成……的边界"}],
+        "examples": [{"en": "The border incident lead to the war between the two countries.", "zh": "这一边境事件导致了两国交战。"}],
+        "collocation": ["within the borders of 在……境内"]
+      }
+    ]
+  },
+  {
+    "page_pdf": 24,
+    "page_print": "015",
+    "words": [
+      {
+        "word": "margin",
+        "phonetic": "/ˈmɑːdʒɪn/",
+        "meanings": [{"pos": "n.", "cn": "边缘；页边空白；余地"}],
+        "examples": [{"en": "There is no margin for error in our plan.", "zh": "我们的计划不容有误。"}],
+        "collocation": ["allow a greater margin of 允许有更大的……余地"]
+      },
+      {
+        "word": "fringe",
+        "phonetic": "/frɪndʒ/",
+        "meanings": [{"pos": "n.", "cn": "边缘；刘海儿"}, {"pos": "adj.", "cn": "次要的；非主流的"}],
+        "examples": [{"en": "We feel it's pretty good and we also offer some good fringe benefits.", "zh": "我们觉得这很不错，而且我们还提供一些很好的附加福利。"}]
+      },
+      {
+        "word": "plate",
+        "phonetic": "/pleɪt/",
+        "meanings": [{"pos": "n.", "cn": "(地质学中的大陆)板块；盘"}],
+        "examples": [{"en": "It is generally accepted that earthquakes are caused by two tectonic plates bumping into each other.", "zh": "人们普遍认为，地震是由两块构造板块互相碰撞造成的。"}]
+      },
+      {
+        "word": "debris",
+        "phonetic": "/ˈdebriː/",
+        "meanings": [{"pos": "n.", "cn": "碎片，残骸"}],
+        "examples": [{"en": "We are searching for his corpse among the debris after the explosion.", "zh": "爆炸后，我在瓦砾堆中寻找着他的尸体。"}]
+      },
+      {
+        "word": "crack",
+        "phonetic": "/kræk/",
+        "meanings": [{"pos": "v.", "cn": "破裂；发出爆裂声"}, {"pos": "n.", "cn": "裂缝；缝隙"}],
+        "examples": [{"en": "The door opened just a crack.", "zh": "这扇门只打开一条缝。"}],
+        "collocation": ["cause a crack 弄出裂缝"]
+      },
+      {
+        "word": "gap",
+        "phonetic": "/ɡæp/",
+        "meanings": [{"pos": "n.", "cn": "缺口，裂缝；差距；空白"}],
+        "examples": [{"en": "There are wide gaps in my knowledge of history.", "zh": "我的历史知识很贫乏。"}],
+        "collocation": ["the generation gap 代沟"]
+      },
+      {
+        "word": "splendid",
+        "phonetic": "/ˈsplendɪd/",
+        "meanings": [{"pos": "adj.", "cn": "极好的；壮观的"}],
+        "examples": [{"en": "You're all doing a splendid job; keep up the good work!", "zh": "你们干得都很出色，要坚持下去！"}],
+        "collocation": ["a splendid chance 极好的机会"]
+      },
+      {
+        "word": "grand",
+        "phonetic": "/ɡrænd/",
+        "meanings": [{"pos": "adj.", "cn": "宏大的；豪华的，宏伟的；极好的"}],
+        "examples": [{"en": "He was born in the purple and was brought up in the grand palace.", "zh": "他出身于皇族，在宏伟的宫殿中长大。"}]
+      },
+      {
+        "word": "magnificent",
+        "phonetic": "/mæɡˈnɪfɪsnt/",
+        "meanings": [{"pos": "adj.", "cn": "壮丽的，宏伟的；令人印象深刻的"}],
+        "examples": [{"en": "The king lived in this magnificent palace.", "zh": "国王住在这座宏伟的宫殿里。"}],
+        "derivatives": [{"w": "magnificence", "pos": "n.", "cn": "宏伟，壮丽"}]
+      },
+      {
+        "word": "super",
+        "phonetic": "/ˈsuːpə/",
+        "meanings": [{"pos": "adj.", "cn": "超级的，极好的"}],
+        "examples": [{"en": "I've discovered a super restaurant near here!", "zh": "我在附近发现一家超级棒的餐馆！"}]
+      },
+      {
+        "word": "interesting",
+        "phonetic": "/ˈɪntrəstɪŋ/",
+        "meanings": [{"pos": "adj.", "cn": "有趣的；引人入胜的"}],
+        "examples": [{"en": "There is an interesting programme on television tonight.", "zh": "今天晚上有一档有趣的电视节目。"}],
+        "derivatives": [{"w": "interested", "pos": "adj.", "cn": "感兴趣的；有利害关系的"}]
+      },
+      {
+        "word": "dramatic",
+        "phonetic": "/drəˈmætɪk/",
+        "meanings": [{"pos": "adj.", "cn": "戏剧的；引人注目的"}],
+        "examples": [{"en": "She made a dramatic speech at the meeting.", "zh": "她在会上发表了激动人心的演说。"}],
+        "collocation": ["a dramatic event 令人印象深刻的事件"],
+        "derivatives": [{"w": "drama", "pos": "n.", "cn": "戏剧"}]
+      },
+      {
+        "word": "wilderness",
+        "phonetic": "/ˈwɪldənəs/",
+        "meanings": [{"pos": "n.", "cn": "荒野"}],
+        "examples": [{"en": "From his attic window, he looked out over a beautiful wilderness.", "zh": "从阁楼的窗户望去，他看到一片美丽的荒野。"}],
+        "collocation": ["a wilderness area 保留自然环境面貌的地区"],
+        "derivatives": [{"w": "wild", "pos": "adj.", "cn": "野生的；荒芜的"}]
+      },
+      {
+        "word": "desert",
+        "phonetic": "/ˈdezət/ (n.)  /dɪˈzɜːt/ (v.)",
+        "meanings": [{"pos": "n.", "cn": "沙漠"}, {"pos": "v.", "cn": "离弃，遗弃；擅离"}],
+        "examples": [{"en": "The baby's mother deserted him soon after giving birth.", "zh": "那个母亲生下他后不久就把他遗弃了。"}],
+        "collocation": ["a cultural desert 文化沙漠"],
+        "memory": "注意与dessert(n. [餐后]甜点，甜食)区分。",
+        "derivatives": [{"w": "desertification", "pos": "n.", "cn": "荒漠化，沙漠化"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 25,
+    "page_print": "016",
+    "words": [
+      {
+        "word": "deforest",
+        "phonetic": "/ˌdiːˈfɒrɪst/",
+        "meanings": [{"pos": "v.", "cn": "毁掉……森林"}],
+        "examples": [{"en": "The land is severely eroded as a result of widespread deforesting and intensive farming.", "zh": "土地因乱砍滥伐和密集耕种而受到严重侵蚀。"}],
+        "derivatives": [{"w": "deforestation", "pos": "n.", "cn": "毁林，滥伐森林"}]
+      },
+      {
+        "word": "barren",
+        "phonetic": "/ˈbærən/",
+        "meanings": [{"pos": "adj.", "cn": "贫瘠的，荒芜的；不结果实的"}],
+        "examples": [{"en": "That remote barren land has blossomed into rich granaries.", "zh": "过去的穷乡僻壤变成了富饶的谷仓。"}],
+        "collocation": ["a barren desert 荒漠"],
+        "memory": "知名组合“男孩地带”(Boyzone)有一首经典歌曲No Matter What，其中一段歌词为“No matter where it's barren, a dream is being born”，即“不论是什么荒芜的地方，都有梦在诞生”。"
+      },
+      {
+        "word": "fertile",
+        "phonetic": "/ˈfɜːtaɪl/",
+        "meanings": [{"pos": "adj.", "cn": "肥沃的，富饶的"}],
+        "examples": [{"en": "There's enough to transform barren coral atolls into fertile groves.", "zh": "这足以将贫瘠的环礁变成富饶的丛林。"}]
+      },
+      {
+        "word": "fertilise",
+        "phonetic": "/ˈfɜːtəlaɪz/",
+        "meanings": [{"pos": "v.", "cn": "施肥于"}],
+        "examples": [{"en": "I fertilised the lawn and pulled out the weeds.", "zh": "我为草坪施了肥又除了杂草。"}],
+        "memory": "= fertilize",
+        "derivatives": [{"w": "fertiliser (= fertilizer)", "pos": "n.", "cn": "肥料"}]
+      },
+      {
+        "word": "solar",
+        "phonetic": "/ˈsəʊlə/",
+        "meanings": [{"pos": "adj.", "cn": "太阳的，阳光的"}],
+        "examples": [{"en": "This toy is operated by solar energy.", "zh": "这个玩具是太阳能驱动的。"}],
+        "collocation": ["solar system 太阳系", "solar energy 太阳能"],
+        "memory": "来自拉丁语sol，意为“太阳”。ar是形容词后缀。"
+      },
+      {
+        "word": "lunar",
+        "phonetic": "/ˈluːnə/",
+        "meanings": [{"pos": "adj.", "cn": "月亮的，月球的"}],
+        "examples": [{"en": "All traditional Chinese festivals are lunar calendar festivals.", "zh": "中国传统节日的时间都是按照阴历定的。"}],
+        "collocation": ["a lunar eclipse 月食"],
+        "memory": "来自拉丁语luna，意为“月亮”。"
+      },
+      {
+        "word": "calendar",
+        "phonetic": "/ˈkælɪndə/",
+        "meanings": [{"pos": "n.", "cn": "日历；历法"}],
+        "examples": [{"en": "The Islamic calendar has fewer days than the Gregorian calendar.", "zh": "伊斯兰历比公历的天数少。"}],
+        "collocation": ["lunar calendar 阴历"]
+      },
+      {
+        "word": "sunrise",
+        "phonetic": "/ˈsʌnraɪz/",
+        "meanings": [{"pos": "n.", "cn": "日出"}],
+        "examples": [{"en": "The beauty of the sunrise is beyond description.", "zh": "日出的美景难以描述。"}],
+        "collocation": ["at sunrise 日出时"]
+      },
+      {
+        "word": "sunset",
+        "phonetic": "/ˈsʌnset/",
+        "meanings": [{"pos": "n.", "cn": "日落"}],
+        "examples": [{"en": "By sunset we had covered thirty miles.", "zh": "到日落的时候，我们已走了30英里。"}],
+        "collocation": ["at sunset 日落时", "a sunset industry 夕阳产业(逐渐没落的产业)", "sunset glow 晚霞"]
+      },
+      {
+        "word": "eclipse",
+        "phonetic": "/ɪˈklɪps/",
+        "meanings": [{"pos": "n.", "cn": "日食；月食"}],
+        "examples": [{"en": "It will take about an hour to reach full eclipse stage.", "zh": "要历时大约一个小时才能进入全食阶段。"}],
+        "collocation": ["a solar/lunar eclipse 日/月食"]
+      },
+      {
+        "word": "dusk",
+        "phonetic": "/dʌsk/",
+        "meanings": [{"pos": "n.", "cn": "黄昏，傍晚"}],
+        "examples": [{"en": "The street lights go on at dusk.", "zh": "街灯在黄昏时亮起来。"}],
+        "collocation": ["by dusk 到黄昏时"]
+      },
+      {
+        "word": "heaven",
+        "phonetic": "/ˈhevn/",
+        "meanings": [{"pos": "n.", "cn": "天堂；极乐(之地)；[the ~s] 天空"}],
+        "examples": [{"en": "Our week on the tropical island was heaven.", "zh": "我们在那座热带小岛上待了一周，简直太开心了。"}]
+      },
+      {
+        "word": "paradise",
+        "phonetic": "/ˈpærədaɪs/",
+        "meanings": [{"pos": "n.", "cn": "天堂；乐园，福地"}],
+        "examples": [{"en": "This club is a sportsman's paradise.", "zh": "这个俱乐部是运动爱好者的乐园。"}]
+      }
+    ]
+  },
+  {
+    "page_pdf": 26,
+    "page_print": "017",
+    "words": [
+      {
+        "word": "sunshine",
+        "phonetic": "/ˈsʌnʃaɪn/",
+        "meanings": [{"pos": "n.", "cn": "阳光，日光"}],
+        "examples": [{"en": "I was sitting in the garden, enjoying the sunshine.", "zh": "我坐在庭院里，享受着阳光。"}],
+        "collocation": ["be bathed in sunshine 沐浴在阳光中"]
+      },
+      {
+        "word": "shade",
+        "phonetic": "/ʃeɪd/",
+        "meanings": [{"pos": "n.", "cn": "阴影部分；背阴处"}, {"pos": "v.", "cn": "给……遮挡(光线)"}],
+        "examples": [{"en": "He tried to shade his house with thick trees.", "zh": "他试图用茂密的树木给房子遮阳。"}],
+        "collocation": ["provide shade 提供阴凉处"],
+        "derivatives": [{"w": "shady", "pos": "adj.", "cn": "成荫的；阴凉的"}]
+      },
+      {
+        "word": "shadow",
+        "phonetic": "/ˈʃædəʊ/",
+        "meanings": [{"pos": "n.", "cn": "影子，阴影"}],
+        "examples": [{"en": "The willow's shadow falls on the lake.", "zh": "垂柳的影子投在湖面上。"}],
+        "collocation": ["cast a shadow 投下阴影"]
+      },
+      {
+        "word": "vapour",
+        "phonetic": "/ˈveɪpə/",
+        "meanings": [{"pos": "n.", "cn": "蒸气；水汽"}],
+        "examples": [{"en": "When water changes to water vapour, we say it evaporates.", "zh": "当水变成水蒸气时，我们就称水蒸发了。"}],
+        "memory": "= vapor"
+      },
+      {
+        "word": "evaporate",
+        "phonetic": "/ɪˈvæpəreɪt/",
+        "meanings": [{"pos": "v.", "cn": "(使)蒸发；消失"}],
+        "examples": [{"en": "The pool of water on the playground evaporated in the sun.", "zh": "操场上的那摊水在阳光下蒸发了。"}],
+        "derivatives": [{"w": "evaporation", "pos": "n.", "cn": "蒸发"}]
+      },
+      {
+        "word": "circulate",
+        "phonetic": "/ˈsɜːkjəleɪt/",
+        "meanings": [{"pos": "v.", "cn": "(使)循环，(使)流通；(信息等)传播"}],
+        "examples": [{"en": "Circulating blood helps transfer the body heat out to the air.", "zh": "循环的血液会促进体内的热量散到体外。"}],
+        "derivatives": [{"w": "circulation", "pos": "n.", "cn": "流通，循环；传播"}]
+      },
+      {
+        "word": "precipitate",
+        "phonetic": "/prɪˈsɪpɪteɪt/",
+        "meanings": [{"pos": "v.", "cn": "(水汽等)凝结；沉淀"}],
+        "examples": [{"en": "Clouds usually precipitate as rain or snow.", "zh": "云常会凝结成雨或雪。"}],
+        "derivatives": [{"w": "precipitation", "pos": "n.", "cn": "沉淀；降水量；陡然下落"}]
+      },
+      {
+        "word": "reservoir",
+        "phonetic": "/ˈrezəvwɑː/",
+        "meanings": [{"pos": "n.", "cn": "水库，蓄水池"}],
+        "examples": [{"en": "This reservoir gives water to the whole city.", "zh": "这座水库为全城提供用水。"}]
+      },
+      {
+        "word": "waterfall",
+        "phonetic": "/ˈwɔːtəfɔːl/",
+        "meanings": [{"pos": "n.", "cn": "瀑布"}],
+        "examples": [{"en": "They were filled with wonder at the new waterfall.", "zh": "他们对新瀑布感到非常惊奇。"}]
+      },
+      {
+        "word": "fountain",
+        "phonetic": "/ˈfaʊntən/",
+        "meanings": [{"pos": "n.", "cn": "喷泉；源泉"}],
+        "examples": [{"en": "Social life is the fountain of wisdom for writers.", "zh": "社会生活是作家们智慧的源泉。"}]
+      },
+      {
+        "word": "spring",
+        "phonetic": "/sprɪŋ/",
+        "meanings": [{"pos": "n.", "cn": "春天；泉水"}],
+        "examples": [{"en": "It can be quite windy there, especially in spring.", "zh": "那里的天气相当多风，特别是在春季。"}],
+        "derivatives": [{"w": "springtime", "pos": "n.", "cn": "春季，春天"}]
+      },
+      {
+        "word": "dew",
+        "phonetic": "/djuː/",
+        "meanings": [{"pos": "n.", "cn": "露水"}],
+        "examples": [{"en": "Dew dripped from the leaves.", "zh": "露水从叶子上滴下来。"}]
+      },
+      {
+        "word": "pour",
+        "phonetic": "/pɔː/",
+        "meanings": [{"pos": "v.", "cn": "倾泻；倒；(雨)倾盆而下"}],
+        "examples": [{"en": "Tears poured from her eyes.", "zh": "泪水从她眼中涌出。"}],
+        "derivatives": [{"w": "downpour", "pos": "n.", "cn": "倾盆大雨"}]
+      },
+      {
+        "word": "drain",
+        "phonetic": "/dreɪn/",
+        "meanings": [{"pos": "v.", "cn": "排空；(使)流出"}, {"pos": "n.", "cn": "耗竭"}],
+        "examples": [{"en": "They drain the swamp and turn it into fertile land.", "zh": "他们排干沼泽地的水，将它变成了肥沃的土地。"}],
+        "memory": "词源同dry(adj. 干的)。",
+        "derivatives": [{"w": "drainage", "pos": "n.", "cn": "排水；排水装置"}]
+      }
+    ]
+  }
+]
