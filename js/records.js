@@ -46,7 +46,11 @@ const Records = (() => {
       <div class="card">
         <div class="card-title"><h3>近 14 天学习时长</h3><span class="pill blue">分钟</span></div>
         <div class="bars">
-          ${days.map(d => `<div class="b ${d.v > 0 ? 'on' : ''}" style="height:${Math.max(3, d.v / max * 100)}%" title="${d.k}：${Math.round(d.v)} 分钟"><span>${d.label}</span></div>`).join('')}
+          ${days.map((d, i) => {
+            // 14 根柱子在手机上放不下 14 个日期，隔 3 天标一次，末位一定标
+            const show = (days.length - 1 - i) % 3 === 0;
+            return `<div class="b ${d.v > 0 ? 'on' : ''}" style="height:${Math.max(3, d.v / max * 100)}%" title="${d.k}：${Math.round(d.v)} 分钟"><span>${show ? d.label : ''}</span></div>`;
+          }).join('')}
         </div>
       </div>
 

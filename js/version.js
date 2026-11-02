@@ -5,6 +5,6 @@
    data/changelog.json 里的 current / build 必须与这里一致，_release.js 会同步。 */
 const APP_VERSION = {
   ver: '1.4.0',
-  build: '20261102-1616',
+  build: '20261102-1642',
   date: '2026-11-02',
 };
