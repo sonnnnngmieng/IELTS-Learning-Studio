@@ -80,9 +80,10 @@ const UI = {
   closeDrawer() { this.toggleDrawer(false); },
   /* ---------- 主题切换 ---------- */
   THEMES: [
-    { key: 'cream', name: '奶油黄（默认）', swatch: '#efb52a' },
-    { key: 'blue', name: '雾蓝 · 安静专注', swatch: '#4f8ad2' },
-    { key: 'green', name: '抹茶 · 草木气', swatch: '#79a24e' },
+    { key: 'cream', name: '暖阳黄 · 默认', swatch: '#efb52a' },
+    { key: 'green', name: '抹茶绿 · 草木气', swatch: '#79a24e' },
+    { key: 'blue', name: '晴空蓝 · 安静专注', swatch: '#4f8ad2' },
+    { key: 'sunset', name: '橘子汽水 · 暖一点', swatch: '#e08a4a' },
     { key: 'pink', name: '樱粉 · 松弛', swatch: '#e07f8d' },
     { key: 'night', name: '夜墨 · 深色护眼', swatch: '#2a2f3d' },
   ],

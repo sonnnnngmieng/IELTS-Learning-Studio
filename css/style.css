@@ -134,6 +134,10 @@ p{margin:0 0 10px}
   cursor:pointer;color:var(--ink-2);font-size:15px;display:grid;place-items:center;transition:.15s;
 }
 .icon-btn:hover{border-color:var(--line-2);color:var(--ink);background:#fff}
+/* 换色：桌面显示文字，窄屏只留图标，宽度随主题不变 */
+.icon-btn.theme-btn{width:auto;min-width:34px;padding:0 10px;display:inline-flex;align-items:center;gap:6px}
+.theme-btn .tb-txt{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+@media (max-width:1000px){.icon-btn.theme-btn{width:34px;padding:0}.theme-btn .tb-txt{display:none}}
 .only-mobile{display:none}
 .view{max-width:980px;width:100%;margin:0 auto;padding:20px 24px 92px}
 
@@ -492,6 +496,15 @@ input[type=checkbox]{width:auto}
   --brand:#e07f8d;--brand-ink:#4c1620;--brand-2:#fbe4e7;--brand-3:#f5c6cd;
   --blue:#e07f8d;--dot:rgba(224,127,141,.16);
 }
+[data-theme="sunset"]{
+  --bg:#f7ebe4;--canvas-a:#fffaf7;--canvas-b:#fdeee6;--canvas-c:#f8dccd;
+  --surface:#ffffff;--surface-2:#fdf5f0;--surface-3:#faeee7;
+  --ink:#33231b;--ink-2:#7c6558;--ink-3:#ae9587;
+  --line:#f3e0d6;--line-2:#e8c9b8;
+  --brand:#e08a4a;--brand-ink:#4a2408;--brand-2:#fbe6d5;--brand-3:#f4caa9;
+  --blue:#e08a4a;--dot:rgba(224,138,74,.18);
+  --shadow:0 2px 6px rgba(122,78,34,.07), 0 14px 34px rgba(122,78,34,.10);
+}
 [data-theme="night"]{
   --bg:#141519;--canvas-a:#1d1f26;--canvas-b:#212430;--canvas-c:#252a3a;
   --surface:#2a2f3d;--surface-2:#262b38;--surface-3:#2b3142;
@@ -506,6 +519,11 @@ input[type=checkbox]{width:auto}
 [data-theme="night"] .nav-pills a:hover,[data-theme="night"] .user-box:hover{background:rgba(255,255,255,.1)}
 [data-theme="night"] .brand .logo{background:linear-gradient(140deg,#f6d47c,#e2a51f)}
 [data-theme="night"] .avatar{background:linear-gradient(140deg,#f6d47c,#e2a51f);color:#4c3a05}
+/* 深色下几处写死的浅色底/白边，跟着主题走，否则浅字压在浅底上看不清 */
+[data-theme="night"] .topbar{background:rgba(29,31,38,.82);border-bottom-color:rgba(255,255,255,.07)}
+[data-theme="night"] .hero{background:linear-gradient(120deg,var(--surface-2),var(--surface-3));border-color:rgba(255,255,255,.07)}
+[data-theme="night"] .card,[data-theme="night"] .kpi,[data-theme="night"] .hi5-panel{border-color:rgba(255,255,255,.07)}
+[data-theme="night"] .hi5-cell.today{background:var(--surface-3);color:var(--brand)}
 
 /* 柔和波点背景（默认为浅黄小波点，随主题换色） */
 body{
