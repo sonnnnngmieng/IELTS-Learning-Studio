@@ -106,7 +106,7 @@ const Plan = (() => {
             oninput="Plan.previewMinutes(this.value)"></label>
         <div class="field" style="margin-bottom:12px">
           <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">
-            每天想学几个新单词（自己定，不用跟着时长走）
+            每天学几个新单词（自己定 · 下面给出预计完成时间和复习负荷）
           </span>
           <div class="chips" id="pl-new-chips">
             ${NEW_OPTIONS.map(n => `<span class="chip ${n === dailyNewOf() ? 'on' : ''}" data-n="${n}" onclick="Plan.pickNew(${n})">${n} 个</span>`).join('')}
@@ -168,10 +168,21 @@ const Plan = (() => {
 
   function newHint(n) {
     const due = Store.dueWords().length;
-    if (n <= 8) return `每天 ${n} 个，压力小、复习压力也小，适合刚起步或工作很忙的时候。`;
-    if (n <= 15) return `每天 ${n} 个是比较稳的节奏，按你现在 ${due} 个待复习的量，大概 25–35 分钟能清完。`;
-    if (n <= 20) return `每天 ${n} 个偏快，需要保证每天有 40 分钟以上；连续三天没清复习就会开始积压。`;
-    return `每天 ${n} 个是冲量节奏，只在你有整块时间、且愿意每天复习时才选。`;
+    const learned = Object.keys(Store.progress).length;
+    const remain = Math.max(0, (Store.words.length || 0) - learned);
+    const days = Math.ceil(remain / n);
+    const done = new Date();
+    done.setDate(done.getDate() + days);
+    const eta = remain === 0 ? '全书已学完'
+      : days <= 1 ? '今天就能学完全部新词'
+        : `照这个节奏，约 <b>${days} 天</b>（${done.getMonth() + 1} 月 ${done.getDate()} 日前后）过完全书新词`;
+    const reviewLoad = Math.round(n * 2.2); // 每个新词平均带来约 2.2 次复习（按遗忘曲线估）
+    let advice;
+    if (n <= 8) advice = '压力最小，适合在职/课多的时候；代价是战线拉长。';
+    else if (n <= 15) advice = '稳健节奏，每天连复习约 25–35 分钟能清完，坚持 3 个月可见明显效果。';
+    else if (n <= 20) advice = '偏快：每天要保证 45 分钟以上，且复习不能断——断 3 天就会积压 100+ 个到期词。';
+    else advice = '冲量模式：只适合有整块时间、能每天雷打不动执行的人；中途放弃会掉进「全在复习」的泥潭。';
+    return `${eta}；届时每天将同步带来约 ${reviewLoad} 个复习。${advice}`;
   }
 
   async function saveProfile() {

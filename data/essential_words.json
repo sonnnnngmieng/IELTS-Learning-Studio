@@ -1,0 +1,130 @@
+{
+  "groups": [
+    {
+      "id": "listen-housing",
+      "module": "listening",
+      "title": "听力场景词 · 住房租房",
+      "scene": "Section 1 最高频场景：租房 / 住宿登记。答案常是人名、地址、租金、入住时间。",
+      "words": [
+        { "en": "accommodation", "cn": "住宿", "tip": "不可数；student accommodation 学生公寓" },
+        { "en": "deposit", "cn": "押金", "tip": "听力答案常问押金金额" },
+        { "en": "landlord / landlady", "cn": "房东 / 女房东", "tip": "还有 letting agent 租房中介" },
+        { "en": "tenant", "cn": "租客", "tip": "与 renter 同义" },
+        { "en": "furnished", "cn": "带家具的", "tip": "unfurnished 不带家具" },
+        { "en": "utility bills", "cn": "水电煤气费", "tip": "常问 bills included 吗" },
+        { "en": "suburb", "cn": "郊区", "tip": "downtown / city centre 市中心" },
+        { "en": "studio flat", "cn": "单间公寓", "tip": "one-bedroom flat 一居室" },
+        { "en": "lease", "cn": "租约", "tip": "six-month lease 六个月租约" },
+        { "en": "rent", "cn": "租金 / 出租", "tip": "monthly rent 每月租金" }
+      ]
+    },
+    {
+      "id": "listen-campus",
+      "module": "listening",
+      "title": "听力场景词 · 校园选课",
+      "scene": "Section 2/3 高频：新生入学、课程咨询、导师讨论作业。",
+      "words": [
+        { "en": "enrolment", "cn": "注册，入学登记", "tip": "美式 enrollment" },
+        { "en": "semester / term", "cn": "学期", "tip": "英式常用 term" },
+        { "en": "compulsory / optional", "cn": "必修的 / 选修的", "tip": "同 core / elective" },
+        { "en": "assignment", "cn": "作业", "tip": "deadline 常考" },
+        { "en": "dissertation", "cn": "毕业论文", "tip": "研究生层面用 dissertation，本科 thesis 偶见" },
+        { "en": "tutor / supervisor", "cn": "导师 /（论文）指导教师", "tip": "personal tutor 个人导师" },
+        { "en": "reference", "cn": "参考文献", "tip": "bibliography 参考书目" },
+        { "en": "plagiarism", "cn": "剽窃", "tip": "学术论文诚信话题高频" },
+        { "en": "undergraduate / postgraduate", "cn": "本科生 / 研究生", "tip": "postgrad 口语缩写" },
+        { "en": "faculty", "cn": "院系；全体教员", "tip": "英式也指「能力」" }
+      ]
+    },
+    {
+      "id": "listen-travel",
+      "module": "listening",
+      "title": "听力场景词 · 旅行出行",
+      "scene": "Section 1/2 高频：订票、行程、景点介绍。",
+      "words": [
+        { "en": "itinerary", "cn": "行程单", "tip": "发音 /aɪˈtɪnərəri/" },
+        { "en": "return ticket", "cn": "往返票", "tip": "美式 round trip" },
+        { "en": "departure / arrival", "cn": "出发 / 到达", "tip": "机场广播必考" },
+        { "en": "excursion", "cn": "短途旅行", "tip": "常指团体一日游" },
+        { "en": "cancellation", "cn": "取消", "tip": "cancellation fee 取消费" },
+        { "en": "sightseeing", "cn": "观光", "tip": "guided tour 有导游的团" },
+        { "en": "accommodation", "cn": "住宿", "tip": "旅行场景问 hotel / hostel / B&B" },
+        { "en": "single ticket", "cn": "单程票", "tip": "美式 one-way" },
+        { "en": "peak season", "cn": "旺季", "tip": "反义 off-peak / low season" },
+        { "en": "luggage / baggage", "cn": "行李", "tip": "不可数，一件是 a piece of luggage" }
+      ]
+    },
+    {
+      "id": "write-upgrade",
+      "module": "writing",
+      "title": "写作高频替换 · 动词升级",
+      "scene": "Task 2 别再用 very good / a lot of。把口water词换成书面语，Lexical Resource 立刻上一个档。",
+      "words": [
+        { "en": "improve → enhance / boost", "cn": "提升", "tip": "enhance 更书面；boost 有「推动」感" },
+        { "en": "reduce → mitigate / curb", "cn": "减少/遏制", "tip": "mitigate risks / curb emissions" },
+        { "en": "cause → give rise to / lead to", "cn": "导致", "tip": "give rise to 更正式" },
+        { "en": "solve → address / tackle", "cn": "解决", "tip": "address the issue 搭配最高频" },
+        { "en": "use → utilise / adopt", "cn": "使用/采用", "tip": "别滥用 utilise，adopt 强调「采纳方法」" },
+        { "en": "show → demonstrate / indicate", "cn": "表明", "tip": "Task 1 描述数据用 indicate / illustrate" },
+        { "en": "think → argue / maintain / contend", "cn": "认为", "tip": "argue 最常用，观点感强" },
+        { "en": "important → crucial / vital / paramount", "cn": "重要的", "tip": "paramount 程度最高，慎用" },
+        { "en": "many → a growing number of / numerous", "cn": "许多", "tip": "a growing number of 自带「趋势」" },
+        { "en": "more and more → increasingly", "cn": "越来越", "tip": "increasingly popular 直接替换" }
+      ]
+    },
+    {
+      "id": "write-task1",
+      "module": "writing",
+      "title": "Task 1 必备 · 数据描述",
+      "scene": "图表写作的动词和句式骨架，背熟这 10 个能覆盖 90% 的图。",
+      "words": [
+        { "en": "account for", "cn": "占（比例）", "tip": "Renewables account for 30% of the total." },
+        { "en": "reach a peak (of)", "cn": "达到峰值", "tip": "peaked at + 数值" },
+        { "en": "level off / plateau", "cn": "趋于平稳", "tip": "plateaued at around 40%" },
+        { "en": "fluctuate", "cn": "波动", "tip": "fluctuated between X and Y" },
+        { "en": "overtake", "cn": "超过", "tip": "A overtook B in 2015" },
+        { "en": "decline / drop", "cn": "下降", "tip": "a sharp decline in sales" },
+        { "en": "remain stable / steady", "cn": "保持稳定", "tip": "remained relatively stable" },
+        { "en": "by contrast", "cn": "相比之下", "tip": "句首对比衔接" },
+        { "en": "respectively", "cn": "分别地", "tip": "5% and 8% respectively" },
+        { "en": "overall / it is clear that", "cn": "总起来看", "tip": "Overview 段开头信号词" }
+      ]
+    },
+    {
+      "id": "speak-link",
+      "module": "speaking",
+      "title": "口语衔接 · 自然过渡",
+      "scene": "口语考的是「像说话」。这 10 个过渡语能让答案流畅不背稿，比大词更拉分。",
+      "words": [
+        { "en": "Well, ...", "cn": "（起缓冲）", "tip": "争取思考时间的自然开头" },
+        { "en": "Actually, ...", "cn": "实际上", "tip": "纠正或强调时用" },
+        { "en": "The thing is, ...", "cn": "问题是/重点是", "tip": "引出核心观点" },
+        { "en": "To be honest, ...", "cn": "说实话", "tip": "引出个人真实感受" },
+        { "en": "It depends, really.", "cn": "看情况", "tip": "Part 3 万能起手，但后面必须展开" },
+        { "en": "What I mean is ...", "cn": "我的意思是", "tip": "自我澄清，考官很吃这套" },
+        { "en": "Off the top of my head, ...", "cn": "随口一说", "tip": "表示不假思索，很地道" },
+        { "en": "In the long run, ...", "cn": "长远来看", "tip": "Part 3 讨论 and 展望" },
+        { "en": "That reminds me of ...", "cn": "这让我想起", "tip": "Part 2 讲故事衔接" },
+        { "en": "So, yeah, that's basically it.", "cn": "差不多就是这样", "tip": "自然收尾，比突然沉默好" }
+      ]
+    },
+    {
+      "id": "read-syn",
+      "module": "reading",
+      "title": "阅读高频同义替换",
+      "scene": "雅思阅读的本质是「同义替换连线题」。题干和原文永远不用同一个词——这 10 组出现率最高。",
+      "words": [
+        { "en": "significant ↔ considerable", "cn": "显著的", "tip": "a significant number = a considerable number" },
+        { "en": "decline ↔ deterioration", "cn": "下降/恶化", "tip": "名词形式替换最常见" },
+        { "en": "impact ↔ effect / implication", "cn": "影响", "tip": "implication 偏「深远影响」" },
+        { "en": "predict ↔ forecast / anticipate", "cn": "预测", "tip": "题干 predict，原文常写 anticipate" },
+        { "en": "limit ↔ restrict / curb / constrain", "cn": "限制", "tip": "四个都要认识" },
+        { "en": "ancient ↔ dating back / long-standing", "cn": "古老的", "tip": "原文用短语，题干用单词" },
+        { "en": "fund ↔ finance / subsidise", "cn": "资助", "tip": "funding = financial support" },
+        { "en": "observe ↔ note / record", "cn": "观察到", "tip": "研究报告语境高频" },
+        { "en": "expand ↔ scale up / widen", "cn": "扩大", "tip": "scale up 商业语境多" },
+        { "en": "accurate ↔ precise / exact", "cn": "准确的", "tip": "accuracy 名词必背" }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   const titles = {
     home: '今日学习空间', vocab: '词汇', listening: '听力', writing: '写作', reading: '阅读',
     speaking: '口语', plan: '学习计划', records: '学习记录', ai: 'AI 助手', profile: '个人中心',
-    daily: '今日学习空间', dictation: '每日听写', game: '拼词闯关', craft: '手工柜',
+    daily: '今日学习空间', dictation: '每日听写', game: '拼词闯关', craft: '手工柜', guide: '备考指南',
   };
 
   async function route() {
@@ -45,6 +45,7 @@
       if (page === 'speaking') return await Speaking.render(root);
       if (page === 'plan') return await Plan.render(root);
       if (page === 'records') return await Records.render(root);
+      if (page === 'guide') return await Guide.render(root, seg);
       if (page === 'ai') return await AI.render(root);
       if (page === 'profile') return Profile.render(root);
       return await Dashboard.render(root);

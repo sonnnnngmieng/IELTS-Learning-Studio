@@ -458,3 +458,113 @@ input[type=checkbox]{width:auto}
   .g2,.g3,.g4{grid-template-columns:1fr}
   .kpis{grid-template-columns:1fr 1fr}
 }
+
+/* ============================================================
+   主题系统：默认奶油黄 + 雾蓝 / 抹茶 / 樱粉 / 夜墨，一键切换
+   波点背景 · 像素风按钮/打卡/进度 · 手写涂鸦装饰 · 大量留白
+   ============================================================ */
+:root{
+  --dot:rgba(214,178,94,.24);          /* 波点颜色（柔和黄） */
+  --hw:'Segoe Print','Comic Sans MS','KaiTi','楷体',cursive; /* 手写体 */
+}
+[data-theme="blue"]{
+  --bg:#e9edf3;--canvas-a:#f9fbfe;--canvas-b:#eaf1f9;--canvas-c:#d8e5f2;
+  --surface:#ffffff;--surface-2:#f2f6fb;--surface-3:#eaf1f8;
+  --ink:#1d2733;--ink-2:#5f6c7d;--ink-3:#93a0b1;
+  --line:#dbe5f0;--line-2:#c4d5e8;
+  --brand:#4f8ad2;--brand-ink:#0e2a4d;--brand-2:#dfeaf8;--brand-3:#b9d2ee;
+  --blue:#4f8ad2;--dot:rgba(94,138,196,.20);
+  --shadow:0 2px 6px rgba(46,74,110,.08), 0 14px 34px rgba(46,74,110,.10);
+}
+[data-theme="green"]{
+  --bg:#e9eee5;--canvas-a:#fafcf7;--canvas-b:#edf3e6;--canvas-c:#dbe9cc;
+  --surface:#ffffff;--surface-2:#f3f8ec;--surface-3:#ebf2e0;
+  --ink:#232a1c;--ink-2:#68725a;--ink-3:#9aa48b;
+  --line:#dfe8d2;--line-2:#c8d8b4;
+  --brand:#79a24e;--brand-ink:#1f320c;--brand-2:#e6efd6;--brand-3:#cfe0b4;
+  --blue:#79a24e;--dot:rgba(121,162,78,.18);
+}
+[data-theme="pink"]{
+  --bg:#f5ecec;--canvas-a:#fefaf9;--canvas-b:#fdeff0;--canvas-c:#f8dbdd;
+  --surface:#ffffff;--surface-2:#fdf3f3;--surface-3:#faebeb;
+  --ink:#312227;--ink-2:#7a626b;--ink-3:#ad969d;
+  --line:#f2dfe1;--line-2:#e5c8cc;
+  --brand:#e07f8d;--brand-ink:#4c1620;--brand-2:#fbe4e7;--brand-3:#f5c6cd;
+  --blue:#e07f8d;--dot:rgba(224,127,141,.16);
+}
+[data-theme="night"]{
+  --bg:#141519;--canvas-a:#1d1f26;--canvas-b:#212430;--canvas-c:#252a3a;
+  --surface:#2a2f3d;--surface-2:#262b38;--surface-3:#2b3142;
+  --ink:#eceade;--ink-2:#a8a698;--ink-3:#767468;
+  --line:#34394c;--line-2:#414860;
+  --brand:#f2c14e;--brand-ink:#2a1f04;--brand-2:#3a3320;--brand-3:#57481c;
+  --blue:#f2c14e;--dot:rgba(242,193,78,.10);
+  --shadow:0 2px 6px rgba(0,0,0,.25), 0 14px 34px rgba(0,0,0,.35);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+}
+[data-theme="night"] .nav-pills,[data-theme="night"] .user-box{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+[data-theme="night"] .nav-pills a:hover,[data-theme="night"] .user-box:hover{background:rgba(255,255,255,.1)}
+[data-theme="night"] .brand .logo{background:linear-gradient(140deg,#f6d47c,#e2a51f)}
+[data-theme="night"] .avatar{background:linear-gradient(140deg,#f6d47c,#e2a51f);color:#4c3a05}
+
+/* 柔和波点背景（默认为浅黄小波点，随主题换色） */
+body{
+  background-image:radial-gradient(var(--dot) 1.4px, transparent 1.5px);
+  background-size:26px 26px;
+}
+
+/* 像素风：按钮 / 打卡 / 进度 */
+.btn{font-family:inherit}
+.btn.primary{
+  border:2px solid var(--brand-ink);
+  box-shadow:3px 3px 0 var(--brand-ink);
+  border-radius:10px;
+  transition:transform .06s, box-shadow .06s;
+}
+.btn.primary:hover{filter:brightness(1.04)}
+.btn.primary:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--brand-ink)}
+.task-check{
+  width:20px;height:20px;border-radius:5px;border:2px solid var(--line-2);flex:0 0 20px;
+  cursor:pointer;display:grid;place-items:center;font-size:12px;color:transparent;background:var(--surface);
+  transition:.1s;
+}
+.task-check.done{
+  background:var(--brand);border-color:var(--brand-ink);color:var(--brand-ink);
+  box-shadow:2px 2px 0 var(--brand-ink);
+}
+.progress{height:12px;border:2px solid var(--line-2);border-radius:6px;background:var(--surface)}
+.progress i{background-image:repeating-linear-gradient(90deg,var(--brand) 0 9px,var(--brand-3) 9px 13px)}
+.pill{border-radius:6px;border:1.5px solid transparent}
+.pill.blue,.pill.green,.pill.red,.pill.amber,.pill.purple{border-color:currentColor}
+.heats i{border-radius:2px;image-rendering:pixelated}
+/* 像素风打卡格（学习记录热力图） */
+.heats i.l1{box-shadow:inset 0 -3px 0 rgba(0,0,0,.06)}
+.heats i.l4{box-shadow:inset 0 -3px 0 rgba(0,0,0,.10), 2px 2px 0 var(--brand-ink)}
+
+/* 手写涂鸦：标题波浪线 + 页角装饰 */
+h1{position:relative;padding-bottom:8px;margin-bottom:12px}
+h1::after{
+  content:'';position:absolute;left:2px;bottom:0;width:74px;height:9px;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 9'><path d='M1 6 Q 7 1 13 6 T 25 6 T 37 6 T 49 6 T 61 6 T 73 6' fill='none' stroke='%23e8a723' stroke-width='2.2' stroke-linecap='round'/></svg>") no-repeat center/contain;
+  opacity:.85;
+}
+[data-theme="blue"] h1::after{filter:hue-rotate(160deg)}
+[data-theme="green"] h1::after{filter:hue-rotate(40deg)}
+[data-theme="pink"] h1::after{filter:hue-rotate(-40deg)}
+.hw{font-family:var(--hw);letter-spacing:.3px}
+.crumb{font-family:var(--hw);color:var(--ink-2)}
+/* 页角涂鸦（固定装饰，不挡交互） */
+.doodle{
+  position:fixed;z-index:2;pointer-events:none;user-select:none;
+  font-family:var(--hw);color:var(--brand);opacity:.5;font-size:15px;line-height:1.3;
+}
+.doodle svg{display:block}
+.doodle.d1{left:26px;bottom:22px}
+.doodle.d2{right:30px;top:76px}
+[data-theme="night"] .doodle{opacity:.34}
+@media(max-width:880px){.doodle{display:none}}
+
+/* 留白：更松的版心与卡片节奏 */
+.view{max-width:1000px;padding-top:28px}
+.card{padding:20px 22px}
+.kpis{gap:12px;margin:16px 0 22px}

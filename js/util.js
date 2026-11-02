@@ -69,6 +69,27 @@ const UI = {
     $('#drawer-mask').classList.toggle('show', open);
   },
   closeDrawer() { this.toggleDrawer(false); },
+  /* ---------- 主题切换 ---------- */
+  THEMES: [
+    { key: 'cream', name: '奶油黄（默认）', swatch: '#efb52a' },
+    { key: 'blue', name: '雾蓝 · 安静专注', swatch: '#4f8ad2' },
+    { key: 'green', name: '抹茶 · 草木气', swatch: '#79a24e' },
+    { key: 'pink', name: '樱粉 · 松弛', swatch: '#e07f8d' },
+    { key: 'night', name: '夜墨 · 深色护眼', swatch: '#2a2f3d' },
+  ],
+  themePicker() {
+    const cur = document.documentElement.dataset.theme || 'cream';
+    UI.sheet(this.THEMES.map(t => ({
+      label: (t.key === cur ? '● ' : '○ ') + t.name,
+      onClick: () => UI.setTheme(t.key),
+    })));
+  },
+  setTheme(key) {
+    document.documentElement.dataset.theme = key;
+    try { localStorage.setItem('wb_theme', key); } catch (e) {}
+    const t = this.THEMES.find(x => x.key === key);
+    UI.toast('已切换：' + (t ? t.name : key));
+  },
   openModal(html, opts) {
     opts = opts || {};
     const mask = document.createElement('div');
