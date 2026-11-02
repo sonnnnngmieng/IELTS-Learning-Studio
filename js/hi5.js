@@ -317,9 +317,12 @@ const Hi5 = (() => {
     paintCard(root, false);
   }
 
-  /** 开场：每天第一次进站自动出现 */
+  /** 开场：每天第一次「进首页」时自动出现；直接深链到学习页时不挡人 */
   function maybeShow() {
     try {
+      const raw = (typeof location !== 'undefined' && location.hash) || '';
+      const h = raw || '#/home';
+      if (!/^#\/(home|daily)?$/.test(h)) return;
       if (Store.hi5DoneToday()) return;
     } catch (e) { return; }
     setTimeout(() => show(), 520);

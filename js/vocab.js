@@ -12,7 +12,12 @@ const Vocab = (() => {
     await Store.loadWords();
     if (!Store.state.ready) await Store.loadUser();
     if (!Store.words.length) { root.innerHTML = '<div class="empty">词库加载中…</div>'; return; }
-    if (sub === 'study') return renderStudy(root);
+    if (sub === 'study' || (sub && sub.indexOf('study/') === 0)) {
+      if (session) return renderStudy(root);
+      // #/vocab/study/new 这类入口（首页击掌、今日建议、周计划）以前会掉到词库列表，点了没反应
+      const k = String(sub).split('/')[1] || 'new';
+      return startStudy(k === 'review' || k === 'mistakes' ? k : 'new');
+    }
     if (sub === 'train') return renderTrain(root);
     if (sub === 'roots') return renderRoots(root);
     if (sub === 'mistakes') return renderMistakes(root);
@@ -34,7 +39,9 @@ const Vocab = (() => {
 
       <div class="grid g3">
         <div class="card hover" onclick="Vocab.startStudy('new')">
-          <h4>学新词</h4><p class="muted tiny" style="margin:0">今天还有 ${Math.max(0, dailyNew - (today.new_words || 0))} 个新词待学</p>
+          <h4>学新词</h4><p class="muted tiny" style="margin:0">${Math.max(0, dailyNew - (today.new_words || 0)) > 0
+            ? `今天还有 ${Math.max(0, dailyNew - (today.new_words || 0))} 个新词，一次给一整组`
+            : `今天的 ${dailyNew} 个已经学完，点进去是加学一组`}</p>
         </div>
         <div class="card hover" onclick="Vocab.startStudy('review')">
           <h4>复习到期</h4><p class="muted tiny" style="margin:0">${s.due ? s.due + ' 个词到期' : '暂无到期词，可继续学新词'}</p>
@@ -209,10 +216,11 @@ const Vocab = (() => {
       </div>
 
       <div class="row wrap">
-        <button class="btn primary" onclick="Vocab.startStudy('new','${id}')">进入学习模式</button>
+        <button class="btn primary" onclick="Vocab.startStudy('new','${id}')">从这个词开始学一组</button>
         <button class="btn" onclick="Vocab.trainOne('spell','${id}')">拼写训练</button>
         <button class="btn" onclick="AI.explainWord('${id}')">让 AI 讲这个词</button>
-      </div>`;
+      </div>
+      <p class="muted tiny" style="margin:8px 0 0">点进去这一组的第一屏就是 ${esc(w.w)}，后面自动补满今天的新词，不会只给你一个词。</p>`;
     window.scrollTo(0, 0);
   }
 
@@ -235,15 +243,37 @@ const Vocab = (() => {
   }
 
   /* ================= 学习会话 ================= */
-  async function startStudy(kind, singleId) {
+  async function startStudy(kind, singleId, extra) {
     await Store.loadWords();
+    const dailyNew = Math.min(100, Math.max(1, Number(Store.settings.daily_new) || 15));
+    const doneToday = (Store.today && Store.today.new_words) || 0;
+    const quotaLeft = dailyNew - doneToday;
     let queue = [];
-    if (singleId) queue = [Store.byId[singleId]].filter(Boolean);
-    else if (kind === 'review') queue = Store.dueWords();
-    else if (kind === 'mistakes') queue = Store.stats().mistakes.map(r => Store.byId[r.word_id]).filter(Boolean);
-    else {
-      const limit = Math.max(1, (Store.settings.daily_new || 15) - ((Store.today && Store.today.new_words) || 0));
-      queue = Store.newWords(limit);
+    let pinned = null;      // 从详情页点进来的那个词：排第一，但不再自己单独成一组
+
+    if (singleId) {
+      const w = Store.byId[singleId];
+      if (w) {
+        pinned = w;
+        const r = Store.progress[w.id];
+        if (!r || !r.reps) {
+          // 没学过：把它放队首，再补满今日一组新词（至少 5 个）
+          const rest = Store.newWords(dailyNew + 1).filter(x => x.id !== w.id);
+          queue = [w, ...rest].slice(0, Math.max(5, Math.min(dailyNew, 100)));
+        } else {
+          // 学过：它先过一遍，再带 9 个到期词
+          const rest = Store.dueWords().filter(x => x.id !== w.id);
+          queue = [w, ...shuffle(rest).slice(0, 9)];
+        }
+      }
+    } else if (kind === 'review') {
+      queue = Store.dueWords();
+    } else if (kind === 'mistakes') {
+      queue = Store.stats().mistakes.map(r => Store.byId[r.word_id]).filter(Boolean);
+    } else {
+      // 额度用完时给「整组加学」，绝不退化成 1 个词也算一组
+      if (quotaLeft <= 0 && !extra) UI.toast(`今天 ${dailyNew} 个新词已完成，这组是加学`);
+      queue = Store.newWords(quotaLeft > 0 ? quotaLeft : dailyNew);
     }
     if (!queue.length) {
       UI.toast(kind === 'review' ? '今天没有到期需要复习的词 🎉' : '今天的新词已经学完啦');
@@ -251,7 +281,8 @@ const Vocab = (() => {
     }
     // 单组上限 100：设多少新词都学得完（以前硬编码 30，设 100 也只给 30 个）
     const batch = Math.min(queue.length, 100);
-    session = { queue: shuffle(queue).slice(0, batch), idx: 0, kind, revealed: false, newCount: 0, right: 0 };
+    const list = pinned ? [pinned, ...shuffle(queue.filter(x => x.id !== pinned.id))] : shuffle(queue);
+    session = { queue: list.slice(0, batch), idx: 0, kind, revealed: false, newCount: 0, right: 0, pin: pinned ? pinned.id : null };
     location.hash = '#/vocab/study';
     renderStudy($('#view'));
   }
@@ -269,7 +300,7 @@ const Vocab = (() => {
             <h2>这一组完成了</h2>
             <p class="muted">共 ${s.queue.length} 个词，答对 ${s.right} 次</p>
             <div class="row" style="justify-content:center;margin-top:12px">
-              <button class="btn primary" onclick="Vocab.startStudy('new')">再学一组新词</button>
+              <button class="btn primary" onclick="Vocab.startStudy('new', null, true)">再学一组新词</button>
               <button class="btn" onclick="location.hash='#/home'">回首页</button>
             </div>
           </div>
@@ -284,7 +315,7 @@ const Vocab = (() => {
       <div class="study-wrap">
         <div class="row between" style="margin-bottom:6px">
           <a class="back" href="#/vocab" onclick="session=null">← 退出</a>
-          <span class="tiny dim">${s.idx + 1} / ${s.queue.length} · ${isNew ? '新词' : '复习'}</span>
+          <span class="tiny dim">${s.idx + 1} / ${s.queue.length} · ${isNew ? '新词' : '复习'}${s.pin && s.idx === 0 ? ' · 从你选的那个词开始' : ''}</span>
         </div>
         <div class="progress"><i style="width:${s.idx / s.queue.length * 100}%"></i></div>
 
