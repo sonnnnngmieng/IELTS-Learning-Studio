@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>数据后台 · 雅中之思 IELTS Learning Studio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23efb52a'/><text y='70' x='50' text-anchor='middle' font-size='52' font-family='sans-serif' fill='%233d2e08'>雅</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body.stats{background:var(--bg)}
+  .stats-wrap{max-width:1080px;margin:0 auto;padding:22px 20px 60px}
+  .stats-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .stats-top .logo{width:38px;height:38px;border-radius:11px;background:var(--brand);color:var(--brand-ink);
+    display:grid;place-items:center;font-weight:700;font-size:18px;box-shadow:var(--shadow-sm)}
+  .stats-top h1{font-size:19px;margin:0}
+  .stats-top .sub{font-size:12px;color:var(--ink-3);letter-spacing:.4px;text-transform:uppercase}
+  .spacer{flex:1}
+  .kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
+  .kpi-grid .kpi{padding:14px 14px 12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+  .kpi-grid .n{font-size:24px;font-weight:650;letter-spacing:-.6px}
+  .kpi-grid .n small{font-size:12px;font-weight:500;color:var(--ink-3);margin-left:2px}
+  .kpi-grid .l{font-size:12px;color:var(--ink-2);margin-top:2px}
+  .chart-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:16px 18px 12px;margin-bottom:16px}
+  .chart-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .chart-head h2{font-size:15px;margin:0}
+  .legend{display:flex;gap:14px;font-size:12px;color:var(--ink-2);margin-left:auto}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .bars{display:flex;align-items:flex-end;gap:6px;height:170px;padding-bottom:2px}
+  .bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;position:relative}
+  .bar .stack{width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:2px}
+  .bar .v{font-size:10px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .bar .dv{width:100%;background:var(--brand);border-radius:4px 4px 2px 2px;min-height:2px}
+  .bar .ev{width:100%;background:var(--brand-3);border-radius:2px;min-height:2px}
+  .bar.zero .dv,.bar.zero .ev{background:var(--line-2)}
+  .bar:hover .dv{filter:brightness(1.06)}
+  .xis{display:flex;gap:6px;margin-top:6px}
+  .xis span{flex:1;text-align:center;font-size:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  table.tbl{width:100%;border-collapse:collapse;font-size:13px}
+  table.tbl th,table.tbl td{padding:8px 8px;text-align:right;border-bottom:1px solid var(--line)}
+  table.tbl th{font-weight:600;color:var(--ink-2);font-size:12px;white-space:nowrap}
+  table.tbl th:first-child,table.tbl td:first-child{text-align:left}
+  table.tbl tbody tr:hover{background:var(--surface-2)}
+  table.tbl td.num{font-variant-numeric:tabular-nums}
+  table.tbl tr.today td{font-weight:650}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .list-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .list-row:last-child{border-bottom:0}
+  .list-row .nm{font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .list-row .track{height:7px;background:var(--surface-3);border-radius:4px;width:42%;overflow:hidden}
+  .list-row .track i{display:block;height:100%;background:var(--brand);border-radius:4px}
+  .list-row .n{font-size:12px;color:var(--ink-2);width:56px;text-align:right;font-variant-numeric:tabular-nums}
+  .gate{max-width:360px;margin:12vh auto 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 24px}
+  .gate h2{font-size:17px}
+  .gate input{width:100%;padding:10px 12px;border:1px solid var(--line-2);border-radius:12px;background:var(--surface-2);color:var(--ink);font-size:14px;margin:12px 0}
+  .gate input:focus{outline:2px solid var(--brand-3);outline-offset:1px}
+  .gate .hint{font-size:12px;color:var(--red);min-height:18px}
+  .foot{margin-top:22px;font-size:12px;color:var(--ink-3);line-height:1.8}
+  .foot code{background:var(--surface-3);padding:1px 5px;border-radius:5px;font-size:11.5px}
+  .empty{color:var(--ink-3);font-size:13px;padding:18px 0;text-align:center}
+  @media (max-width:900px){
+    .kpi-grid{grid-template-columns:repeat(3,1fr)}
+    .grid2{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .kpi-grid{grid-template-columns:repeat(2,1fr)}
+    .bars{height:130px}
+    .bar .v{font-size:9px}
+  }
+</style>
+</head>
+<body class="stats">
+<div class="stats-wrap">
+
+  <div class="stats-top">
+    <div class="logo">雅</div>
+    <div>
+      <h1>数据后台</h1>
+      <div class="sub">Usage Dashboard · 匿名汇总</div>
+    </div>
+    <div class="spacer"></div>
+    <span class="tiny dim" id="upd">读取中…</span>
+    <button class="btn sm" id="btn-refresh">刷新</button>
+    <a class="btn sm line" href="index.html">回站点</a>
+  </div>
+
+  <section class="gate" id="gate" hidden>
+    <h2>先输入查看口令</h2>
+    <p class="muted tiny" style="margin:6px 0 0">这个页面对外没有入口，口令只存在你自己的浏览器里。</p>
+    <input id="gate-input" type="password" placeholder="查看口令" autocomplete="off">
+    <div class="hint" id="gate-hint"></div>
+    <button class="btn primary block" id="gate-go">进入</button>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="kpi-grid" id="kpis"></div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <h2>近 14 天</h2>
+        <span class="tiny dim" id="chart-note"></span>
+        <div class="legend">
+          <span><i style="background:var(--brand)"></i>活跃设备</span>
+        </div>
+      </div>
+      <div class="bars" id="bars"></div>
+      <div class="xis" id="xis"></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head"><h2>每天细账</h2><span class="tiny dim">最近 14 天，新的在上</span></div>
+      <div style="overflow-x:auto">
+        <table class="tbl" id="tbl">
+          <thead><tr>
+            <th>日期</th><th>活跃设备</th><th>新设备</th><th>击掌</th><th>学习组数</th><th>学词数</th><th>事件合计</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="chart-card" style="margin:0">
+        <div class="chart-head"><h2>用什么设备来</h2><span class="tiny dim">累计</span></div>
+        <div id="platforms"></div>
+      </div>
+      <div class="chart-card" style="margin:0">
+        <div class="chart-head"><h2>在哪些页面活动</h2><span class="tiny dim">事件数 Top 8</span></div>
+        <div id="paths"></div>
+      </div>
+    </div>
+
+    <div class="foot">
+      数据来自云数据库的<strong>聚合视图</strong>（<code>usage_activity_daily</code> / <code>usage_daily</code> / <code>usage_path_daily</code> / <code>usage_env_daily</code> / <code>usage_study_daily</code> / <code>usage_new_device_daily</code> / <code>usage_totals</code>）：
+      只有「每天每类事件多少条、多少台设备」，<strong>看不到单条记录，也没有姓名、手机号、IP、作答内容</strong>。
+      「设备」= 浏览器里随机生成的 16 位串，换设备或清缓存就是一台新设备，所以它约等于「来过的人数」，会比真实人数略高一点。
+      这个页面不在站点导航里，也加了 <code>noindex</code>，搜索引擎不会收录。
+    </div>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script>
+  window.PUBLIC_CONFIG = {
+    endpoint: "https://ielts-station-86055.app.workbuddy.host",
+    oauthRelayBaseUrl: "https://www.workbuddy.cn/v2/as/genie-baas/oauth",
+    publishableKey: "wbpk_EM0sEYg5RawLa41D0Xu5OT_DodsJs2jlx9o8eK7VN7AyKdFE0OmPcks"
+  };
+</script>
+<script src="js/stats.js"></script>
+</body>
+</html>
