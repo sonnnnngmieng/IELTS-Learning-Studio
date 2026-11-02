@@ -2,11 +2,13 @@
 (async function boot() {
   Store.loadUser();
   UI.setUserChip();
+  try { ChangeLog.paintBadge(); ChangeLog.watch(); } catch (e) { /* 没有版本模块也不影响用 */ }
 
   const titles = {
     home: '今日学习空间', vocab: '词汇', listening: '听力', writing: '写作', reading: '阅读',
     speaking: '口语', plan: '学习计划', records: '学习记录', ai: 'AI 助手', profile: '个人中心',
     daily: '今日学习空间', dictation: '每日听写', game: '拼词闯关', craft: '手工柜', guide: '备考指南',
+    changelog: '更新日志',
   };
 
   async function route() {
@@ -48,6 +50,7 @@
       if (page === 'guide') return await Guide.render(root, seg);
       if (page === 'ai') return await AI.render(root);
       if (page === 'profile') return Profile.render(root);
+      if (page === 'changelog') return ChangeLog.render(root);
       return await Dashboard.render(root);
     } catch (e) {
       root.innerHTML = `<div class="empty">页面出错了：${esc(e.message || e)}<br><a onclick="location.reload()">重新加载</a></div>`;
@@ -96,9 +99,17 @@
             <button class="btn" onclick="document.getElementById('pf-import').click()">导入备份</button>
             <input type="file" id="pf-import" accept="application/json" style="display:none" onchange="Profile.doImport(this)">
             ${Store.backupInfo() ? `<button class="btn soft" onclick="Profile.restore()">恢复 ${esc((Store.backupInfo().day || '').slice(5))} 快照</button>` : ''}
+            ${Store.preBackupInfo() ? `<button class="btn soft" onclick="Profile.restorePre()">回到升级前</button>` : ''}
             <button class="btn" style="color:var(--red)" onclick="if(confirm('确定清空吗？所有进度会被删除，无法恢复。')){Store.resetData();UI.toast('已清空');location.reload()}">清空数据</button>
           </div>
           <p class="muted tiny" style="margin:10px 0 0">版本更新只会给旧数据补齐新字段，不会删除已有的词表进度、任务和记录；每次升级前系统还会自动留一份当日快照。</p>
+          <div class="sep"></div>
+          <p class="muted tiny" style="margin:0">
+            当前版本 <b>v${esc((typeof APP_VERSION !== 'undefined' ? APP_VERSION.ver : '—'))}</b>
+            <span class="dim">· 构建 ${esc((typeof APP_VERSION !== 'undefined' ? APP_VERSION.build : '—'))}</span>
+            · <a href="#/changelog">查看更新日志</a>
+            ${Store.preBackupInfo() ? `<span class="dim"> · 升级前快照 ${esc(Store.preBackupInfo().day || '')}</span>` : ''}
+          </p>
         </div>
 
         <div class="card">
@@ -134,8 +145,20 @@
         UI.toast('恢复失败：' + (e.message || '没有可用快照'), 3200);
       }
     },
-    async doImport(input) {
-      const f = input.files && input.files[0];
+    restorePre() {
+      const info = Store.preBackupInfo();
+      if (!info) return UI.toast('没有升级前的快照');
+      if (!confirm(`回到 ${info.day || ''}（版本 ${info.build}）的升级前状态？现在的进度会被替换。`)) return;
+      try {
+        const day = Store.restorePre();
+        UI.toast(`已回到 ${day} 升级前的数据`);
+        UI.setUserChip();
+        Profile.render($('#view'));
+      } catch (e) {
+        UI.toast('恢复失败：' + (e.message || '快照不可用'), 3200);
+      }
+    },
+    async doImport(input) {      const f = input.files && input.files[0];
       if (!f) return;
       try {
         await Store.importData(f);

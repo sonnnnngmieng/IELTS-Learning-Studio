@@ -780,3 +780,53 @@ h1::after{
   .hi5-palm{width:88px;height:104px}
   .hi5-palm .hi5-svg{width:68px;height:82px}
 }
+
+/* ---------- 版本 / 更新日志（1.4.0） ---------- */
+.side-ver{
+  display:flex;align-items:center;gap:8px;margin-top:8px;padding:9px 10px;border-radius:12px;
+  font-size:12px;color:var(--ink-3);border:1px dashed var(--line-2);text-decoration:none;transition:.16s;
+}
+.side-ver:hover{background:var(--surface-2);color:var(--ink-2);border-color:var(--brand-3)}
+.side-ver i{font-style:normal;color:var(--brand);font-size:13px}
+.side-ver em{
+  margin-left:auto;font-style:normal;font-size:11px;padding:1px 7px;border-radius:999px;
+  background:var(--brand);color:var(--brand-ink);font-weight:600;
+}
+.side-ver.on{border-style:solid;border-color:var(--brand-3);background:var(--brand-2);color:var(--brand-ink)}
+
+.chg-list{display:grid;gap:12px;margin-top:14px}
+.chg-item{padding:16px 18px}
+.chg-ul{margin:4px 0 0;padding-left:18px;font-size:13px;line-height:1.8;color:var(--ink-2)}
+.chg-ul li{margin-bottom:2px}
+.chg-ul li::marker{color:var(--brand)}
+
+/* 有新版时的浮条：不占布局，底部居中 */
+.upd-bar{
+  position:fixed;left:50%;bottom:20px;transform:translate(-50%,14px);z-index:320;
+  display:flex;align-items:center;gap:10px;padding:10px 12px 10px 16px;
+  background:var(--surface);border:1px solid var(--line-2);border-radius:16px;
+  box-shadow:0 10px 30px rgba(96,74,24,.18);font-size:13px;color:var(--ink);
+  opacity:0;transition:opacity .2s,transform .2s;max-width:calc(100vw - 24px);
+}
+.upd-bar.in{opacity:1;transform:translate(-50%,0)}
+.upd-bar b{white-space:nowrap}
+.upd-bar-sub{color:var(--ink-3);font-size:12px;white-space:nowrap}
+.upd-bar .upd-x{
+  border:0;background:transparent;color:var(--ink-3);font-size:14px;cursor:pointer;padding:2px 4px;
+}
+.upd-bar .upd-x:hover{color:var(--ink)}
+@media (max-width:900px){
+  .upd-bar{bottom:78px;font-size:12.5px;padding:9px 10px 9px 14px}
+  .upd-bar-sub{display:none}
+}
+
+/* 顶栏版本入口：桌面显示 v1.4.0，窄屏只留 ⟳ + 小圆点 */
+.icon-btn.ver-btn{width:auto;min-width:34px;padding:0 9px;gap:5px;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.ver-btn .tb-txt{font-size:12px;letter-spacing:0;color:var(--ink-2)}
+.ver-dot{
+  position:absolute;top:5px;right:5px;width:7px;height:7px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 0 2px var(--surface);
+}
+.icon-btn .ver-dot{position:absolute}
+.side-ver .ver-dot{position:static;width:auto;height:auto;box-shadow:none;border-radius:999px;background:var(--brand);color:var(--brand-ink);font-size:11px;font-weight:600;padding:1px 7px;margin-left:auto}
+@media (max-width:1000px){.ver-btn .tb-txt{display:none}}

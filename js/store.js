@@ -22,6 +22,9 @@ const Store = (() => {
   /* ---------- 本地持久化 ---------- */
   const DATA_V = 2;              // 数据结构版本：升级只做合并，永不整体覆盖
   const BACKUP_KEY = 'wb_ielts_backup';
+  const PRE_KEY = 'wb_ielts_backup_pre';   // 版本升级前的快照
+  const BUILD_KEY = 'wb_ielts_build';
+  const BUILD = (typeof APP_VERSION !== 'undefined' && APP_VERSION.build) || 'dev';
 
   /** 版本迁移：只补字段 / 修类型，绝不删已有数据 */
   function migrate(d) {
@@ -59,14 +62,53 @@ const Store = (() => {
     } catch (e) { console.warn('滚动备份失败（可能是空间不足）', e); }
   }
 
-  function loadLS() {
-    // 只在启动时读一次：之后内存就是唯一真相。
+  /** 换版本后第一次打开：先把旧数据整份留一份，再让 migrate 去补字段 */
+  function preUpgradeBackup(raw) {
+    try {
+      const seenBuild = localStorage.getItem(BUILD_KEY) || '';
+      if (seenBuild === BUILD) return;
+      if (seenBuild && raw) {
+        localStorage.setItem(PRE_KEY, JSON.stringify({
+          build: seenBuild,
+          day: todayStr(),
+          at: new Date().toISOString(),
+          payload: raw.slice(0, 500000),
+        }));
+      }
+      localStorage.setItem(BUILD_KEY, BUILD);
+    } catch (e) { /* 空间不够就跳过，每日快照还在 */ }
+  }
+
+  function preBackupInfo() {
+    try {
+      const b = JSON.parse(localStorage.getItem(PRE_KEY) || 'null');
+      return b ? { build: b.build || '', day: b.day || '', bytes: (b.payload || '').length } : null;
+    } catch (e) { return null; }
+  }
+
+  function restorePre() {
+    const b = JSON.parse(localStorage.getItem(PRE_KEY) || 'null');
+    if (!b || !b.payload) throw new Error('没有升级前的快照');
+    const d = migrate(JSON.parse(b.payload));
+    state.progress = d.progress;
+    state.profile = d.profile;
+    state.settings = d.settings;
+    state.stats = d.stats;
+    state.tasks = d.tasks;
+    state.events = d.events;
+    state.hi5 = d.hi5;
+    persist(true);
+    return b.day || '升级前';
+  }
+
+  function loadLS() {    // 只在启动时读一次：之后内存就是唯一真相。
     // 以前每次渲染都重读，会把刚改完还没落盘的设置/进度冲掉（目标分总是跳回 6.5 就是这个原因）。
     if (state.ready) return;
     try {
       const raw = localStorage.getItem(KEY);
       if (!raw) { state.ready = true; return; }
       rollingBackup(raw);
+      preUpgradeBackup(raw);
       const d = migrate(JSON.parse(raw));
       state.progress = d.progress;
       state.profile = d.profile;
@@ -515,6 +557,7 @@ const Store = (() => {
     stats, history, streak, examCountdown, rootGroups, schedule, safeJSON,
     exportData, importData, resetData, todayStat, addEvent, eventsOf,
     hi5DoneToday, markHi5, hi5Today, hi5Stats, flush: writeNow, restoreBackup, backupInfo,
+    preBackupInfo, restorePre,
     get words() { return state.words || []; },
     get byId() { return state.byId; },
     get progress() { return state.progress; },
