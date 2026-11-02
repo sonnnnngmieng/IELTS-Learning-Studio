@@ -131,6 +131,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .links a:hover{color:var(--ink);background:rgba(245,194,44,.22);border-color:var(--shadow)}
 .links a.is-active{color:var(--ink);font-weight:700;background:var(--yellow);border-color:var(--shadow)}
 .nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+/* 换色按钮：固定宽度 + 固定 2 字标签，切换主题时导航不会位移 */
+#themeBtn{min-width:84px;justify-content:center}
+/* 可点的示意元素：只加手型，不改尺寸 */
+.links a,.mod,.stop,.task,.tile{cursor:pointer}
 
 /* ---------- 主视觉 ---------- */
 .hero{
@@ -358,6 +362,50 @@ button{font:inherit;color:inherit;cursor:pointer}
 .cal-legend i.td{background:#fffdf1;border-width:3px}
 .cal-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:12px;border-top:2px dashed rgba(44,35,20,.14);font-size:12.5px;color:var(--ink-2)}
 .cal-foot b{font-size:16px;color:var(--ink)}
+
+/* ---------- 击掌邀请弹窗 ---------- */
+.hi5-invite{
+  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+  padding:20px;background:rgba(44,35,20,.34);
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+  opacity:0;transition:opacity .18s ease;
+}
+.hi5-invite.in{opacity:1}
+.hi5-invite-card{
+  position:relative;width:min(94vw,392px);background:var(--cream);
+  border:3px solid var(--shadow);box-shadow:8px 8px 0 rgba(44,35,20,.24);
+  padding:16px 20px 20px;text-align:center;
+  transform:translateY(10px);transition:transform .18s ease;
+}
+.hi5-invite.in .hi5-invite-card{transform:none}
+.hi5-invite-x{
+  position:absolute;right:8px;top:6px;border:0;background:transparent;
+  font-size:14px;font-weight:800;color:var(--ink-3);cursor:pointer;padding:5px 7px;line-height:1;
+}
+.hi5-invite-card h3{font-size:22px;margin:10px 0 5px}
+.hi5-invite-sub{font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:0 0 14px}
+.hi5-invite .hi5-hand{width:132px;height:158px;margin:0 auto}
+.hi5-invite .hi5-hand svg{width:104px;height:139px;margin-bottom:10px}
+.hi5-invite-tip{font-size:11.5px;color:var(--ink-3);margin:9px 0 0}
+.hi5-invite-say{
+  margin-top:12px;padding:10px 12px;font-size:13px;line-height:1.7;
+  background:#fffdf1;border:3px solid var(--shadow);text-align:left;
+}
+.hi5-invite-say b{background:linear-gradient(transparent 62%,rgba(245,194,44,.75) 62%);font-weight:700}
+.hi5-invite-actions{display:flex;gap:10px;margin-top:14px}
+.hi5-invite-actions .btn{flex:1;justify-content:center;padding:11px 6px;font-size:14px}
+.hi5-invite-actions .btn.is-hot{animation:hotpulse 1.2s steps(2,end) infinite}
+@keyframes hotpulse{0%,100%{filter:none}50%{filter:brightness(1.08) saturate(1.15)}}
+
+/* 像素 toast */
+.px-toast{
+  position:fixed;left:50%;bottom:26px;z-index:300;max-width:86vw;
+  transform:translate(-50%,12px);opacity:0;pointer-events:none;
+  background:var(--shadow);color:#fff;font-size:13px;font-weight:600;line-height:1.5;
+  padding:9px 16px;border:2px solid #fff;box-shadow:4px 4px 0 rgba(44,35,20,.3);
+  transition:opacity .16s ease,transform .16s ease;text-align:center;
+}
+.px-toast.in{opacity:1;transform:translate(-50%,0)}
 
 .foot{margin-top:34px;text-align:center;font-size:12px;color:var(--ink-3)}
 
@@ -1001,26 +1049,29 @@ button{font:inherit;color:inherit;cursor:pointer}
 </main>
 
 <script>
-  // 换色：4 套主题循环
+  // 换色：只改变量颜色，不动任何布局；按钮固定 2 个字，宽度不变
   (function () {
     var themes = [
-      { k: 'sunny', n: '暖阳黄' },
-      { k: 'mint', n: '抹茶绿' },
-      { k: 'sky', n: '晴空蓝' },
-      { k: 'sunset', n: '橘子汽水' }
+      { k: 'sunny', n: '暖阳' },
+      { k: 'mint', n: '抹茶' },
+      { k: 'sky', n: '晴空' },
+      { k: 'sunset', n: '橘子' }
     ];
     var i = 0;
     var btn = document.getElementById('themeBtn');
+    var label = btn.lastChild;
     btn.addEventListener('click', function () {
       i = (i + 1) % themes.length;
       document.documentElement.dataset.theme = themes[i].k;
-      btn.lastChild.textContent = ' ' + themes[i].n;
+      label.textContent = ' ' + themes[i].n;
+      btn.title = themes[i].n + '主题（再点切换）';
     });
   })();
 
-  /* ---------- 每日击掌：可重复点击 + 打卡日历 ---------- */
+  /* ---------- 每日击掌：浮动邀请 + 可重复点击 + 打卡日历 ---------- */
   (function () {
     var KEY = 'px_hi5_v1';
+    var INVITE_KEY = 'px_hi5_invite';
     var hand = document.getElementById('hi5Hand');
     var sparks = document.getElementById('hi5Sparks');
     var say = document.getElementById('hi5Say');
@@ -1045,11 +1096,10 @@ button{font:inherit;color:inherit;cursor:pointer}
     function sum() { var t = 0; for (var k in S.days) t += (S.days[k] || 0); return t; }
     function dayCount() { var t = 0; for (var k in S.days) if (S.days[k] > 0) t++; return t; }
 
-    // 概念稿预设：本月已过去的日期按规律打过卡，日历不是一片空白
     function seed() {
       if (S.seeded) return;
       for (var d = 1; d < NOW.getDate(); d++) {
-        if (d % 7 === 3 || d % 5 === 0) continue;       // 留几个没来的日子
+        if (d % 7 === 3 || d % 5 === 0) continue;
         S.days[key(new Date(NOW.getFullYear(), NOW.getMonth(), d))] = 1 + (d % 3);
       }
       S.seeded = true;
@@ -1058,7 +1108,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 
     function streak() {
       var n = 0, d = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate());
-      if (!S.days[key(d)]) d.setDate(d.getDate() - 1);  // 今天还没点，就从昨天往前数
+      if (!S.days[key(d)]) d.setDate(d.getDate() - 1);
       while (S.days[key(d)]) { n++; d.setDate(d.getDate() - 1); }
       return n;
     }
@@ -1071,7 +1121,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 
     function renderCal() {
       var y = NOW.getFullYear(), m = NOW.getMonth();
-      var lead = (new Date(y, m, 1).getDay() + 6) % 7;   // 周一为第一列
+      var lead = (new Date(y, m, 1).getDay() + 6) % 7;
       var last = new Date(y, m + 1, 0).getDate();
       var html = '', hit = 0;
       for (var i = 0; i < lead; i++) html += '<div class="cal-cell blank"></div>';
@@ -1106,17 +1156,9 @@ button{font:inherit;color:inherit;cursor:pointer}
       return base + (st >= 2 ? ' 已经连着 <b>' + st + '</b> 天来击掌。' : '');
     }
 
-    function slap() {
-      var n = (S.days[todayKey] || 0) + 1;
-      S.days[todayKey] = n;
-      save();
-
-      hand.classList.remove('hit');
-      void hand.offsetWidth;
-      hand.classList.add('hit');
-      setTimeout(function () { hand.classList.remove('hit'); }, 480);
-
-      sparks.innerHTML = '';
+    function burst(box) {
+      if (!box) return;
+      box.innerHTML = '';
       var marks = ['✦', '✧', '＋', '·'];
       for (var i = 0; i < 10; i++) {
         var s = document.createElement('i');
@@ -1126,18 +1168,158 @@ button{font:inherit;color:inherit;cursor:pointer}
         s.style.setProperty('--dx', Math.round(Math.cos(ang) * dist) + 'px');
         s.style.setProperty('--dy', Math.round(Math.sin(ang) * dist - 12) + 'px');
         s.style.animationDelay = (i % 3) * 30 + 'ms';
-        sparks.appendChild(s);
+        box.appendChild(s);
       }
+    }
 
+    function bump(handEl, sparksEl) {
+      var n = (S.days[todayKey] || 0) + 1;
+      S.days[todayKey] = n;
+      save();
+      if (handEl) {
+        handEl.classList.remove('hit');
+        void handEl.offsetWidth;
+        handEl.classList.add('hit');
+        setTimeout(function () { handEl.classList.remove('hit'); }, 480);
+      }
+      burst(sparksEl);
       renderStats();
       renderCal();
-      say.innerHTML = praise(n, streak());
+      return n;
+    }
+
+    hand.addEventListener('click', function () {
+      say.innerHTML = praise(bump(hand, sparks), streak());
       say.classList.remove('pop');
       void say.offsetWidth;
       say.classList.add('pop');
+    });
+
+    /* 浮动邀请弹窗：浮在最上层，不改动页面任何结构 */
+    var invite = null;
+    function onInviteKey(e) { if (e.key === 'Escape') closeInvite(); }
+
+    function openInvite() {
+      if (invite) return;
+      var d = NOW;
+      var wd = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][d.getDay()];
+      invite = document.createElement('div');
+      invite.className = 'hi5-invite';
+      invite.id = 'hi5Invite';
+      invite.setAttribute('role', 'dialog');
+      invite.setAttribute('aria-label', '每日击掌邀请');
+      invite.innerHTML =
+        '<div class="hi5-invite-card">' +
+          '<button class="hi5-invite-x" data-close aria-label="关闭">✕</button>' +
+          '<span class="eyebrow">DAILY HIGH-FIVE</span>' +
+          '<h3>来，先击个掌</h3>' +
+          '<p class="hi5-invite-sub">' + (d.getMonth() + 1) + ' 月 ' + d.getDate() + ' 日 · ' + wd +
+            '　点一下手掌，今天就算正式开始了。</p>' +
+          '<button class="hi5-hand" id="hi5InviteHand" aria-label="击掌">' +
+            '<span class="hi5-bang">啪！</span>' +
+            '<span class="hi5-sparks" id="hi5InviteSparks" aria-hidden="true"></span>' +
+          '</button>' +
+          '<p class="hi5-invite-tip">点手掌 ↑　可以一直点</p>' +
+          '<p class="hi5-invite-say" id="hi5InviteSay" hidden></p>' +
+          '<div class="hi5-invite-actions">' +
+            '<button class="btn btn-primary" id="hi5InviteGo">开始今日挑战</button>' +
+            '<button class="btn btn-ghost" data-close>今天先看看</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(invite);
+
+      var src = document.querySelector('#hi5Hand svg');
+      if (src) invite.querySelector('#hi5InviteHand').appendChild(src.cloneNode(true));
+
+      invite.addEventListener('click', function (e) {
+        if (e.target === invite || e.target.closest('[data-close]')) { closeInvite(); return; }
+        if (e.target.closest('#hi5InviteGo')) {
+          closeInvite();
+          toast('开始今日挑战 —— 概念稿里会进入第 1 关');
+        }
+      });
+
+      var ih = invite.querySelector('#hi5InviteHand');
+      ih.addEventListener('click', function () {
+        var n = bump(ih, invite.querySelector('#hi5InviteSparks'));
+        var box = invite.querySelector('#hi5InviteSay');
+        box.hidden = false;
+        box.innerHTML = praise(n, streak());
+        var go = invite.querySelector('#hi5InviteGo');
+        go.textContent = '开始今日挑战 →';
+        go.classList.add('is-hot');
+      });
+
+      var panel = invite;
+      requestAnimationFrame(function () { if (panel && panel.parentNode) panel.classList.add('in'); });
+      document.addEventListener('keydown', onInviteKey);
     }
 
-    hand.addEventListener('click', slap);
+    function closeInvite() {
+      document.removeEventListener('keydown', onInviteKey);
+      if (!invite) return;
+      var el = invite;
+      invite = null;
+      el.classList.remove('in');
+      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 200);
+    }
+
+    /* 像素 toast：给还没实现的入口一个明确反馈 */
+    var toastEl = null, toastTimer = null;
+    function toast(msg) {
+      if (!toastEl) {
+        toastEl = document.createElement('div');
+        toastEl.className = 'px-toast';
+        document.body.appendChild(toastEl);
+      }
+      toastEl.textContent = msg;
+      requestAnimationFrame(function () { toastEl.classList.add('in'); });
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toastEl.classList.remove('in'); }, 1900);
+    }
+
+    /* 其余入口：全部可点，但不改动任何布局 */
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('.links a');
+      if (a) { e.preventDefault(); toast('概念稿：这里会进入「' + a.textContent.trim() + '」模块'); return; }
+
+      var mod = e.target.closest('.mod');
+      if (mod) {
+        var h = mod.querySelector('h3');
+        toast('概念稿：「' + (h ? h.textContent.trim() : '模块') + '」会打开对应的闯关页');
+        return;
+      }
+
+      var stop = e.target.closest('.stop');
+      if (stop) {
+        var lb = stop.querySelector('.label');
+        toast('概念稿：进入「' + (lb ? lb.textContent.trim().split('\n')[0] : '关卡') + '」');
+        return;
+      }
+
+      var task = e.target.closest('.task');
+      if (task) {
+        var t = task.querySelector('.tick');
+        if (t) {
+          t.classList.toggle('on');
+          t.textContent = t.classList.contains('on') ? '✓' : '';
+        }
+        return;
+      }
+
+      var btn = e.target.closest('.btn');
+      if (!btn || btn.id === 'themeBtn' || btn.closest('.hi5') || btn.closest('.hi5-invite')) return;
+      var label = btn.textContent.trim();
+      if (label.indexOf('查看地图') >= 0) {
+        var map = document.querySelector('.map');
+        if (map) map.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast('已跳到学习地图');
+        return;
+      }
+      if (label.indexOf('开始今日挑战') >= 0 || label.indexOf('开始学习') >= 0) { openInvite(); return; }
+      if (label.indexOf('重置') >= 0) { toast('概念稿：会把今天重新算一遍'); return; }
+      toast('概念稿：「' + label + '」');
+    });
 
     seed();
     renderStats();
@@ -1145,6 +1327,18 @@ button{font:inherit;color:inherit;cursor:pointer}
     say.innerHTML = S.days[todayKey]
       ? '今天已经击过 <b>' + S.days[todayKey] + '</b> 掌了 —— 还能再补几下。'
       : praise(0, streak());
+
+    // 入场邀请：今天还没击掌，就浮在最上层邀请一次
+    var invited = false;
+    try { invited = localStorage.getItem(INVITE_KEY) === todayKey; } catch (e) {}
+    if (!S.days[todayKey] && !invited) {
+      setTimeout(function () {
+        openInvite();
+        try { localStorage.setItem(INVITE_KEY, todayKey); } catch (e) {}
+      }, 700);
+    }
+
+    window.PXHi5 = { open: openInvite, close: closeInvite, toast: toast };
   })();
 </script>
 </body>
