@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="sunny">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>像素学英语 · 首页概念稿</title>
+<style>
+/* ============================================================
+   像素风英语学习站 · 首页概念稿
+   规则：文字用现代无衬线字体（绝不像素化）；文字之外的
+   图标、边框、按钮、进度条、徽章、角色、道具全部 8-bit 像素风。
+   ============================================================ */
+
+:root{
+  --sky-1:#bfe3f7;
+  --sky-2:#e8f6ff;
+  --bg-a:#fdf7e4;
+  --bg-b:#fbf0d0;
+  --dot:rgba(228,183,72,.30);
+  --cream:#fffdf7;
+  --ink:#2c2314;
+  --ink-2:#6b5f49;
+  --ink-3:#a2987f;
+  --yellow:#f5c22c;
+  --yellow-d:#d9a018;
+  --blue:#5b9be0;
+  --blue-d:#3d7cc0;
+  --green:#6db25f;
+  --green-d:#4f9247;
+  --orange:#f0923c;
+  --orange-d:#cf7420;
+  --pink:#e78496;
+  --shadow:#2c2314;
+  --outline:3px;
+}
+/* 换色主题 */
+html[data-theme="mint"]{
+  --bg-a:#f1f9ef;--bg-b:#e4f2e2;--dot:rgba(110,178,95,.26);
+  --yellow:#7fc26f;--yellow-d:#5aa04c;--orange:#eab84a;--orange-d:#c9992c;
+  --blue:#5aa9b8;--blue-d:#3f8896;--green:#8ac06a;--green-d:#649a45;
+}
+html[data-theme="sky"]{
+  --bg-a:#f2f7fd;--bg-b:#e3eefb;--dot:rgba(91,155,224,.24);
+  --yellow:#6aa8e6;--yellow-d:#4a86c4;--orange:#f0a86a;--orange-d:#cd8244;
+  --blue:#5b9be0;--blue-d:#3d7cc0;--green:#66b7a8;--green-d:#469184;
+}
+html[data-theme="sunset"]{
+  --bg-a:#fdf3ee;--bg-b:#fbe7dd;--dot:rgba(240,146,60,.22);
+  --yellow:#f0923c;--yellow-d:#cf7420;--orange:#e78496;--orange-d:#c4647a;
+  --blue:#7d8fd0;--blue-d:#5c6fb4;--green:#8fbc6a;--green-d:#6b9a48;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background-color:var(--bg-a);
+  background-image:
+    radial-gradient(var(--dot) 2.2px, transparent 2.4px),
+    linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 100%);
+  background-size:22px 22px, 100% 100%;
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px 72px}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.4px;line-height:1.25}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* ---------- 像素通用零件 ---------- */
+.px{
+  border:var(--outline) solid var(--shadow);
+  border-radius:0;
+  box-shadow:6px 6px 0 rgba(44,35,20,.16);
+  background:var(--cream);
+}
+.px-sm{box-shadow:4px 4px 0 rgba(44,35,20,.16)}
+/* 像素切角：上下左右各切掉 6px 的方块锯齿 */
+.notch{
+  clip-path:polygon(
+    6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,
+    100% calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) 100%,
+    6px 100%,6px calc(100% - 6px),0 calc(100% - 6px),0 6px,6px 6px);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;font-size:14.5px;font-weight:600;
+  border:3px solid var(--shadow);border-radius:0;
+  background:var(--cream);box-shadow:5px 5px 0 var(--shadow);
+  transition:transform .06s linear,box-shadow .06s linear;
+  white-space:nowrap;
+}
+.btn:hover{filter:brightness(1.03)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--shadow)}
+.btn-primary{background:var(--yellow);color:#3a2a06}
+.btn-green{background:var(--green);color:#fff}
+.btn-ghost{background:var(--cream);color:var(--ink)}
+.btn-lg{padding:14px 26px;font-size:15.5px}
+.btn-sm{padding:8px 14px;font-size:13px;box-shadow:4px 4px 0 var(--shadow)}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;
+  padding:4px 10px;border:2px solid var(--shadow);background:var(--cream);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-2);
+}
+
+/* ---------- 顶部导航 ---------- */
+.nav{
+  display:flex;align-items:center;gap:22px;
+  margin:20px auto 0;padding:12px 16px;
+  max-width:1160px;
+  background:var(--cream);
+  border:3px solid var(--shadow);
+  box-shadow:6px 6px 0 rgba(44,35,20,.14);
+}
+.brand{display:flex;align-items:center;gap:11px;padding-right:6px}
+.brand b{display:block;font-size:16px;letter-spacing:-.2px}
+.brand em{
+  display:block;font-style:normal;font-size:10px;letter-spacing:.18em;
+  color:var(--ink-3);font-weight:600;
+}
+.links{display:flex;align-items:center;gap:4px;margin-left:8px}
+.links a{
+  text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:500;
+  padding:8px 12px;border:3px solid transparent;
+}
+.links a:hover{color:var(--ink);background:rgba(245,194,44,.22);border-color:var(--shadow)}
+.links a.is-active{color:var(--ink);font-weight:700;background:var(--yellow);border-color:var(--shadow)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+/* ---------- 主视觉 ---------- */
+.hero{
+  margin-top:22px;padding:0;overflow:hidden;
+  display:grid;grid-template-columns:1.02fr .98fr;
+  background:var(--cream);border:3px solid var(--shadow);
+  box-shadow:8px 8px 0 rgba(44,35,20,.14);
+}
+.hero-copy{padding:46px 12px 42px 46px}
+.hero h1{font-size:47px;line-height:1.14;letter-spacing:-1.4px;margin:16px 0 0}
+.hero h1 span{white-space:nowrap}
+.hero .sub{margin-top:14px;font-size:16px;color:var(--ink-2);max-width:26em}
+.hero-actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:0;margin-top:32px;border-top:2px dashed rgba(44,35,20,.16);padding-top:16px;max-width:430px}
+.hero-stats div{padding-right:22px;margin-right:22px;border-right:2px dashed rgba(44,35,20,.16)}
+.hero-stats div:last-child{border-right:0;margin-right:0;padding-right:0}
+.hero-stats b{display:block;font-size:19px;letter-spacing:-.3px}
+.hero-stats span{font-size:12px;color:var(--ink-3);font-weight:600}
+
+/* 场景 */
+.scene{
+  position:relative;background:linear-gradient(180deg,#dff1fd 0%,#eef9ff 48%,#fdf7e4 100%);
+  border-left:3px solid var(--shadow);min-height:430px;overflow:hidden;
+}
+.scene svg{display:block;width:100%;height:100%}
+
+/* ---------- 模块区 ---------- */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin:52px 0 18px;gap:16px}
+.section-head h2{font-size:25px}
+.section-head p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.modules{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mod{
+  padding:20px 18px 18px;background:var(--cream);
+  border:3px solid var(--shadow);box-shadow:6px 6px 0 rgba(44,35,20,.14);
+  display:flex;flex-direction:column;gap:12px;
+  transition:transform .1s ease;
+}
+.mod:hover{transform:translateY(-3px)}
+.mod-icon{height:74px;display:flex;align-items:center}
+.mod h3{font-size:16px}
+.mod p{font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.mod .meta{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mod .progress{flex:1}
+.mod-yellow{border-top:8px solid var(--yellow)}
+.mod-blue{border-top:8px solid var(--blue)}
+.mod-green{border-top:8px solid var(--green)}
+.mod-orange{border-top:8px solid var(--orange)}
+
+/* 像素方格进度条 */
+.progress{
+  display:flex;gap:3px;height:14px;align-items:stretch;
+}
+.progress i{
+  flex:1;background:rgba(44,35,20,.10);border:2px solid rgba(44,35,20,.22);
+}
+.progress i.on{background:var(--yellow);border-color:var(--shadow)}
+.progress.sm{height:11px;gap:2px}
+.progress.sm i{border-width:1.5px}
+
+/* ---------- 地图 ---------- */
+.map{
+  margin-top:22px;padding:26px 26px 30px;background:var(--cream);
+  border:3px solid var(--shadow);box-shadow:6px 6px 0 rgba(44,35,20,.14);
+}
+.map-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.track{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding-bottom:6px}
+.stop{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:96px}
+.stop .label{font-size:12px;color:var(--ink-2);font-weight:600;text-align:center;line-height:1.4}
+.stop .stars{display:flex;gap:3px;height:14px}
+.tile{
+  width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+  border:3px solid var(--shadow);background:#e7dcc2;box-shadow:4px 4px 0 rgba(44,35,20,.16);
+  font-weight:800;font-size:17px;color:rgba(44,35,20,.45);
+}
+.tile.done{background:var(--green);color:#fff}
+.tile.now{background:var(--yellow);color:#3a2a06;box-shadow:4px 4px 0 var(--shadow)}
+.tile.reward{background:var(--orange);color:#fff;border-style:dashed}
+.route{
+  flex:1;height:58px;display:flex;align-items:center;justify-content:center;
+  border-bottom:4px dotted rgba(44,35,20,.28);margin:0 2px 0 2px;position:relative;
+}
+.route::after{
+  content:"";position:absolute;right:-2px;top:calc(50% - 7px);
+  width:0;height:0;border-left:9px solid rgba(44,35,20,.35);
+  border-top:7px solid transparent;border-bottom:7px solid transparent;
+}
+.now-tag{
+  position:relative;display:inline-flex;align-items:center;gap:5px;
+  background:var(--yellow);border:2px solid var(--shadow);padding:2px 7px;
+  font-size:10.5px;font-weight:800;letter-spacing:.06em;
+}
+
+/* ---------- 今日任务 ---------- */
+.tasks{
+  margin-top:22px;display:grid;grid-template-columns:1.35fr .95fr;gap:18px;
+}
+.panel{background:var(--cream);border:3px solid var(--shadow);box-shadow:6px 6px 0 rgba(44,35,20,.14);padding:22px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.panel-head h3{font-size:17px}
+.task{
+  display:flex;align-items:center;gap:12px;padding:13px 0;
+  border-bottom:2px dashed rgba(44,35,20,.12);
+}
+.task:last-child{border-bottom:0}
+.tick{
+  width:26px;height:26px;flex:none;border:3px solid var(--shadow);background:var(--cream);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--shadow)
+}
+.tick.on{background:var(--green);color:#fff}
+.task-main{flex:1;min-width:0}
+.task-main b{display:block;font-size:14px;font-weight:600}
+.task-main span{font-size:12px;color:var(--ink-3)}
+.task .progress{width:112px;flex:none}
+
+.side-stat{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:2px dashed rgba(44,35,20,.12)}
+.side-stat:last-child{border-bottom:0}
+.badge{
+  width:46px;height:46px;flex:none;display:flex;align-items:center;justify-content:center;
+  border:3px solid var(--shadow);background:var(--yellow);box-shadow:3px 3px 0 rgba(44,35,20,.18)
+}
+.badge.b2{background:var(--blue)}
+.badge.b3{background:var(--green)}
+.badge.b4{background:var(--orange)}
+.side-stat b{display:block;font-size:14.5px}
+.side-stat span{font-size:12px;color:var(--ink-3)}
+
+/* ---------- 每日击掌打卡 ---------- */
+.hi5{
+  margin-top:22px;display:grid;grid-template-columns:1fr 1fr;
+  background:var(--cream);border:3px solid var(--shadow);
+  box-shadow:8px 8px 0 rgba(44,35,20,.14);overflow:hidden;
+}
+.hi5-l{padding:26px 26px 24px;border-right:3px solid var(--shadow);display:flex;flex-direction:column}
+.hi5-l h2{font-size:23px;margin-top:8px}
+.hi5-desc{margin-top:8px;font-size:13px;color:var(--ink-2);max-width:24em;line-height:1.7}
+.hi5-stage{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:14px;flex:1;justify-content:center}
+
+/* 手掌：可点击的像素按钮 */
+.hi5-hand{
+  position:relative;flex:none;width:152px;height:186px;padding:0;
+  display:flex;align-items:flex-end;justify-content:center;
+  background:#fffdf1;border:3px solid var(--shadow);
+  box-shadow:5px 5px 0 var(--shadow);
+  transition:transform .06s linear,box-shadow .06s linear;
+}
+.hi5-hand:hover{transform:translateY(-2px)}
+.hi5-hand:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--shadow)}
+.hi5-hand svg{position:relative;z-index:2;display:block;margin-bottom:12px;width:126px;height:169px}
+.hi5-hand.hit{animation:hi5bounce .44s steps(5,end)}
+@keyframes hi5bounce{
+  0%{transform:translateY(0) scale(1,1)}
+  22%{transform:translateY(-11px) scale(1.05,.94)}
+  46%{transform:translateY(2px) scale(.94,1.06)}
+  70%{transform:translateY(-5px) scale(1.02,.98)}
+  100%{transform:translateY(0) scale(1,1)}
+}
+.hi5-bang{
+  position:absolute;top:7px;right:5px;z-index:4;
+  font-size:14px;font-weight:900;letter-spacing:0;color:var(--shadow);
+  background:#fffdf1;border:2px solid var(--shadow);padding:0 5px;line-height:1.5;
+  opacity:0;transform:scale(.6);transform-origin:center;
+}
+.hi5-hand.hit .hi5-bang{animation:hi5bang .44s ease-out}
+@keyframes hi5bang{
+  0%{opacity:0;transform:scale(.5)}
+  35%{opacity:1;transform:scale(1.15)}
+  70%{opacity:1;transform:scale(1)}
+  100%{opacity:0;transform:scale(1) translateY(-8px)}
+}
+.hi5-sparks{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:visible}
+.hi5-sparks i{
+  position:absolute;left:50%;top:52%;font-style:normal;font-weight:900;
+  font-size:13px;color:var(--shadow);opacity:0;
+  animation:hi5spark .6s ease-out forwards;
+}
+@keyframes hi5spark{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(.7)}
+  100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.1)}
+}
+
+/* 计数 + 鼓励文案 */
+.hi5-meter{display:flex;width:100%;border-top:2px dashed rgba(44,35,20,.14);padding-top:12px}
+.hi5-num{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;
+  padding:0 6px;border-right:2px dashed rgba(44,35,20,.14);
+}
+.hi5-num:last-child{border-right:0}
+.hi5-num b{font-size:26px;letter-spacing:-.8px;font-variant-numeric:tabular-nums;line-height:1.15}
+.hi5-num span{font-size:11.5px;color:var(--ink-3);font-weight:600}
+.hi5-say{
+  margin-top:14px;padding:13px 16px;background:#fffdf1;
+  border:3px solid var(--shadow);box-shadow:4px 4px 0 rgba(44,35,20,.12);
+  font-size:13.5px;line-height:1.7;min-height:62px;
+}
+.hi5-say b{background:linear-gradient(transparent 62%,rgba(245,194,44,.75) 62%);font-weight:700}
+.hi5-say.pop{animation:saypop .3s ease-out}
+@keyframes saypop{0%{transform:translateY(3px);opacity:.4}100%{transform:translateY(0);opacity:1}}
+.hi5-hint{margin-top:10px;font-size:11.5px;color:var(--ink-3);display:flex;align-items:center;gap:6px}
+.hi5-hint i{width:9px;height:9px;background:var(--green);border:2px solid var(--shadow);display:block;animation:blink 1.4s steps(2,end) infinite}
+@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.25}}
+
+/* 打卡日历 */
+.hi5-r{padding:24px 24px 20px;background:#fffaf0}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.cal-head b{font-size:16px}
+.cal-week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:5px}
+.cal-week i{font-style:normal;text-align:center;font-size:11px;font-weight:800;color:var(--ink-3);letter-spacing:.05em}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal-cell{
+  position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:700;color:rgba(44,35,20,.4);
+  background:#efe7d5;border:2px solid rgba(44,35,20,.16);
+}
+.cal-cell.blank{background:transparent;border-color:transparent}
+.cal-cell.on{background:var(--yellow);border-color:var(--shadow);color:#3a2a06;box-shadow:2px 2px 0 rgba(44,35,20,.18)}
+.cal-cell.future{background:transparent;border-style:dashed;border-color:rgba(44,35,20,.13);color:rgba(44,35,20,.22)}
+.cal-cell.today{border:3px solid var(--shadow);background:#fffdf1;color:var(--shadow)}
+.cal-cell.today::after{content:"";position:absolute;right:2px;top:2px;width:5px;height:5px;background:var(--shadow)}
+.cal-cell.today.on{background:var(--yellow)}
+.cal-cell.today.blank{background:transparent;border-color:transparent}
+.cal-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;font-size:11.5px;color:var(--ink-2)}
+.cal-legend span{display:inline-flex;align-items:center;gap:5px;font-weight:600}
+.cal-legend i{width:12px;height:12px;display:block;border:2px solid var(--shadow);background:var(--yellow)}
+.cal-legend i.off{background:#efe7d5;border-color:rgba(44,35,20,.3)}
+.cal-legend i.td{background:#fffdf1;border-width:3px}
+.cal-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:12px;border-top:2px dashed rgba(44,35,20,.14);font-size:12.5px;color:var(--ink-2)}
+.cal-foot b{font-size:16px;color:var(--ink)}
+
+.foot{margin-top:34px;text-align:center;font-size:12px;color:var(--ink-3)}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:36px 28px 30px}
+  .hero h1{font-size:38px}
+  .scene{border-left:0;border-top:3px solid var(--shadow);min-height:360px}
+  .modules{grid-template-columns:repeat(2,1fr)}
+  .tasks{grid-template-columns:1fr}
+  .hi5{grid-template-columns:1fr}
+  .hi5-l{border-right:0;border-bottom:3px solid var(--shadow)}
+  .links{display:none}
+}
+@media (max-width:620px){
+  body{overflow-x:hidden}
+  .wrap{padding:0 14px 50px}
+  .hero h1{font-size:30px}
+  .hero h1 span{white-space:normal}
+  .hero-copy{padding:26px 20px 24px}
+  .hero-actions{gap:10px}
+  .hero-actions .btn{flex:1;justify-content:center;padding:12px 10px;font-size:14px}
+  .hero-stats div{padding-right:13px;margin-right:13px}
+  .hero-stats b{font-size:16px}
+  .modules{grid-template-columns:1fr}
+  .nav{padding:10px 10px;gap:8px;flex-wrap:wrap;row-gap:10px}
+  .brand em{display:none}
+  .brand b{font-size:15px}
+  .nav-right{margin-left:auto;gap:8px}
+  .nav-right .btn-sm{padding:7px 10px;font-size:12px;box-shadow:3px 3px 0 var(--shadow)}
+  .section-head{flex-direction:column;align-items:flex-start;gap:8px;margin:34px 0 14px}
+  .section-head h2{font-size:21px}
+  .panel{padding:16px 14px}
+  .task{gap:8px}
+  .task .progress{width:64px}
+  .map{padding:18px 14px 22px}
+  .track{overflow-x:auto;justify-content:flex-start;padding-bottom:10px}
+  .stop{width:58px;min-width:0;gap:4px}
+  .stop .label{font-size:10px;line-height:1.35;overflow-wrap:anywhere}
+  .stop .stars{height:12px}
+  .tile{width:42px;height:42px;font-size:14px}
+  .route{height:42px}
+  .map-top .progress{width:96px !important}
+  .hi5-l{padding:20px 16px 18px}
+  .hi5-l h2{font-size:20px}
+  .hi5-stage{gap:14px;margin-top:16px}
+  .hi5-hand{width:124px;height:152px}
+  .hi5-hand svg{width:96px;height:129px;margin-bottom:10px}
+  .hi5-num b{font-size:21px}
+  .hi5-say{font-size:13px;min-height:0;padding:10px 12px}
+  .hi5-r{padding:18px 16px 16px}
+  .cal-cell{font-size:11px}
+  .cal-week i{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= 顶部导航 ================= -->
+<header class="nav">
+  <div class="brand">
+    <!-- Logo：字母块 + 铅笔 + 星星 + 砖块 -->
+    <svg width="42" height="42" viewBox="0 0 42 42" shape-rendering="crispEdges" aria-label="像素英语 Logo">
+      <rect x="2" y="26" width="14" height="14" fill="#f0923c" stroke="#2c2314" stroke-width="2"/>
+      <rect x="2" y="32" width="14" height="2" fill="#cf7420"/>
+      <rect x="12" y="26" width="2" height="6" fill="#cf7420"/>
+      <rect x="6" y="8" width="20" height="20" fill="#f5c22c" stroke="#2c2314" stroke-width="2"/>
+      <rect x="12" y="13" width="3" height="10" fill="#2c2314"/>
+      <rect x="18" y="13" width="3" height="10" fill="#2c2314"/>
+      <rect x="15" y="20" width="3" height="3" fill="#2c2314"/>
+      <rect x="27" y="17" width="4" height="16" fill="#5b9be0" transform="rotate(-38 29 25)" stroke="#2c2314" stroke-width="2"/>
+      <rect x="30" y="6" width="5" height="5" fill="#ffffff" stroke="#2c2314" stroke-width="2"/>
+      <rect x="35" y="1" width="4" height="4" fill="#ffffff" stroke="#2c2314" stroke-width="2"/>
+      <rect x="33" y="11" width="3" height="3" fill="#ffffff"/>
+    </svg>
+    <div>
+      <b>像素学英语</b>
+      <em>PIXEL ENGLISH</em>
+    </div>
+  </div>
+
+  <nav class="links">
+    <a href="#" class="is-active">单词</a>
+    <a href="#">听力</a>
+    <a href="#">阅读</a>
+    <a href="#">口语</a>
+    <a href="#">游戏闯关</a>
+  </nav>
+
+  <div class="nav-right">
+    <button class="btn btn-sm btn-ghost" id="themeBtn">
+      <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges">
+        <rect x="0" y="5" width="4" height="4" fill="#2c2314"/>
+        <rect x="10" y="5" width="4" height="4" fill="#2c2314"/>
+        <rect x="5" y="0" width="4" height="4" fill="#2c2314"/>
+        <rect x="5" y="10" width="4" height="4" fill="#2c2314"/>
+        <rect x="5" y="5" width="4" height="4" fill="#2c2314"/>
+      </svg>
+      换色
+    </button>
+    <button class="btn btn-sm btn-primary">开始学习</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= 主视觉 ================= -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges">
+          <rect x="4" y="0" width="4" height="12" fill="#f5c22c"/>
+          <rect x="0" y="4" width="12" height="4" fill="#f5c22c"/>
+        </svg>
+        LEVEL 12 · 今日第 1 关
+      </span>
+
+      <h1><span>今天开始，</span><br><span>轻松学英语</span></h1>
+      <p class="sub">用游戏闯关的方式，每天积累一点进步</p>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg">开始今日挑战</button>
+        <button class="btn btn-green btn-lg">查看地图</button>
+      </div>
+
+      <div class="hero-stats">
+        <div><b>12 天</b><span>连续闯关</span></div>
+        <div><b>38 关</b><span>已通过</span></div>
+        <div><b>1246</b><span>掌握单词</span></div>
+      </div>
+    </div>
+
+    <!-- 主视觉场景：像素角色 + 砖块平台 + 单词卡 + 金币 + 宝箱 + 字母块 + 旗帜 -->
+    <div class="scene">
+      <svg viewBox="0 0 560 430" preserveAspectRatio="xMidYMax meet" shape-rendering="crispEdges" aria-label="像素学习场景">
+        <!-- 天空云朵 -->
+        <g fill="#ffffff" stroke="#cfe6f5" stroke-width="2">
+          <rect x="60" y="52" width="26" height="16"/>
+          <rect x="76" y="42" width="40" height="26"/>
+          <rect x="112" y="52" width="24" height="16"/>
+          <rect x="380" y="78" width="22" height="14"/>
+          <rect x="396" y="70" width="34" height="22"/>
+          <rect x="424" y="80" width="20" height="12"/>
+        </g>
+        <!-- 小藤蔓 -->
+        <g stroke="#6db25f" stroke-width="3" fill="none">
+          <path d="M0 0 L0 46 L14 46 L14 74"/>
+          <path d="M560 0 L560 38 L544 38 L544 62"/>
+        </g>
+        <g fill="#6db25f">
+          <rect x="9" y="46" width="10" height="8"/>
+          <rect x="10" y="66" width="10" height="8"/>
+          <rect x="540" y="38" width="10" height="8"/>
+          <rect x="533" y="56" width="10" height="8"/>
+        </g>
+
+        <!-- 悬浮砖台（过关平台） -->
+        <g stroke="#2c2314" stroke-width="3">
+          <rect x="10" y="240" width="92" height="28" fill="#e5b98c"/>
+          <rect x="10" y="240" width="92" height="10" fill="#f0cfa6"/>
+        </g>
+        <g stroke="#2c2314" stroke-width="2">
+          <path d="M38 250 L38 268 M66 250 L66 268 M94 250 L94 268"/>
+        </g>
+        <g stroke="#2c2314" stroke-width="2.5">
+          <rect x="44" y="208" width="18" height="18" fill="#f5c22c"/>
+          <rect x="50" y="214" width="6" height="6" fill="#fff3c4"/>
+        </g>
+
+        <!-- 漂浮字母块 -->
+        <g stroke="#2c2314" stroke-width="3">
+          <rect x="52" y="132" width="34" height="34" fill="#5b9be0"/>
+          <rect x="452" y="150" width="34" height="34" fill="#6db25f"/>
+          <rect x="146" y="200" width="30" height="30" fill="#f0923c"/>
+        </g>
+        <g fill="#ffffff" font-family="inherit" font-size="19" font-weight="700" text-anchor="middle">
+          <text x="69" y="156">A</text>
+          <text x="469" y="174">B</text>
+          <text x="161" y="222" font-size="17">C</text>
+        </g>
+
+        <!-- 单词卡 -->
+        <g>
+          <rect x="336" y="112" width="150" height="66" fill="#fffdf7" stroke="#2c2314" stroke-width="3"/>
+          <rect x="336" y="112" width="150" height="9" fill="#f5c22c"/>
+          <text x="350" y="146" font-size="15" font-weight="700" fill="#2c2314" font-family="inherit">serendipity</text>
+          <text x="350" y="166" font-size="11.5" fill="#6b5f49" font-family="inherit">n. 意外发现的好运</text>
+        </g>
+
+        <!-- 金币 -->
+        <g stroke="#2c2314" stroke-width="2.5">
+          <rect x="196" y="96" width="20" height="20" fill="#f5c22c"/>
+          <rect x="203" y="103" width="6" height="6" fill="#fff3c4"/>
+          <rect x="228" y="126" width="16" height="16" fill="#f5c22c"/>
+        </g>
+
+        <!-- 宝箱 -->
+        <g stroke="#2c2314" stroke-width="3">
+          <rect x="428" y="296" width="60" height="38" fill="#cf7420"/>
+          <rect x="428" y="296" width="60" height="12" fill="#f0923c"/>
+          <rect x="450" y="308" width="16" height="16" fill="#f5c22c"/>
+        </g>
+
+        <!-- 旗帜 -->
+        <g>
+          <rect x="496" y="210" width="5" height="88" fill="#2c2314"/>
+          <path d="M501 214 L548 228 L501 244 Z" fill="#f0923c" stroke="#2c2314" stroke-width="3"/>
+          <rect x="507" y="224" width="8" height="8" fill="#fff3c4"/>
+        </g>
+
+        <!-- 砖块平台 -->
+        <g stroke="#2c2314" stroke-width="3">
+          <rect x="96" y="330" width="330" height="26" fill="#e5b98c"/>
+          <rect x="96" y="356" width="330" height="26" fill="#d8a878"/>
+        </g>
+        <g stroke="#2c2314" stroke-width="2.5">
+          <path d="M136 330 L136 356 M176 330 L176 356 M216 330 L216 356 M256 330 L256 356 M296 330 L296 356 M336 330 L336 356 M376 330 L376 356"/>
+          <path d="M116 356 L116 382 M156 356 L156 382 M196 356 L196 382 M236 356 L236 382 M276 356 L276 382 M316 356 L316 382 M356 356 L356 382 M396 356 L396 382"/>
+        </g>
+
+        <!-- 角色：像素探险学习者 -->
+        <g stroke="#2c2314" stroke-width="3">
+          <!-- 帽子 -->
+          <rect x="196" y="196" width="86" height="22" fill="#e78496"/>
+          <rect x="184" y="218" width="110" height="10" fill="#cf6f83"/>
+          <!-- 脸 -->
+          <rect x="196" y="228" width="86" height="56" fill="#f7d3b0"/>
+          <!-- 头发 -->
+          <rect x="188" y="228" width="8" height="40" fill="#5a3f2a"/>
+          <rect x="282" y="228" width="8" height="40" fill="#5a3f2a"/>
+          <!-- 眼睛 -->
+          <rect x="214" y="246" width="10" height="10" fill="#2c2314" stroke="none"/>
+          <rect x="254" y="246" width="10" height="10" fill="#2c2314" stroke="none"/>
+          <!-- 腮红 -->
+          <rect x="206" y="262" width="10" height="6" fill="#f3a9a9" stroke="none"/>
+          <rect x="262" y="262" width="10" height="6" fill="#f3a9a9" stroke="none"/>
+          <!-- 笑 -->
+          <rect x="232" y="266" width="16" height="6" fill="#2c2314" stroke="none"/>
+          <!-- 围巾 -->
+          <rect x="192" y="284" width="94" height="20" fill="#6db25f"/>
+          <rect x="272" y="300" width="20" height="26" fill="#4f9247"/>
+          <!-- 身体 -->
+          <rect x="200" y="304" width="80" height="46" fill="#5b9be0"/>
+          <!-- 背包带 -->
+          <rect x="212" y="304" width="10" height="46" fill="#3d7cc0" stroke="none"/>
+          <!-- 手臂 -->
+          <rect x="176" y="308" width="24" height="34" fill="#5b9be0"/>
+          <rect x="282" y="308" width="24" height="34" fill="#5b9be0"/>
+          <rect x="176" y="342" width="24" height="14" fill="#f7d3b0"/>
+          <rect x="282" y="342" width="24" height="14" fill="#f7d3b0"/>
+          <!-- 腿 -->
+          <rect x="208" y="350" width="26" height="30" fill="#2f4e7a"/>
+          <rect x="246" y="350" width="26" height="30" fill="#2f4e7a"/>
+          <!-- 鞋 -->
+          <rect x="200" y="378" width="38" height="14" fill="#2c2314"/>
+          <rect x="242" y="378" width="38" height="14" fill="#2c2314"/>
+        </g>
+
+        <!-- 手里的小书 -->
+        <g stroke="#2c2314" stroke-width="3">
+          <rect x="300" y="332" width="34" height="26" fill="#f5c22c"/>
+          <rect x="300" y="332" width="6" height="26" fill="#d9a018"/>
+        </g>
+
+        <!-- 远山 -->
+        <g fill="#d7e9c9">
+          <rect x="18" y="332" width="96" height="60"/>
+          <rect x="52" y="312" width="52" height="24"/>
+          <rect x="392" y="336" width="120" height="56"/>
+          <rect x="428" y="316" width="60" height="22"/>
+        </g>
+        <!-- 地面 -->
+        <rect x="0" y="392" width="560" height="38" fill="#e8dcc0"/>
+        <g stroke="#2c2314" stroke-width="2" opacity=".35">
+          <path d="M0 392 L560 392"/>
+        </g>
+        <g fill="#6db25f">
+          <rect x="126" y="376" width="6" height="16"/>
+          <rect x="120" y="382" width="6" height="10"/>
+          <rect x="132" y="380" width="6" height="12"/>
+          <rect x="486" y="378" width="6" height="14"/>
+          <rect x="480" y="384" width="6" height="8"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================= 每日击掌打卡 ================= -->
+  <section class="hi5" id="hi5">
+    <div class="hi5-l">
+      <span class="eyebrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges">
+          <rect x="4" y="0" width="4" height="12" fill="#4f9d5d"/>
+          <rect x="0" y="4" width="12" height="4" fill="#4f9d5d"/>
+        </svg>
+        DAILY HIGH-FIVE
+      </span>
+      <h2>今天先击个掌</h2>
+      <p class="hi5-desc">点一下手掌，今天就算来过了。可以一直点 —— 每一下都算一次，手感越点越顺。</p>
+
+      <div class="hi5-stage">
+        <button class="hi5-hand" id="hi5Hand" aria-label="击掌打卡，可重复点击">
+          <span class="hi5-bang">啪！</span>
+          <span class="hi5-sparks" id="hi5Sparks" aria-hidden="true"></span>
+          <svg width="112" height="150" viewBox="0 0 112 150" shape-rendering="crispEdges" aria-hidden="true">
+            <!-- 手腕 -->
+            <rect x="44" y="104" width="40" height="34" fill="#f0b71f" stroke="#2c2314" stroke-width="3"/>
+            <!-- 拇指 -->
+            <rect x="4" y="62" width="28" height="40" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <rect x="9" y="67" width="8" height="11" fill="#ffe07a"/>
+            <!-- 手掌 -->
+            <rect x="24" y="58" width="78" height="56" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <!-- 四指：食指 / 中指 / 无名指 / 小指 -->
+            <rect x="26" y="26" width="16" height="40" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <rect x="46" y="10" width="16" height="56" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <rect x="66" y="16" width="16" height="50" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <rect x="86" y="32" width="16" height="34" fill="#f5c22c" stroke="#2c2314" stroke-width="3"/>
+            <!-- 高光 -->
+            <rect x="29" y="34" width="5" height="22" fill="#ffe07a"/>
+            <rect x="49" y="18" width="5" height="38" fill="#ffe07a"/>
+            <rect x="69" y="24" width="5" height="32" fill="#ffe07a"/>
+            <rect x="89" y="40" width="5" height="18" fill="#ffe07a"/>
+            <rect x="28" y="64" width="28" height="5" fill="#ffe07a"/>
+            <!-- 掌心纹路 -->
+            <rect x="40" y="84" width="34" height="4" fill="#d8a41f"/>
+            <rect x="40" y="94" width="22" height="4" fill="#d8a41f"/>
+          </svg>
+        </button>
+
+        <div class="hi5-meter">
+          <div class="hi5-num"><b id="hi5Today">0</b><span>今日击掌</span></div>
+          <div class="hi5-num"><b id="hi5Total">0</b><span>累计击掌</span></div>
+          <div class="hi5-num"><b id="hi5DaysN">0</b><span>打卡天数</span></div>
+        </div>
+      </div>
+
+      <p class="hi5-say" id="hi5Say">还没击掌 —— 点一下手掌，今天就算正式开始了。</p>
+      <p class="hi5-hint"><i></i>可以重复点击，随时回来补一下</p>
+    </div>
+
+    <div class="hi5-r">
+      <div class="cal-head">
+        <b id="calTitle">11 月</b>
+        <span class="chip" id="calMonthStat">本月 0 天</span>
+      </div>
+      <div class="cal-week">
+        <i>一</i><i>二</i><i>三</i><i>四</i><i>五</i><i>六</i><i>日</i>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i></i>已击掌</span>
+        <span><i class="off"></i>未击掌</span>
+        <span><i class="td"></i>今天</span>
+      </div>
+      <div class="cal-foot">
+        <span>连续打卡 <b id="calStreak">0</b> 天</span>
+        <span id="calRate">本月出勤 0%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 学习模块 ================= -->
+  <div class="section-head">
+    <div>
+      <h2>四张地图，四个技能点</h2>
+      <p>每天挑一个模块通关，进度会存进你的冒险档案里</p>
+    </div>
+    <span class="chip">本周目标 · 通关 14 次</span>
+  </div>
+
+  <section class="modules">
+    <article class="mod mod-yellow">
+      <div class="mod-icon">
+        <svg width="86" height="70" viewBox="0 0 86 70" shape-rendering="crispEdges" aria-hidden="true">
+          <g stroke="#2c2314" stroke-width="2.5">
+            <rect x="4" y="30" width="30" height="30" fill="#f5c22c"/>
+            <rect x="34" y="16" width="26" height="26" fill="#5b9be0"/>
+            <rect x="56" y="40" width="24" height="24" fill="#f0923c"/>
+          </g>
+          <g fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle" font-family="inherit">
+            <text x="19" y="51">A</text>
+            <text x="47" y="35">B</text>
+            <text x="68" y="57" font-size="14">C</text>
+          </g>
+          <g stroke="#2c2314" stroke-width="2">
+            <rect x="62" y="6" width="16" height="16" fill="#f5c22c"/>
+            <rect x="68" y="12" width="4" height="4" fill="#fff3c4" stroke="none"/>
+          </g>
+        </svg>
+      </div>
+      <h3>单词像素</h3>
+      <p>字母块拼出单词，拼对就点亮一格；错一次记一个红点。</p>
+      <div class="meta">
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <span class="chip">1246 词</span>
+      </div>
+    </article>
+
+    <article class="mod mod-blue">
+      <div class="mod-icon">
+        <svg width="86" height="70" viewBox="0 0 86 70" shape-rendering="crispEdges" aria-hidden="true">
+          <!-- 耳机弧顶 -->
+          <g stroke="#2c2314" stroke-width="2.5" fill="#3d7cc0">
+            <rect x="12" y="14" width="52" height="10"/>
+            <rect x="6" y="20" width="10" height="12" fill="#5b9be0"/>
+            <rect x="60" y="20" width="10" height="12" fill="#5b9be0"/>
+          </g>
+          <!-- 左右耳罩 -->
+          <g stroke="#2c2314" stroke-width="2.5" fill="#5b9be0">
+            <rect x="4" y="30" width="18" height="26"/>
+            <rect x="54" y="30" width="18" height="26"/>
+          </g>
+          <g fill="#2c2314">
+            <rect x="9" y="37" width="8" height="12"/>
+            <rect x="59" y="37" width="8" height="12"/>
+          </g>
+          <!-- 声波 -->
+          <g stroke="#2c2314" stroke-width="2" fill="#f5c22c">
+            <rect x="26" y="34" width="6" height="4"/>
+            <rect x="34" y="28" width="6" height="16"/>
+            <rect x="42" y="34" width="6" height="4"/>
+          </g>
+      </div>
+      <h3>听力闯关</h3>
+      <p>盲听 → 逐句听写 → 对上声波，一关三关全是真实语速。</p>
+      <div class="meta">
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="chip">24 关</span>
+      </div>
+    </article>
+
+    <article class="mod mod-green">
+      <div class="mod-icon">
+        <svg width="86" height="70" viewBox="0 0 86 70" shape-rendering="crispEdges" aria-hidden="true">
+          <g stroke="#2c2314" stroke-width="2.5">
+            <rect x="6" y="26" width="34" height="38" fill="#6db25f"/>
+            <rect x="40" y="26" width="8" height="38" fill="#4f9247"/>
+            <rect x="48" y="26" width="32" height="38" fill="#6db25f"/>
+          </g>
+          <g fill="#fffdf7">
+            <rect x="12" y="34" width="22" height="3"/>
+            <rect x="12" y="42" width="18" height="3"/>
+            <rect x="12" y="50" width="22" height="3"/>
+            <rect x="54" y="34" width="22" height="3"/>
+            <rect x="54" y="42" width="16" height="3"/>
+          </g>
+          <g stroke="#2c2314" stroke-width="2">
+            <rect x="66" y="8" width="16" height="6" fill="#f5c22c"/>
+            <rect x="70" y="14" width="8" height="4" fill="#f5c22c"/>
+          </g>
+        </svg>
+      </div>
+      <h3>阅读冒险</h3>
+      <p>长句拆成桥板，一段一段过；找不到定位句就搭不上桥。</p>
+      <div class="meta">
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="chip">18 篇</span>
+      </div>
+    </article>
+
+    <article class="mod mod-orange">
+      <div class="mod-icon">
+        <svg width="86" height="70" viewBox="0 0 86 70" shape-rendering="crispEdges" aria-hidden="true">
+          <!-- 话筒头 -->
+          <g stroke="#2c2314" stroke-width="2.5" fill="#f0923c">
+            <rect x="33" y="4" width="18" height="26"/>
+            <rect x="37" y="30" width="10" height="8" fill="#cf7420"/>
+          </g>
+          <g fill="#fff3c4">
+            <rect x="37" y="10" width="10" height="3"/>
+            <rect x="37" y="17" width="10" height="3"/>
+            <rect x="37" y="24" width="10" height="3"/>
+          </g>
+          <!-- 支架 -->
+          <g fill="#2c2314">
+            <rect x="41" y="38" width="4" height="10"/>
+            <rect x="26" y="48" width="34" height="5"/>
+            <rect x="38" y="52" width="10" height="4"/>
+          </g>
+          <!-- 对话气泡 -->
+          <g stroke="#2c2314" stroke-width="2.5" fill="#fffdf7">
+            <rect x="58" y="12" width="22" height="16"/>
+            <rect x="62" y="28" width="6" height="6"/>
+          </g>
+          <g fill="#2c2314">
+            <rect x="62" y="18" width="14" height="3"/>
+          </g>
+          <g stroke="#2c2314" stroke-width="2" fill="#f5c22c">
+            <rect x="8" y="8" width="12" height="12"/>
+            <rect x="14" y="2" width="12" height="12"/>
+          </g>
+      </div>
+      <h3>口语挑战</h3>
+      <p>Part 2 话题卡限时 2 分钟，录完听回放，找出卡壳的那一句。</p>
+      <div class="meta">
+        <div class="progress sm"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="chip">9 个话题</span>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= 学习地图 ================= -->
+  <div class="section-head">
+    <div>
+      <h2>今日路线</h2>
+      <p>沿路线走完 4 个点，终点的宝箱就开了</p>
+    </div>
+    <span class="chip">★ 累计 86 颗</span>
+  </div>
+
+  <section class="map">
+    <div class="map-top">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="now-tag">当前 · 第 4 关</span>
+        <span style="font-size:12.5px;color:var(--ink-2)">今日进度</span>
+        <div class="progress" style="width:150px"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <b style="font-size:13px">3 / 5</b>
+      </div>
+      <button class="btn btn-sm">重置今日</button>
+    </div>
+
+    <div class="track">
+      <div class="stop">
+        <div class="tile done">✓</div>
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+        </div>
+        <div class="label">单词入门<br>20 词</div>
+      </div>
+      <div class="route"></div>
+
+      <div class="stop">
+        <div class="tile done">✓</div>
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="rgba(44,35,20,.16)"/><rect x="0" y="4" width="14" height="4" fill="rgba(44,35,20,.16)"/><rect x="3" y="8" width="8" height="3" fill="rgba(44,35,20,.16)"/><rect x="1" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/><rect x="9" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/></svg>
+        </div>
+        <div class="label">听力热身<br>1 段对话</div>
+      </div>
+      <div class="route"></div>
+
+      <div class="stop">
+        <div class="tile done">✓</div>
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="#f5c22c"/><rect x="0" y="4" width="14" height="4" fill="#f5c22c"/><rect x="3" y="8" width="8" height="3" fill="#f5c22c"/><rect x="1" y="11" width="4" height="3" fill="#f5c22c"/><rect x="9" y="11" width="4" height="3" fill="#f5c22c"/></svg>
+        </div>
+        <div class="label">复习打卡<br>到期 18 词</div>
+      </div>
+      <div class="route"></div>
+
+      <div class="stop">
+        <div class="tile now">4</div>
+        <div class="stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="rgba(44,35,20,.16)"/><rect x="0" y="4" width="14" height="4" fill="rgba(44,35,20,.16)"/><rect x="3" y="8" width="8" height="3" fill="rgba(44,35,20,.16)"/><rect x="1" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/><rect x="9" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="rgba(44,35,20,.16)"/><rect x="0" y="4" width="14" height="4" fill="rgba(44,35,20,.16)"/><rect x="3" y="8" width="8" height="3" fill="rgba(44,35,20,.16)"/><rect x="1" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/><rect x="9" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" shape-rendering="crispEdges"><rect x="5" y="0" width="4" height="4" fill="rgba(44,35,20,.16)"/><rect x="0" y="4" width="14" height="4" fill="rgba(44,35,20,.16)"/><rect x="3" y="8" width="8" height="3" fill="rgba(44,35,20,.16)"/><rect x="1" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/><rect x="9" y="11" width="4" height="3" fill="rgba(44,35,20,.16)"/></svg>
+        </div>
+        <div class="label">今日挑战<br>作文 + 口语</div>
+      </div>
+      <div class="route"></div>
+
+      <div class="stop">
+        <div class="tile reward">
+          <svg width="30" height="24" viewBox="0 0 30 24" shape-rendering="crispEdges">
+            <rect x="1" y="7" width="28" height="16" fill="#fffdf7" stroke="#2c2314" stroke-width="2"/>
+            <rect x="1" y="2" width="28" height="7" fill="#fffdf7" stroke="#2c2314" stroke-width="2"/>
+            <rect x="12" y="9" width="6" height="8" fill="#2c2314"/>
+            <rect x="13" y="2" width="4" height="5" fill="#2c2314"/>
+          </svg>
+        </div>
+        <div class="stars"></div>
+        <div class="label">奖励宝箱<br>还差 1 关</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 今日任务 + 侧栏 ================= -->
+  <section class="tasks">
+    <div class="panel">
+      <div class="panel-head">
+        <h3>今日任务</h3>
+        <span class="chip">完成 3 / 4</span>
+      </div>
+      <div class="task">
+        <div class="tick on">✓</div>
+        <div class="task-main"><b>每日单词</b><span>20 个新词 · 预计 8 分钟</span></div>
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      </div>
+      <div class="task">
+        <div class="tick on">✓</div>
+        <div class="task-main"><b>听力练习</b><span>Section 1 租房对话 · 12 分钟</span></div>
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      </div>
+      <div class="task">
+        <div class="tick on">✓</div>
+        <div class="task-main"><b>复习打卡</b><span>18 个到期词 · 6 分钟</span></div>
+        <div class="progress sm"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      </div>
+      <div class="task">
+        <div class="tick"></div>
+        <div class="task-main"><b>挑战完成</b><span>Task 2 限时 40 分钟 · 还没开始</span></div>
+        <div class="progress sm"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>冒险档案</h3></div>
+      <div class="side-stat">
+        <div class="badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" shape-rendering="crispEdges"><rect x="10" y="0" width="4" height="24" fill="#2c2314"/><rect x="0" y="10" width="24" height="4" fill="#2c2314"/></svg>
+        </div>
+        <div><b>连续 12 天</b><span>昨天 21:40 打过卡</span></div>
+      </div>
+      <div class="side-stat">
+        <div class="badge b2">
+          <svg width="24" height="24" viewBox="0 0 24 24" shape-rendering="crispEdges"><rect x="2" y="4" width="20" height="16" fill="#fffdf7" stroke="#2c2314" stroke-width="2"/><rect x="6" y="9" width="12" height="2" fill="#2c2314"/><rect x="6" y="14" width="8" height="2" fill="#2c2314"/></svg>
+        </div>
+        <div><b>38 / 60 关</b><span>下一关：听力 Section 4</span></div>
+      </div>
+      <div class="side-stat">
+        <div class="badge b3">
+          <svg width="24" height="24" viewBox="0 0 24 24" shape-rendering="crispEdges"><rect x="4" y="2" width="16" height="20" fill="#f5c22c" stroke="#2c2314" stroke-width="2"/><rect x="9" y="7" width="6" height="10" fill="#2c2314"/></svg>
+        </div>
+        <div><b>86 颗星</b><span>满星关卡 14 个</span></div>
+      </div>
+      <div class="side-stat">
+        <div class="badge b4">
+          <svg width="24" height="24" viewBox="0 0 24 24" shape-rendering="crispEdges"><rect x="8" y="2" width="8" height="12" fill="#fffdf7" stroke="#2c2314" stroke-width="2"/><rect x="10" y="14" width="4" height="4" fill="#2c2314"/><rect x="6" y="18" width="12" height="3" fill="#2c2314"/></svg>
+        </div>
+        <div><b>口语 6.0</b><span>目标 7.5 · 还差 1.5</span></div>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">像素风概念稿 · 文字使用现代无衬线字体，界面元素统一为 8-bit 像素语言</p>
+</main>
+
+<script>
+  // 换色：4 套主题循环
+  (function () {
+    var themes = [
+      { k: 'sunny', n: '暖阳黄' },
+      { k: 'mint', n: '抹茶绿' },
+      { k: 'sky', n: '晴空蓝' },
+      { k: 'sunset', n: '橘子汽水' }
+    ];
+    var i = 0;
+    var btn = document.getElementById('themeBtn');
+    btn.addEventListener('click', function () {
+      i = (i + 1) % themes.length;
+      document.documentElement.dataset.theme = themes[i].k;
+      btn.lastChild.textContent = ' ' + themes[i].n;
+    });
+  })();
+
+  /* ---------- 每日击掌：可重复点击 + 打卡日历 ---------- */
+  (function () {
+    var KEY = 'px_hi5_v1';
+    var hand = document.getElementById('hi5Hand');
+    var sparks = document.getElementById('hi5Sparks');
+    var say = document.getElementById('hi5Say');
+    var elToday = document.getElementById('hi5Today');
+    var elTotal = document.getElementById('hi5Total');
+    var elDaysN = document.getElementById('hi5DaysN');
+    var grid = document.getElementById('calGrid');
+    var NOW = new Date();
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function key(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+    var todayKey = key(NOW);
+
+    var S = (function () {
+      var s = null;
+      try { s = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { s = null; }
+      if (!s || typeof s !== 'object' || !s.days) s = { days: {}, seeded: false };
+      return s;
+    })();
+
+    function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+    function sum() { var t = 0; for (var k in S.days) t += (S.days[k] || 0); return t; }
+    function dayCount() { var t = 0; for (var k in S.days) if (S.days[k] > 0) t++; return t; }
+
+    // 概念稿预设：本月已过去的日期按规律打过卡，日历不是一片空白
+    function seed() {
+      if (S.seeded) return;
+      for (var d = 1; d < NOW.getDate(); d++) {
+        if (d % 7 === 3 || d % 5 === 0) continue;       // 留几个没来的日子
+        S.days[key(new Date(NOW.getFullYear(), NOW.getMonth(), d))] = 1 + (d % 3);
+      }
+      S.seeded = true;
+      save();
+    }
+
+    function streak() {
+      var n = 0, d = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate());
+      if (!S.days[key(d)]) d.setDate(d.getDate() - 1);  // 今天还没点，就从昨天往前数
+      while (S.days[key(d)]) { n++; d.setDate(d.getDate() - 1); }
+      return n;
+    }
+
+    function renderStats() {
+      elToday.textContent = S.days[todayKey] || 0;
+      elTotal.textContent = sum();
+      elDaysN.textContent = dayCount();
+    }
+
+    function renderCal() {
+      var y = NOW.getFullYear(), m = NOW.getMonth();
+      var lead = (new Date(y, m, 1).getDay() + 6) % 7;   // 周一为第一列
+      var last = new Date(y, m + 1, 0).getDate();
+      var html = '', hit = 0;
+      for (var i = 0; i < lead; i++) html += '<div class="cal-cell blank"></div>';
+      for (var d = 1; d <= last; d++) {
+        var k = key(new Date(y, m, d)), cls = 'cal-cell';
+        if (S.days[k]) { cls += ' on'; hit++; }
+        if (d === NOW.getDate()) cls += ' today';
+        else if (!S.days[k] && d > NOW.getDate()) cls += ' future';
+        html += '<div class="' + cls + '">' + d + '</div>';
+      }
+      grid.innerHTML = html;
+      document.getElementById('calTitle').textContent = (m + 1) + ' 月 · ' + y;
+      document.getElementById('calMonthStat').textContent = '本月 ' + hit + ' 天';
+      document.getElementById('calStreak').textContent = streak();
+      document.getElementById('calRate').textContent =
+        '本月出勤 ' + Math.round(hit / NOW.getDate() * 100) + '%';
+    }
+
+    var LINES = [
+      '',
+      '啪！第一掌打上了 —— <b>今天开张</b>，剩下的都是赚的。',
+      '第二下也接住了，<b>手感在回来的路上</b>。',
+      '三连击！今天的开场比昨天稳。',
+      '啪、啪、啪 —— <b>四下</b>了，可以带着这个手感去做第一组单词。',
+      '连着 <b>五下</b>，差不多收手，把力气留给精听。',
+      '还在点？那就当你在给自己<b>热身</b>。'
+    ];
+    function praise(n, st) {
+      var base = n <= 0
+        ? '还没击掌 —— 点一下手掌，今天就算正式开始了。'
+        : LINES[Math.min(n, LINES.length - 1)];
+      return base + (st >= 2 ? ' 已经连着 <b>' + st + '</b> 天来击掌。' : '');
+    }
+
+    function slap() {
+      var n = (S.days[todayKey] || 0) + 1;
+      S.days[todayKey] = n;
+      save();
+
+      hand.classList.remove('hit');
+      void hand.offsetWidth;
+      hand.classList.add('hit');
+      setTimeout(function () { hand.classList.remove('hit'); }, 480);
+
+      sparks.innerHTML = '';
+      var marks = ['✦', '✧', '＋', '·'];
+      for (var i = 0; i < 10; i++) {
+        var s = document.createElement('i');
+        s.textContent = marks[i % marks.length];
+        var ang = (Math.PI * 2 * i) / 10 + Math.random() * 0.5;
+        var dist = 44 + Math.random() * 40;
+        s.style.setProperty('--dx', Math.round(Math.cos(ang) * dist) + 'px');
+        s.style.setProperty('--dy', Math.round(Math.sin(ang) * dist - 12) + 'px');
+        s.style.animationDelay = (i % 3) * 30 + 'ms';
+        sparks.appendChild(s);
+      }
+
+      renderStats();
+      renderCal();
+      say.innerHTML = praise(n, streak());
+      say.classList.remove('pop');
+      void say.offsetWidth;
+      say.classList.add('pop');
+    }
+
+    hand.addEventListener('click', slap);
+
+    seed();
+    renderStats();
+    renderCal();
+    say.innerHTML = S.days[todayKey]
+      ? '今天已经击过 <b>' + S.days[todayKey] + '</b> 掌了 —— 还能再补几下。'
+      : praise(0, streak());
+  })();
+</script>
+</body>
+</html>

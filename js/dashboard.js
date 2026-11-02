@@ -37,6 +37,8 @@ const Dashboard = (() => {
         </div>
       </section>
 
+      ${(typeof Hi5 !== 'undefined' && Hi5.cardHTML) ? Hi5.cardHTML() : ''}
+
       <section class="kpis">
         <div class="kpi"><div class="n">${stats.due}</div><div class="l">待复习</div></div>
         <div class="kpi"><div class="n">${stats.mastered}</div><div class="l">已掌握</div></div>
@@ -74,6 +76,7 @@ const Dashboard = (() => {
       ${Daily.achievementsHTML()}
       ${motivation}
     `;
+    try { if (typeof Hi5 !== 'undefined' && Hi5.bind) Hi5.bind(root); } catch (e) { /* 击掌卡失败不影响首页 */ }
     window.scrollTo(0, 0);
   }
 

@@ -14,7 +14,7 @@ const Store = (() => {
     tasks: {},         // day -> [task]
     ready: false,
     events: [],        // 本地练习记录 {kind, day, ts, ...payload}
-    hi5: { last: null, total: 0 }, // 每日击掌打卡
+    hi5: { last: null, total: 0, days: {} }, // 每日击掌：last=今天，total=累计次数，days=每日明细
     savedAt: null,
     persistError: false,
   };
@@ -33,6 +33,11 @@ const Store = (() => {
     out.profile = { target_band: 6.5, exam_date: null, daily_minutes: 60, ...(d.profile || {}) };
     out.settings = { daily_new: 15, accent: 'en-GB', ...(d.settings || {}) };
     out.hi5 = { last: null, total: 0, ...(d.hi5 || {}) };
+    // 旧版本没有每日明细：按 last 补一条，历史击掌次数不会丢
+    if (!out.hi5.days || typeof out.hi5.days !== 'object') {
+      out.hi5.days = {};
+      if (out.hi5.last) out.hi5.days[out.hi5.last] = Math.max(1, Number(out.hi5.total) || 1);
+    }
     // 类型兜底：旧版本可能存成字符串
     out.profile.target_band = Number(out.profile.target_band) || 6.5;
     out.profile.daily_minutes = Number(out.profile.daily_minutes) || 60;
@@ -217,7 +222,7 @@ const Store = (() => {
     state.events = [];
     state.profile = { target_band: 6.5, exam_date: null, daily_minutes: 60 };
     state.settings = { daily_new: 15, accent: 'en-GB' };
-    state.hi5 = { last: null, total: 0 };
+    state.hi5 = { last: null, total: 0, days: {} };
     persist(true);
   }
 
@@ -226,14 +231,42 @@ const Store = (() => {
     return state.hi5 && state.hi5.last === todayStr();
   }
 
+  /** 击掌：每点一次都计数（可重复点击），同时记录当天明细 */
   function markHi5() {
-    const doneBefore = hi5DoneToday();
+    const day = todayStr();
+    const days = { ...(state.hi5 && state.hi5.days ? state.hi5.days : {}) };
+    days[day] = (Number(days[day]) || 0) + 1;
     state.hi5 = {
-      last: todayStr(),
-      total: (state.hi5 && state.hi5.total ? state.hi5.total : 0) + (doneBefore ? 0 : 1),
+      last: day,
+      total: (state.hi5 && state.hi5.total ? state.hi5.total : 0) + 1,
+      total_days: Object.keys(days).length,
+      days,
     };
     persist(true);
     return state.hi5;
+  }
+
+  /** 今日击掌次数 */
+  function hi5Today() {
+    const d = (state.hi5 && state.hi5.days) || {};
+    return Number(d[todayStr()]) || 0;
+  }
+
+  /** 打卡天数 / 连续天数 */
+  function hi5Stats() {
+    const days = (state.hi5 && state.hi5.days) || {};
+    const keys = Object.keys(days).filter(k => Number(days[k]) > 0).sort();
+    let streak = 0;
+    const d = new Date();
+    if (!days[todayStr()]) d.setDate(d.getDate() - 1);   // 今天还没点，从昨天往前数
+    while (days[todayStr(d)]) { streak++; d.setDate(d.getDate() - 1); }
+    return {
+      total: (state.hi5 && state.hi5.total) || 0,
+      today: Number(days[todayStr()]) || 0,
+      days: keys.length,
+      streak,
+      map: days,
+    };
   }
 
 
@@ -481,7 +514,7 @@ const Store = (() => {
     trackStudy, flushStats, addNewWords, toggleTask, dueWords, overdueWords, newWords,
     stats, history, streak, examCountdown, rootGroups, schedule, safeJSON,
     exportData, importData, resetData, todayStat, addEvent, eventsOf,
-    hi5DoneToday, markHi5, flush: writeNow, restoreBackup, backupInfo,
+    hi5DoneToday, markHi5, hi5Today, hi5Stats, flush: writeNow, restoreBackup, backupInfo,
     get words() { return state.words || []; },
     get byId() { return state.byId; },
     get progress() { return state.progress; },
