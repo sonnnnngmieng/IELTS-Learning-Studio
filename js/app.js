@@ -65,19 +65,20 @@
         <div class="card">
           <div class="card-title"><h3>我的目标</h3><span class="pill blue">${left != null && left >= 0 ? `距考试 ${left} 天` : '未设置考试日期'}</span></div>
           <div class="grid g2">
-            <label class="field"><span>目标分数</span>
-              <select id="pf-band">${[6, 6.5, 7, 7.5, 8, 8.5].map(b => `<option value="${b}" ${(+p.target_band === b) ? 'selected' : ''}>${b} 分</option>`).join('')}</select></label>
+            <label class="field"><span>目标分数（5.0–9.0，0.5 分一档）</span>
+              <select id="pf-band">${(Plan.BANDS || [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9]).map(b => `<option value="${b}" ${(+p.target_band === b) ? 'selected' : ''}>${b} 分</option>`).join('')}</select></label>
             <label class="field"><span>考试日期</span><input type="date" id="pf-date" value="${p.exam_date || ''}"></label>
           </div>
           <label class="field"><span>每日学习时长：<b id="pf-min-label">${p.daily_minutes || 60}</b> 分钟</span>
             <input type="range" id="pf-min" min="20" max="120" step="10" value="${p.daily_minutes || 60}"
               oninput="document.getElementById('pf-min-label').textContent=this.value"></label>
           <div class="field" style="margin-bottom:12px">
-            <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">每天学几个新单词</span>
+            <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">每天学几个新单词（5–100 个，自己定）</span>
             <div class="chips" id="pf-new-chips">
               ${Plan.NEW_OPTIONS.map(n => `<span class="chip ${n === Plan.dailyNewOf() ? 'on' : ''}" data-n="${n}"
-                onclick="Array.from(this.parentNode.children).forEach(c=>c.classList.remove('on'));this.classList.add('on')">${n} 个</span>`).join('')}
+                onclick="Array.from(this.parentNode.children).forEach(c=>c.classList.remove('on'));this.classList.add('on');var h=document.getElementById('pf-new-hint');if(h)h.innerHTML=Plan.newHint(${n})">${n} 个</span>`).join('')}
             </div>
+            <p class="muted tiny" id="pf-new-hint" style="margin:8px 0 0">${Plan.newHint(Plan.dailyNewOf())}</p>
           </div>
           <button class="btn primary" onclick="Profile.save()">保存</button>
         </div>

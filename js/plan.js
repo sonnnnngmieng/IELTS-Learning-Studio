@@ -1,8 +1,12 @@
 /* 学习计划：按目标分 / 考试日期 / 每日时长生成任务，并作为今日任务来源 */
 const Plan = (() => {
-  const BAND_VOCAB = { 5: 3000, 5.5: 3500, 6: 4000, 6.5: 5000, 7: 6000, 7.5: 7000, 8: 8000, 8.5: 9000 };
-  const NEW_OPTIONS = [5, 8, 10, 12, 15, 20, 25, 30];
+  const BAND_VOCAB = { 5: 3000, 5.5: 3500, 6: 4000, 6.5: 5000, 7: 6000, 7.5: 7000, 8: 8000, 8.5: 9000, 9: 10000 };
+  // 雅思总分 5.0–9.0，按 0.5 分一档，全部可选
+  const BANDS = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9];
+  // 每日新词上限开放到 100 个
+  const NEW_OPTIONS = [5, 8, 10, 12, 15, 20, 25, 30, 40, 50, 60, 80, 100];
   let pendingNew = null;   // 页面上临时选中、点保存后生效
+  let pendingBand = null;  // 同上，目标分数
 
   /** 用户自选优先；没选过就跟学习时长联动 */
   function dailyNewOf() {
@@ -18,6 +22,23 @@ const Plan = (() => {
     if (minutes <= 60) return 15;
     if (minutes <= 90) return 22;
     return 30;
+  }
+
+  /** 当前选中的目标分（临时选中优先，其次用户存档，最后兜底 6.5） */
+  function bandNow() {
+    if (pendingBand) return pendingBand;
+    const b = +(Store.profile && Store.profile.target_band);
+    return b > 0 ? b : 6.5;
+  }
+
+  /** 点选目标分：只改页面状态，点「保存目标」才写库 */
+  function pickBand(b) {
+    pendingBand = b;
+    $$('#pl-band-chips .chip').forEach(c => c.classList.toggle('on', +c.dataset.b === b));
+    const need = BAND_VOCAB[b] || 6000;
+    const mastered = Store.stats().mastered;
+    const tip = $('#pl-band-tip');
+    if (tip) tip.innerHTML = `目标 ${b} 分 ≈ 需要 ${need} 个可主动运用的词，你已掌握 ${mastered} 个，还差 ${Math.max(0, need - mastered)} 个。`;
   }
 
   function rotationTasks() {
@@ -44,7 +65,7 @@ const Plan = (() => {
     const tasks = [];
 
     if (due > 0) {
-      const cnt = Math.min(due, Math.max(10, Math.round(n * 1.5)));
+      const cnt = Math.min(due, Math.max(10, Math.round(n * 1.5)), 90);
       tasks.push({
         key: 'review', module: 'vocab',
         title: `复习 ${cnt} 个到期单词` + (overdue ? `（含 ${overdue} 个逾期）` : ''),
@@ -76,7 +97,7 @@ const Plan = (() => {
     const p = Store.profile;
     const stats = Store.stats();
     const left = Store.examCountdown();
-    const need = BAND_VOCAB[Math.round((p.target_band || 6.5) * 10) / 10] || 6000;
+    const need = BAND_VOCAB[Math.round(bandNow() * 10) / 10] || 6000;
     const gap = Math.max(0, need - stats.mastered);
     const perDay = left && left > 0 ? Math.ceil(gap / left) : null;
 
@@ -85,7 +106,7 @@ const Plan = (() => {
       <p class="muted" style="margin-bottom:14px">目标决定路径。设置好目标和考试日期，系统会据此生成每日任务。</p>
 
       <div class="kpis">
-        <div class="kpi"><div class="n">${p.target_band || '—'}</div><div class="l">目标分数</div></div>
+        <div class="kpi"><div class="n">${bandNow()}</div><div class="l">目标分数</div></div>
         <div class="kpi"><div class="n">${left == null ? '未设置' : (left >= 0 ? left + ' 天' : '已过期')}</div><div class="l">距考试</div></div>
         <div class="kpi"><div class="n">${fmtMin(p.daily_minutes || 60)}</div><div class="l">每日可投入</div></div>
         <div class="kpi"><div class="n">${stats.mastered}</div><div class="l">已掌握词汇</div></div>
@@ -93,20 +114,23 @@ const Plan = (() => {
 
       <div class="card">
         <div class="card-title"><h3>目标与节奏</h3><span class="pill blue">修改后明日任务随之调整</span></div>
-        <div class="grid g2">
-          <label class="field"><span>目标分数</span>
-            <select id="pl-band">
-              ${[6, 6.5, 7, 7.5, 8, 8.5].map(b => `<option value="${b}" ${(+p.target_band === b) ? 'selected' : ''}>${b} 分</option>`).join('')}
-            </select></label>
-          <label class="field"><span>考试日期（可留空）</span>
-            <input type="date" id="pl-date" value="${p.exam_date || ''}"></label>
+        <div class="field">
+          <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">
+            目标分数（雅思总分 5.0–9.0，0.5 分一档，点一下选中即可）
+          </span>
+          <div class="chips" id="pl-band-chips">
+            ${BANDS.map(b => `<span class="chip ${b === bandNow() ? 'on' : ''}" data-b="${b}" onclick="Plan.pickBand(${b})">${b} 分</span>`).join('')}
+          </div>
+          <p class="muted tiny" id="pl-band-tip" style="margin:8px 0 0">目标 ${bandNow()} 分 ≈ 需要 ${need} 个可主动运用的词，你已掌握 ${stats.mastered} 个，还差 ${gap} 个。</p>
         </div>
+        <label class="field"><span>考试日期（可留空）</span>
+          <input type="date" id="pl-date" value="${p.exam_date || ''}"></label>
         <label class="field"><span>每日学习时长（决定任务总条数）：<b id="pl-min-label">${p.daily_minutes || 60}</b> 分钟</span>
           <input type="range" id="pl-min" min="20" max="120" step="10" value="${p.daily_minutes || 60}"
             oninput="Plan.previewMinutes(this.value)"></label>
         <div class="field" style="margin-bottom:12px">
           <span style="display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:6px">
-            每天学几个新单词（自己定 · 下面给出预计完成时间和复习负荷）
+            每天学几个新单词（5–100 个自己定 · 下面给出预计完成时间和复习负荷）
           </span>
           <div class="chips" id="pl-new-chips">
             ${NEW_OPTIONS.map(n => `<span class="chip ${n === dailyNewOf() ? 'on' : ''}" data-n="${n}" onclick="Plan.pickNew(${n})">${n} 个</span>`).join('')}
@@ -118,7 +142,7 @@ const Plan = (() => {
 
       <div class="card">
         <h3>距离目标还差多少</h3>
-        <p class="muted tiny">目标 ${p.target_band} 分通常需要约 ${need} 个可主动运用的词汇量，你现在已掌握 ${stats.mastered} 个。</p>
+        <p class="muted tiny">目标 ${bandNow()} 分通常需要约 ${need} 个可主动运用的词汇量，你现在已掌握 ${stats.mastered} 个。</p>
         <div class="progress"><i style="width:${Math.min(100, stats.mastered / need * 100)}%"></i></div>
         <p class="muted tiny" style="margin:6px 0 0">
           ${gap === 0 ? '词汇量已达标，接下来重点是精听与写作输出。'
@@ -157,45 +181,56 @@ const Plan = (() => {
 
   function previewMinutes(v) {
     $('#pl-min-label').textContent = v;
+    const hint = $('#pl-new-hint');
+    if (hint) hint.innerHTML = newHint(pendingNew || dailyNewOf());
   }
 
   function pickNew(n) {
     pendingNew = n;
     $$('#pl-new-chips .chip').forEach(c => c.classList.toggle('on', +c.dataset.n === n));
     const hint = $('#pl-new-hint');
-    if (hint) hint.textContent = newHint(n);
+    if (hint) hint.innerHTML = newHint(n);
   }
 
+  /** 每天 n 个新词的代价说明：完成时间 + 复习负荷 + 节奏建议 */
   function newHint(n) {
-    const due = Store.dueWords().length;
     const learned = Object.keys(Store.progress).length;
     const remain = Math.max(0, (Store.words.length || 0) - learned);
     const days = Math.ceil(remain / n);
     const done = new Date();
     done.setDate(done.getDate() + days);
-    const eta = remain === 0 ? '全书已学完'
-      : days <= 1 ? '今天就能学完全部新词'
-        : `照这个节奏，约 <b>${days} 天</b>（${done.getMonth() + 1} 月 ${done.getDate()} 日前后）过完全书新词`;
-    const reviewLoad = Math.round(n * 2.2); // 每个新词平均带来约 2.2 次复习（按遗忘曲线估）
+    const eta = remain === 0 ? '全书新词已经过完了'
+      : days <= 1 ? '今天就能把全书新词过完'
+        : `照这个节奏，约 <b>${days} 天</b>（${done.getMonth() + 1} 月 ${done.getDate()} 日前后）过完全书剩余 ${remain} 个新词`;
+    const reviewLoad = Math.round(n * 2.2);          // 每个新词平均带来约 2.2 次复习（按遗忘曲线估）
+    const minutes = (Store.profile && Store.profile.daily_minutes) || 60;
+    const needMin = Math.round(n * 0.8 + reviewLoad * 0.35); // 新学 + 复习的合计耗时
     let advice;
-    if (n <= 8) advice = '压力最小，适合在职/课多的时候；代价是战线拉长。';
-    else if (n <= 15) advice = '稳健节奏，每天连复习约 25–35 分钟能清完，坚持 3 个月可见明显效果。';
+    if (n <= 8) advice = '压力最小，适合在职 / 课多的时候；代价是战线拉长。';
+    else if (n <= 15) advice = '稳健节奏，每天连复习 25–35 分钟能清完，坚持 3 个月有明显效果。';
     else if (n <= 20) advice = '偏快：每天要保证 45 分钟以上，且复习不能断——断 3 天就会积压 100+ 个到期词。';
-    else advice = '冲量模式：只适合有整块时间、能每天雷打不动执行的人；中途放弃会掉进「全在复习」的泥潭。';
-    return `${eta}；届时每天将同步带来约 ${reviewLoad} 个复习。${advice}`;
+    else if (n <= 30) advice = '冲量模式：只适合有整块时间、能每天雷打不动执行的人；中途断档会掉进「全在复习」的泥潭。';
+    else if (n <= 50) advice = '高强度：单日约 1 小时以上，适合全天备考或假期冲刺；建议把每日学习时长也拉到 90 分钟以上。';
+    else if (n <= 100) advice = '极限量：单日 2 小时以上，只建议考前突击或长假集中攻坚时用。第一遍只求「看个脸熟」（认识 / 不认识快速过），不要在拼写上死磕；连续两周以上通常会出现新词记不住、旧词全积压，届时请退回 30–50。';
+    else advice = '量已经很大了，注意留出复习的时间。';
+    const budget = needMin > minutes
+      ? `<br><b style="color:var(--amber,#b8860b)">注意：按这个量，新学 + 复习合计约 ${needMin} 分钟，已经超过你设定的每天 ${minutes} 分钟</b>——要么把「每日学习时长」往上拉，要么把新词量降一点。`
+      : `预计新学 + 复习合计约 ${needMin} 分钟，在你设定的 ${minutes} 分钟内。`;
+    return `${eta}；届时每天同步带来约 ${reviewLoad} 个复习。${budget}<br>${advice}`;
   }
 
   async function saveProfile() {
-    const band = +$('#pl-band').value;
+    const band = pendingBand || bandNow();
     const date = $('#pl-date').value || null;
     const mins = +$('#pl-min').value;
     const newPerDay = pendingNew || dailyNewOf();
     Store.saveProfile({ target_band: band, exam_date: date, daily_minutes: mins });
     Store.saveSettings({ daily_new: newPerDay });
+    pendingBand = null; pendingNew = null;
     // 计划变化，重建今日任务
     delete Store.state.tasks[todayStr()];
     Store.loadTasks();
-    UI.toast('目标已保存，今日任务已更新');
+    UI.toast(`已保存：目标 ${band} 分 · 每天 ${newPerDay} 个新词`);
     UI.setUserChip();
     render($('#view'));
   }
@@ -239,5 +274,5 @@ const Plan = (() => {
     location.hash = map[module] || '#/home';
   }
 
-  return { generate, render, saveProfile, regen, toggle, open, previewMinutes, pickNew, dailyNewFrom, dailyNewOf, moduleName, BAND_VOCAB, NEW_OPTIONS };
+  return { generate, render, saveProfile, regen, toggle, open, previewMinutes, pickNew, pickBand, dailyNewFrom, dailyNewOf, moduleName, BAND_VOCAB, BANDS, NEW_OPTIONS, newHint };
 })();

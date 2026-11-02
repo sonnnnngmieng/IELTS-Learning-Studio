@@ -249,7 +249,9 @@ const Vocab = (() => {
       UI.toast(kind === 'review' ? '今天没有到期需要复习的词 🎉' : '今天的新词已经学完啦');
       return;
     }
-    session = { queue: shuffle(queue).slice(0, 30), idx: 0, kind, revealed: false, newCount: 0, right: 0 };
+    // 单组上限 100：设多少新词都学得完（以前硬编码 30，设 100 也只给 30 个）
+    const batch = Math.min(queue.length, 100);
+    session = { queue: shuffle(queue).slice(0, batch), idx: 0, kind, revealed: false, newCount: 0, right: 0 };
     location.hash = '#/vocab/study';
     renderStudy($('#view'));
   }
