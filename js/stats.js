@@ -15,6 +15,12 @@
   };
 
   const $ = s => document.querySelector(s);
+  const EP = String((window.PUBLIC_CONFIG || {}).endpoint || '').replace(/\/+$/, '');
+  const SHARE = 'MUZ3NY7BPH';   // 发布域名下的分享码，裸路径会被挡
+  const sameOrigin = (() => {
+    try { return location.origin === new URL(EP).origin; } catch (e) { return false; }
+  })();
+  const cloudUrl = `${EP}/stats.html?sharecode=${SHARE}`;
   const num = v => (v == null ? 0 : Number(v) || 0);
   const pad = n => (n < 10 ? '0' + n : '' + n);
   const dayStr = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
@@ -196,12 +202,25 @@
   }
 
   /* ---------- 入口 ---------- */
+  function originHint() {
+    $('#upd').textContent = '这个地址读不到统计';
+    $('#dash').hidden = false;
+    $('#kpis').innerHTML = `<div class="kpi" style="grid-column:1/-1;text-align:left">
+      <div class="n" style="font-size:16px">换到发布域名才能看数据</div>
+      <div class="l" style="margin-top:6px;line-height:1.8">
+        云端只接受发布域名的请求，你现在打开的是 <b>${location.host}</b>。
+        <a href="${cloudUrl}">点这里到带数据的后台 →</a><br>
+        <span class="dim">（同一份代码，只是域名不同；GitHub Pages 上只放学习内容，统计读不到也写不进去。）</span>
+      </div></div>`;
+  }
+
   async function start() {
     $('#upd').textContent = '读取中…';
     try {
       render(await load());
       $('#dash').hidden = false;
     } catch (e) {
+      if (!sameOrigin) return originHint();
       $('#upd').textContent = '读取失败：' + (e.message || e);
       $('#dash').hidden = false;
       $('#kpis').innerHTML = `<div class="kpi" style="grid-column:1/-1">
