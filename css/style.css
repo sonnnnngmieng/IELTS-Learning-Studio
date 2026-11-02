@@ -568,3 +568,88 @@ h1::after{
 .view{max-width:1000px;padding-top:28px}
 .card{padding:20px 22px}
 .kpis{gap:12px;margin:16px 0 22px}
+
+/* ===== 每日击掌 ===== */
+.hi5-mask{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;
+  background:rgba(38,31,22,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .2s ease;padding:20px}
+.hi5-mask.in{opacity:1}
+.hi5-card{width:min(94vw,396px);background:var(--surface);border-radius:26px;padding:16px 20px 22px;
+  box-shadow:0 26px 64px rgba(60,44,10,.3);text-align:center;position:relative;overflow:hidden;
+  transform:translateY(16px) scale(.96);transition:transform .28s cubic-bezier(.2,.9,.3,1.15)}
+.hi5-mask.in .hi5-card{transform:none}
+.hi5-card::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.3px,transparent 1.4px);background-size:20px 20px;opacity:.5}
+.hi5-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;position:relative;z-index:1}
+.hi5-date{font-size:12.5px;color:var(--ink-3)}
+.hi5-x{border:0;background:transparent;color:var(--ink-3);font-size:14px;cursor:pointer;padding:4px 6px;line-height:1}
+.hi5-title{font-size:20px;font-weight:600;letter-spacing:-.3px;position:relative;z-index:1}
+.hi5-sub{font-size:13px;color:var(--ink-2);margin:2px 0 4px;position:relative;z-index:1}
+.hi5-hand{width:128px;height:146px;margin:4px auto 0;color:var(--brand);cursor:pointer;position:relative;
+  filter:drop-shadow(4px 4px 0 var(--brand-ink));animation:hi5float 2.8s ease-in-out infinite;z-index:1}
+.hi5-hand:hover{transform:scale(1.04)}
+.hi5-hand:focus-visible{outline:2px dashed var(--brand-ink);outline-offset:4px;border-radius:12px}
+.hi5-hand.hit{animation:hi5hit .44s cubic-bezier(.3,1.4,.5,1)}
+.hi5-svg{width:100%;height:100%;display:block}
+@keyframes hi5float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+@keyframes hi5hit{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.16) rotate(-9deg)}70%{transform:scale(.96) rotate(4deg)}100%{transform:scale(1) rotate(0)}}
+.hi5-burst{position:absolute;left:50%;top:32%;transform:translate(-50%,-50%) scale(.4);opacity:0;
+  font-size:22px;font-weight:700;color:var(--brand-ink);background:var(--brand);border-radius:10px;padding:2px 9px;
+  box-shadow:2px 2px 0 var(--brand-ink);pointer-events:none}
+.hi5-hand.hit .hi5-burst{animation:hi5burst .72s ease forwards}
+@keyframes hi5burst{0%{opacity:0;transform:translate(-50%,-50%) scale(.4) rotate(-8deg)}
+  30%{opacity:1;transform:translate(-50%,-58%) scale(1.12) rotate(3deg)}
+  100%{opacity:0;transform:translate(-50%,-98%) scale(1) rotate(0)}}
+.hi5-sparks{position:absolute;left:50%;top:46%;width:0;height:0;pointer-events:none}
+.hi5-sparks i{position:absolute;left:0;top:0;font-style:normal;font-size:15px;color:var(--brand);opacity:0;
+  animation:hi5spark .7s ease-out forwards}
+@keyframes hi5spark{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.2)}}
+.hi5-tap{font-size:12.5px;color:var(--ink-3);margin-top:2px;position:relative;z-index:1}
+.hi5-skip{border:0;background:transparent;color:var(--ink-3);font-size:12.5px;text-decoration:underline;
+  cursor:pointer;margin-top:12px;position:relative;z-index:1}
+.hi5-stage{position:relative;z-index:1}
+.hi5-stamp{display:inline-block;font-size:12px;color:var(--brand-ink);background:var(--brand-2);
+  border-radius:999px;padding:3px 11px;margin-bottom:10px}
+.hi5-praise{font-size:15px;line-height:1.7;margin:0 0 8px}
+.hi5-body{font-size:13.5px;color:var(--ink-2);line-height:1.75;margin:0 0 16px}
+.hi5-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hi5-actions .btn{min-width:132px;justify-content:center}
+.hi5-auto{margin:12px 0 0}
+@media (max-width:520px){
+  .hi5-card{padding:14px 16px 18px;border-radius:22px}
+  .hi5-hand{width:112px;height:128px}
+  .hi5-title{font-size:18px}
+  .hi5-actions .btn{flex:1;min-width:0}
+}
+
+/* 云端使用统计小卡 */
+.usage-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.usage-row:last-child{border-bottom:0}
+.usage-day{font-size:12.5px;color:var(--ink-2);width:78px;flex:none}
+.usage-bar{flex:1;height:8px;border-radius:4px;background:var(--surface-3);overflow:hidden}
+.usage-bar i{display:block;height:100%;background:var(--brand)}
+.usage-num{font-size:12.5px;color:var(--ink);min-width:64px;text-align:right;flex:none}
+
+/* ===== 素材出处标记 ===== */
+.src-tag{display:inline-block;font-size:11.5px;line-height:1.6;color:var(--ink-2);background:var(--surface-2);
+  border:1px dashed var(--line-2);border-radius:999px;padding:2px 9px;cursor:pointer;white-space:nowrap}
+.src-tag:hover{background:var(--brand-2);color:var(--brand-ink);border-color:var(--brand-3)}
+.src-row{padding:12px 0;border-bottom:1px dashed var(--line)}
+.src-row:last-child{border-bottom:0}
+.src-name{font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.src-short{font-weight:400;font-size:11.5px;color:var(--ink-3);background:var(--surface-2);border-radius:999px;padding:1px 8px}
+.src-detail p{font-size:12.5px;color:var(--ink-2);line-height:1.75;margin:5px 0 0}
+
+/* ===== 写作常用词句 ===== */
+.ph-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.ph-row:first-of-type{border-top:0}
+.ph-main{flex:1;min-width:0}
+.ph-en{font-size:14px;line-height:1.6;cursor:pointer;color:var(--ink)}
+.ph-en:hover{color:var(--brand-ink);text-decoration:underline dotted}
+.ph-cn{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.ph-use{font-size:11.5px;color:var(--purple);margin-top:3px}
+.ph-row .btn{flex:none;margin-top:2px}
+@media (max-width:560px){
+  .ph-row{flex-direction:column;gap:6px}
+  .ph-row .btn{align-self:flex-end}
+}

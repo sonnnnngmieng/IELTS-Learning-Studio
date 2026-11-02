@@ -119,7 +119,8 @@ const Listening = (() => {
     root.innerHTML = `
       <a class="back" href="#/listening">← 返回</a>
       <h1>${esc(cur.title)}</h1>
-      <p class="muted">${esc(cur.section)} · ${esc(cur.genre)} · ${cur.sentences.length} 句</p>
+      <p class="muted" style="margin-bottom:6px">${esc(cur.section)} · ${esc(cur.genre)} · ${cur.sentences.length} 句</p>
+      <p style="margin:0 0 10px">${Src.pill('listening')}</p>
       <div class="card">
         <h3>本次训练流程</h3>
         <div class="grid g2 tiny muted" style="margin-top:8px">
@@ -361,6 +362,7 @@ const Listening = (() => {
     });
     Store.trackStudy(secs);
     Store.flushStats();
+    try { Track.study('listening', { acc: avg, secs }); } catch (e) { /* 忽略 */ }
     UI.toast('记录已保存，可在学习记录查看');
     location.hash = '#/listening';
   }

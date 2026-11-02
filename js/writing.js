@@ -1,12 +1,13 @@
 /* 写作模块：范文结构精读 / 句型库 / 话题词汇 / 练习与 AI 批改 */
 const Writing = (() => {
-  let DATA = null, DEEP = null;
+  let DATA = null, DEEP = null, PHRASES = null;
   let tab = 'essays';
 
   async function ensure() {
     if (DATA) return;
     DATA = await fetch('data/writing.json').then(r => r.json());
     DEEP = await fetch('data/writing_deep.json').then(r => r.json()).catch(() => ({ essays: [], task1_sentence_bank: [], linking_bank: [] }));
+    PHRASES = await fetch('data/writing_phrases.json').then(r => r.json()).catch(() => ({ groups: [] }));
   }
 
   function paras(text) {
@@ -19,7 +20,7 @@ const Writing = (() => {
       <h1>写作</h1>
       <p class="muted" style="margin-bottom:14px">范文不是拿来背的，是拿来拆的：每段干什么、每句怎么搭、哪些句型能搬走。</p>
       <div class="tabs">
-        ${[['essays', '范文精读'], ['t1', 'Task 1'], ['t2', 'Task 2'], ['bank', '句型与衔接'], ['vocab', '话题词汇'], ['practice', '动笔练习']]
+        ${[['essays', '范文精读'], ['t1', 'Task 1'], ['t2', 'Task 2'], ['bank', '句型与衔接'], ['phrases', '常用词句'], ['vocab', '话题词汇'], ['practice', '动笔练习']]
           .map(([k, l]) => `<button class="tab ${tab === k ? 'on' : ''}" onclick="Writing.tab('${k}')">${l}</button>`).join('')}
       </div>
       <div id="w-body"></div>`;
@@ -34,6 +35,7 @@ const Writing = (() => {
     if (tab === 't1') return tabT1(b);
     if (tab === 't2') return tabT2(b);
     if (tab === 'bank') return tabBank(b);
+    if (tab === 'phrases') return tabPhrases(b);
     if (tab === 'vocab') return tabVocab(b);
     if (tab === 'practice') return tabPractice(b);
   }
@@ -48,7 +50,8 @@ const Writing = (() => {
           <h3>${esc(src.type || e.type)} · ${esc(src.band || '')}</h3>
           <span class="pill blue">${e.structure_map ? e.structure_map.length : 0} 段 · ${e.sentence_notes ? e.sentence_notes.length : 0} 句拆解</span>
         </div>
-        <div class="feedback info" style="margin-bottom:12px"><b>题目：</b>${esc(src.prompt || '')}</div>
+        <div class="feedback info" style="margin-bottom:12px"><b>题目：</b>${esc(src.prompt || '')}
+          <div style="margin-top:6px">${Src.pill('essay')}</div></div>
 
         <div class="label">全文（黄色高亮为可迁移句型）</div>
         <div class="essay">${paras(highlight(src.essay || '', e.sentence_notes || []))}</div>
@@ -156,6 +159,85 @@ const Writing = (() => {
       </div>`;
   }
 
+  /* ---- 常用词句（训练写作） ---- */
+  let phraseQ = '';
+  let phraseFor = '全部';
+
+  function tabPhrases(b) {
+    const groups = (PHRASES && PHRASES.groups) || [];
+    b.innerHTML = `
+      <div class="card">
+        <div class="card-title"><h3>训练用词句</h3>${Src.pill('phrases')}</div>
+        <p class="muted tiny" style="margin:0 0 10px">${esc((PHRASES && PHRASES.intro) || '')}</p>
+        <div class="row wrap" style="gap:8px;margin-bottom:8px">
+          <input class="input" id="ph-q" style="flex:1;min-width:200px" placeholder="搜关键词：让步 / because / 上升 / percentage…"
+            value="${esc(phraseQ)}" oninput="Writing.searchPhrases(this.value)">
+          ${['全部', 'Task 2', 'Task 1', '通用'].map(f => `<span class="chip ${f === phraseFor ? 'on' : ''}" onclick="Writing.filterPhrases('${f}')">${f}</span>`).join('')}
+        </div>
+      </div>
+      <div id="ph-list">${phraseGroups(groups)}</div>`;
+  }
+
+  function phraseGroups(groups) {
+    const kw = (phraseQ || '').trim().toLowerCase();
+    const out = groups.filter(g => phraseFor === '全部' || g.for === phraseFor).map(g => {
+      const items = g.items.filter(it => !kw || (it.en + ' ' + it.cn + ' ' + it.use).toLowerCase().includes(kw));
+      if (!items.length) return '';
+      return `<div class="card">
+        <div class="card-title"><h3>${esc(g.title)}</h3><span class="pill blue">${esc(g.for)}</span></div>
+        ${items.map(it => `<div class="ph-row">
+          <div class="ph-main">
+            <div class="ph-en" onclick="Audio2.speakFallback('${jss(it.en)}')" title="点击朗读">${esc(it.en)}</div>
+            <div class="ph-cn">${esc(it.cn)}</div>
+            <div class="ph-use">${esc(it.use)}</div>
+          </div>
+          <button class="btn sm soft" onclick="Writing.usePhrase('${jss(it.en)}')">插入</button>
+        </div>`).join('')}
+      </div>`;
+    }).filter(Boolean);
+    return out.length ? out.join('') : '<div class="card"><p class="muted tiny" style="margin:0">没有匹配的句子，换个关键词试试。</p></div>';
+  }
+
+  function searchPhrases(q) {
+    phraseQ = q;
+    const box = $('#ph-list');
+    if (box) box.innerHTML = phraseGroups((PHRASES && PHRASES.groups) || []);
+  }
+
+  function filterPhrases(f) {
+    phraseFor = f;
+    renderTab();
+  }
+
+  /** 插入到练习框；当前不在动笔页就复制到剪贴板 */
+  function usePhrase(text) {
+    const box = $('#wp-body');
+    if (box) {
+      const s0 = box.selectionStart || 0, e0 = box.selectionEnd || 0;
+      const v = box.value;
+      const add = (s0 > 0 && !/\s$/.test(v.slice(0, s0))) ? ' ' + text : text;
+      box.value = v.slice(0, s0) + add + v.slice(e0);
+      const pos = s0 + add.length;
+      box.focus(); box.setSelectionRange(pos, pos);
+      count();
+      UI.toast('已插入到作文里');
+      return;
+    }
+    const done = () => UI.toast('已复制，去「动笔练习」粘贴即可');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => { copyFallback(text); done(); });
+    } else { copyFallback(text); done(); }
+  }
+
+  function copyFallback(text) {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+    } catch (e) { /* 忽略 */ }
+  }
+
   /* ---- 话题词汇 ---- */
   function tabVocab(b) {
     b.innerHTML = DATA.topic_vocab.map(t => `
@@ -247,6 +329,7 @@ const Writing = (() => {
     if (!body) return UI.toast('正文还是空的');
     const prompt = $('#wp-prompt').value.trim() || '未填写题目';
     Store.addEvent('writing', { title: prompt.slice(0, 80), content: body });
+    try { Track.study('writing', { words: body.split(/\s+/).filter(Boolean).length }); } catch (e) { /* 忽略 */ }
     UI.toast('已保存，可在学习记录查看');
   }
 
@@ -257,5 +340,6 @@ const Writing = (() => {
     AI.reviewText(prompt, body);
   }
 
-  return { render, tab: tab_, practiceWith, practiceDaily, usePrompt, count, startTimer, stopTimer, save, aiReview, ensure };
+  return { render, tab: tab_, practiceWith, practiceDaily, usePrompt, count, startTimer, stopTimer, save, aiReview, ensure,
+    searchPhrases, filterPhrases, usePhrase };
 })();

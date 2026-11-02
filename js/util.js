@@ -129,6 +129,7 @@ const UI = {
   showUserMenu() {
     UI.sheet([
       { label: '目标与个人中心', onClick: () => { location.hash = '#/profile'; } },
+      { label: '击掌打卡（再来一次）', onClick: () => { try { Hi5.force(); } catch (e) { UI.toast('暂时打不开'); } } },
       { label: '学习记录', onClick: () => { location.hash = '#/records'; } },
       { label: '导出学习数据（备份）', onClick: () => { Store.exportData(); UI.toast('备份文件已下载，换设备时可在个人中心导入'); } },
       { label: '清空本地学习数据', danger: true, onClick: () => {

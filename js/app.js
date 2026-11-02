@@ -86,12 +86,19 @@
         <div class="card">
           <h3>数据备份</h3>
           <p class="muted tiny" style="margin:0 0 10px">所有学习数据只保存在这台设备的浏览器里，不会上传。换手机 / 换电脑 / 清理浏览器前，先导出一份备份，在新设备的个人中心导入即可无缝继续。</p>
+          <p class="muted tiny" style="margin:0 0 10px">
+            上次保存：<b>${Store.savedAt ? new Date(Store.savedAt).toLocaleString('zh-CN') : '还没保存过'}</b>
+            ${Store.state.persistError ? '<span class="pill red">保存失败：浏览器存储已满，请先导出备份</span>' : '<span class="pill green">正常</span>'}
+            ${Store.backupInfo() ? ` · 昨日快照 ${esc(Store.backupInfo().day || '')}` : ''}
+          </p>
           <div class="row" style="gap:10px;flex-wrap:wrap">
             <button class="btn" onclick="Store.exportData();UI.toast('备份文件已下载')">导出备份</button>
             <button class="btn" onclick="document.getElementById('pf-import').click()">导入备份</button>
             <input type="file" id="pf-import" accept="application/json" style="display:none" onchange="Profile.doImport(this)">
+            ${Store.backupInfo() ? `<button class="btn soft" onclick="Profile.restore()">恢复 ${esc((Store.backupInfo().day || '').slice(5))} 快照</button>` : ''}
             <button class="btn" style="color:var(--red)" onclick="if(confirm('确定清空吗？所有进度会被删除，无法恢复。')){Store.resetData();UI.toast('已清空');location.reload()}">清空数据</button>
           </div>
+          <p class="muted tiny" style="margin:10px 0 0">版本更新只会给旧数据补齐新字段，不会删除已有的词表进度、任务和记录；每次升级前系统还会自动留一份当日快照。</p>
         </div>
 
         <div class="card">
@@ -115,6 +122,18 @@
       UI.setUserChip();
       Profile.render($('#view'));
     },
+    restore() {
+      const info = Store.backupInfo();
+      if (!confirm(`用 ${info && info.day ? info.day : '上次'} 的快照覆盖当前数据？当前进度会被替换。`)) return;
+      try {
+        const day = Store.restoreBackup();
+        UI.toast(`已恢复到 ${day} 的快照`);
+        UI.setUserChip();
+        Profile.render($('#view'));
+      } catch (e) {
+        UI.toast('恢复失败：' + (e.message || '没有可用快照'), 3200);
+      }
+    },
     async doImport(input) {
       const f = input.files && input.files[0];
       if (!f) return;
@@ -133,4 +152,8 @@
 
   window.addEventListener('hashchange', route);
   await route();
+
+  // 开场：记录一次访问（匿名）+ 今日第一次进站先击个掌
+  try { Track.visit(); } catch (e) { /* 统计不可用不影响使用 */ }
+  try { Hi5.maybeShow(); } catch (e) { /* 忽略 */ }
 })();

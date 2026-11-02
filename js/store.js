@@ -14,48 +14,166 @@ const Store = (() => {
     tasks: {},         // day -> [task]
     ready: false,
     events: [],        // 本地练习记录 {kind, day, ts, ...payload}
+    hi5: { last: null, total: 0 }, // 每日击掌打卡
+    savedAt: null,
+    persistError: false,
   };
 
   /* ---------- 本地持久化 ---------- */
+  const DATA_V = 2;              // 数据结构版本：升级只做合并，永不整体覆盖
+  const BACKUP_KEY = 'wb_ielts_backup';
+
+  /** 版本迁移：只补字段 / 修类型，绝不删已有数据 */
+  function migrate(d) {
+    const out = { ...d };
+    out.progress = d.progress && typeof d.progress === 'object' ? d.progress : {};
+    out.stats = d.stats && typeof d.stats === 'object' ? d.stats : {};
+    out.tasks = d.tasks && typeof d.tasks === 'object' ? d.tasks : {};
+    out.events = Array.isArray(d.events) ? d.events : [];
+    out.profile = { target_band: 6.5, exam_date: null, daily_minutes: 60, ...(d.profile || {}) };
+    out.settings = { daily_new: 15, accent: 'en-GB', ...(d.settings || {}) };
+    out.hi5 = { last: null, total: 0, ...(d.hi5 || {}) };
+    // 类型兜底：旧版本可能存成字符串
+    out.profile.target_band = Number(out.profile.target_band) || 6.5;
+    out.profile.daily_minutes = Number(out.profile.daily_minutes) || 60;
+    out.settings.daily_new = Math.min(100, Math.max(1, Number(out.settings.daily_new) || 15));
+    return out;
+  }
+
+  /** 每天留一份滚动备份，升级 / 误操作都能退回去 */
+  function rollingBackup(raw) {
+    try {
+      const prev = localStorage.getItem(BACKUP_KEY);
+      const prevDay = prev ? (JSON.parse(prev).backup_day || '') : '';
+      if (prevDay === todayStr()) return;
+      localStorage.setItem(BACKUP_KEY, JSON.stringify({
+        backup_day: todayStr(),
+        data_v: DATA_V,
+        payload: raw,
+      }));
+    } catch (e) { console.warn('滚动备份失败（可能是空间不足）', e); }
+  }
+
   function loadLS() {
+    // 只在启动时读一次：之后内存就是唯一真相。
+    // 以前每次渲染都重读，会把刚改完还没落盘的设置/进度冲掉（目标分总是跳回 6.5 就是这个原因）。
+    if (state.ready) return;
     try {
       const raw = localStorage.getItem(KEY);
       if (!raw) { state.ready = true; return; }
-      const d = JSON.parse(raw);
-      state.progress = d.progress || {};
-      if (d.profile) state.profile = { ...state.profile, ...d.profile };
-      if (d.settings) state.settings = { ...state.settings, ...d.settings };
-      state.stats = d.stats || {};
-      state.tasks = d.tasks || {};
-      state.events = d.events || [];
-    } catch (e) { console.warn('本地数据读取失败，使用全新数据', e); }
+      rollingBackup(raw);
+      const d = migrate(JSON.parse(raw));
+      state.progress = d.progress;
+      state.profile = d.profile;
+      state.settings = d.settings;
+      state.stats = d.stats;
+      state.tasks = d.tasks;
+      state.events = d.events;
+      state.hi5 = d.hi5;
+      state.savedAt = d.saved_at || null;
+      if (Number(d.v) !== DATA_V) persist(true);   // 老数据就地升级到新结构
+    } catch (e) {
+      // 数据损坏时先留个备份，避免下一次保存把它彻底覆盖掉
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (raw) localStorage.setItem(KEY + '_broken', raw.slice(0, 200000));
+      } catch (e2) { /* 忽略 */ }
+      console.warn('本地数据读取失败，已备份到 ' + KEY + '_broken', e);
+    }
     state.ready = true;
   }
 
-  let saveTimer = null;
-  function persist() {
-    clearTimeout(saveTimer);
-    saveTimer = setTimeout(() => {
-      try {
-        localStorage.setItem(KEY, JSON.stringify({
-          progress: state.progress,
-          profile: state.profile,
-          settings: state.settings,
-          stats: state.stats,
-          tasks: state.tasks,
-          events: (state.events || []).slice(-800),
-          saved_at: new Date().toISOString(),
-        }));
-      } catch (e) { console.warn('本地保存失败', e); }
-    }, 120);
+  /** 从昨天的备份恢复（只在新版本出问题时用） */
+  function restoreBackup() {
+    try {
+      const b = JSON.parse(localStorage.getItem(BACKUP_KEY) || 'null');
+      if (!b || !b.payload) throw new Error('没有可用备份');
+      const d = migrate(JSON.parse(b.payload));
+      state.progress = d.progress;
+      state.profile = d.profile;
+      state.settings = d.settings;
+      state.stats = d.stats;
+      state.tasks = d.tasks;
+      state.events = d.events;
+      state.hi5 = d.hi5;
+      persist(true);
+      return b.backup_day || '上次备份';
+    } catch (e) { throw e; }
   }
+
+  function backupInfo() {
+    try {
+      const b = JSON.parse(localStorage.getItem(BACKUP_KEY) || 'null');
+      return b ? { day: b.backup_day || null, bytes: (b.payload || '').length } : null;
+    } catch (e) { return null; }
+  }
+
+  let saveTimer = null;
+
+  function snapshot(int) {
+    const slim = int === 'slim';
+    const day = todayStr();
+    return {
+      v: DATA_V,
+      progress: state.progress,
+      profile: state.profile,
+      settings: state.settings,
+      stats: state.stats,
+      tasks: slim ? (state.tasks[day] ? { [day]: state.tasks[day] } : {}) : state.tasks,
+      events: (state.events || []).slice(slim ? -200 : -800),
+      hi5: state.hi5,
+      saved_at: new Date().toISOString(),
+    };
+  }
+
+  /** 立刻写盘：关键操作（保存目标、打卡、记录）都走这里，不等防抖 */
+  function writeNow() {
+    if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+    try {
+      localStorage.setItem(KEY, JSON.stringify(snapshot()));
+      state.savedAt = new Date().toISOString();
+      state.persistError = false;
+      return true;
+    } catch (e) {
+      // 存储配额满：先瘦身（只留今天的任务、最近 200 条记录）再试一次
+      try {
+        localStorage.setItem(KEY, JSON.stringify(snapshot('slim')));
+        state.savedAt = new Date().toISOString();
+        state.persistError = false;
+        console.warn('本地存储接近上限，已压缩历史数据', e);
+        return true;
+      } catch (e2) {
+        state.persistError = true;
+        console.warn('本地保存失败', e2);
+        return false;
+      }
+    }
+  }
+
+  /** immediate=true 立刻落盘；否则 120ms 合并写入 */
+  function persist(immediate) {
+    if (immediate) return writeNow();
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(writeNow, 120);
+  }
+
+  // 关页面 / 切到后台时，把还没落盘的改动写完
+  if (typeof window !== 'undefined' && window.addEventListener) {
+    window.addEventListener('pagehide', writeNow);
+    window.addEventListener('beforeunload', writeNow);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') writeNow();
+    });
+  }
+
 
   /* 导出 / 导入（代替云端同步） */
   function exportData() {
     const blob = new Blob([JSON.stringify({
-      app: 'IELTS-Learning-Studio', version: 1, exported_at: new Date().toISOString(),
+      app: 'IELTS-Learning-Studio', version: 2, exported_at: new Date().toISOString(),
       progress: state.progress, profile: state.profile, settings: state.settings,
       stats: state.stats, tasks: state.tasks, events: (state.events || []).slice(-800),
+      hi5: state.hi5,
     }, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -74,7 +192,8 @@ const Store = (() => {
     state.stats = d.stats || {};
     state.tasks = d.tasks || {};
     state.events = d.events || [];
-    persist();
+    if (d.hi5) state.hi5 = { ...state.hi5, ...d.hi5 };
+    persist(true);
   }
 
   /* ---------- 本地练习记录（听力精听 / 写作笔记 / 口语录音等） ---------- */
@@ -82,7 +201,7 @@ const Store = (() => {
     state.events = state.events || [];
     state.events.push({ kind, day: todayStr(), ts: new Date().toISOString(), ...(payload || {}) });
     if (state.events.length > 800) state.events = state.events.slice(-800);
-    persist();
+    persist(true);
   }
 
   function eventsOf(kind, limit) {
@@ -98,8 +217,25 @@ const Store = (() => {
     state.events = [];
     state.profile = { target_band: 6.5, exam_date: null, daily_minutes: 60 };
     state.settings = { daily_new: 15, accent: 'en-GB' };
-    persist();
+    state.hi5 = { last: null, total: 0 };
+    persist(true);
   }
+
+  /* ---------- 每日击掌 ---------- */
+  function hi5DoneToday() {
+    return state.hi5 && state.hi5.last === todayStr();
+  }
+
+  function markHi5() {
+    const doneBefore = hi5DoneToday();
+    state.hi5 = {
+      last: todayStr(),
+      total: (state.hi5 && state.hi5.total ? state.hi5.total : 0) + (doneBefore ? 0 : 1),
+    };
+    persist(true);
+    return state.hi5;
+  }
+
 
   /* ---------- 词库 ---------- */
   async function loadWords() {
@@ -158,12 +294,12 @@ const Store = (() => {
 
   function saveProfile(patch) {
     state.profile = { ...state.profile, ...patch };
-    persist();
+    persist(true);       // 目标分这类设置立刻落盘，避免刷新后回到默认值
   }
 
   function saveSettings(patch) {
     state.settings = { ...state.settings, ...patch };
-    persist();
+    persist(true);
   }
 
   /* ---------- SRS ---------- */
@@ -221,7 +357,7 @@ const Store = (() => {
     row.word_id = wordId;
     if (word) row.source = word.source || 'book';
     state.progress[wordId] = row;
-    persist();
+    persist(true);
     return row.starred;
   }
 
@@ -254,7 +390,7 @@ const Store = (() => {
     if (!n) return;
     const s = dayStat(todayStr());
     s.new_words = (s.new_words || 0) + n;
-    persist();
+    persist(true);
   }
 
   function todayStat() { return state.stats[todayStr()] || null; }
@@ -280,7 +416,7 @@ const Store = (() => {
 
   function toggleTask(task, done) {
     task.status = done ? 'done' : 'todo';
-    persist();
+    persist(true);
   }
 
   /* ---------- 队列与统计 ---------- */
@@ -345,6 +481,7 @@ const Store = (() => {
     trackStudy, flushStats, addNewWords, toggleTask, dueWords, overdueWords, newWords,
     stats, history, streak, examCountdown, rootGroups, schedule, safeJSON,
     exportData, importData, resetData, todayStat, addEvent, eventsOf,
+    hi5DoneToday, markHi5, flush: writeNow, restoreBackup, backupInfo,
     get words() { return state.words || []; },
     get byId() { return state.byId; },
     get progress() { return state.progress; },
@@ -352,5 +489,7 @@ const Store = (() => {
     get settings() { return state.settings; },
     get today() { return todayStat(); },
     get tasks() { return loadTasks(); },
+    get savedAt() { return state.savedAt; },
+    get hi5() { return state.hi5; },
   };
 })();

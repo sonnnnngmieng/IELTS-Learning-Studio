@@ -1,0 +1,148 @@
+{
+  "intro": "句式分两类用法：一类是骨架（句子结构，换掉里面的名词就能用），一类是血肉（具体搭配，必须跟着题目内容走）。只搬骨架不算模板化，整段照搬才会被判模板。",
+  "groups": [
+    {
+      "id": "t2-open",
+      "title": "Task 2 · 开头与亮立场",
+      "for": "Task 2",
+      "items": [
+        { "en": "While some argue that ..., I would argue that ...", "cn": "有人认为……，但我认为……", "use": "开头一句把双方都点到，再给自己的立场" },
+        { "en": "It is often claimed that ... . In my view, however, this argument overlooks ...", "cn": "人们常说……，但在我看来这个说法忽略了……", "use": "先复述对方，再指出漏洞，比直接否定更有力" },
+        { "en": "Few issues are as divisive as ...", "cn": "很少有议题像……这样引起分歧", "use": "开头引入争议话题（适合讨论型）" },
+        { "en": "In recent decades, ... has moved from the margins to the centre of public debate.", "cn": "近几十年，……从边缘议题变成了公共讨论的中心", "use": "强调话题的时代性，避免 With the development of society" },
+        { "en": "This essay will examine both sides before explaining why I favour ...", "cn": "本文先看双方，再说明我为什么支持……", "use": "结尾句预告结构，CC 分好拿" },
+        { "en": "The question is not whether ... is valuable, but how it should be ...", "cn": "问题不在于……是否有价值，而在于它应当如何……", "use": "把绝对化的题目改成可讨论的题目，最容易写深" }
+      ]
+    },
+    {
+      "id": "t2-concession",
+      "title": "Task 2 · 让步与反驳",
+      "for": "Task 2",
+      "items": [
+        { "en": "Admittedly, ... ; nevertheless, ...", "cn": "诚然……；然而……", "use": "先承认对方合理处，再转回来，是最稳的 7 分结构" },
+        { "en": "It is true that ... , but this is only part of the picture.", "cn": "……确实如此，但这只是事情的一部分", "use": "反驳「只不过」类观点" },
+        { "en": "Critics may contend that ... , yet such a view tends to ignore ...", "cn": "批评者可能主张……，但这种看法往往忽略……", "use": "带出对方立场并指出盲点" },
+        { "en": "Granted, ... . Even so, the argument does not hold when ...", "cn": "就算……成立，当……时这个论证也不成立", "use": "加条件式反驳，显得思考有层次" },
+        { "en": "This argument has some merit, but it does not withstand closer scrutiny.", "cn": "这个论点有一定道理，但经不起细看", "use": "一句收掉对方，进入自己的论证" },
+        { "en": "Such reasoning confuses correlation with causation.", "cn": "这种推理把相关当成了因果", "use": "高级反驳，适合数据/研究型题目" }
+      ]
+    },
+    {
+      "id": "t2-cause",
+      "title": "Task 2 · 因果与推进",
+      "for": "Task 2",
+      "items": [
+        { "en": "This is largely attributable to ...", "cn": "这在很大程度上归因于……", "use": "给出主因，比 because 更书面" },
+        { "en": "A further factor is ...", "cn": "还有一个因素是……", "use": "补充第二个原因，替代 Secondly" },
+        { "en": "..., which in turn leads to ...", "cn": "……，进而导致……", "use": "写出因果链，是 TR 深度最直接的来源" },
+        { "en": "The root of the problem lies not in ... but in ...", "cn": "问题的根源不在……而在……", "use": "把讨论从现象推进到机制" },
+        { "en": "As a consequence, ...", "cn": "结果是……", "use": "承接结果，替代 so" },
+        { "en": "Unless ... , the problem is likely to persist.", "cn": "除非……，否则问题会持续存在", "use": "引出解决方案前的铺垫" }
+      ]
+    },
+    {
+      "id": "t2-example",
+      "title": "Task 2 · 举例与引用",
+      "for": "Task 2",
+      "items": [
+        { "en": "A case in point is ...", "cn": "一个例子是……", "use": "最省字的举例开头" },
+        { "en": "Take ... , for example: ...", "cn": "以……为例：……", "use": "举例后用冒号直接给细节" },
+        { "en": "This is well illustrated by ...", "cn": "……很好地说明了这一点", "use": "承接上文观点再举例" },
+        { "en": "Evidence from ... suggests that ...", "cn": "来自……的证据表明……", "use": "引用研究/调查（编数据要谨慎，宁可用笼统表述）" },
+        { "en": "In practice, however, ...", "cn": "然而在实践中……", "use": "从理论转到现实，避免空谈" },
+        { "en": "Consider ... : if ... , then ...", "cn": "设想……：如果……，那么……", "use": "假设式论证，适合没有真实例子的题目" }
+      ]
+    },
+    {
+      "id": "t2-close",
+      "title": "Task 2 · 结尾与建议",
+      "for": "Task 2",
+      "items": [
+        { "en": "In conclusion, while ... , the benefits clearly outweigh the drawbacks.", "cn": "总之，虽然……，但好处明显大于坏处", "use": "利弊型题目的标准收束" },
+        { "en": "Ultimately, the question is not whether ... but how ...", "cn": "归根结底，问题不是要不要……，而是怎么……", "use": "结尾再抬一层，TR 加分" },
+        { "en": "What is needed, therefore, is not ... but ...", "cn": "因此需要的不是……而是……", "use": "给出方向而不是空喊口号" },
+        { "en": "Governments and schools should therefore ... rather than ...", "cn": "因此政府与学校应当……而不是……", "use": "落到可执行主体" },
+        { "en": "Only by ... can ... be ...", "cn": "只有……，才能……", "use": "强调句收尾，注意后面用倒装" }
+      ]
+    },
+    {
+      "id": "t1-trend",
+      "title": "Task 1 · 趋势描述（上升/下降/波动/持平）",
+      "for": "Task 1",
+      "items": [
+        { "en": "rose steadily from X in 2000 to Y in 2010", "cn": "从 2000 年的 X 稳步上升到 2010 年的 Y", "use": "上升 + 起止点，一句说清" },
+        { "en": "declined sharply, falling by almost half", "cn": "急剧下降，几乎减少一半", "use": "下降 + 幅度" },
+        { "en": "fluctuated between X and Y throughout the period", "cn": "在此期间于 X 与 Y 之间波动", "use": "波动，配 between ... and ..." },
+        { "en": "remained relatively stable at around X", "cn": "基本稳定在 X 左右", "use": "持平，注意 at around" },
+        { "en": "peaked at X in 2010 before falling back to Y", "cn": "2010 年达到 X 的峰值，随后回落到 Y", "use": "先升后降，比两个句子省一半字数" },
+        { "en": "hit a low of X in 2005", "cn": "2005 年跌至最低点 X", "use": "最低点" },
+        { "en": "grew more than threefold over the decade", "cn": "十年间增长了三倍多", "use": "倍数表达，注意 threefold 是「变为三倍」" },
+        { "en": "overtook X to become the largest category", "cn": "超过 X 成为占比最大的类别", "use": "排名变化" },
+        { "en": "accounted for roughly a third of the total", "cn": "约占总量的三分之一", "use": "占比，配 accounted for" },
+        { "en": "was twice as high as X", "cn": "是 X 的两倍", "use": "比较，注意 as ... as 结构" }
+      ]
+    },
+    {
+      "id": "t1-overview",
+      "title": "Task 1 · 概述与对比",
+      "for": "Task 1",
+      "items": [
+        { "en": "Overall, the most striking feature is that ...", "cn": "总体来看，最显著的特点是……", "use": "概述段开头，必须有这一段" },
+        { "en": "The chart shows a clear upward trend in ...", "cn": "图表显示……呈明显上升趋势", "use": "概述趋势，不写具体数字" },
+        { "en": "By contrast, ... accounted for the smallest share.", "cn": "相比之下，……占比最小", "use": "两组数据对比" },
+        { "en": "X and Y followed broadly similar patterns, although ...", "cn": "X 与 Y 走势大致相似，尽管……", "use": "把两条线合并成一句，省字数" },
+        { "en": "The gap between X and Y widened / narrowed over time.", "cn": "X 与 Y 之间的差距逐渐扩大 / 缩小", "use": "差距变化，很出效果" },
+        { "en": "Figures for X were consistently higher than those for Y.", "cn": "X 的数据始终高于 Y", "use": "those 代替重复的名词" }
+      ]
+    },
+    {
+      "id": "link",
+      "title": "学术衔接（按功能选，不要背一串）",
+      "for": "通用",
+      "items": [
+        { "en": "Consequently, ...", "cn": "因此……", "use": "结果（句中已含因果，后面别再 because）" },
+        { "en": "Nevertheless, ...", "cn": "尽管如此……", "use": "转折，比 but 正式" },
+        { "en": "Moreover, ...", "cn": "此外……", "use": "递进，一段最多用一次" },
+        { "en": "In contrast, ...", "cn": "相反……", "use": "对比，前后必须是同类事物" },
+        { "en": "Given that ... , ...", "cn": "考虑到……，……", "use": "前提 + 结论" },
+        { "en": "With regard to ...", "cn": "关于……", "use": "切换讨论对象" },
+        { "en": "This is particularly true of ...", "cn": "……尤其如此", "use": "缩小范围，避免绝对化" },
+        { "en": "To a large extent, ...", "cn": "在很大程度上……", "use": "给观点留余地" }
+      ]
+    },
+    {
+      "id": "swap",
+      "title": "高频词升级（同一意思，换个更准的词）",
+      "for": "通用",
+      "items": [
+        { "en": "important → crucial / vital / pivotal", "cn": "重要的", "use": "pivotal 适合「关键转折」的语境" },
+        { "en": "good → beneficial / advantageous / constructive", "cn": "好的", "use": "beneficial 配 for/to" },
+        { "en": "bad → detrimental / damaging / adverse", "cn": "坏的", "use": "detrimental to 健康/环境" },
+        { "en": "big → substantial / considerable / significant", "cn": "大的", "use": "修饰数量、影响" },
+        { "en": "many → a growing number of / numerous", "cn": "许多", "use": "可数名词；不可数用 a great deal of" },
+        { "en": "think → believe / maintain / contend / argue", "cn": "认为", "use": "contend 带「主张」意味" },
+        { "en": "show → demonstrate / illustrate / indicate", "cn": "表明", "use": "图表用 illustrate，数据用 indicate" },
+        { "en": "help → facilitate / foster / contribute to", "cn": "帮助/促进", "use": "foster 配能力、关系" },
+        { "en": "problem → issue / challenge / drawback / shortcoming", "cn": "问题", "use": "drawback 指方案缺点" },
+        { "en": "get → obtain / acquire / gain", "cn": "得到", "use": "acquire skills 搭配固定" },
+        { "en": "change → shift / transform / alter", "cn": "改变", "use": "shift 常指态度、重心转移" },
+        { "en": "because → owing to / due to / as a result of", "cn": "因为", "use": "后接名词短语，不接从句" }
+      ]
+    },
+    {
+      "id": "fix",
+      "title": "中式表达纠正（考官一眼能看出来的）",
+      "for": "通用",
+      "items": [
+        { "en": "✗ With the development of society → ✓ As societies develop,", "cn": "随着社会发展", "use": "模板句，考场上出现太多次；换成具体变化" },
+        { "en": "✗ more and more people → ✓ a growing number of people", "cn": "越来越多的人", "use": "口语化 + 重复，正式写作少用" },
+        { "en": "✗ In my opinion, I think ... → ✓ In my view, ...", "cn": "我认为", "use": "两个表达重复，删一个" },
+        { "en": "✗ I very like ... → ✓ I really enjoy / I am fond of ...", "cn": "我很喜欢", "use": "very 不能直接修饰动词" },
+        { "en": "✗ There have many people ... → ✓ There are many people ...", "cn": "有很多人", "use": "there be 句型不用 have" },
+        { "en": "✗ Last but not least, ... → ✓ Finally, / More importantly, ...", "cn": "最后但同样重要的是", "use": "口语套话，书面语不用" },
+        { "en": "✗ On the one hand ... on the other hand ... （用于并列）→ ✓ While ..., ...", "cn": "一方面……另一方面……", "use": "这组词本义是「对立」，不是「并列」" },
+        { "en": "✗ solve the problem（一段用三次）→ ✓ address / tackle / alleviate", "cn": "解决问题", "use": "同一个动词别在一段里重复" }
+      ]
+    }
+  ]
+}

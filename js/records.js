@@ -106,7 +106,56 @@ const Records = (() => {
               <button class="btn sm soft" onclick="Records.viewNote(${i})">查看</button>
             </div>`).join('')
           : '<p class="muted tiny">还没有保存过作文</p>'}
+      </div>
+
+      <div class="card">
+        <div class="card-title"><h3>使用统计</h3><span class="pill blue">匿名 · 云端汇总</span></div>
+        <div id="usage-body"><p class="muted tiny" style="margin:0">正在读取云端记录…</p></div>
+        <p class="muted tiny" style="margin:10px 0 0">
+          只记录「哪天有多少台设备打开、学了几次」这类计数，不记录姓名、手机号、IP 或任何作答内容。
+        </p>
       </div>`;
+    paintUsage();
+  }
+
+  /** 云端汇总：今天有多少人在用、大家学了多少 */
+  async function paintUsage() {
+    const el = $('#usage-body');
+    if (!el) return;
+    let res;
+    try { res = await Track.summary(14); } catch (e) { res = { ok: false, rows: [] }; }
+    const mine = Track.localStats();
+    if (!res.ok || !res.rows.length) {
+      el.innerHTML = `<p class="muted tiny" style="margin:0 0 6px">
+        云端还没读到记录（${esc(res.reason || '暂无数据')}）。这不影响你自己的学习统计。</p>
+        <p class="muted tiny" style="margin:0">本机标识 <span class="mono">${esc(mine.device)}</span>
+        · 已记录 ${mine.events} 条练习事件${mine.pending ? ` · 待上报 ${mine.pending} 条` : ''}</p>`;
+      return;
+    }
+    const byDay = {};
+    res.rows.forEach(r => {
+      const d = byDay[r.day] = byDay[r.day] || { day: r.day, visits: 0, devices: 0, acts: 0 };
+      const n = Number(r.events) || 0;
+      if (r.kind === 'visit') d.visits += n;
+      else d.acts += n;
+      d.devices = Math.max(d.devices, Number(r.devices) || 0);
+    });
+    const list = Object.values(byDay).sort((a, b) => (a.day < b.day ? 1 : -1));
+    const today = list.find(d => d.day === todayStr()) || { visits: 0, devices: 0, acts: 0 };
+    const week = list.slice(0, 7).reduce((a, d) => Math.max(a, d.devices), 0);
+    const maxV = Math.max(1, ...list.map(d => d.visits));
+    el.innerHTML = `
+      <div class="kpis" style="margin:0 0 8px">
+        <div class="kpi"><div class="n">${today.devices}</div><div class="l">今天使用人数</div></div>
+        <div class="kpi"><div class="n">${today.visits}</div><div class="l">今天打开次数</div></div>
+        <div class="kpi"><div class="n">${today.acts}</div><div class="l">今天学习次数</div></div>
+        <div class="kpi"><div class="n">${week}</div><div class="l">近 7 天最多</div></div>
+      </div>
+      ${list.slice(0, 10).map(d => `<div class="usage-row">
+        <span class="usage-day">${esc(d.day.slice(5))}</span>
+        <span class="usage-bar"><i style="width:${Math.round(d.visits / maxV * 100)}%"></i></span>
+        <span class="usage-num">${d.devices} 人 / ${d.visits} 次</span>
+      </div>`).join('')}`;
   }
 
   function heatCells(rows) {

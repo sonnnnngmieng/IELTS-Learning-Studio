@@ -30,11 +30,13 @@ const Guide = (() => {
         <span class="chip ${tab === 'grammar' ? 'on' : ''}" onclick="location.hash='#/guide/grammar'">✎ 必备语法</span>
         <span class="chip ${tab === 'words' ? 'on' : ''}" onclick="location.hash='#/guide/words'">✦ 必背词单</span>
         <span class="chip ${tab === 'exam' ? 'on' : ''}" onclick="location.hash='#/guide/exam'">◷ 考试须知</span>
+        <span class="chip ${tab === 'source' ? 'on' : ''}" onclick="location.hash='#/guide/source'">❋ 素材出处</span>
       </div>
       <div id="guide-body"></div>`;
     const body = $('#guide-body');
     if (tab === 'words') paintWords(body);
     else if (tab === 'exam') paintExam(body);
+    else if (tab === 'source') paintSource(body);
     else paintGrammar(body);
     window.scrollTo(0, 0);
   }
@@ -118,6 +120,27 @@ const Guide = (() => {
   }
 
   /* ---------- 考试须知 ---------- */
+  /* ---------- 素材出处 ---------- */
+  function paintSource(root) {
+    root.innerHTML = `
+      <div class="card">
+        <div class="card-title"><h3>每份材料从哪来</h3><span class="pill amber">不含真题原文</span></div>
+        <p class="muted tiny" style="margin:0 0 6px">
+          下面把站里每一类内容都交代清楚：哪些是原书整理、哪些是我按考纲自编、哪些是 TTS 合成。
+          凡是「自编」，意思是它模仿雅思的题型和评分标准，<b>但不是考场原题，也不摘自任何商业题库</b>。
+        </p>
+        ${Src.tableHTML()}
+      </div>
+      <div class="card">
+        <h3>为什么不做真题</h3>
+        <p class="muted tiny" style="margin:0">
+          剑桥雅思真题的版权在剑桥大学出版社，整套搬运会侵权，也没办法在这个页面里长期维护。
+          所以这里的做法是：<b>用自编材料把「方法」练熟</b>，真题留给纸质的剑桥真题集做整套模考——
+          方法在这练，手感在真题上找，两者不冲突。
+        </p>
+      </div>`;
+  }
+
   function paintExam(root) {
     root.innerHTML = cache.exam.map(s => `
       <div class="card" style="margin-bottom:14px">

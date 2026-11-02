@@ -297,6 +297,7 @@ const Daily = (() => {
         <span class="pill line">${esc(e.difficulty || '')}</span>
         <span class="pill line">${e.word_count || ''} 词</span>
         ${e.band ? `<span class="pill line" title="按四项评分标准自评的参考档位，非官方评分">参考 ${esc(e.band)} 档</span>` : ''}
+        ${Src.pill('essay')}
       </div>
       <h1 style="font-size:19px;line-height:1.5">${esc(e.prompt)}</h1>
       <p class="muted tiny">${esc(e.prompt_zh || '')}</p>

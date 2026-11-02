@@ -147,6 +147,7 @@ const Dashboard = (() => {
     const t = (Store.tasks || []).find(x => x.id === id);
     if (!t) return;
     Store.toggleTask(t, t.status !== 'done');
+    if (t.status === 'done') { try { Track.study('task', { m: t.module }); } catch (e) { /* 忽略 */ } }
     render($('#view'));
   }
 

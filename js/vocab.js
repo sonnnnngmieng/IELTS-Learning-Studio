@@ -261,6 +261,7 @@ const Vocab = (() => {
     const s = session;
     if (s.idx >= s.queue.length) {
       if (s.kind === 'new' || s.newCount) Store.addNewWords(s.newCount);
+      try { Track.study('study', { kind: s.kind, n: s.queue.length }); } catch (e) { /* 忽略 */ }
       root.innerHTML = `
         <div class="study-wrap">
           <div class="card center" style="padding:38px 20px">
